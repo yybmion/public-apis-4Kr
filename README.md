@@ -1,4 +1,4 @@
-# Public API - kr
+# <img src="./assets/public-api-icon.png" width="50" height="50"/> Public API - kr
 
 <h3 align='center'>한국에서 이용 가능한 모든 Public API 모음</h3>
 
