@@ -4,7 +4,7 @@
 
 <br/>
 
-이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 공개 API를 체계적으로 정리한 목록입니다. 2025년 최신 정보로 업데이트되었으며, **200개 이상의 API**를 포함합니다.
+이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 공개 API를 체계적으로 정리한 목록입니다. 2025년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
 
 ## 목차
 
@@ -119,6 +119,8 @@
 
 | API | 설명 | 인증 |
 | --- | --- | --- |
+| [현대자동차 Developers](https://developers.hyundai.com/) | 차량 제원, 운행정보, 주행거리, 차량상태, 운전습관 | `OAuth` |
+| [기아자동차 Developers](https://developers.kia.com/) | KIA Connect 차량 데이터 및 운행정보 | `OAuth` |
 | [서울 TOPIS 교통정보](https://topis.seoul.go.kr/refRoom/openRefRoom_4.do) | 서울시 다양한 교통정보, 비영리 목적 활용 | `apiKey` |
 | [서울시 지하철 실시간 도착정보](https://www.data.go.kr/data/15000314/openapi.do) | 서울 지하철 2~8호선 실시간 도착정보 | `apiKey` |
 | [서울시 버스 도착정보](http://api.bus.go.kr/contents/sub01/wisOpenApi.html) | 서울시 시내버스 실시간 도착정보 | `apiKey` |
@@ -152,6 +154,7 @@
 
 | API | 설명 | 인증 |
 | --- | --- | --- |
+| [삼성헬스 SDK](https://developer.samsung.com/health) | 건강 데이터 읽기/쓰기 (심박수, 산소포화도, 혈당, 혈압 등) | `Partnership` |
 | [건강보험심사평가원 의료기관정보](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 전국 의료기관 상세정보 서비스 | `apiKey` |
 | [식품의약품안전처 의약품정보](https://data.mfds.go.kr/cntnts/20) | 의약품 허가정보 및 안전성 정보 | `apiKey` |
 | [국민건강보험공단 검진기관정보](https://www.data.go.kr/data/15001672/openapi.do) | 건강검진 및 암검진 기관정보 | `apiKey` |
@@ -177,6 +180,7 @@
 
 | API | 설명 | 인증 |
 | --- | --- | --- |
+| [Airbnb API](https://www.airbnb.com/help/article/3418) | 숙소 관리, 예약 관리 (B2B 파트너십 필수) | `OAuth` |
 | [아파트 매매 실거래가](https://www.data.go.kr/data/15126469/openapi.do) | 국토교통부 아파트 매매 실거래 자료 | `apiKey` |
 | [아파트 전월세 실거래가](https://www.data.go.kr/data/15126474/openapi.do) | 아파트 전세/월세 실거래 자료 | `apiKey` |
 | [한국부동산원 부동산통계](https://www.reb.or.kr/r-one/portal/openapi/openApiIntroPage.do) | 부동산 시장동향 및 통계정보 | `apiKey` |
@@ -221,16 +225,17 @@
 
 ### 쇼핑 & 이커머스
 
-| API | 설명 | 인증 |
-| --- | --- | --- |
-| [쿠팡 Open API](https://developers.coupangcorp.com/hc/en-us) | 쿠팡 파트너스 및 셀러 API | `apiKey` |
-| [11번가 Open API](https://openapi.11st.co.kr/) | 11번가 상품정보 및 주문관리 API | `apiKey` |
-| [G마켓 Open API](https://etapi.gmarket.com/pages/API-%EA%B0%80%EC%9D%B4%EB%93%9C) | G마켓 상품검색 및 카테고리 API | `apiKey` |
-| [네이버 쇼핑 검색 API](https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md) | 네이버 쇼핑 상품 검색 서비스 | `apiKey` |
-| [네이버 커머스 API](https://apicenter.commerce.naver.com/ko/basic/commerce-api) | 스마트스토어 판매자 전용 상품/주문 관리 | `OAuth` |
+| API                                                                                         | 설명 | 인증 |
+|---------------------------------------------------------------------------------------------| --- | --- |
+| [쿠팡 Open API](https://developers.coupangcorp.com/hc/en-us)                                  | 쿠팡 파트너스 및 셀러 API | `apiKey` |
+| [11번가 Open API](https://openapi.11st.co.kr/)                                                | 11번가 상품정보 및 주문관리 API | `apiKey` |
+| [G마켓 Open API](https://etapi.gmarket.com/pages/API-%EA%B0%80%EC%9D%B4%EB%93%9C)             | G마켓 상품검색 및 카테고리 API | `apiKey` |
+| [네이버 쇼핑 검색 API](https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)   | 네이버 쇼핑 상품 검색 서비스 | `apiKey` |
+| [네이버 커머스 API](https://apicenter.commerce.naver.com/ko/basic/commerce-api)                   | 스마트스토어 판매자 전용 상품/주문 관리 | `OAuth` |
 | [네이버 쇼핑인사이트 API](https://developers.naver.com/docs/serviceapi/datalab/shopping/shopping.md) | 쇼핑 분야별 검색 트렌드 데이터 | `apiKey` |
-| [G마켓/옥션 ESM Trading API](https://etapi.gmarket.com/category/%EA%B3%B5%EC%A7%80) | 이베이코리아 통합 판매자 도구 | `JWT` |
-| [NHN커머스 개발자센터](https://devcenter.nhn-commerce.com/) | 고도몰 API 연동 및 샘플 코드 제공 | `apiKey` |
+| [위메프 로그인](https://developer.login.wonders.work/)        | 위메프 로그인 OAuth 2.0 (제휴사 전용) | `OAuth` |
+| [G마켓/옥션 ESM Trading API](https://etapi.gmarket.com/category/%EA%B3%B5%EC%A7%80)             | 이베이코리아 통합 판매자 도구 | `JWT` |
+| [NHN커머스 개발자센터](https://devcenter.nhn-commerce.com/)                                         | 고도몰 API 연동 및 샘플 코드 제공 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -277,16 +282,17 @@
 
 ### 소셜 & 커뮤니케이션
 
-| API | 설명 | 인증 |
-| --- | --- | --- |
+| API                                                                              | 설명 | 인증 |
+|----------------------------------------------------------------------------------| --- | --- |
 | [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/kakaotalk-message/common) | 카카오톡 텍스트/이미지 메시지 전송 | `OAuth` |
-| [카카오톡 공유하기](https://developers.kakao.com/docs/latest/ko/kakaotalk-share/common) | 웹/앱에서 카카오톡으로 콘텐츠 공유 | `apiKey` |
-| [카카오톡 채널](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common) | 메시지 발송, 채널 관리 | `OAuth` |
-| [네이버 카페 API](https://developers.naver.com/docs/login/cafe-api/cafe-api.md) | 네이버 카페 글 작성 및 관리 | `OAuth` |
-| [네이버 블로그 API](https://developers.naver.com/docs/serviceapi/search/blog/blog.md) | 네이버 블로그 포스팅 API | `OAuth` |
-| [가비아 문자/알림톡 API](https://message.gabia.com/api/documentation/) | SMS, LMS, MMS, 카카오 알림톡 통합 (8개 언어 지원) | `OAuth` |
-| [하이웍스 API](https://developers.hiworks.com/) | 전자결재, 푸시 알림 기업용 협업 도구 | `apiKey` |
-| [잔디(JANDI) 웹훅](https://support.jandi.com/) | 외부 서비스 실시간 연동 인커밍 웹훅 | `webhook` |
+| [카카오톡 공유하기](https://developers.kakao.com/docs/latest/ko/kakaotalk-share/common)  | 웹/앱에서 카카오톡으로 콘텐츠 공유 | `apiKey` |
+| [카카오톡 채널](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common)  | 메시지 발송, 채널 관리 | `OAuth` |
+| [네이버 카페 API](https://developers.naver.com/docs/login/cafe-api/cafe-api.md)       | 네이버 카페 글 작성 및 관리 | `OAuth` |
+| [네이버 블로그 API](https://developers.naver.com/docs/serviceapi/search/blog/blog.md)  | 네이버 블로그 포스팅 API | `OAuth` |
+| [라인 API](https://developers.line.biz/)       | LINE Login, Messaging API, LINE Pay, LIFF, MINI App | `OAuth` |
+| [가비아 문자/알림톡 API](https://message.gabia.com/api/documentation/)                   | SMS, LMS, MMS, 카카오 알림톡 통합 (8개 언어 지원) | `OAuth` |
+| [하이웍스 API](https://developers.hiworks.com/)                                      | 전자결재, 푸시 알림 기업용 협업 도구 | `apiKey` |
+| [잔디(JANDI) 웹훅](https://support.jandi.com/)                                       | 외부 서비스 실시간 연동 인커밍 웹훅 | `webhook` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
