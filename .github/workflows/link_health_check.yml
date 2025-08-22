@@ -6,7 +6,7 @@ on:
       file_to_check:
         description: '검사할 파일'
         required: false
-        default: 'README.md'
+        default: 'both'
         type: choice
         options:
           - 'README.md'
