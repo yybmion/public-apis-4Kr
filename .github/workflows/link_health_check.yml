@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🐍 Python 설정
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -63,7 +63,7 @@ jobs:
         continue-on-error: true
 
       - name: 📊 검사 결과 업로드
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: link-health-reports
@@ -74,7 +74,7 @@ jobs:
 
       - name: 🚨 깨진 링크 이슈 생성
         if: failure() && github.event_name == 'schedule'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
@@ -152,66 +152,3 @@ jobs:
             } else {
               console.log('모든 링크가 정상적으로 작동합니다! 🎉');
             }
-
-      - name: 💬 PR에 결과 댓글 작성
-        if: github.event_name == 'pull_request' && (failure() || success())
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require('fs');
-            
-            let allBroken = [];
-            let totalLinks = 0;
-            let workingLinks = 0;
-            
-            // 결과 파일들 읽기
-            try {
-              const koReport = JSON.parse(fs.readFileSync('link_health_report.json', 'utf8'));
-              totalLinks += koReport.total_links;
-              workingLinks += koReport.working_links;
-              const koBroken = koReport.results.filter(link => !link.is_working);
-              allBroken = allBroken.concat(koBroken.map(link => ({...link, file: 'README.md'})));
-            } catch (e) {}
-            
-            try {
-              const enReport = JSON.parse(fs.readFileSync('link_health_report_en.json', 'utf8'));
-              totalLinks += enReport.total_links;
-              workingLinks += enReport.working_links;
-              const enBroken = enReport.results.filter(link => !link.is_working);
-              allBroken = allBroken.concat(enBroken.map(link => ({...link, file: 'README_EN.md'})));
-            } catch (e) {}
-            
-            const successRate = totalLinks > 0 ? ((workingLinks / totalLinks) * 100).toFixed(1) : 0;
-            
-            let commentBody = `## 🔗 링크 상태 검사 결과\n\n`;
-            
-            if (allBroken.length === 0) {
-              commentBody += `✅ **모든 링크가 정상적으로 작동합니다!**\n\n`;
-              commentBody += `📊 **통계**: ${totalLinks}개 링크 중 ${workingLinks}개 정상 (${successRate}%)\n`;
-            } else {
-              commentBody += `⚠️ **일부 링크에 문제가 발견되었습니다.**\n\n`;
-              commentBody += `📊 **통계**: ${totalLinks}개 링크 중 ${allBroken.length}개 문제 (성공률: ${successRate}%)\n\n`;
-              commentBody += `### 🚨 문제가 있는 링크들:\n\n`;
-            
-              allBroken.slice(0, 10).forEach(link => {
-                commentBody += `- ❌ **${link.api_name}** (${link.file})\n`;
-                commentBody += `  - URL: ${link.url}\n`;
-                commentBody += `  - 오류: ${link.error_message}\n\n`;
-              });
-            
-              if (allBroken.length > 10) {
-                commentBody += `... 그리고 ${allBroken.length - 10}개 더\n\n`;
-              }
-            
-              commentBody += `🔧 **수정 후 다시 검사를 받으시기 바랍니다.**\n`;
-            }
-            
-            commentBody += `\n---\n 링크 상태 자동 검사`;
-
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: commentBody
-            });
-            
