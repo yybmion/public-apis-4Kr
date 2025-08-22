@@ -1,0 +1,217 @@
+name: "Link Health Check"
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_to_check:
+        description: '검사할 파일'
+        required: false
+        default: 'README.md'
+        type: choice
+        options:
+          - 'README.md'
+          - 'README_EN.md'
+          - 'both'
+
+  schedule:
+    - cron: '0 9 * * 1'
+
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'README.md'
+      - 'README_EN.md'
+
+jobs:
+  check_links:
+    name: "API 링크 상태 검사"
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+      - name: 📁 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 설정
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 📦 의존성 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp
+
+      - name: 🔍 README.md 링크 검사
+        id: check_readme
+        if: github.event.inputs.file_to_check != 'README_EN.md'
+        run: |
+          echo "=== 한국어 README 검사 시작 ===" 
+          python scripts/link_health_check.py README.md --save-json --concurrent 25
+        continue-on-error: true
+
+      - name: 🔍 README_EN.md 링크 검사
+        id: check_readme_en
+        if: github.event.inputs.file_to_check == 'README_EN.md' || github.event.inputs.file_to_check == 'both'
+        run: |
+          echo "=== 영어 README 검사 시작 ==="
+          python scripts/link_health_check.py README_EN.md --save-json --concurrent 25
+          mv link_health_report.json link_health_report_en.json
+        continue-on-error: true
+
+      - name: 📊 검사 결과 업로드
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: link-health-reports
+          path: |
+            link_health_report.json
+            link_health_report_en.json
+          retention-days: 30
+
+      - name: 🚨 깨진 링크 이슈 생성
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            
+            let brokenLinks = [];
+            let reportContent = '';
+            
+            // 한국어 README 결과 확인
+            try {
+              const koReport = JSON.parse(fs.readFileSync('link_health_report.json', 'utf8'));
+              const koBroken = koReport.results.filter(link => !link.is_working);
+              brokenLinks = brokenLinks.concat(koBroken.map(link => ({...link, file: 'README.md'})));
+            } catch (e) {
+              console.log('한국어 리포트 파일을 찾을 수 없습니다.');
+            }
+            
+            // 영어 README 결과 확인
+            try {
+              const enReport = JSON.parse(fs.readFileSync('link_health_report_en.json', 'utf8'));
+              const enBroken = enReport.results.filter(link => !link.is_working);
+              brokenLinks = brokenLinks.concat(enBroken.map(link => ({...link, file: 'README_EN.md'})));
+            } catch (e) {
+              console.log('영어 리포트 파일을 찾을 수 없습니다.');
+            }
+            
+            if (brokenLinks.length > 0) {
+              // 에러 타입별로 그룹화
+              const errorGroups = {};
+              brokenLinks.forEach(link => {
+                const errorType = link.error_type;
+                if (!errorGroups[errorType]) {
+                  errorGroups[errorType] = [];
+                }
+                errorGroups[errorType].push(link);
+              });
+            
+              let issueBody = `## 🚨 링크 부패 감지 알림\n\n`;
+              issueBody += `**총 ${brokenLinks.length}개의 깨진 링크가 발견되었습니다.**\n\n`;
+            
+              // 에러 타입별 상세 내용
+              for (const [errorType, links] of Object.entries(errorGroups)) {
+                issueBody += `### 📋 ${errorType} (${links.length}개)\n\n`;
+            
+                links.forEach(link => {
+                  issueBody += `- ❌ **[${link.api_name}](${link.url})**\n`;
+                  issueBody += `  - 📁 파일: ${link.file}\n`;
+                  issueBody += `  - 📂 카테고리: ${link.category}\n`;
+                  issueBody += `  - ⚠️ 오류: ${link.error_message}\n`;
+                  if (link.redirect_url) {
+                    issueBody += `  - 🔄 리다이렉트: ${link.redirect_url}\n`;
+                  }
+                  issueBody += `\n`;
+                });
+              }
+            
+              issueBody += `\n### 🔧 수정 방법\n\n`;
+              issueBody += `1. **서비스 상태 확인**: 해당 API 서비스가 종료되었는지 확인\n`;
+              issueBody += `2. **URL 변경 확인**: 공식 문서에서 새로운 URL 확인\n`;
+              issueBody += `3. **대체 서비스 조사**: 동일한 기능의 대체 API 조사\n`;
+              issueBody += `4. **항목 제거**: 복구 불가능한 경우 해당 항목 제거\n\n`;
+              issueBody += `---\n`;
+              issueBody += `**자동 생성 시간**: ${new Date().toLocaleString('ko-KR', {timeZone: 'Asia/Seoul'})}\n`;
+              issueBody += `**검사 주기**: 매주 월요일\n`;
+
+              // 이슈 생성
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🔗 주간 링크 상태 점검: ${brokenLinks.length}개 링크 수정 필요`,
+                body: issueBody,
+                labels: ['🐛 bug', '🔗 link-rot', '🔧 maintenance', '📋 weekly-check']
+              });
+            
+              console.log(`이슈가 생성되었습니다: ${brokenLinks.length}개 깨진 링크`);
+            } else {
+              console.log('모든 링크가 정상적으로 작동합니다! 🎉');
+            }
+
+      - name: 💬 PR에 결과 댓글 작성
+        if: github.event_name == 'pull_request' && (failure() || success())
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            
+            let allBroken = [];
+            let totalLinks = 0;
+            let workingLinks = 0;
+            
+            // 결과 파일들 읽기
+            try {
+              const koReport = JSON.parse(fs.readFileSync('link_health_report.json', 'utf8'));
+              totalLinks += koReport.total_links;
+              workingLinks += koReport.working_links;
+              const koBroken = koReport.results.filter(link => !link.is_working);
+              allBroken = allBroken.concat(koBroken.map(link => ({...link, file: 'README.md'})));
+            } catch (e) {}
+            
+            try {
+              const enReport = JSON.parse(fs.readFileSync('link_health_report_en.json', 'utf8'));
+              totalLinks += enReport.total_links;
+              workingLinks += enReport.working_links;
+              const enBroken = enReport.results.filter(link => !link.is_working);
+              allBroken = allBroken.concat(enBroken.map(link => ({...link, file: 'README_EN.md'})));
+            } catch (e) {}
+            
+            const successRate = totalLinks > 0 ? ((workingLinks / totalLinks) * 100).toFixed(1) : 0;
+            
+            let commentBody = `## 🔗 링크 상태 검사 결과\n\n`;
+            
+            if (allBroken.length === 0) {
+              commentBody += `✅ **모든 링크가 정상적으로 작동합니다!**\n\n`;
+              commentBody += `📊 **통계**: ${totalLinks}개 링크 중 ${workingLinks}개 정상 (${successRate}%)\n`;
+            } else {
+              commentBody += `⚠️ **일부 링크에 문제가 발견되었습니다.**\n\n`;
+              commentBody += `📊 **통계**: ${totalLinks}개 링크 중 ${allBroken.length}개 문제 (성공률: ${successRate}%)\n\n`;
+              commentBody += `### 🚨 문제가 있는 링크들:\n\n`;
+            
+              allBroken.slice(0, 10).forEach(link => {
+                commentBody += `- ❌ **${link.api_name}** (${link.file})\n`;
+                commentBody += `  - URL: ${link.url}\n`;
+                commentBody += `  - 오류: ${link.error_message}\n\n`;
+              });
+            
+              if (allBroken.length > 10) {
+                commentBody += `... 그리고 ${allBroken.length - 10}개 더\n\n`;
+              }
+            
+              commentBody += `🔧 **수정 후 다시 검사를 받으시기 바랍니다.**\n`;
+            }
+            
+            commentBody += `\n---\n 링크 상태 자동 검사`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+            
