@@ -48,6 +48,11 @@
 | --- | --- | --- |
 | [공공데이터포털](https://www.data.go.kr/) | 정부 및 공공기관의 모든 데이터를 통합 제공하는 중앙 플랫폼 (10만개 이상 데이터셋) | `apiKey` |
 | [정부24 공공서비스 API](https://www.gov.kr/openapi/info) | 정부 공공서비스 정보 오픈API, 실시간 행정정보 제공 | `apiKey` |
+| [마이헬스웨이 API](https://www.myhealthway.go.kr/portal/index?page=Individual/Portal/MediMyData/MydataApi) | 보건복지부 개인 의료정보 통합 플랫폼, 113종 건강정보 제공 | `OAuth` |
+| [열린국회정보 확장 API](https://open.assembly.go.kr/portal/openapi/main.do) | 국회의원 표결정보, 발의법률안, 의안 상세정보, 연구보고서 | `apiKey` |
+| [마이데이터 통합지원 API](https://www.kdata.or.kr/mydata) | 한국데이터산업진흥원 마이데이터 표준 API 서비스 | `OAuth` |
+| [환경공간정보서비스 지도 API](https://egis.me.go.kr/api/intro.do) | 환경부 토지피복지도, 환경주제도, 생태자연도 공간정보 | `apiKey` |
+| [초록누리 Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi) | 환경부 환경정보 및 친환경 생활정보 제공 | `apiKey` |
 | [행정안전부 행정표준코드](https://www.data.go.kr/data/15077871/openapi.do) | 법정동코드, 행정구역코드 등 표준코드 정보 | `apiKey` |
 | [국토교통부 실거래가](https://www.data.go.kr/dataset/3050988/openapi.do) | 아파트, 오피스텔, 단독다가구 등 실거래가 정보 | `apiKey` |
 | [건강보험심사평가원 병원정보](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 전국 의료기관 기본정보 및 진료과목 정보 | `apiKey` |
@@ -108,6 +113,9 @@
 | [코인원 Open API](https://docs.coinone.co.kr/) | 가상자산 거래 및 시세정보 API | `apiKey` |
 | [키움증권 Open API+](https://openapi.kiwoom.com/) | OCX 기반 실시간 주식 데이터 및 주문 | `apiKey` |
 | [CODEF API](https://developer.codef.io/) | 금융, 보험, 통신 데이터 통합 연동 | `OAuth` |
+| [부트페이 API](https://docs.bootpay.co.kr/) | 통합 PG 연동 서비스, 이니시스·KCP·다날 등 다중 PG사 지원 | `apiKey` |
+| [페이플 API](https://developer.payple.kr/) | 금융규제샌드박스 SMS 인증방식 간편결제, 정기결제 | `apiKey` |
+| [하이픈 API 마켓플레이스](https://hyphen.im/) | 케이에스넷 자회사 데이터 API 마켓플레이스 (500개 이상 API) | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -165,6 +173,7 @@
 | [식품의약품안전처 의약품정보](https://data.mfds.go.kr/OPCAA01F01) | 의약품 허가정보 및 안전성 정보 | `apiKey` |
 | [국민건강보험공단 검진기관정보](https://www.data.go.kr/data/15001672/openapi.do) | 건강검진 및 암검진 기관정보 | `apiKey` |
 | [질병관리청 감염병정보](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp) | 법정감염병 발생현황 및 통계 | `apiKey` |
+| [보건의료빅데이터 확장 API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 건강보험심사평가원 의료빅데이터 활용 Open API | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -226,6 +235,7 @@
 | [삼성SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html) | 멀티 LLM 기업용 생성형 AI 플랫폼 | `apiKey` |
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0) | 한국어 특화 대규모 언어모델 | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/) | 한국전자통신연구원 AI 서비스 플랫폼 | `apiKey` |
+| [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566) | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -327,6 +337,7 @@
 | [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs) | 중소기업 지원정책 및 사업정보 | `apiKey` |
 | [CODEF 오픈API](https://codef.io/) | 금융, 보험, 통신, 공공기관 스크래핑 API | `OAuth` |
 | [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK) | `apiKey` |
+| [네이버웍스 경영지원 API](https://developers.worksmobile.com/kr/) | B2B 업무 자동화, 결재·근태·인사·사업장 관리 통합 | `OAuth` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -412,5 +423,5 @@
 
 ---
 
-**마지막 업데이트**: 2025년 8월 22일  
-**총 API 수**: 170개 이상
+**마지막 업데이트**: 2025년 8월 22일
+**총 API 수**: 175개 이상
