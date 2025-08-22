@@ -41,6 +41,11 @@ This project systematically organizes all public APIs that developers can utiliz
 | --- | --- | --- |
 | [Korea Public Data Portal](https://www.data.go.kr/) | Central platform providing integrated data from government and public institutions (100,000+ datasets) | `apiKey` |
 | [Gov24 Public Service API](https://www.gov.kr/openapi/info) | Government public service information Open API, real-time administrative information | `apiKey` |
+| [MyHealthWay API](https://www.myhealthway.go.kr/portal/index?page=Individual/Portal/MediMyData/MydataApi) | Ministry of Health and Welfare personal medical information integration platform, 113 types of health data | `OAuth` |
+| [Open National Assembly Information API](https://open.assembly.go.kr/portal/openapi/main.do) | National Assembly member voting records, proposed bills, bill details, research reports | `apiKey` |
+| [MyData Integrated Support API](https://www.kdata.or.kr/mydata) | Korea Data Industry Promotion Institute MyData standard API service | `OAuth` |
+| [Environmental Spatial Information Service API](https://egis.me.go.kr/api/intro.do) | Ministry of Environment land cover maps, environmental thematic maps, ecological spatial data | `apiKey` |
+| [Green Nuri Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi) | Ministry of Environment eco-friendly lifestyle and environmental information | `apiKey` |
 | [MOIS Administrative Standard Codes](https://www.data.go.kr/data/15077871/openapi.do) | Legal district codes, administrative area codes and other standard code information | `apiKey` |
 | [MOLIT Real Estate Transaction Prices](https://www.data.go.kr/dataset/3050988/openapi.do) | Real transaction prices for apartments, officetels, detached houses, etc. | `apiKey` |
 | [HIRA Hospital Information](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Basic information and medical departments of medical institutions nationwide | `apiKey` |
@@ -101,6 +106,9 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Coinone Open API](https://docs.coinone.co.kr/) | Virtual asset trading and market information API | `apiKey` |
 | [Kiwoom Securities Open API+](https://openapi.kiwoom.com/) | OCX-based real-time stock data and orders | `apiKey` |
 | [CODEF API](https://developer.codef.io/) | Finance, insurance, telecommunications data integration API | `OAuth` |
+| [Bootpay API](https://docs.bootpay.co.kr/) | Unified PG integration service supporting multiple payment gateways (Inicis, KCP, Danal, etc.) | `apiKey` |
+| [Payple API](https://developer.payple.kr/) | Financial regulatory sandbox SMS-based simple payment and subscription billing | `apiKey` |
+| [HYPHEN API Marketplace](https://hyphen.im/) | KSNet subsidiary data API marketplace with 500+ APIs | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -158,6 +166,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [MFDS Drug Information](https://data.mfds.go.kr/OPCAA01F01) | Drug approval information and safety information | `apiKey` |
 | [NHIS Health Screening Institution Information](https://www.data.go.kr/data/15001672/openapi.do) | Health screening and cancer screening institution information | `apiKey` |
 | [KDCA Infectious Disease Information](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp) | Legal infectious disease occurrence status and statistics | `apiKey` |
+| [Healthcare Big Data Extended API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Health Insurance Review & Assessment Service medical big data utilization API | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -219,6 +228,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Samsung SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html) | Multi-LLM enterprise generative AI platform | `apiKey` |
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0) | Korean-specialized large language model | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/) | Electronics and Telecommunications Research Institute AI service platform | `apiKey` |
+| [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566) | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -320,6 +330,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information | `apiKey` |
 | [CODEF Open API](https://codef.io/) | Finance, insurance, telecommunications, public institution scraping API | `OAuth` |
 | [Airbridge API](https://help.airbridge.io/ko/references/introduction) | Mobile app marketing attribution (multi-platform SDK) | `apiKey` |
+| [Naver Works Business Support API](https://developers.worksmobile.com/kr/) | B2B workflow automation for approval, attendance, HR, and workplace management | `OAuth` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -418,4 +429,4 @@ This project is distributed under the MIT License.
 ---
 
 **Last Updated**: August 22, 2025  
-**Total API Count**: 170+
+**Total API Count**: 175+
