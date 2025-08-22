@@ -32,8 +32,8 @@ This project systematically organizes all public APIs that developers can utiliz
 - [☁️ Cloud Services](#cloud-services)
 - [🔗 Blockchain](#blockchain)
 - [🏠 IoT & Smart Home](#iot--smart-home)
-- [🌐 Naver](#naver)
-- [💬 Kakao](#kakao)
+- [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
+- [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
 ### Government & Public Institutions
 
