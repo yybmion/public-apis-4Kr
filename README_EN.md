@@ -111,7 +111,6 @@ This project systematically organizes all public APIs that developers can utiliz
 | [SK Telecom Open API](https://openapi.sk.com/) | T Map, NUGU, AI/IoT platform 46 APIs | `apiKey` |
 | [KT API Link](https://apilink.kt.co.kr/) | Geo Master, Cloud API, GiGA Genie AI | `apiKey` |
 | [KT Cloud AI API](https://github.com/gigagenie/cloud-aiapi) | Voice recognition (Dictation), TTS (Voice), personalized TTS | `apiKey` |
-| [LG U+ Open API](https://www.lguplus.com/business/openapi) | IMS Centrix, SMS API, DCS Rest API | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -156,7 +155,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | --- | --- | --- |
 | [Samsung Health SDK](https://developer.samsung.com/health) | Health data read/write (heart rate, blood oxygen saturation, blood sugar, blood pressure, etc.) | `Partnership` |
 | [HIRA Medical Institution Information](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Detailed information service for medical institutions nationwide | `apiKey` |
-| [MFDS Drug Information](https://data.mfds.go.kr/cntnts/20) | Drug approval information and safety information | `apiKey` |
+| [MFDS Drug Information](https://data.mfds.go.kr/OPCAA01F01) | Drug approval information and safety information | `apiKey` |
 | [NHIS Health Screening Institution Information](https://www.data.go.kr/data/15001672/openapi.do) | Health screening and cancer screening institution information | `apiKey` |
 | [KDCA Infectious Disease Information](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp) | Legal infectious disease occurrence status and statistics | `apiKey` |
 
@@ -227,7 +226,7 @@ This project systematically organizes all public APIs that developers can utiliz
 
 | API | Description | Auth |
 | --- | --- | --- |
-| [Coupang Open API](https://developers.coupangcorp.com/hc/en-us) | Coupang Partners and Seller API | `apiKey` |
+| [Coupang Open API](https://developers.coupangcorp.com/hc/ko) | Coupang Partners and Seller API | `apiKey` |
 | [11st Open API](https://openapi.11st.co.kr/) | 11st product information and order management API | `apiKey` |
 | [Gmarket Open API](https://etapi.gmarket.com/pages/API-%EA%B0%80%EC%9D%B4%EB%93%9C) | Gmarket product search and category API | `apiKey` |
 | [Naver Shopping Search API](https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md) | Naver Shopping product search service | `apiKey` |
@@ -405,13 +404,6 @@ This project systematically organizes all public APIs that developers can utiliz
 
 If you would like to add new APIs to this list or modify information, please send a Pull Request.
 
-### Addition Criteria
-- APIs serviced in South Korea
-- Publicly available APIs
-- Actively maintained APIs
-- APIs with clear documentation provided
-- Actually accessible URLs
-
 ### How to Contribute
 1. Fork this repository
 2. Create a new branch (`git checkout -b feature/add-new-api`)
@@ -425,5 +417,5 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: August 21, 2025  
-**Total API Count**: 200+
+**Last Updated**: August 22, 2025  
+**Total API Count**: 170+

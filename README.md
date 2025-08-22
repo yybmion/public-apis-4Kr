@@ -118,7 +118,6 @@
 | [SK텔레콤 Open API](https://openapi.sk.com/) | T맵, NUGU, AI/IoT 플랫폼 46개 API | `apiKey` |
 | [KT API Link](https://apilink.kt.co.kr/) | Geo Master, Cloud API, GiGA Genie AI | `apiKey` |
 | [KT Cloud AI API](https://github.com/gigagenie/cloud-aiapi) | 음성인식(Dictation), TTS(Voice), 개인화 TTS | `apiKey` |
-| [LG U+ Open API](https://www.lguplus.com/business/openapi) | IMS 센트릭스, SMS API, DCS Rest API | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -163,7 +162,7 @@
 | --- | --- | --- |
 | [삼성헬스 SDK](https://developer.samsung.com/health) | 건강 데이터 읽기/쓰기 (심박수, 산소포화도, 혈당, 혈압 등) | `Partnership` |
 | [건강보험심사평가원 의료기관정보](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 전국 의료기관 상세정보 서비스 | `apiKey` |
-| [식품의약품안전처 의약품정보](https://data.mfds.go.kr/cntnts/20) | 의약품 허가정보 및 안전성 정보 | `apiKey` |
+| [식품의약품안전처 의약품정보](https://data.mfds.go.kr/OPCAA01F01) | 의약품 허가정보 및 안전성 정보 | `apiKey` |
 | [국민건강보험공단 검진기관정보](https://www.data.go.kr/data/15001672/openapi.do) | 건강검진 및 암검진 기관정보 | `apiKey` |
 | [질병관리청 감염병정보](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp) | 법정감염병 발생현황 및 통계 | `apiKey` |
 
@@ -234,7 +233,7 @@
 
 | API                                                                                         | 설명 | 인증 |
 |---------------------------------------------------------------------------------------------| --- | --- |
-| [쿠팡 Open API](https://developers.coupangcorp.com/hc/en-us)                                  | 쿠팡 파트너스 및 셀러 API | `apiKey` |
+| [쿠팡 Open API](https://developers.coupangcorp.com/hc/ko)                                  | 쿠팡 파트너스 및 셀러 API | `apiKey` |
 | [11번가 Open API](https://openapi.11st.co.kr/)                                                | 11번가 상품정보 및 주문관리 API | `apiKey` |
 | [G마켓 Open API](https://etapi.gmarket.com/pages/API-%EA%B0%80%EC%9D%B4%EB%93%9C)             | G마켓 상품검색 및 카테고리 API | `apiKey` |
 | [네이버 쇼핑 검색 API](https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)   | 네이버 쇼핑 상품 검색 서비스 | `apiKey` |
@@ -400,14 +399,6 @@
 
 ---
 
-## 참고 자료
-
-- [공공데이터포털](https://www.data.go.kr) - 정부 및 공공기관 API 통합 플랫폼
-- [네이버 개발자센터](https://developers.naver.com) - 네이버 오픈 API 플랫폼
-- [카카오 개발자센터](https://developers.kakao.com) - 카카오 오픈 API 플랫폼
-- [SK 오픈 API](https://openapi.sk.com) - SK텔레콤 오픈 API 플랫폼
-- [금융결제원 오픈뱅킹](https://www.openbanking.or.kr) - 금융 오픈 API 통합 플랫폼
-
 ## 기여하기
 
 이 목록에 새로운 API를 추가하거나 정보를 수정하고 싶으시다면 Pull Request를 보내주세요.
@@ -421,5 +412,5 @@
 
 ---
 
-**마지막 업데이트**: 2025년 8월 20일  
-**총 API 수**: 200개 이상
+**마지막 업데이트**: 2025년 8월 22일  
+**총 API 수**: 170개 이상
