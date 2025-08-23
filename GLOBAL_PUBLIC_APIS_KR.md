@@ -2,7 +2,7 @@
 
 > 번역 저장소 안내 👀
 > 
-> 이 프로젝트는 한국어 사용 개발자를 위해 [public-api-lists](https://github.com/public-api-lists/public-api-lists) 저장소를 포크하여 번역 및 데이터를 추가한 저장소입니다.
+> 이 Global Public API는 한국어 사용 개발자를 위해 [public-api-lists](https://github.com/public-api-lists/public-api-lists) 저장소를 포크하여 번역 및 데이터를 추가한 저장소입니다.
 >
 > MIT 라이선스 하에 번역 및 배포됩니다.
 
@@ -1153,3 +1153,4 @@
 ---
 
 **[⬆ 목차로 돌아가기](#목차)**
+
