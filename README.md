@@ -2,8 +2,10 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-180+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-195+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-1030+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
+
+🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
 
 <h3 align='center'>한국에서 이용 가능한 Public API 모음</h3>
 
@@ -44,6 +46,9 @@
 - [☁️ 클라우드 서비스](#클라우드-서비스)
 - [🔗 블록체인](#블록체인)
 - [🏠 IoT & 스마트홈](#iot--스마트홈)
+- [💬 커뮤니케이션 & 메시징](#커뮤니케이션--메시징)
+- [💰 암호화폐 거래소](#암호화폐-거래소)
+- [🏢 대기업 추가 서비스](#대기업-추가-서비스)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
@@ -232,7 +237,7 @@
 
 | API | 설명 | 인증 |
 | --- | --- | --- |
-| [네이버 클라우드 CLOVA Studio](https://www.ncloud.com/product/aiService/clovaStudio) | 한국어 특화 생성형 AI 플랫폼 | `apiKey` |
+| [네이버 클라우드 CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary) | 한국어 특화 생성형 AI 플랫폼 | `apiKey` |
 | [네이버 CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md) | 얼굴 인식 및 감정 분석 | `apiKey` |
 | [네이버 CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech) | 음성 인식 및 STT 서비스 | `apiKey` |
 | [Upstage Solar LLM](https://developers.upstage.ai/) | 대화형 LLM, Document AI, OCR, Embedding | `apiKey` |
@@ -290,14 +295,16 @@
 | [Neople API](https://developers.neople.co.kr/) | 던전앤파이터 게임 데이터 | `apiKey` |
 | [펄어비스 Black Desert API](https://documenter.getpostman.com/view/4028519/2s9Y5YRhp4) | 검은사막 게임 정보 및 캐릭터 데이터 | `apiKey` |
 | [컴투스 HIVE 플랫폼](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS 플랫폼 (연 1억명 접속) | `apiKey` |
+| [크래프톤 배틀그라운드 API](https://developer.pubg.com/) | 배틀그라운드 게임 데이터, 플레이어 통계, 매치 분석 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
 ### 미디어 & 콘텐츠
 
-| API                                                          | 설명                   | 인증 |
-|--------------------------------------------------------------|----------------------| --- |
+| API                                                          | 설명                  | 인증 |
+|--------------------------------------------------------------|---------------------| --- |
 | [SOOP](https://developers.afreecatv.com/?szWork=openapi)            | SOOP 방송 리스트, 카테고리 정보 | `apiKey` |
+| [네이버 치지직 API](https://chzzk.gitbook.io/chzzk) | 네이버 라이브 스트리밍 플랫폼 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -374,6 +381,35 @@
 
 **[⬆ 목차로 돌아가기](#목차)**
 
+### 커뮤니케이션 & 메시징
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [센드버드 채팅 플랫폼 API](https://sendbird.com/docs) | 실시간 채팅, 음성/영상 통화, AI 챗봇 기능 | `apiKey` |
+| [센드버드 통화 API](https://sendbird.com/docs/calls) | WebRTC 기반 음성/영상 통화 솔루션 | `apiKey` |
+| [가비아 알림톡 API](https://message.gabia.com/api/documentation/) | SMS, LMS, MMS, 카카오 알림톡 통합 서비스 | `OAuth` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 암호화폐 거래소
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [두나무 노딧 API](https://docs.nodit.io/) | 블록체인 개발 플랫폼 및 인프라 서비스 | `apiKey` |
+| [빗썸 프로 API](https://apidocs.bithumb.com/) | 전문 거래자용 암호화폐 거래 API | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 대기업 추가 서비스
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [삼성페이 API](https://developer.samsung.com/pay) | 모바일 결제 및 디지털 지갑 서비스 | `Partnership` |
+| [삼성 빅스비 API](https://developer.samsung.com/bixby) | 음성 인식 및 AI 어시스턴트 통합 | `apiKey` |
+| [삼성 녹스 API](https://developer.samsung.com/knox) | 기업용 모바일 보안 및 관리 솔루션 | `Partnership` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
 ### 네이버
 
 | API | 설명 | 인증 |
@@ -428,5 +464,5 @@
 
 ---
 
-**마지막 업데이트**: 2025년 8월 22일
-**총 API 수**: 185+
+**마지막 업데이트**: 2025년 8월 24일
+**총 API 수**: 195+

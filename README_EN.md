@@ -32,6 +32,9 @@ This project systematically organizes all public APIs that developers can utiliz
 - [☁️ Cloud Services](#cloud-services)
 - [🔗 Blockchain](#blockchain)
 - [🏠 IoT & Smart Home](#iot--smart-home)
+- [💬 Communication & Messaging](#communication--messaging)
+- [💰 Cryptocurrency Exchanges](#cryptocurrency-exchanges)
+- [🏢 Major Corporation Additional Services](#major-corporation-additional-services)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -220,7 +223,7 @@ This project systematically organizes all public APIs that developers can utiliz
 
 | API | Description | Auth |
 | --- | --- | --- |
-| [Naver Cloud CLOVA Studio](https://www.ncloud.com/product/aiService/clovaStudio) | Korean-specialized generative AI platform | `apiKey` |
+| [Naver Cloud CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary) | Korean-specialized generative AI platform | `apiKey` |
 | [Naver CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md) | Face recognition and emotion analysis | `apiKey` |
 | [Naver CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech) | Voice recognition and STT service | `apiKey` |
 | [Upstage Solar LLM](https://developers.upstage.ai/) | Conversational LLM, Document AI, OCR, Embedding | `apiKey` |
@@ -278,6 +281,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Neople API](https://developers.neople.co.kr/) | Dungeon Fighter game data | `apiKey` |
 | [Pearl Abyss Black Desert API](https://documenter.getpostman.com/view/4028519/2s9Y5YRhp4) | Black Desert game information and character data | `apiKey` |
 | [Com2uS HIVE Platform](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS platform (100 million annual connections) | `apiKey` |
+| [Krafton PUBG API](https://developer.pubg.com/) | PUBG game data, player statistics, match analysis | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -286,6 +290,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | API | Description | Auth |
 | --- | --- | --- |
 | [SOOP](https://developers.afreecatv.com/?szWork=openapi) | SOOP broadcast list, category information | `apiKey` |
+| [NAVER Chzzk API](https://chzzk.gitbook.io/chzzk) | NAVER live streaming platform | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -362,6 +367,35 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
+### Communication & Messaging
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Sendbird Chat Platform API](https://sendbird.com/docs) | Real-time chat, voice/video calls, AI chatbot features | `apiKey` |
+| [Sendbird Calls API](https://sendbird.com/docs/calls) | WebRTC-based voice/video call solutions | `apiKey` |
+| [Gabia Message API](https://message.gabia.com/api/documentation/) | SMS, LMS, MMS, KakaoTalk notification service integration | `OAuth` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Cryptocurrency Exchanges
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Dunamu Nodit API](https://docs.nodit.io/) | Blockchain development platform and infrastructure services | `apiKey` |
+| [Bithumb Pro API](https://apidocs.bithumb.com/) | Professional trader cryptocurrency exchange API | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Major Corporation Additional Services
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Samsung Pay API](https://developer.samsung.com/pay) | Mobile payment and digital wallet services | `Partnership` |
+| [Samsung Bixby API](https://developer.samsung.com/bixby) | Voice recognition and AI assistant integration | `apiKey` |
+| [Samsung Knox API](https://developer.samsung.com/knox) | Enterprise mobile security and management solutions | `Partnership` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
 ### Naver
 
 | API | Description | Auth |
@@ -403,14 +437,6 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ---
 
-## Reference Materials
-
-- [Korea Public Data Portal](https://www.data.go.kr) - Government and public institution API integration platform
-- [Naver Developers](https://developers.naver.com) - Naver Open API platform
-- [Kakao Developers](https://developers.kakao.com) - Kakao Open API platform
-- [SK Open API](https://openapi.sk.com) - SK Telecom Open API platform
-- [KFTC Open Banking](https://www.openbanking.or.kr) - Financial Open API integration platform
-
 ## Contributing
 
 If you would like to add new APIs to this list or modify information, please send a Pull Request.
@@ -428,5 +454,5 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: August 22, 2025  
-**Total API Count**: 185+
+**Last Updated**: August 24, 2025  
+**Total API Count**: 195+
