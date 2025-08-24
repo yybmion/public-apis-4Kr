@@ -48,7 +48,6 @@
 - [🏠 IoT & 스마트홈](#iot--스마트홈)
 - [💬 커뮤니케이션 & 메시징](#커뮤니케이션--메시징)
 - [💰 암호화폐 거래소](#암호화폐-거래소)
-- [🏢 대기업 추가 서비스](#대기업-추가-서비스)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
@@ -117,6 +116,7 @@
 | [토스페이 API](https://docs-pay.toss.im/reference) | 토스를 통한 결제 서비스 API (TLS 1.2+ 필수) | `apiKey` |
 | [네이버페이 API](https://developers.pay.naver.com/) | 네이버페이 결제, 정기결제, 자동결제 API | `OAuth` |
 | [카카오페이](https://developers.kakaopay.com/) | 온라인 결제, 정기결제, 송금 등 종합 결제 솔루션 | `OAuth` |
+| [삼성페이 API](https://developer.samsung.com/pay) | 모바일 결제 및 디지털 지갑 서비스 | `Partnership` |
 | [페이코(PAYCO)](https://developers.payco.com/guide) | NHN 통합 ID 및 멤버십 연동 서비스 | `OAuth` |
 | [업비트 Open API](https://docs.upbit.com/kr) | 국내 최대 암호화폐 거래소 API (JWT 인증) | `JWT` |
 | [빗썸 Open API](https://apidocs.bithumb.com/) | 암호화폐 거래, 원화 입출금 지원 (API 2.0) | `apiKey` |
@@ -243,6 +243,7 @@
 | [Upstage Solar LLM](https://developers.upstage.ai/) | 대화형 LLM, Document AI, OCR, Embedding | `apiKey` |
 | [Upstage Document AI](https://developers.upstage.ai/) | 문서 파싱, 레이아웃 분석, 정보 추출 | `apiKey` |
 | [삼성SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html) | 멀티 LLM 기업용 생성형 AI 플랫폼 | `apiKey` |
+| [삼성 빅스비 API](https://developer.samsung.com/bixby) | 음성 인식 및 AI 어시스턴트 통합 | `apiKey` |
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0) | 한국어 특화 대규모 언어모델 | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/) | 한국전자통신연구원 AI 서비스 플랫폼 | `apiKey` |
 | [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566) | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
@@ -350,6 +351,7 @@
 | [CODEF 오픈API](https://codef.io/) | 금융, 보험, 통신, 공공기관 스크래핑 API | `OAuth` |
 | [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK) | `apiKey` |
 | [네이버웍스 경영지원 API](https://developers.worksmobile.com/kr/) | B2B 업무 자동화, 결재·근태·인사·사업장 관리 통합 | `OAuth` |
+| [삼성 녹스 API](https://developer.samsung.com/knox) | 기업용 모바일 보안 및 관리 솔루션 | `Partnership` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -369,6 +371,7 @@
 | --- | --- | --- |
 | [클레이튼 KAS](https://docs.klaytnapi.com/) | 노드 운영 없는 블록체인 개발 서비스 | `apiKey` |
 | [카이아(KAIA) API](https://docs.kaia.io/) | 클레이튼+핀시아 통합 블록체인 (라인 메신저 연동) | `apiKey` |
+| [두나무 노딧 API](https://docs.nodit.io/) | 블록체인 개발 플랫폼 및 인프라 서비스 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -395,18 +398,7 @@
 
 | API | 설명 | 인증 |
 | --- | --- | --- |
-| [두나무 노딧 API](https://docs.nodit.io/) | 블록체인 개발 플랫폼 및 인프라 서비스 | `apiKey` |
 | [빗썸 프로 API](https://apidocs.bithumb.com/) | 전문 거래자용 암호화폐 거래 API | `apiKey` |
-
-**[⬆ 목차로 돌아가기](#목차)**
-
-### 대기업 추가 서비스
-
-| API | 설명 | 인증 |
-| --- | --- | --- |
-| [삼성페이 API](https://developer.samsung.com/pay) | 모바일 결제 및 디지털 지갑 서비스 | `Partnership` |
-| [삼성 빅스비 API](https://developer.samsung.com/bixby) | 음성 인식 및 AI 어시스턴트 통합 | `apiKey` |
-| [삼성 녹스 API](https://developer.samsung.com/knox) | 기업용 모바일 보안 및 관리 솔루션 | `Partnership` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
