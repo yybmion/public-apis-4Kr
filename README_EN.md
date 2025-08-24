@@ -34,6 +34,11 @@ This project systematically organizes all public APIs that developers can utiliz
 - [🏠 IoT & Smart Home](#iot--smart-home)
 - [💬 Communication & Messaging](#communication--messaging)
 - [💰 Cryptocurrency Exchanges](#cryptocurrency-exchanges)
+- [⚖️ Legal](#️-legal)
+- [🔒 Security](#-security)
+- [🚨 Public Safety](#-public-safety)
+- [✈️ Aviation](#️-aviation)
+- [🚛 Logistics & Customs](#-logistics--customs)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -388,6 +393,52 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
+### Legal
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [National Legal Information Open API](https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwListGuide) | Access to current Korean laws and legal provisions | `apiKey` |
+| [National Legal Information Case Law API](https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=precInfoGuide) | Korean court case law and legal precedents | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Security
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [WHOIS Domain/IP Information API](https://www.data.go.kr/data/15094277/openapi.do) | WHOIS information for .kr domains and IP addresses | `apiKey` |
+| [GeranGeokyo Malicious IP API](https://www.bigdata-policing.kr/page/openapi) | Phishing and malware IP address information | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Public Safety
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do) | Missing person information and public safety data (National Police Agency) | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Aviation
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Aircraft Operation Information API](https://www.data.go.kr/data/15000126/openapi.do) | Real-time flight operation information for domestic airports | `apiKey` |
+| [Domestic Aviation Operation Information API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y) | Domestic flight schedules (Ministry of Land, Infrastructure and Transport) | `apiKey` |
+| [Incheon Airport Passenger Flight Status API](https://www.data.go.kr/data/15095074/openapi.do) | Incheon Airport flight arrival/departure status | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Logistics & Customs
+
+| API | Description | Auth |
+| --- | --- | --- |
+| [Logispot Logistics Open API](https://logi-spot.com/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8C%9F-open-api-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95/) | Integrated logistics management API (dispatch, vehicle info, billing) | `apiKey` |
+| [Logistics Warehouse Registration Information API](https://www.data.go.kr/data/3048029/openapi.do) | Nationwide logistics warehouse company information | `apiKey` |
+| [Korea Customs Service Cargo Clearance API](https://www.data.go.kr/data/15126268/openapi.do) | Import/export cargo customs clearance status | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
 ### Naver
 
 | API | Description | Auth |
@@ -447,4 +498,5 @@ This project is distributed under the MIT License.
 ---
 
 **Last Updated**: August 24, 2025  
-**Total API Count**: 195+
+
+**Total API Count**: 205+

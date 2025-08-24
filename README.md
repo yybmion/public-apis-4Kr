@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-195+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-205+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-1030+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -48,6 +48,11 @@
 - [🏠 IoT & 스마트홈](#iot--스마트홈)
 - [💬 커뮤니케이션 & 메시징](#커뮤니케이션--메시징)
 - [💰 암호화폐 거래소](#암호화폐-거래소)
+- [⚖️ 법률](#️-법률)
+- [🔒 보안](#-보안)
+- [🚨 공공안전](#-공공안전)
+- [✈️ 항공](#️-항공)
+- [🚛 물류 인프라 & 통관](#-물류-인프라--통관)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
@@ -402,6 +407,52 @@
 
 **[⬆ 목차로 돌아가기](#목차)**
 
+### 법률
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [국가법령정보 Open API](https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwListGuide) | 대한민국 현행 법령 목록과 조문 정보 조회 | `apiKey` |
+| [국가법령정보 판례 API](https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=precInfoGuide) | 대한민국 법원 판례 전문 정보 조회 | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 보안
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [WHOIS 도메인/IP 정보 API](https://www.data.go.kr/data/15094277/openapi.do) | .kr 도메인과 IP 주소 WHOIS 정보 조회 | `apiKey` |
+| [지란지교 악성행위 IP API](https://www.bigdata-policing.kr/page/openapi) | 피싱/악성코드 IP 주소 정보 조회 | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 공공안전
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [안전드림 실종/안전 API](https://www.safe182.go.kr/home/api/guideMain.do) | 실종자 정보 및 생활안전 정보 제공 (경찰청) | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 항공
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [항공기 운항정보 API](https://www.data.go.kr/data/15000126/openapi.do) | 국내 공항 항공편 실시간 운항정보 조회 | `apiKey` |
+| [국내항공운항정보 API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y) | 국내선 항공편 운항 일정 조회 (국토부) | `apiKey` |
+| [인천공항 여객운항 현황 API](https://www.data.go.kr/data/15095074/openapi.do) | 인천공항 항공편 출도착 현황 조회 | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 물류 인프라 & 통관
+
+| API | 설명 | 인증 |
+| --- | --- | --- |
+| [로지스팟 물류 Open API](https://logi-spot.com/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8C%9F-open-api-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95/) | 통합 물류관리 API (운송배차, 차량정보, 정산) | `apiKey` |
+| [물류창고업 등록정보 API](https://www.data.go.kr/data/3048029/openapi.do) | 전국 물류창고 업체 현황 정보 조회 | `apiKey` |
+| [관세청 화물통관정보 API](https://www.data.go.kr/data/15126268/openapi.do) | 수출입 화물 통관 진행 상황 조회 | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
 ### 네이버
 
 | API | 설명 | 인증 |
@@ -457,4 +508,5 @@
 ---
 
 **마지막 업데이트**: 2025년 8월 24일
-**총 API 수**: 195+
+
+**총 API 수**: 205+
