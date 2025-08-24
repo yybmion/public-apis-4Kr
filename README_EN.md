@@ -34,7 +34,6 @@ This project systematically organizes all public APIs that developers can utiliz
 - [🏠 IoT & Smart Home](#iot--smart-home)
 - [💬 Communication & Messaging](#communication--messaging)
 - [💰 Cryptocurrency Exchanges](#cryptocurrency-exchanges)
-- [🏢 Major Corporation Additional Services](#major-corporation-additional-services)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -103,6 +102,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Toss Pay API](https://docs-pay.toss.im/reference) | Payment service API through Toss (TLS 1.2+ required) | `apiKey` |
 | [Naver Pay API](https://developers.pay.naver.com/) | Naver Pay payment, regular payment, automatic payment API | `OAuth` |
 | [Kakao Pay](https://developers.kakaopay.com/) | Online payment, regular payment, remittance and other comprehensive payment solutions | `OAuth` |
+| [Samsung Pay API](https://developer.samsung.com/pay) | Mobile payment and digital wallet services | `Partnership` |
 | [PAYCO](https://developers.payco.com/guide) | NHN integrated ID and membership integration service | `OAuth` |
 | [Upbit Open API](https://docs.upbit.com/kr) | Korea's largest cryptocurrency exchange API (JWT authentication) | `JWT` |
 | [Bithumb Open API](https://apidocs.bithumb.com/) | Cryptocurrency trading, KRW deposit/withdrawal support (API 2.0) | `apiKey` |
@@ -229,6 +229,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Upstage Solar LLM](https://developers.upstage.ai/) | Conversational LLM, Document AI, OCR, Embedding | `apiKey` |
 | [Upstage Document AI](https://developers.upstage.ai/) | Document parsing, layout analysis, information extraction | `apiKey` |
 | [Samsung SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html) | Multi-LLM enterprise generative AI platform | `apiKey` |
+| [Samsung Bixby API](https://developer.samsung.com/bixby) | Voice recognition and AI assistant integration | `apiKey` |
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0) | Korean-specialized large language model | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/) | Electronics and Telecommunications Research Institute AI service platform | `apiKey` |
 | [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566) | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
@@ -336,6 +337,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [CODEF Open API](https://codef.io/) | Finance, insurance, telecommunications, public institution scraping API | `OAuth` |
 | [Airbridge API](https://help.airbridge.io/ko/references/introduction) | Mobile app marketing attribution (multi-platform SDK) | `apiKey` |
 | [Naver Works Business Support API](https://developers.worksmobile.com/kr/) | B2B workflow automation for approval, attendance, HR, and workplace management | `OAuth` |
+| [Samsung Knox API](https://developer.samsung.com/knox) | Enterprise mobile security and management solutions | `Partnership` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -355,6 +357,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | --- | --- | --- |
 | [Klaytn KAS](https://docs.klaytnapi.com/) | Blockchain development service without node operation | `apiKey` |
 | [Kaia API](https://docs.kaia.io/) | Klaytn + Finschia integrated blockchain (LINE Messenger integration) | `apiKey` |
+| [Dunamu Nodit API](https://docs.nodit.io/) | Blockchain development platform and infrastructure services | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -381,18 +384,7 @@ This project systematically organizes all public APIs that developers can utiliz
 
 | API | Description | Auth |
 | --- | --- | --- |
-| [Dunamu Nodit API](https://docs.nodit.io/) | Blockchain development platform and infrastructure services | `apiKey` |
 | [Bithumb Pro API](https://apidocs.bithumb.com/) | Professional trader cryptocurrency exchange API | `apiKey` |
-
-**[⬆ Back to Table of Contents](#table-of-contents)**
-
-### Major Corporation Additional Services
-
-| API | Description | Auth |
-| --- | --- | --- |
-| [Samsung Pay API](https://developer.samsung.com/pay) | Mobile payment and digital wallet services | `Partnership` |
-| [Samsung Bixby API](https://developer.samsung.com/bixby) | Voice recognition and AI assistant integration | `apiKey` |
-| [Samsung Knox API](https://developer.samsung.com/knox) | Enterprise mobile security and management solutions | `Partnership` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
