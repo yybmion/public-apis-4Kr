@@ -610,7 +610,7 @@
       "redirect_url": null
     },
     {
-      "url": "https://www.data.go.kr/data/15000314/openapi.do",
+      "url": "https://data.seoul.go.kr/dataList/OA-12764/A/1/datasetView.do",
       "api_name": "서울시 지하철 실시간 도착정보",
       "category": "교통",
       "status_code": 200,
