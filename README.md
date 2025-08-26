@@ -5,11 +5,12 @@
 [![Korean APIs](https://img.shields.io/badge/Korean%20APIs-205+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-1030+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
-🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
+🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
 
 <br/>
 
-이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 공개 API를 체계적으로 정리한 목록입니다. 2025년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 공개 API를 체계적으로 정리한 목록입니다.
+2025년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
 
 
 > ### 🌍 글로벌 API 리소스
