@@ -39,6 +39,7 @@ This project systematically organizes all public APIs that developers can utiliz
 - [🚨 Public Safety](#public-safety)
 - [✈️ Aviation](#️aviation)
 - [🚛 Logistics & Customs](#logistics--customs)
+- [🌾 Farming](#Farming)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -93,7 +94,7 @@ This project systematically organizes all public APIs that developers can utiliz
 ### Finance & Payment
 
 | API                                                                                | Description                                                                                    | Auth          |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- |
+|------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------- | ------------- |
 | [KFTC Open Banking](https://openapi.kftc.or.kr/service/openBanking)                | Integrated account inquiry, transfer, and payment services for 19 banks                        | `OAuth`       |
 | [KB Kookmin Bank Open API](https://obizapi.kbstar.com/quics?page=C108082)          | KB comprehensive financial services and BaaS platform                                          | `OAuth`       |
 | [KB API Portal](https://apiportal.kbfg.com/)                                       | KB Financial Group comprehensive financial API service (755 APIs provided)                     | `OAuth`       |
@@ -103,6 +104,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [NH Nonghyup Bank Open API](https://developers.nonghyup.com/center/CE_1020)        | Nonghyup financial API developer center                                                        | `OAuth`       |
 | [Korea Investment Securities KIS API](https://apiportal.koreainvestment.com/intro) | Domestic and overseas stock quotes and order API (launched in 2022)                            | `OAuth`       |
 | [Bank of Korea Open API](https://ecos.bok.or.kr/api/)                              | Economic statistics information providing API                                                  | `apiKey`      |
+| [Korea Development Bank Open API](https://www.koreaexim.go.kr/ir/HPHKIR019M01)     | Current exchange rates, loan rates, international rates | `apiKey` |
 | [Toss Payments](https://docs.tosspayments.com/reference)                           | Integrated payment API (card, virtual account, simple payment)                                 | `apiKey`      |
 | [Toss Pay API](https://docs-pay.toss.im/reference)                                 | Payment service API through Toss (TLS 1.2+ required)                                           | `apiKey`      |
 | [Naver Pay API](https://developers.pay.naver.com/)                                 | Naver Pay payment, regular payment, automatic payment API                                      | `OAuth`       |
@@ -293,10 +295,13 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Media & Content
 
-| API                                                      | Description                               | Auth     |
-| -------------------------------------------------------- | ----------------------------------------- | -------- |
-| [SOOP](https://developers.afreecatv.com/?szWork=openapi) | SOOP broadcast list, category information | `apiKey` |
-| [NAVER Chzzk API](https://chzzk.gitbook.io/chzzk)        | NAVER live streaming platform             | `apiKey` |
+| API                                                                                  | Description                                                                         | Auth     |
+|--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------| -------- |
+| [SOOP](https://developers.afreecatv.com/?szWork=openapi)                             | SOOP broadcast list, category information                                           | `apiKey` |
+| [NAVER Chzzk API](https://chzzk.gitbook.io/chzzk)                                    | NAVER live streaming platform                                                       | `apiKey` |
+| [Korea Film Council KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | Box office data, movie info, film company & people info                             | `apiKey` |
+| [KMDb Movie Details](https://www.kmdb.or.kr/info/api/apiDetail/6)                    | Korean film titles, production year, companies, credits, synopsis, genres, keywords | `apiKey` |
+| [KMDb KOFA Cinema Schedule](https://www.kmdb.or.kr/info/api/apiDetail/3)             | Korea Film Archive Sangam headquarters cinema screening schedule (2002-present)     | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -439,6 +444,15 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
+### Farming
+
+| API                                                                                                                                           | Description                                                                                                    | Auth     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------| -------- |
+| [Rural Development Administration Nongsaro Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)             | Crop-specific farming techniques, weekly agricultural info, pest control information for external developers   | `apiKey` |
+| [National Institute of Agricultural Sciences Soil Environment API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | Regional soil chemistry and detailed soil characteristics via parcel number (PNU) or legal district code       | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
 ### Naver
 
 | API                                                                                                   | Description                                                | Auth     |
@@ -498,6 +512,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: August 24, 2025
+**Last Updated**: August 29, 2025
 
-**Total API Count**: 205+
+**Total API Count**: 210+
