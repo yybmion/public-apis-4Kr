@@ -2,8 +2,8 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-205+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
-[![Global APIs](https://img.shields.io/badge/Global%20APIs-1030+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-210+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
 
@@ -51,6 +51,7 @@
 - [🚨 공공안전](#공공안전)
 - [✈️ 항공](#️항공)
 - [🚛 물류 인프라 & 통관](#물류-인프라--통관)
+- [🌾 농업정보](#농업정보)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
@@ -104,29 +105,30 @@
 
 ### 금융 & 결제
 
-| API                                                                   | 설명                                                       | 인증          |
-| --------------------------------------------------------------------- | ---------------------------------------------------------- | ------------- |
-| [금융결제원 오픈뱅킹](https://openapi.kftc.or.kr/service/openBanking) | 19개 은행 통합 계좌조회, 이체, 결제 서비스                 | `OAuth`       |
-| [KB국민은행 Open API](https://obizapi.kbstar.com/quics?page=C108082)  | KB 종합 금융서비스 및 BaaS 플랫폼                          | `OAuth`       |
-| [KB API 포탈](https://apiportal.kbfg.com/)                            | KB금융그룹 종합 금융 API 서비스 (755개 API 제공)           | `OAuth`       |
-| [신한은행 Open API](https://openapi.shinhan.com/)                     | 신한금융그룹 통합 API 서비스                               | `OAuth`       |
-| [우리은행 Open API](https://developer.wooribank.com/apiservice)       | 핀테크 개발자 원스탑 지원 서비스                           | `OAuth`       |
-| [하나금융그룹 Open API](https://www.hanafnapimarket.com/)             | 그룹 통합 API 마켓플레이스                                 | `OAuth`       |
-| [NH농협은행 Open API](https://developers.nonghyup.com/center/CE_1020) | 농협 금융 API 개발자센터                                   | `OAuth`       |
-| [한국투자증권 KIS API](https://apiportal.koreainvestment.com/intro)   | 국내외 주식 시세 및 주문 API (2022년 출시)                 | `OAuth`       |
-| [한국은행 Open API](https://ecos.bok.or.kr/api/)                      | 경제통계정보 제공 API                                      | `apiKey`      |
-| [토스페이먼츠](https://docs.tosspayments.com/reference)               | 통합 결제 API (카드, 가상계좌, 간편결제)                   | `apiKey`      |
-| [토스페이 API](https://docs-pay.toss.im/reference)                    | 토스를 통한 결제 서비스 API (TLS 1.2+ 필수)                | `apiKey`      |
-| [네이버페이 API](https://developers.pay.naver.com/)                   | 네이버페이 결제, 정기결제, 자동결제 API                    | `OAuth`       |
-| [카카오페이](https://developers.kakaopay.com/)                        | 온라인 결제, 정기결제, 송금 등 종합 결제 솔루션            | `OAuth`       |
-| [삼성페이 API](https://developer.samsung.com/pay)                     | 모바일 결제 및 디지털 지갑 서비스                          | `Partnership` |
-| [페이코(PAYCO)](https://developers.payco.com/guide)                   | NHN 통합 ID 및 멤버십 연동 서비스                          | `OAuth`       |
-| [업비트 Open API](https://docs.upbit.com/kr)                          | 국내 최대 암호화폐 거래소 API (JWT 인증)                   | `JWT`         |
-| [빗썸 Open API](https://apidocs.bithumb.com/)                         | 암호화폐 거래, 원화 입출금 지원 (API 2.0)                  | `apiKey`      |
-| [코인원 Open API](https://docs.coinone.co.kr/)                        | 가상자산 거래 및 시세정보 API                              | `apiKey`      |
-| [키움증권 Open API+](https://openapi.kiwoom.com/)                     | OCX 기반 실시간 주식 데이터 및 주문                        | `apiKey`      |
-| [CODEF API](https://developer.codef.io/)                              | 금융, 보험, 통신 데이터 통합 연동                          | `OAuth`       |
-| [부트페이 API](https://docs.bootpay.co.kr/)                           | 통합 PG 연동 서비스, 이니시스·KCP·다날 등 다중 PG사 지원   | `apiKey`      |
+| API                                                                   | 설명                                     | 인증          |
+| --------------------------------------------------------------------- |----------------------------------------| ------------- |
+| [금융결제원 오픈뱅킹](https://openapi.kftc.or.kr/service/openBanking) | 19개 은행 통합 계좌조회, 이체, 결제 서비스             | `OAuth`       |
+| [KB국민은행 Open API](https://obizapi.kbstar.com/quics?page=C108082)  | KB 종합 금융서비스 및 BaaS 플랫폼                 | `OAuth`       |
+| [KB API 포탈](https://apiportal.kbfg.com/)                            | KB금융그룹 종합 금융 API 서비스 (755개 API 제공)     | `OAuth`       |
+| [신한은행 Open API](https://openapi.shinhan.com/)                     | 신한금융그룹 통합 API 서비스                      | `OAuth`       |
+| [우리은행 Open API](https://developer.wooribank.com/apiservice)       | 핀테크 개발자 원스탑 지원 서비스                     | `OAuth`       |
+| [하나금융그룹 Open API](https://www.hanafnapimarket.com/)             | 그룹 통합 API 마켓플레이스                       | `OAuth`       |
+| [NH농협은행 Open API](https://developers.nonghyup.com/center/CE_1020) | 농협 금융 API 개발자센터                        | `OAuth`       |
+| [한국투자증권 KIS API](https://apiportal.koreainvestment.com/intro)   | 국내외 주식 시세 및 주문 API (2022년 출시)          | `OAuth`       |
+| [한국은행 Open API](https://ecos.bok.or.kr/api/)                      | 경제통계정보 제공 API                          | `apiKey`      |
+| [한국수출입은행 Open API](https://www.koreaexim.go.kr/ir/HPHKIR019M01) | 현재환율, 대출금리, 국제금리 정보                    | `apiKey` |
+| [토스페이먼츠](https://docs.tosspayments.com/reference)               | 통합 결제 API (카드, 가상계좌, 간편결제)             | `apiKey`      |
+| [토스페이 API](https://docs-pay.toss.im/reference)                    | 토스를 통한 결제 서비스 API (TLS 1.2+ 필수)        | `apiKey`      |
+| [네이버페이 API](https://developers.pay.naver.com/)                   | 네이버페이 결제, 정기결제, 자동결제 API               | `OAuth`       |
+| [카카오페이](https://developers.kakaopay.com/)                        | 온라인 결제, 정기결제, 송금 등 종합 결제 솔루션           | `OAuth`       |
+| [삼성페이 API](https://developer.samsung.com/pay)                     | 모바일 결제 및 디지털 지갑 서비스                    | `Partnership` |
+| [페이코(PAYCO)](https://developers.payco.com/guide)                   | NHN 통합 ID 및 멤버십 연동 서비스                 | `OAuth`       |
+| [업비트 Open API](https://docs.upbit.com/kr)                          | 국내 최대 암호화폐 거래소 API (JWT 인증)            | `JWT`         |
+| [빗썸 Open API](https://apidocs.bithumb.com/)                         | 암호화폐 거래, 원화 입출금 지원 (API 2.0)           | `apiKey`      |
+| [코인원 Open API](https://docs.coinone.co.kr/)                        | 가상자산 거래 및 시세정보 API                     | `apiKey`      |
+| [키움증권 Open API+](https://openapi.kiwoom.com/)                     | OCX 기반 실시간 주식 데이터 및 주문                 | `apiKey`      |
+| [CODEF API](https://developer.codef.io/)                              | 금융, 보험, 통신 데이터 통합 연동                   | `OAuth`       |
+| [부트페이 API](https://docs.bootpay.co.kr/)                           | 통합 PG 연동 서비스, 이니시스·KCP·다날 등 다중 PG사 지원  | `apiKey`      |
 | [페이플 API](https://developer.payple.kr/)                            | 금융규제샌드박스 SMS 인증방식 간편결제, 정기결제           | `apiKey`      |
 | [하이픈 API 마켓플레이스](https://hyphen.im/)                         | 케이에스넷 자회사 데이터 API 마켓플레이스 (500개 이상 API) | `apiKey`      |
 
@@ -305,10 +307,13 @@
 
 ### 미디어 & 콘텐츠
 
-| API                                                      | 설명                            | 인증     |
-| -------------------------------------------------------- | ------------------------------- | -------- |
-| [SOOP](https://developers.afreecatv.com/?szWork=openapi) | SOOP 방송 리스트, 카테고리 정보 | `apiKey` |
-| [네이버 치지직 API](https://chzzk.gitbook.io/chzzk)      | 네이버 라이브 스트리밍 플랫폼   | `apiKey` |
+| API                                                                       | 설명                                           | 인증     |
+|---------------------------------------------------------------------------|----------------------------------------------| -------- |
+| [SOOP](https://developers.afreecatv.com/?szWork=openapi)                  | SOOP 방송 리스트, 카테고리 정보                         | `apiKey` |
+| [네이버 치지직 API](https://chzzk.gitbook.io/chzzk)                             | 네이버 라이브 스트리밍 플랫폼                             | `apiKey` |
+| [영화진흥위원회 KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | 박스오피스, 영화정보, 영화사정보, 영화인정보                    | `apiKey` |
+| [KMDb 영화상세정보](https://www.kmdb.or.kr/info/api/apiDetail/6) | 한국영화 제명, 제작년도, 제작사, 크레딧, 줄거리, 장르, 키워드 등 상세정보 | `apiKey` |
+| [KMDb 시네마테크KOFA 상영일정](https://www.kmdb.or.kr/info/api/apiDetail/3) | 한국영상자료원 상암본원 시네마테크 상영일정 (2002년~현재)           | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -451,6 +456,15 @@
 
 **[⬆ 목차로 돌아가기](#목차)**
 
+### 🌾 농업정보
+
+| API                                                                                                          | 설명                                                     | 인증     |
+|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------| -------- |
+| [농촌진흥청 농사로 Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)            | 작목별 농업기술, 주간농사정보, 병해충 방제정보 등 다양한 농업 기술정보를 외부 개발자에게 제공  | `apiKey` |
+| [국립농업과학원 토양환경정보 Open API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21)         | 지번 코드(PNU) 또는 법정동 코드를 통해 지역별 토양 화학성 등 상세 토양특성 정보를 제공   | `apiKey` |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
 ### 네이버
 
 | API                                                                                                | 설명                                       | 인증     |
@@ -506,6 +520,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 8월 24일
+**마지막 업데이트**: 2025년 8월 29일
 
-**총 API 수**: 205+
+**총 API 수**: 210+
