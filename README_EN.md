@@ -40,6 +40,7 @@ This project systematically organizes all public APIs that developers can utiliz
 - [✈️ Aviation](#️aviation)
 - [🚛 Logistics & Customs](#logistics--customs)
 - [🌾 Farming](#Farming)
+- [📈 Daily Economy](#Daily-Economy)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -453,6 +454,14 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
+### Daily Economy
+| API                                                              | Description                        | Authentication |
+|------------------------------------------------------------------|------------------------------------|----------|
+| [Gas Station Price Information](https://www.opinet.co.kr/user/custapi/custApiInfo.do) | Nationwide gas station gasoline/diesel prices | `apiKey` |
+| [Korea Consumer Agency Price Info](https://www.data.go.kr/dataset/3043385/openapi.do) | Real-time daily necessities price information | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
 ### Naver
 
 | API                                                                                                   | Description                                                | Auth     |
@@ -512,6 +521,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: August 29, 2025
+**Last Updated**: September 1, 2025
 
 **Total API Count**: 210+
