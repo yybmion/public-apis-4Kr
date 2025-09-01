@@ -295,14 +295,15 @@
 
 ### 게임 & 엔터테인먼트
 
-| API                                                                                                                                                                                                     | 설명                                               | 인증     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | -------- |
-| [넥슨 Open API](https://openapi.nexon.com/)                                                                                                                                                             | 메이플스토리, 던파, FC온라인 등 13종 게임 데이터   | `apiKey` |
-| [엔씨소프트 PLAYNC](https://developers.plaync.com/)                                                                                                                                                     | 리니지2M 아이템 정보, 시세, 검색 데이터            | `apiKey` |
-| [Neople API](https://developers.neople.co.kr/)                                                                                                                                                          | 던전앤파이터 게임 데이터                           | `apiKey` |
-| [펄어비스 Black Desert API](https://documenter.getpostman.com/view/4028519/2s9Y5YRhp4)                                                                                                                  | 검은사막 게임 정보 및 캐릭터 데이터                | `apiKey` |
-| [컴투스 HIVE 플랫폼](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS 플랫폼 (연 1억명 접속)                       | `apiKey` |
-| [크래프톤 배틀그라운드 API](https://developer.pubg.com/)                                                                                                                                                | 배틀그라운드 게임 데이터, 플레이어 통계, 매치 분석 | `apiKey` |
+| API                                                                                                                                                                                        | 설명                             | 인증        |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|-----------|
+| [넥슨 Open API](https://openapi.nexon.com/)                                                                                                                                                  | 메이플스토리, 던파, FC온라인 등 13종 게임 데이터 | `apiKey`  |
+| [엔씨소프트 PLAYNC](https://developers.plaync.com/)                                                                                                                                             | 리니지2M 아이템 정보, 시세, 검색 데이터       | `apiKey`  |
+| [Neople API](https://developers.neople.co.kr/)                                                                                                                                             | 던전앤파이터 게임 데이터                  | `apiKey`  |
+| [펄어비스 Black Desert API](https://documenter.getpostman.com/view/4028519/2s9Y5YRhp4)                                                                                                         | 검은사막 게임 정보 및 캐릭터 데이터           | `apiKey`  |
+| [컴투스 HIVE 플랫폼](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS 플랫폼 (연 1억명 접속)           | `apiKey`  |
+| [크래프톤 배틀그라운드 API](https://developer.pubg.com/)                                                                                                                                             | 배틀그라운드 게임 데이터, 플레이어 통계, 매치 분석  | `apiKey`  |
+| [Riot Games API](https://developer.riotgames.com/apis)                                                                                                                                         | 롤, 발로란트 등 라이엇 게임 데이터           | `apiKey`  |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
