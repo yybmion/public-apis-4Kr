@@ -332,10 +332,12 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Science & Research
 
-| API                                                                                                   | Description                                          | Auth     |
-| ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | -------- |
-| [Korea Institute of Science and Technology Information KISTI](https://aida.kisti.re.kr/about/openapi) | Science and technology information and research data | `apiKey` |
-| [National Archives Record Information](https://www.archives.go.kr/next/newsearch/openAPI01.do)        | National archives and historical information search  | `apiKey` |
+| API                                                                                                                          | Description                                          | Auth     |
+|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------| -------- |
+| [Korea Institute of Science and Technology Information KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | Science and technology information and research data | `apiKey` |
+| [National Archives Record Information](https://www.archives.go.kr/next/newsearch/openAPI01.do)                               | National archives and historical information search  | `apiKey` |
+| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                                                                        | Academic paper search (institutional license)        | `apiKey` |
+| [National Library of Korea OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                                        | Search library holdings and digital collections      | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -523,4 +525,4 @@ This project is distributed under the MIT License.
 
 **Last Updated**: September 1, 2025
 
-**Total API Count**: 210+
+**Total API Count**: 215+
