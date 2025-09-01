@@ -73,7 +73,7 @@ jobs:
           retention-days: 30
 
       - name: 🚨 깨진 링크 이슈 생성
-        if: failure() && github.event_name == 'schedule'
+        if: failure() && github.event_name == 'schedule' // 현재는 continue-on-error -> true로 해당 job skip
         uses: actions/github-script@v7
         with:
           script: |
