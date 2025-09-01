@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-210+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-215+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -344,10 +344,12 @@
 
 ### 과학 & 연구
 
-| API                                                                           | 설명                        | 인증     |
-| ----------------------------------------------------------------------------- | --------------------------- | -------- |
-| [한국과학기술정보연구원 KISTI](https://aida.kisti.re.kr/about/openapi)        | 과학기술 정보 및 연구데이터 | `apiKey` |
-| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do) | 국가기록 및 역사정보 검색   | `apiKey` |
+| API                                                                                | 설명                        | 인증     |
+|------------------------------------------------------------------------------------| --------------------------- | -------- |
+| [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터 | `apiKey` |
+| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do)               | 국가기록 및 역사정보 검색   | `apiKey` |
+| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                              | 학술논문 검색 (기관 라이선스) | `apiKey` |
+| [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                | 소장자료, 디지털컬렉션 검색 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -531,4 +533,4 @@
 
 **마지막 업데이트**: 2025년 9월 1일
 
-**총 API 수**: 210+
+**총 API 수**: 215+
