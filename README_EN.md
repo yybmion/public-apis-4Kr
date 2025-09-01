@@ -284,13 +284,14 @@ This project systematically organizes all public APIs that developers can utiliz
 ### Gaming & Entertainment
 
 | API                                                                                                                                                                                                       | Description                                                   | Auth     |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | -------- |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------| -------- |
 | [Nexon Open API](https://openapi.nexon.com/)                                                                                                                                                              | MapleStory, Dungeon Fighter, FC Online and 13 other game data | `apiKey` |
 | [NCSOFT PLAYNC](https://developers.plaync.com/)                                                                                                                                                           | Lineage 2M item information, market prices, search data       | `apiKey` |
 | [Neople API](https://developers.neople.co.kr/)                                                                                                                                                            | Dungeon Fighter game data                                     | `apiKey` |
 | [Pearl Abyss Black Desert API](https://documenter.getpostman.com/view/4028519/2s9Y5YRhp4)                                                                                                                 | Black Desert game information and character data              | `apiKey` |
 | [Com2uS HIVE Platform](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS platform (100 million annual connections)               | `apiKey` |
 | [Krafton PUBG API](https://developer.pubg.com/)                                                                                                                                                           | PUBG game data, player statistics, match analysis             | `apiKey` |
+| [Riot Games API](https://developer.riotgames.com/)                                                                                                                                                        | Data for Riot Games such as League of Legends and VALORANT    | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
