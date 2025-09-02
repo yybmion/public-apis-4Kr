@@ -242,18 +242,19 @@
 
 ### AI & 머신러닝
 
-| API                                                                                           | 설명                                                       | 인증     |
-| --------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | -------- |
-| [네이버 클라우드 CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary) | 한국어 특화 생성형 AI 플랫폼                               | `apiKey` |
-| [네이버 CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md) | 얼굴 인식 및 감정 분석                                     | `apiKey` |
-| [네이버 CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech)                   | 음성 인식 및 STT 서비스                                    | `apiKey` |
-| [Upstage Solar LLM](https://developers.upstage.ai/)                                           | 대화형 LLM, Document AI, OCR, Embedding                    | `apiKey` |
-| [Upstage Document AI](https://developers.upstage.ai/)                                         | 문서 파싱, 레이아웃 분석, 정보 추출                        | `apiKey` |
-| [삼성SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                         | 멀티 LLM 기업용 생성형 AI 플랫폼                           | `apiKey` |
-| [삼성 빅스비 API](https://developer.samsung.com/bixby)                                        | 음성 인식 및 AI 어시스턴트 통합                            | `apiKey` |
-| [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                              | 한국어 특화 대규모 언어모델                                | `apiKey` |
-| [ETRI AI Open API](https://epretx.etri.re.kr/)                                                | 한국전자통신연구원 AI 서비스 플랫폼                        | `apiKey` |
-| [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566)                           | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
+| API                                                                                        | 설명                                   | 인증     |
+|--------------------------------------------------------------------------------------------|--------------------------------------| -------- |
+| [네이버 클라우드 CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary)     | 한국어 특화 생성형 AI 플랫폼                    | `apiKey` |
+| [네이버 CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md) | 얼굴 인식 및 감정 분석                        | `apiKey` |
+| [네이버 CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech)                   | 음성 인식 및 STT 서비스                      | `apiKey` |
+| [Upstage Solar LLM](https://developers.upstage.ai/)                                        | 대화형 LLM, Document AI, OCR, Embedding | `apiKey` |
+| [Upstage Document AI](https://developers.upstage.ai/)                                      | 문서 파싱, 레이아웃 분석, 정보 추출                | `apiKey` |
+| [삼성SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                        | 멀티 LLM 기업용 생성형 AI 플랫폼                | `apiKey` |
+| [삼성 빅스비 API](https://developer.samsung.com/bixby)                                          | 음성 인식 및 AI 어시스턴트 통합                  | `apiKey` |
+| [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                           | 한국어 특화 대규모 언어모델                      | `apiKey` |
+| [ETRI AI Open API](https://epretx.etri.re.kr/)                                             | 한국전자통신연구원 AI 서비스 플랫폼                 | `apiKey` |
+| [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566)                              | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
+| [AI Hub 번역 데이터](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100)    | AI 학습용 한국어-다국어 병렬 말뭉치 및 번역 데이터셋      | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
