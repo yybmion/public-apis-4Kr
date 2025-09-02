@@ -183,15 +183,16 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Education
 
-| API                                                                                          | Description                                                              | Auth           |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------- |
-| [MOE NEIS School Basic Information](https://www.data.go.kr/data/15122275/openapi.do)         | Basic information for elementary, middle, and high schools nationwide    | `apiKey`       |
-| [School Info](https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do)                           | Basic information for elementary, middle, and high schools nationwide    | `apiKey`       |
-| [University Info](https://www.data.go.kr/data/15037507/openapi.do#tab_layer_detail_function) | University basic information                                             | `apiKey`       |
-| [Career Net](https://www.career.go.kr/cnet/front/openapi/openApiUseGuideCenter.do)           | Career education materials and job information                           | `apiKey`       |
-| [Class101 Business API](https://docs.class101.net/)                                          | Class management, course registration, progress inquiry, SSO integration | `Bearer Token` |
-| [KERIS Academic Research Information](https://www.data.go.kr/data/3046254/openapi.do)        | KERIS academic papers, research information search service               | `apiKey`       |
-| [KERIS RISS Comprehensive Catalog](https://www.data.go.kr/data/15071949/fileData.do)         | University library integrated academic material catalog                  | `apiKey`       |
+| API                                                                                                    | Description                                                              | Auth           |
+|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------------|
+| [MOE NEIS School Basic Information](https://www.data.go.kr/data/15122275/openapi.do)                   | Basic information for elementary, middle, and high schools nationwide    | `apiKey`       |
+| [School Info](https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do)                                     | Basic information for elementary, middle, and high schools nationwide    | `apiKey`       |
+| [University Info](https://www.data.go.kr/data/15037507/openapi.do#tab_layer_detail_function)           | University basic information                                             | `apiKey`       |
+| [Career Net](https://www.career.go.kr/cnet/front/openapi/openApiUseGuideCenter.do)                     | Career education materials and job information                           | `apiKey`       |
+| [Class101 Business API](https://docs.class101.net/)                                                    | Class management, course registration, progress inquiry, SSO integration | `Bearer Token` |
+| [KERIS Academic Research Information](https://www.data.go.kr/data/3046254/openapi.do)                  | KERIS academic papers, research information search service               | `apiKey`       |
+| [KERIS RISS Comprehensive Catalog](https://www.data.go.kr/data/15071949/fileData.do)                   | University library integrated academic material catalog                  | `apiKey`       |
+| [National Institute of Korean Language - Urimalsam](https://opendict.korean.go.kr/service/openApiInfo) | Urimalsam dictionary (standard Korean, dialects, and loanwords)          | `apiKey`       |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -325,9 +326,10 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Energy & Power
 
-| API                                                                                              | Description                                                                  | Auth     |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | -------- |
-| [Electric Vehicle Charging Station Information](https://www.data.go.kr/data/15076352/openapi.do) | Nationwide electric vehicle charging station location and status information | `apiKey` |
+| API                                                                                               | Description                                                                  | Auth     |
+|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------| -------- |
+| [Electric Vehicle Charging Station Information](https://www.data.go.kr/data/15076352/openapi.do)  | Nationwide electric vehicle charging station location and status information | `apiKey` |
+| [KEPCO Electricity Rates](https://www.kepco.co.kr/home/disclosure/pbdata/pbdatasystem/conts.do)   | Electricity usage and billing information                                    | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -524,6 +526,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 1, 2025
+**Last Updated**: September 2, 2025
 
 **Total API Count**: 215+

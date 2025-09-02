@@ -195,15 +195,16 @@
 
 ### 교육
 
-| API                                                                                     | 설명                                         | 인증           |
-| --------------------------------------------------------------------------------------- | -------------------------------------------- | -------------- |
-| [교육부 나이스 학교기본정보](https://www.data.go.kr/data/15122275/openapi.do)           | 전국 초중고 학교 기본정보                    | `apiKey`       |
-| [학교알리미](https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do)                       | 전국 초중고 학교 기본정보                    | `apiKey`       |
-| [대학알리미](https://www.data.go.kr/data/15037507/openapi.do#tab_layer_detail_function) | 대학 기본정보                                | `apiKey`       |
-| [커리어넷](https://www.career.go.kr/cnet/front/openapi/openApiUseGuideCenter.do)        | 진로교육 자료 및 직업정보                    | `apiKey`       |
-| [클래스101 Business API](https://docs.class101.net/)                                    | 클래스 관리, 수강신청, 진도율 조회, SSO 연동 | `Bearer Token` |
-| [한국교육학술정보원 학술연구정보](https://www.data.go.kr/data/3046254/openapi.do)       | KERIS 학술논문, 연구정보 검색 서비스         | `apiKey`       |
-| [한국교육학술정보원 RISS 종합목록](https://www.data.go.kr/data/15071949/fileData.do)    | 대학 도서관 통합 학술자료 목록               | `apiKey`       |
+| API                                                                                | 설명                           | 인증             |
+|------------------------------------------------------------------------------------|------------------------------|----------------|
+| [교육부 나이스 학교기본정보](https://www.data.go.kr/data/15122275/openapi.do)                  | 전국 초중고 학교 기본정보               | `apiKey`       |
+| [학교알리미](https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do)                       | 전국 초중고 학교 기본정보               | `apiKey`       |
+| [대학알리미](https://www.data.go.kr/data/15037507/openapi.do#tab_layer_detail_function) | 대학 기본정보                      | `apiKey`       |
+| [커리어넷](https://www.career.go.kr/cnet/front/openapi/openApiUseGuideCenter.do)       | 진로교육 자료 및 직업정보               | `apiKey`       |
+| [클래스101 Business API](https://docs.class101.net/)                                  | 클래스 관리, 수강신청, 진도율 조회, SSO 연동 | `Bearer Token` |
+| [한국교육학술정보원 학술연구정보](https://www.data.go.kr/data/3046254/openapi.do)                 | KERIS 학술논문, 연구정보 검색 서비스      | `apiKey`       |
+| [한국교육학술정보원 RISS 종합목록](https://www.data.go.kr/data/15071949/fileData.do)            | 대학 도서관 통합 학술자료 목록            | `apiKey`       |
+| [국립국어원 우리말샘](https://opendict.korean.go.kr/service/openApiInfo)                    | 표준국어대사전, 방언, 외래어 정보          | `apiKey`       |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -337,9 +338,10 @@
 
 ### 에너지 & 전력
 
-| API                                                                   | 설명                                | 인증     |
-| --------------------------------------------------------------------- | ----------------------------------- | -------- |
-| [전기차 충전소 정보](https://www.data.go.kr/data/15076352/openapi.do) | 전국 전기차 충전소 위치 및 상태정보 | `apiKey` |
+| API                                                                               | 설명                   | 인증        |
+|-----------------------------------------------------------------------------------|----------------------|-----------|
+| [전기차 충전소 정보](https://www.data.go.kr/data/15076352/openapi.do)                     | 전국 전기차 충전소 위치 및 상태정보 | `apiKey`  |
+| [한국전력 전기요금](https://www.kepco.co.kr/home/disclosure/pbdata/pbdatasystem/conts.do) | 전기 사용량 및 요금 정보       | `apiKey`  |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -532,6 +534,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 9월 1일
+**마지막 업데이트**: 2025년 9월 2일
 
 **총 API 수**: 215+
