@@ -230,18 +230,19 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### AI & Machine Learning
 
-| API                                                                                          | Description                                                                        | Auth     |
-| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------- |
-| [Naver Cloud CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary)    | Korean-specialized generative AI platform                                          | `apiKey` |
-| [Naver CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md) | Face recognition and emotion analysis                                              | `apiKey` |
-| [Naver CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech)                   | Voice recognition and STT service                                                  | `apiKey` |
-| [Upstage Solar LLM](https://developers.upstage.ai/)                                          | Conversational LLM, Document AI, OCR, Embedding                                    | `apiKey` |
-| [Upstage Document AI](https://developers.upstage.ai/)                                        | Document parsing, layout analysis, information extraction                          | `apiKey` |
-| [Samsung SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                    | Multi-LLM enterprise generative AI platform                                        | `apiKey` |
-| [Samsung Bixby API](https://developer.samsung.com/bixby)                                     | Voice recognition and AI assistant integration                                     | `apiKey` |
-| [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                             | Korean-specialized large language model                                            | `apiKey` |
-| [ETRI AI Open API](https://epretx.etri.re.kr/)                                               | Electronics and Telecommunications Research Institute AI service platform          | `apiKey` |
-| [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566)                           | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
+| API                                                                                               | Description                                                                        | Auth     |
+|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------| -------- |
+| [Naver Cloud CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary)         | Korean-specialized generative AI platform                                          | `apiKey` |
+| [Naver CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md)      | Face recognition and emotion analysis                                              | `apiKey` |
+| [Naver CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech)                        | Voice recognition and STT service                                                  | `apiKey` |
+| [Upstage Solar LLM](https://developers.upstage.ai/)                                               | Conversational LLM, Document AI, OCR, Embedding                                    | `apiKey` |
+| [Upstage Document AI](https://developers.upstage.ai/)                                             | Document parsing, layout analysis, information extraction                          | `apiKey` |
+| [Samsung SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                         | Multi-LLM enterprise generative AI platform                                        | `apiKey` |
+| [Samsung Bixby API](https://developer.samsung.com/bixby)                                          | Voice recognition and AI assistant integration                                     | `apiKey` |
+| [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                                  | Korean-specialized large language model                                            | `apiKey` |
+| [ETRI AI Open API](https://epretx.etri.re.kr/)                                                    | Electronics and Telecommunications Research Institute AI service platform          | `apiKey` |
+| [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566)                                | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
+| [AI Hub Translation Data](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100) | Korean-Multilingual Parallel Corpus and Translation Dataset for AI Training        | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
