@@ -426,9 +426,10 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Public Safety
 
-| API                                                                                       | Description                                                                | Auth     |
-| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do) | Missing person information and public safety data (National Police Agency) | `apiKey` |
+| API                                                                                         | Description                                                                                      | Auth     |
+|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| -------- |
+| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)   | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
+| [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
