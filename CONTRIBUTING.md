@@ -52,6 +52,15 @@ Pull Request를 열면 제안된 변경사항에 대한 토론이 시작됩니�
 
 그런 경우, 브랜치에 더 많은 커밋을 추가하고 푸시하면 기존 Pull Request에 자동으로 들어갑니다!
 
+### 기여 방법 요약
+
+1. 이 저장소를 Fork
+2. 새 브랜치 생성 (`git checkout -b (어떤 브랜치 이름이든 상관없음)`)
+3. 코드 수정
+4. 변경사항 커밋 (`git commit -am 'Add new API'`)
+5. 브랜치에 Push (`git push origin (브랜치 이름)`)
+6. Pull Request 생성
+
 ## 특별 고려사항
 
 ### 한국 중심의 API
