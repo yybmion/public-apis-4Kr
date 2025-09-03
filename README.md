@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-215+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-220+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -232,11 +232,12 @@
 
 ### 통계 & 데이터
 
-| API                                                                      | 설명                             | 인증     |
-| ------------------------------------------------------------------------ | -------------------------------- | -------- |
-| [통계청 KOSIS 통계목록](https://www.data.go.kr/data/15056860/openapi.do) | 국가통계포털 통계목록 조회       | `apiKey` |
-| [통계청 KOSIS 통계자료](https://kosis.kr/openapi/?sso=ok)                | 국가통계 데이터 조회 서비스      | `apiKey` |
-| [한국은행 경제통계](https://ecos.bok.or.kr/api/#/)                       | 금리, 환율, 물가지수 등 경제통계 | `apiKey` |
+| API                                                               | 설명                           | 인증        |
+|-------------------------------------------------------------------|------------------------------|-----------|
+| [통계청 KOSIS 통계목록](https://www.data.go.kr/data/15056860/openapi.do) | 국가통계포털 통계목록 조회               | `apiKey`  |
+| [통계청 KOSIS 통계자료](https://kosis.kr/openapi/?sso=ok)                | 국가통계 데이터 조회 서비스              | `apiKey`  |
+| [한국은행 경제통계](https://ecos.bok.or.kr/api/#/)                        | 금리, 환율, 물가지수 등 경제통계          | `apiKey`  |
+| [빅카인즈(BIG KINDS)](https://www.bigkinds.or.kr/)                    | 한국언론진흥재단 뉴스 빅데이터 분석 (로그인 필요) |  `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -523,18 +524,10 @@
 
 ## 기여하기
 
-이 목록에 새로운 API를 추가하거나 정보를 수정하고 싶으시다면 Pull Request를 보내주세요.
-
-### 기여 방법
-
-1. 이 저장소를 Fork
-2. 새 브랜치 생성 (`git checkout -b feature/add-new-api`)
-3. 변경사항 커밋 (`git commit -am 'Add new API'`)
-4. 브랜치에 Push (`git push origin feature/add-new-api`)
-5. Pull Request 생성
+이 목록에 새로운 API를 추가하거나 정보를 수정하고 싶으시다면 Pull Request를 보내주세요. 자세한 내용은 [기여 가이드](./CONTRIBUTING.md)를 참고해주세요.
 
 ---
 
-**마지막 업데이트**: 2025년 9월 2일
+**마지막 업데이트**: 2025년 9월 4일
 
-**총 API 수**: 215+
+**총 API 수**: 220+
