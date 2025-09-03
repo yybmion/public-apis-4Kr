@@ -50,6 +50,15 @@ During the discussion, you may be asked to make some changes to your pull reques
 
 If so, add more commits to your branch and push them – they will automatically go into the existing pull request!
 
+### Contribution Guide (Summary)
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b (Any branch name)`)
+3. Make your code changes
+4. Commit your changes (`git commit -am 'Add new API'`)
+5. Push to your branch (`git push origin (branch name)`)
+6. Open a Pull Request
+
 ## Special Considerations
 
 ### Korea-Focused APIs
