@@ -221,10 +221,11 @@ This project systematically organizes all public APIs that developers can utiliz
 ### Statistics & Data
 
 | API                                                                             | Description                                                               | Auth     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------- |
+|---------------------------------------------------------------------------------|---------------------------------------------------------------------------| -------- |
 | [KOSTAT KOSIS Statistics List](https://www.data.go.kr/data/15056860/openapi.do) | National Statistical Portal statistics list inquiry                       | `apiKey` |
 | [KOSTAT KOSIS Statistical Data](https://kosis.kr/openapi/?sso=ok)               | National statistics data inquiry service                                  | `apiKey` |
 | [Bank of Korea Economic Statistics](https://ecos.bok.or.kr/api/#/)              | Interest rates, exchange rates, price index and other economic statistics | `apiKey` |
+| [BIG KINDS](https://www.bigkinds.or.kr/)                                        | Korea Press Foundation News Big Data Analysis (login required)            | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -511,15 +512,7 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ## Contributing
 
-If you would like to add new APIs to this list or modify information, please send a Pull Request.
-
-### How to Contribute
-
-1. Fork this repository
-2. Create a new branch (`git checkout -b feature/add-new-api`)
-3. Commit changes (`git commit -am 'Add new API'`)
-4. Push to branch (`git push origin feature/add-new-api`)
-5. Create Pull Request
+If you would like to add new APIs to this list or modify information, please send a Pull Request. For more details, please refer to the [Contributing Guide](./CONTRIBUTING_EN.md).
 
 ## License
 
@@ -527,6 +520,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 2, 2025
+**Last Updated**: September 4, 2025
 
-**Total API Count**: 215+
+**Total API Count**: 220+
