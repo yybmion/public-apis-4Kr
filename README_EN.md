@@ -295,6 +295,7 @@ This project systematically organizes all public APIs that developers can utiliz
 | [Com2uS HIVE Platform](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS platform (100 million annual connections)               | `apiKey` |
 | [Krafton PUBG API](https://developer.pubg.com/)                                                                                                                                                           | PUBG game data, player statistics, match analysis             | `apiKey` |
 | [Riot Games API](https://developer.riotgames.com/)                                                                                                                                                        | Data for Riot Games such as League of Legends and VALORANT    | `apiKey` |
+| [Game Rating and Administration Committee](https://www.grac.or.kr/OpenBook/OpenAPI.aspx)                                                                                                                  | Game content rating information                               | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -521,6 +522,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 4, 2025
+**Last Updated**: September 5, 2025
 
 **Total API Count**: 220+
