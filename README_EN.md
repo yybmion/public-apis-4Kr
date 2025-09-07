@@ -39,7 +39,7 @@ This project systematically organizes all public APIs that developers can utiliz
 - [🚨 Public Safety](#public-safety)
 - [✈️ Aviation](#️aviation)
 - [🚛 Logistics & Customs](#logistics--customs)
-- [🌾 Farming](#Farming)
+- [🌾 Agriculture & Fisheries](#Agriculture--Fisheries)
 - [📈 Daily Economy](#Daily-Economy)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
@@ -454,12 +454,14 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
-### Farming
+### Agriculture & Fisheries
 
-| API                                                                                                                                           | Description                                                                                                    | Auth     |
-|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------| -------- |
-| [Rural Development Administration Nongsaro Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)             | Crop-specific farming techniques, weekly agricultural info, pest control information for external developers   | `apiKey` |
-| [National Institute of Agricultural Sciences Soil Environment API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | Regional soil chemistry and detailed soil characteristics via parcel number (PNU) or legal district code       | `apiKey` |
+| API                                                                                                                                           | Description                                                                                                  | Auth     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------| -------- |
+| [Rural Development Administration Nongsaro Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)             | Crop-specific farming techniques, weekly agricultural info, pest control information for external developers | `apiKey` |
+| [National Institute of Agricultural Sciences Soil Environment API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | Regional soil chemistry and detailed soil characteristics via parcel number (PNU) or legal district code     | `apiKey` |
+| [National Institute of Fisheries Science](https://www.nifs.go.kr/openApi/actionOpenapiInfoList.do)                                            | Marine environment and fisheries information                                                                 | `apiKey` |
+
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -522,6 +524,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 5, 2025
+**Last Updated**: September 7, 2025
 
 **Total API Count**: 220+
