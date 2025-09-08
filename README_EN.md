@@ -2,9 +2,11 @@
 
 <h3 align='center'>Comprehensive Collection of Public APIs Available in South Korea</h3>
 
-<br/>
 
-This project systematically organizes all public APIs that developers can utilize in South Korea. Updated with the latest information as of 2025, and will be periodically updated going forward.
+This project systematically organizes all public APIs that developers can utilize in South Korea.
+
+
+Updated with the latest information as of 2025, and will be periodically updated going forward.
 
 ## Table of Contents
 
@@ -428,11 +430,12 @@ This project systematically organizes all public APIs that developers can utiliz
 
 ### Public Safety
 
-| API                                                                                         | Description                                                                                      | Auth     |
-|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| -------- |
-| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)   | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
-| [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
-| [Public Safety Information](https://safemap.go.kr/opna/data/dataList.do)                    | Crime statistics, traffic accidents, fire incidents, and locations of public safety facilities   | `apiKey` |
+| API                                                                                                 | Description                                                                                      | Auth     |
+|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| -------- |
+| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)           | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
+| [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/)         | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
+| [Public Safety Information](https://safemap.go.kr/opna/data/dataList.do)                            | Crime statistics, traffic accidents, fire incidents, and locations of public safety facilities   | `apiKey` |
+| [Disaster Safety Data Sharing Platform](https://www.safetydata.go.kr/disaster-data/view?dataSn=228) | Disaster occurrences, damage statistics, and safety-related disaster information                 | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
