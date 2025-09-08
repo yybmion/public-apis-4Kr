@@ -41,6 +41,7 @@ This project systematically organizes all public APIs that developers can utiliz
 - [🚛 Logistics & Customs](#logistics--customs)
 - [🌾 Agriculture & Fisheries](#Agriculture--Fisheries)
 - [📈 Daily Economy](#Daily-Economy)
+- [🏦 Finance & Budget](#Finance--Budget)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
@@ -473,6 +474,14 @@ This project systematically organizes all public APIs that developers can utiliz
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
+### Finance & Budget
+
+| API                                                                                                     | Description                                                                                              | Auth      |
+|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|-----------|
+| [Open Fiscal Data System](https://www.openfiscaldata.go.kr/op/ko/ds/UOPKODSA06?utm_source=chatgpt.com)  | National and local government budget/expenditure, subsidies, and treasury-supported project information  | `apiKey`  |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
 ### Naver
 
 | API                                                                                                   | Description                                                | Auth     |
@@ -524,6 +533,6 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 7, 2025
+**Last Updated**: September 9, 2025
 
 **Total API Count**: 220+
