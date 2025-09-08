@@ -441,12 +441,12 @@
 
 ### 공공안전
 
-| API                                                                         | 설명                              | 인증       |
-|-----------------------------------------------------------------------------|---------------------------------| -------- |
-| [안전드림 실종/안전 API](https://www.safe182.go.kr/home/api/guideMain.do)           | 실종자 정보 및 생활안전 정보 제공 (경찰청)       | `apiKey` |
-| [소방청 공공데이터](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/)        | 화재정보, 구급출동, 소방시설 위치 등 소방안전정보    | `apiKey` |
-| [생활안전정보](https://safemap.go.kr/opna/data/dataList.do)                       | 범죄발생현황, 교통사고, 화재, 생활안전시설 위치정보   | `apiKey` |
-| [재난안전데이터 공유플랫폼](https://www.safetydata.go.kr/disaster-data/view?dataSn=228) | 재난 발생 현황, 피해 통계, 안전 관련 등 재난안전정보 | `apiKey` |
+| API                                                                  | 설명                              | 인증       |
+|----------------------------------------------------------------------|---------------------------------| -------- |
+| [안전드림 실종/안전 API](https://www.safe182.go.kr/home/api/guideMain.do)    | 실종자 정보 및 생활안전 정보 제공 (경찰청)       | `apiKey` |
+| [소방청 공공데이터](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | 화재정보, 구급출동, 소방시설 위치 등 소방안전정보    | `apiKey` |
+| [생활안전정보](https://safemap.go.kr/opna/data/dataList.do)                | 범죄발생현황, 교통사고, 화재, 생활안전시설 위치정보   | `apiKey` |
+| [재난안전데이터 공유플랫폼](https://www.safetydata.go.kr/disaster-data/list2)    | 재난 발생 현황, 피해 통계, 안전 관련 등 재난안전정보 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
