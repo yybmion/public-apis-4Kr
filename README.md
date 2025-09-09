@@ -257,7 +257,7 @@
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                           | 한국어 특화 대규모 언어모델                      | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/)                                             | 한국전자통신연구원 AI 서비스 플랫폼                 | `apiKey` |
 | [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566)                              | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
-| [AI Hub 번역 데이터](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100)    | AI 학습용 한국어-다국어 병렬 말뭉치 및 번역 데이터셋      | `apiKey` |
+| [AI Hub](https://aihub.or.kr)                                                              | AI 학습용 데이터셋                              | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
