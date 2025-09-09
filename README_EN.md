@@ -246,7 +246,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                                  | Korean-specialized large language model                                            | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/)                                                    | Electronics and Telecommunications Research Institute AI service platform          | `apiKey` |
 | [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566)                                | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
-| [AI Hub Translation Data](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100) | Korean-Multilingual Parallel Corpus and Translation Dataset for AI Training        | `apiKey` |
+| [AI Hub](https://aihub.or.kr)                                                                     | Dataset for AI Training                                                            | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -540,3 +540,4 @@ This project is distributed under the MIT License.
 **Last Updated**: September 9, 2025
 
 **Total API Count**: 225+
+
