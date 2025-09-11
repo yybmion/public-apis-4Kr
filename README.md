@@ -103,6 +103,7 @@
 | [네이버 지도](https://www.ncloud.com/product/applicationService/maps) | 지도 API, Geocoding, Directions, 파노라마  | `apiKey` |
 | [T맵 API](https://openapi.sk.com/)                                    | SK텔레콤의 내비게이션 및 경로 탐색 API     | `apiKey` |
 | [브이월드](https://www.vworld.kr/v4po_openapi_s001.do)                | 국토지리정보원의 3D 지도 및 공간정보       | `apiKey` |
+| [주소기반산업지원서비스](https://business.juso.go.kr)                | 도로명주소 API / DB 제공 및 국가지점정보 등 제공 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -257,7 +258,7 @@
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                           | 한국어 특화 대규모 언어모델                      | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/)                                             | 한국전자통신연구원 AI 서비스 플랫폼                 | `apiKey` |
 | [카카오 카나나 AI API](https://www.kakaocorp.com/page/detail/11566)                              | 카카오 자체 개발 한국어 특화 생성형 AI 모델 4종 (오픈소스) | `apiKey` |
-| [AI Hub 번역 데이터](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100)    | AI 학습용 한국어-다국어 병렬 말뭉치 및 번역 데이터셋      | `apiKey` |
+| [AI Hub](https://aihub.or.kr)                                                              | AI 학습용 데이터셋                              | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
