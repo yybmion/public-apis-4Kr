@@ -352,12 +352,13 @@
 
 ### 과학 & 연구
 
-| API                                                                                | 설명                        | 인증     |
-|------------------------------------------------------------------------------------| --------------------------- | -------- |
-| [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터 | `apiKey` |
-| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do)               | 국가기록 및 역사정보 검색   | `apiKey` |
-| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                              | 학술논문 검색 (기관 라이선스) | `apiKey` |
-| [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                | 소장자료, 디지털컬렉션 검색 | `apiKey` |
+| API                                                                               | 설명                            | 인증     |
+|-----------------------------------------------------------------------------------|-------------------------------| -------- |
+| [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터               | `apiKey` |
+| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do)              | 국가기록 및 역사정보 검색                | `apiKey` |
+| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                             | 학술논문 검색 (기관 라이선스)             | `apiKey` |
+| [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)               | 소장자료, 디지털컬렉션 검색               | `apiKey` |
+| [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                   | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -543,6 +544,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 9월 9일
+**마지막 업데이트**: 2025년 9월 11일
 
 **총 API 수**: 225+
