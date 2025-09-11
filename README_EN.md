@@ -92,6 +92,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [Naver Map](https://www.ncloud.com/product/applicationService/maps) | Map API, Geocoding, Directions, Panorama                                    | `apiKey` |
 | [T Map API](https://openapi.sk.com/)                                | SK Telecom's navigation and route search API                                | `apiKey` |
 | [V-World](https://www.vworld.kr/v4po_openapi_s001.do)               | National Geographic Information Institute's 3D maps and spatial information | `apiKey` |
+| [Address-based industry support service](https://business.juso.go.kr) | Provision of road name address API/DB and national branch information     | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -246,7 +247,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                                  | Korean-specialized large language model                                            | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/)                                                    | Electronics and Telecommunications Research Institute AI service platform          | `apiKey` |
 | [Kakao Kanana AI API](https://www.kakaocorp.com/page/detail/11566)                                | Kakao's proprietary Korean-specialized generative AI models (4 types, open source) | `apiKey` |
-| [AI Hub Translation Data](https://aihub.or.kr/devsport/apishell/list.do?currMenu=403&topMenu=100) | Korean-Multilingual Parallel Corpus and Translation Dataset for AI Training        | `apiKey` |
+| [AI Hub](https://aihub.or.kr)                                                                     | Dataset for AI Training                                                            | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -541,3 +542,4 @@ This project is distributed under the MIT License.
 **Last Updated**: September 11, 2025
 
 **Total API Count**: 225+
+
