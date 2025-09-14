@@ -474,11 +474,12 @@
 
 ### 농수산
 
-| API                                                                                                  | 설명                                               | 인증     |
-|------------------------------------------------------------------------------------------------------|--------------------------------------------------| -------- |
-| [농촌진흥청 농사로 Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)    | 작목별 농업기술, 주간농사정보, 병해충 방제정보 등 다양한 농업 기술정보         | `apiKey` |
+| API                                                                                              | 설명                                              | 인증     |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------| -------- |
+| [농촌진흥청 농사로 Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191) | 작목별 농업기술, 주간농사정보, 병해충 방제정보 등 다양한 농업 기술정보        | `apiKey` |
 | [국립농업과학원 토양환경정보 Open API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | 지번 코드(PNU) 또는 법정동 코드를 통해 지역별 토양 화학성 등 상세 토양특성 정보 | `apiKey` |
-| [국립수산과학원](https://www.nifs.go.kr/openApi/actionOpenapiInfoList.do)                                   | 해양환경 및 수산정보                                      | `apiKey` |
+| [국립수산과학원](https://www.nifs.go.kr/openApi/actionOpenapiInfoList.do)                               | 해양환경 및 수산정보                                     | `apiKey` |
+| [농식품올바로](https://koreanfood.rda.go.kr/kfi/openapi/useNewGuidance)                                | 농산물성분, 농산물효능 등 다양한 농산물 정보                       | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -545,6 +546,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 9월 11일
+**마지막 업데이트**: 2025년 9월 14일
 
 **총 API 수**: 225+
