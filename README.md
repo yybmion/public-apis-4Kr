@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-225+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-230+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -185,14 +185,15 @@
 
 ### 의료 & 보건
 
-| API                                                                                            | 설명                                                      | 인증          |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------- |
-| [삼성헬스 SDK](https://developer.samsung.com/health)                                           | 건강 데이터 읽기/쓰기 (심박수, 산소포화도, 혈당, 혈압 등) | `Partnership` |
-| [건강보험심사평가원 의료기관정보](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 전국 의료기관 상세정보 서비스                             | `apiKey`      |
-| [식품의약품안전처 의약품정보](https://data.mfds.go.kr/OPCAA01F01)                              | 의약품 허가정보 및 안전성 정보                            | `apiKey`      |
-| [국민건강보험공단 검진기관정보](https://www.data.go.kr/data/15001672/openapi.do)               | 건강검진 및 암검진 기관정보                               | `apiKey`      |
-| [질병관리청 감염병정보](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp)            | 법정감염병 발생현황 및 통계                               | `apiKey`      |
-| [보건의료빅데이터 확장 API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do)       | 건강보험심사평가원 의료빅데이터 활용 Open API             | `apiKey`      |
+| API                                                                             | 설명                                  | 인증            |
+|---------------------------------------------------------------------------------|-------------------------------------|---------------|
+| [삼성헬스 SDK](https://developer.samsung.com/health)                                | 건강 데이터 읽기/쓰기 (심박수, 산소포화도, 혈당, 혈압 등) | `Partnership` |
+| [건강보험심사평가원 의료기관정보](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 전국 의료기관 상세정보 서비스                    | `apiKey`      |
+| [식품의약품안전처 의약품정보](https://data.mfds.go.kr/OPCAA01F01)                            | 의약품 허가정보 및 안전성 정보                   | `apiKey`      |
+| [국민건강보험공단 검진기관정보](https://www.data.go.kr/data/15001672/openapi.do)              | 건강검진 및 암검진 기관정보                     | `apiKey`      |
+| [질병관리청 감염병정보](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp)       | 법정감염병 발생현황 및 통계                     | `apiKey`      |
+| [보건의료빅데이터 확장 API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do)  | 건강보험심사평가원 의료빅데이터 활용 Open API        | `apiKey`      |
+| [중앙응급의료센터](https://www.e-gen.or.kr/nemc/open_api.do)                            | 병의원/약국 위치, AED 설치정보 등               | `apiKey`      |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -546,6 +547,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 9월 14일
+**마지막 업데이트**: 2025년 9월 18일
 
-**총 API 수**: 225+
+**총 API 수**: 230+
