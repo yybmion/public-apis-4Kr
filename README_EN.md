@@ -282,10 +282,10 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Food & Beverage
 
-| API                                                                                                      | Description                                                                   | Auth     |
-| -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------- |
-| [Baedal Minjok Delivery Agency API](https://www.newtrack.co.kr/news/29)                                  | Delivery agency order information integration system (partner companies only) | `apiKey` |
-| [MFDS Restaurant Information](https://www.data.go.kr/data/15145167/openapi.do#tab_layer_detail_function) | General restaurant hygiene grade information                                  | `apiKey` |
+| API                                                                                                  | Description                                                                                                   | Auth     |
+|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------| -------- |
+| [Baedal Minjok Delivery Agency API](https://www.newtrack.co.kr/news/29)                              | Delivery agency order information integration system (partner companies only)                                 | `apiKey` |
+| [Food Nutrition Database](https://various.foodsafetykorea.go.kr/nutrient/industry/openApi/info.do)   | Provides nutritional information (calories, nutrients, etc.) for processed foods, raw ingredients, and dishes | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -540,7 +540,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 18, 2025
+**Last Updated**: September 23, 2025
 
 **Total API Count**: 230+
 
