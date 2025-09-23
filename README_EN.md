@@ -174,15 +174,15 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Healthcare & Medical
 
-| API                                                                                                 | Description                                                                                     | Auth          |
-|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|---------------|
-| [Samsung Health SDK](https://developer.samsung.com/health)                                          | Health data read/write (heart rate, blood oxygen saturation, blood sugar, blood pressure, etc.) | `Partnership` |
-| [HIRA Medical Institution Information](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Detailed information service for medical institutions nationwide                                | `apiKey`      |
-| [MFDS Drug Information](https://data.mfds.go.kr/OPCAA01F01)                                         | Drug approval information and safety information                                                | `apiKey`      |
-| [NHIS Health Screening Institution Information](https://www.data.go.kr/data/15001672/openapi.do)    | Health screening and cancer screening institution information                                   | `apiKey`      |
-| [KDCA Infectious Disease Information](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp)   | Legal infectious disease occurrence status and statistics                                       | `apiKey`      |
-| [Healthcare Big Data Extended API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do)     | Health Insurance Review & Assessment Service medical big data utilization API                   | `apiKey`      |
-| [National Emergency Medical Center](https://www.e-gen.or.kr/nemc/open_api.do)                       | Information on hospital/pharmacy locations and AED installations                                | `apiKey`      |
+| API                                                                                                 | Description                                                                                                | Auth          |
+|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|---------------|
+| [Samsung Health SDK](https://developer.samsung.com/health)                                          | Health data read/write (heart rate, blood oxygen saturation, blood sugar, blood pressure, etc.)            | `Partnership` |
+| [HIRA Medical Institution Information](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Detailed information service for medical institutions nationwide                                           | `apiKey`      |
+| [Food and Drug Data](https://data.mfds.go.kr/OPCAA01F01)                                            | Various datasets related to public health and safety, including food, pharmaceuticals, and medical devices | `apiKey`      |
+| [NHIS Health Screening Institution Information](https://www.data.go.kr/data/15001672/openapi.do)    | Health screening and cancer screening institution information                                              | `apiKey`      |
+| [KDCA Infectious Disease Information](https://dportal.kdca.go.kr/pot/www/COMMON/ATRPT/INTRCN.jsp)   | Legal infectious disease occurrence status and statistics                                                  | `apiKey`      |
+| [Healthcare Big Data Extended API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do)     | Health Insurance Review & Assessment Service medical big data utilization API                              | `apiKey`      |
+| [National Emergency Medical Center](https://www.e-gen.or.kr/nemc/open_api.do)                       | Information on hospital/pharmacy locations and AED installations                                           | `apiKey`      |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
