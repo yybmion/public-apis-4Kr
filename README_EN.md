@@ -86,13 +86,14 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Maps & Location
 
-| API                                                                 | Description                                                                 | Auth     |
-| ------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------- |
-| [Kakao Map](https://apis.map.kakao.com/web/guide/)                  | Map display, place search, coordinate conversion, route navigation          | `apiKey` |
-| [Naver Map](https://www.ncloud.com/product/applicationService/maps) | Map API, Geocoding, Directions, Panorama                                    | `apiKey` |
-| [T Map API](https://openapi.sk.com/)                                | SK Telecom's navigation and route search API                                | `apiKey` |
-| [V-World](https://www.vworld.kr/v4po_openapi_s001.do)               | National Geographic Information Institute's 3D maps and spatial information | `apiKey` |
-| [Address-based industry support service](https://business.juso.go.kr) | Provision of road name address API/DB and national branch information     | `apiKey` |
+| API                                                                                     | Description                                                                            | Auth     |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------| -------- |
+| [Kakao Map](https://apis.map.kakao.com/web/guide/)                                      | Map display, place search, coordinate conversion, route navigation                     | `apiKey` |
+| [Naver Map](https://www.ncloud.com/product/applicationService/maps)                     | Map API, Geocoding, Directions, Panorama                                               | `apiKey` |
+| [T Map API](https://openapi.sk.com/)                                                    | SK Telecom's navigation and route search API                                           | `apiKey` |
+| [V-World](https://www.vworld.kr/v4po_openapi_s001.do)                                   | National Geographic Information Institute's 3D maps and spatial information            | `apiKey` |
+| [Address-based industry support service](https://business.juso.go.kr)                   | Provision of road name address API/DB and national branch information                  | `apiKey` |
+| [National Land Information Platform](https://map.ngii.go.kr/mi/openKey/openKeyInfo.do)  | Digital maps, aerial imagery, orthophotos, DEM, and national points of interest (POI)  | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -540,7 +541,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 23, 2025
+**Last Updated**: September 28, 2025
 
 **Total API Count**: 230+
 
