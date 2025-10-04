@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-230+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-245+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -172,15 +172,30 @@
 
 ### 날씨 & 환경
 
-| API                                                                               | 설명                                        | 인증     |
-| --------------------------------------------------------------------------------- | ------------------------------------------- | -------- |
-| [기상청 동네예보](https://www.data.go.kr/dataset/15000099/openapi.do)             | 읍면동 단위 동네예보 3시간 간격 제공        | `apiKey` |
-| [기상청 중기예보](https://www.data.go.kr/data/15059468/openapi.do)                | 3~10일 중기예보 정보                        | `apiKey` |
-| [에어코리아 실시간 대기오염정보](https://www.data.go.kr/data/15073861/openapi.do) | 시도별 실시간 대기질 측정정보               | `apiKey` |
-| [에어코리아 대기오염 예보정보](https://www.data.go.kr/data/15109350/openapi.do)   | 미세먼지, 초미세먼지, 오존 예보             | `apiKey` |
-| [한국환경공단 전기차충전소](https://www.data.go.kr/data/15076352/openapi.do)      | 전국 전기차 충전소 정보, 충전기 상태정보    | `apiKey` |
-| [전국전기차충전소표준데이터](https://www.data.go.kr/data/15013115/standard.do)    | 충전소 구분, 위치, 운영시간, 충전기 상태 등 | `apiKey` |
-| [전기차충전기정보](https://chargeinfo.ksga.org/front/cs/api/infomation)           | 충전 사업자 충전소 위치 및 충전기 상태      | `apiKey` |
+| API                                                                                | 설명                              | 인증        |
+|------------------------------------------------------------------------------------|---------------------------------|-----------|
+| [기상청 동네예보](https://www.data.go.kr/dataset/15000099/openapi.do)                     | 읍면동 단위 동네예보 3시간 간격 제공           | `apiKey`  |
+| [기상청 중기예보](https://www.data.go.kr/data/15059468/openapi.do)                        | 3~10일 중기예보 정보                   | `apiKey`  |
+| [에어코리아 실시간 대기오염정보](https://www.data.go.kr/data/15073861/openapi.do)                | 시도별 실시간 대기질 측정정보                | `apiKey`  |
+| [에어코리아 대기오염 예보정보](https://www.data.go.kr/data/15109350/openapi.do)                 | 미세먼지, 초미세먼지, 오존 예보              | `apiKey`  |
+| [한국환경공단 전기차충전소](https://www.data.go.kr/data/15076352/openapi.do)                   | 전국 전기차 충전소 정보, 충전기 상태정보         | `apiKey`  |
+| [전국전기차충전소표준데이터](https://www.data.go.kr/data/15013115/standard.do)                  | 충전소 구분, 위치, 운영시간, 충전기 상태 등      | `apiKey`  |
+| [전기차충전기정보](https://chargeinfo.ksga.org/front/cs/api/infomation)                    | 충전 사업자 충전소 위치 및 충전기 상태          | `apiKey`  |
+| [대기질정보 서비스](https://www.data.go.kr/data/15028236/openapi.do)                       | 연돌기준, 대기질분야 조사·예측 정보 및 공간정보 제공  | `apiKey`  |
+| [온실가스정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)      | 환경영향평가 사업의 온실가스 조사·예측 정보 제공     | `apiKey`  |
+| [악취정보 서비스](https://www.data.go.kr/data/15083164/fileData.do)                       | 악취분야 조사·예측 속성정보 및 조사지점 공간정보 제공  | `apiKey`  |
+| [위생공중보건정보 서비스](https://www.data.go.kr/data/15028239/openapi.do)                    | 위생공중보건분야 조사 속성정보(스타이렌, 염화수소 등)  | `apiKey`  |
+| [수질정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_05.html)        | 수질조사 개요·조사·예측 정보 및 조사지점 공간정보    | `apiKey`  |
+| [수리수문정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)      | 수리수문분야 조사·예측 정보 제공              | `apiKey`  |
+| [해양환경정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_07.html)      | 해양환경분야 조사·예측 정보 제공              | `apiKey`  |
+| [토지이용정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_08.html)      | 토지이용 현황 및 계획 정보 제공              | `apiKey`  |
+| [토양정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_09.html)        | 토양 기본정보 및 조사 정보 제공              | `apiKey`  |
+| [지형지질정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_10.html)      | 개요·조사·광산·지질도·능선축·표고·경사 정보 제공    | `apiKey`  |
+| [동식물상정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_11.html)      | 동식물상 조사 정보 및 생태계 보전 관련 정보       | `apiKey`  |
+| [친환경적자원순환정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_12.html)  | 친환경적 자원순환 관련 정보 제공              | `apiKey`  |
+| [소음진동정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_13.html)      | 소음·진동 조사·예측 정보 제공               | `apiKey`  |
+| [인구주거정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_14.html)      | 인구 및 주거 관련 정보 제공                | `apiKey`  |
+| [사업구역정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_15.html)      | 환경영향평가 사업구역 정보 제공               | `apiKey`  |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -548,6 +563,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 9월 28일
+**마지막 업데이트**: 2025년 10월 04일
 
-**총 API 수**: 230+
+**총 API 수**: 245+

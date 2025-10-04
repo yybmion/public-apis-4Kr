@@ -161,15 +161,30 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Weather & Environment
 
-| API                                                                                                          | Description                                                                          | Auth     |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | -------- |
-| [KMA Local Forecast](https://www.data.go.kr/dataset/15000099/openapi.do)                                     | Local forecast for eup/myeon/dong units provided at 3-hour intervals                 | `apiKey` |
-| [KMA Medium-term Forecast](https://www.data.go.kr/data/15059468/openapi.do)                                  | 3-10 day medium-term forecast information                                            | `apiKey` |
-| [AirKorea Real-time Air Pollution Information](https://www.data.go.kr/data/15073861/openapi.do)              | Real-time air quality measurement information by city/province                       | `apiKey` |
-| [AirKorea Air Pollution Forecast Information](https://www.data.go.kr/data/15109350/openapi.do)               | Fine dust, ultra-fine dust, ozone forecasts                                          | `apiKey` |
-| [K-eco Electric Vehicle Charging Stations](https://www.data.go.kr/data/15076352/openapi.do)                  | Nationwide electric vehicle charging station information, charger status information | `apiKey` |
-| [National Electric Vehicle Charging Station Standard Data](https://www.data.go.kr/data/15013115/standard.do) | Charging station classification, location, operating hours, charger status, etc.     | `apiKey` |
-| [Electric Vehicle Charger Information](https://chargeinfo.ksga.org/front/cs/api/infomation)                  | Charging operator charging station location and charger status                       | `apiKey` |
+| API                                                                                                                        | Description                                                                                              | Auth     |
+|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------|
+| [KMA Local Forecast](https://www.data.go.kr/dataset/15000099/openapi.do)                                                   | Local forecast for eup/myeon/dong units provided at 3-hour intervals                                     | `apiKey` |
+| [KMA Medium-term Forecast](https://www.data.go.kr/data/15059468/openapi.do)                                                | 3-10 day medium-term forecast information                                                                | `apiKey` |
+| [AirKorea Real-time Air Pollution Information](https://www.data.go.kr/data/15073861/openapi.do)                            | Real-time air quality measurement information by city/province                                           | `apiKey` |
+| [AirKorea Air Pollution Forecast Information](https://www.data.go.kr/data/15109350/openapi.do)                             | Fine dust, ultra-fine dust, ozone forecasts                                                              | `apiKey` |
+| [K-eco Electric Vehicle Charging Stations](https://www.data.go.kr/data/15076352/openapi.do)                                | Nationwide electric vehicle charging station information, charger status information                     | `apiKey` |
+| [National Electric Vehicle Charging Station Standard Data](https://www.data.go.kr/data/15013115/standard.do)               | Charging station classification, location, operating hours, charger status, etc.                         | `apiKey` |
+| [Electric Vehicle Charger Information](https://chargeinfo.ksga.org/front/cs/api/infomation)                                | Charging operator charging station location and charger status                                           | `apiKey` |
+| [Air Quality Information Service](https://www.data.go.kr/data/15028236/openapi.do)                                         | Provides investigation, prediction, and spatial data on air quality based on emission standards          | `apiKey` |
+| [Greenhouse Gas Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)                      | Provides greenhouse gas investigation and prediction data for environmental impact assessment projects   | `apiKey` |
+| [Odor Information Service](https://www.data.go.kr/data/15083164/fileData.do)                                               | Provides investigation and prediction data on odor attributes and survey locations                       | `apiKey` |
+| [Public Health and Sanitation Information Service](https://www.data.go.kr/data/15028239/openapi.do)                        | Provides investigation data on public health and sanitation (e.g., styrene, hydrogen chloride)           | `apiKey` |
+| [Water Quality Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_05.html)                       | Provides overview, investigation, prediction, and spatial data on water quality                          | `apiKey` |
+| [Hydrology and Water Resources Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)       | Provides investigation and prediction data on hydrology and water resources                              | `apiKey` |
+| [Marine Environment Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_07.html)                  | Provides investigation and prediction data on marine environment                                         | `apiKey` |
+| [Land Use Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_08.html)                            | Provides information on current land use and land use plans                                              | `apiKey` |
+| [Soil Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_09.html)                                | Provides basic and survey data on soil                                                                   | `apiKey` |
+| [Topography and Geology Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_10.html)              | Provides overview, survey, mining, geological maps, ridgelines, elevation, and slope data                | `apiKey` |
+| [Flora and Fauna Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_11.html)                     | Provides survey data on flora and fauna and information related to ecosystem conservation                | `apiKey` |
+| [Eco-friendly Resource Circulation Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_12.html)   | Provides information related to eco-friendly resource circulation                                        | `apiKey` |
+| [Noise and Vibration Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_13.html)                 | Provides investigation and prediction data on noise and vibration                                        | `apiKey` |
+| [Population and Housing Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_14.html)              | Provides information on population and housing                                                           | `apiKey` |
+| [Project Area Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_15.html)                        | Provides project area data for environmental impact assessment                                           | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -541,7 +556,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: September 28, 2025
+**Last Updated**: October 04, 2025
 
-**Total API Count**: 230+
+**Total API Count**: 245+
 
