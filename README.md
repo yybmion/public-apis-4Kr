@@ -58,6 +58,8 @@
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
+⚠️ 현재 국가정보자원관리원 화재(25.9.26.)로 인해 행정안전부 공공데이터포털(data.go.kr) 관련 Open API는 서비스가 불가함! **(다른 Open api 정상동작)** [관련정보](https://data.seoul.go.kr/together/notice/boardView.do?seq=fbff9781bc392bc8396367ef54d569e4&bbsCd=10001&ditcCd=&pageIndex=1)
+
 ### 정부 & 공공기관
 
 | API                                                                                                        | 설명                                                                              | 인증     |
@@ -241,12 +243,13 @@
 
 ### 문화 & 관광
 
-| API                                                                               | 설명                                   | 인증     |
-| --------------------------------------------------------------------------------- | -------------------------------------- | -------- |
-| [한국관광공사 TourAPI 4.0](https://api.visitkorea.or.kr/)                         | 관광지, 숙박, 음식점, 축제 등 관광정보 | `apiKey` |
-| [문화공공데이터광장](https://www.culture.go.kr/data/main/main.do)                 | 박물관, 미술관, 공연, 문화재 정보      | `apiKey` |
-| [KOPIS 공연예술통합전산망](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | 공연정보, 공연장정보, 예매정보         | `apiKey` |
-| [한국문화정보원](https://www.kcisa.kr/kr/contents/open_openData/view.do)          | 문화콘텐츠 오픈 API                    | `apiKey` |
+| API                                                                      | 설명                               | 인증     |
+|--------------------------------------------------------------------------|----------------------------------| -------- |
+| [한국관광공사 TourAPI 4.0](https://api.visitkorea.or.kr/)                      | 관광지, 숙박, 음식점, 축제 등 관광정보          | `apiKey` |
+| [문화공공데이터광장](https://www.culture.go.kr/data/main/main.do)                 | 박물관, 미술관, 공연, 문화재 정보             | `apiKey` |
+| [KOPIS 공연예술통합전산망](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | 공연정보, 공연장정보, 예매정보                | `apiKey` |
+| [한국문화정보원](https://www.kcisa.kr/kr/contents/open_openData/view.do)        | 문화콘텐츠 오픈 API                     | `apiKey` |
+| [도서관 정보나루](https://www.data4library.kr/apiUtilization)                   | 전국 공공도서관에서 수집한 회원·장서·대출 데이터 등을 제공 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -563,6 +566,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 10월 04일
+**마지막 업데이트**: 2025년 10월 17일
 
 **총 API 수**: 245+
