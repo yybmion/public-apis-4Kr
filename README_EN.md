@@ -47,6 +47,8 @@ Updated with the latest information as of 2025, and will be periodically updated
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
+⚠️ Due to the fire at the National Information Resources Service (September 26, 2025), Open APIs related to the Ministry of the Interior and Safety’s Public Data Portal (data.go.kr) are currently unavailable! (Other Open APIs are operating normally.)
+
 ### Government & Public Institutions
 
 | API                                                                                                               | Description                                                                                                  | Auth     |
@@ -230,12 +232,13 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Culture & Tourism
 
-| API                                                                                                        | Description                                                                              | Auth     |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- |
-| [Korea Tourism Organization TourAPI 4.0](https://api.visitkorea.or.kr/)                                    | Tourist attractions, accommodation, restaurants, festivals and other tourism information | `apiKey` |
-| [Culture Public Data Plaza](https://www.culture.go.kr/data/main/main.do)                                   | Museums, art galleries, performances, cultural property information                      | `apiKey` |
-| [KOPIS Performing Arts Integrated Computer Network](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | Performance information, venue information, booking information                          | `apiKey` |
-| [Korea Culture Information Service Agency](https://www.kcisa.kr/kr/contents/open_openData/view.do)         | Cultural content open API                                                                | `apiKey` |
+| API                                                                                                        | Description                                                                                | Auth     |
+|------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------| -------- |
+| [Korea Tourism Organization TourAPI 4.0](https://api.visitkorea.or.kr/)                                    | Tourist attractions, accommodation, restaurants, festivals and other tourism information   | `apiKey` |
+| [Culture Public Data Plaza](https://www.culture.go.kr/data/main/main.do)                                   | Museums, art galleries, performances, cultural property information                        | `apiKey` |
+| [KOPIS Performing Arts Integrated Computer Network](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | Performance information, venue information, booking information                            | `apiKey` |
+| [Korea Culture Information Service Agency](https://www.kcisa.kr/kr/contents/open_openData/view.do)         | Cultural content open API                                                                  | `apiKey` |
+| [Data4Library](https://www.data4library.kr/apiUtilization)                                                 | Provides data collected from public libraries nationwide (members, holdings, loans, etc.)) | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -556,7 +559,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: October 04, 2025
+**Last Updated**: October 17, 2025
 
 **Total API Count**: 245+
 
