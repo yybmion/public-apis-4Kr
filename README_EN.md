@@ -47,8 +47,6 @@ Updated with the latest information as of 2025, and will be periodically updated
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
 
-⚠️ Due to the fire at the National Information Resources Service (September 26, 2025), Open APIs related to the Ministry of the Interior and Safety’s Public Data Portal (data.go.kr) are currently unavailable! (Other Open APIs are operating normally.)
-
 ### Government & Public Institutions
 
 | API                                                                                                               | Description                                                                                                  | Auth     |

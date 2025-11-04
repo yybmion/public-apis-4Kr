@@ -58,8 +58,6 @@
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> 네이버](#네이버)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> 카카오](#카카오)
 
-⚠️ 현재 국가정보자원관리원 화재(25.9.26.)로 인해 행정안전부 공공데이터포털(data.go.kr) 관련 Open API는 서비스가 불가함! **(다른 Open api 정상동작)** [관련정보](https://data.seoul.go.kr/together/notice/boardView.do?seq=fbff9781bc392bc8396367ef54d569e4&bbsCd=10001&ditcCd=&pageIndex=1)
-
 ### 정부 & 공공기관
 
 | API                                                                                                        | 설명                                                                              | 인증     |
