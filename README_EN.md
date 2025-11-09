@@ -471,11 +471,12 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Logistics & Customs
 
-| API                                                                                                                                                                    | Description                                                           | Auth     |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------- |
-| [Logispot Logistics Open API](https://logi-spot.com/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8C%9F-open-api-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95/) | Integrated logistics management API (dispatch, vehicle info, billing) | `apiKey` |
-| [Logistics Warehouse Registration Information API](https://www.data.go.kr/data/3048029/openapi.do)                                                                     | Nationwide logistics warehouse company information                    | `apiKey` |
-| [Korea Customs Service Cargo Clearance API](https://www.data.go.kr/data/15126268/openapi.do)                                                                           | Import/export cargo customs clearance status                          | `apiKey` |
+| API                                                                                                                                                                    | Description                                                                                           | Auth     |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------| -------- |
+| [Logispot Logistics Open API](https://logi-spot.com/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8C%9F-open-api-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95/) | Integrated logistics management API (dispatch, vehicle info, billing)                                 | `apiKey` |
+| [Logistics Warehouse Registration Information API](https://www.data.go.kr/data/3048029/openapi.do)                                                                     | Nationwide logistics warehouse company information                                                    | `apiKey` |
+| [Korea Customs Service Cargo Clearance API](https://www.data.go.kr/data/15126268/openapi.do)                                                                           | Import/export cargo customs clearance status                                                          | `apiKey` |
+| [KOMSA MTIS Open API](https://mtisopenapi.komsa.or.kr/)                                                                                                                | Provides coastal passenger ship schedules, statistics, vessel specifications, and safety information  | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -557,7 +558,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: October 17, 2025
+**Last Updated**: November 09, 2025
 
 **Total API Count**: 245+
 
