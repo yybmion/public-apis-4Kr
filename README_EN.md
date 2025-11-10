@@ -492,10 +492,11 @@ Updated with the latest information as of 2025, and will be periodically updated
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
 ### Daily Economy
-| API                                                              | Description                        | Authentication |
-|------------------------------------------------------------------|------------------------------------|----------|
-| [Gas Station Price Information](https://www.opinet.co.kr/user/custapi/custApiInfo.do) | Nationwide gas station gasoline/diesel prices | `apiKey` |
-| [Korea Consumer Agency Price Info](https://www.data.go.kr/dataset/3043385/openapi.do) | Real-time daily necessities price information | `apiKey` |
+| API                                                                                                                                          | Description                                                                   | Auth     |
+|----------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|----------|
+| [Gas Station Price Information](https://www.opinet.co.kr/user/custapi/custApiInfo.do)                                                        | Nationwide gas station gasoline/diesel prices                                 | `apiKey` |
+| [Korea Consumer Agency Price Info](https://www.data.go.kr/dataset/3043385/openapi.do)                                                        | Real-time daily necessities price information                                 | `apiKey` |
+| [Local Currency Merchant Status](https://data.gg.go.kr/portal/data/service/selectServicePage.do?infId=3NPA52LBMO36CQEQ1GMY28894927&infSeq=1) | Status of local currency merchants across municipalities in Gyeonggi Province | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -558,7 +559,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: November 09, 2025
+**Last Updated**: November 11, 2025
 
 **Total API Count**: 245+
 
