@@ -8,7 +8,8 @@ Pages:
 2. 🎯 투자 신호 - 매수/매도 신호 및 액션 플랜
 3. 📈 경제 지표 - 금리, 환율, 수익률 곡선
 4. 📉 분석 차트 - 시각화 및 추세
-5. ⚙️  설정 - 스케줄러 제어
+5. 🧪 백테스팅 - 전략 성과 검증
+6. ⚙️  설정 - 스케줄러 제어
 
 Author: AI Assistant
 Created: 2025-11-22
@@ -90,6 +91,7 @@ page = st.sidebar.radio(
         "🎯 투자 신호",
         "📈 경제 지표",
         "📉 분석 차트",
+        "🧪 백테스팅",
         "⚙️ 설정"
     ]
 )
@@ -110,6 +112,10 @@ elif page == "📈 경제 지표":
 elif page == "📉 분석 차트":
     from app.dashboard.pages import charts
     charts.show()
+
+elif page == "🧪 백테스팅":
+    from app.dashboard.pages import backtesting
+    backtesting.show()
 
 elif page == "⚙️ 설정":
     from app.dashboard.pages import settings
