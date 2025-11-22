@@ -9,7 +9,8 @@ Pages:
 3. 📈 경제 지표 - 금리, 환율, 수익률 곡선
 4. 📉 분석 차트 - 시각화 및 추세
 5. 🧪 백테스팅 - 전략 성과 검증
-6. ⚙️  설정 - 스케줄러 제어
+6. 📋 로그 - 시스템 로그 및 모니터링
+7. ⚙️  설정 - 스케줄러 제어
 
 Author: AI Assistant
 Created: 2025-11-22
@@ -92,6 +93,7 @@ page = st.sidebar.radio(
         "📈 경제 지표",
         "📉 분석 차트",
         "🧪 백테스팅",
+        "📋 로그",
         "⚙️ 설정"
     ]
 )
@@ -116,6 +118,10 @@ elif page == "📉 분석 차트":
 elif page == "🧪 백테스팅":
     from app.dashboard.pages import backtesting
     backtesting.show()
+
+elif page == "📋 로그":
+    from app.dashboard.pages import logs
+    logs.show()
 
 elif page == "⚙️ 설정":
     from app.dashboard.pages import settings
