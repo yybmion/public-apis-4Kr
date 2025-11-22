@@ -63,6 +63,9 @@ httpx==0.25.2
 python-dateutil==2.8.2
 pytz==2023.3
 
+# Scheduler
+apscheduler==3.10.4
+
 # AWS SDK
 boto3==1.34.0
 
