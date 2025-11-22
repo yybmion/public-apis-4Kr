@@ -1,0 +1,1323 @@
+# 인덱서고(INDEXerGO) 데이터 소스 분석 및 주식 자동 매매 시스템 활용 가이드
+
+> **작성일:** 2025년 11월  
+> **목적:** 거시경제 데이터 소스 정리 및 자동 매매 시스템 구현 가이드  
+> **참조:** https://www.indexergo.com/link/?ctg=link
+
+---
+
+## 목차
+
+1. [개요](#1-개요)
+2. [해외 경제 데이터 소스](#2-해외-경제-데이터-소스)
+3. [해외 주식 분석 데이터 소스](#3-해외-주식-분석-데이터-소스)
+4. [국내 경제 데이터 소스](#4-국내-경제-데이터-소스)
+5. [자동 매매 시스템 활용 분석](#5-자동-매매-시스템-활용-분석)
+6. [시스템 아키텍처 제안](#6-시스템-아키텍처-제안)
+7. [구현 우선순위 및 로드맵](#7-구현-우선순위-및-로드맵)
+8. [API 연동 코드 예시](#8-api-연동-코드-예시)
+
+---
+
+## 1. 개요
+
+인덱서고(INDEXerGO)는 거시경제 데이터와 비교차트를 제공하는 플랫폼으로, 투자에 필요한 다양한 데이터 소스를 카테고리별로 정리해 두었습니다. 본 문서는 이 데이터 소스들을 주식 자동 매매 시스템에 어떻게 활용할 수 있는지 분석합니다.
+
+### 자동화 가능성 범례
+
+| 기호 | 의미 | 설명 |
+|:---:|------|------|
+| ✅ | 즉시 구현 가능 | 공식 API 제공 또는 안정적인 크롤링 가능 |
+| ⚠️ | 조건부 구현 | 유료 API 또는 크롤링 필요 (불안정할 수 있음) |
+| ❌ | 구현 어려움 | 수동 도구이거나 자동화 불가 |
+
+---
+
+## 2. 해외 경제 데이터 소스
+
+### 2.1 중앙은행 및 정부 기관
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **FED** | Federal Reserve Board (연방준비제도이사회) | federalreserve.gov | ✅ | 금리 정책, FOMC |
+| **FRED** | Federal Reserve Economic Data | fred.stlouisfed.org | ✅ | 무료 API, 80만+ 시계열 |
+| **GDPNow** | Atlanta Fed GDP 예측 | atlantafed.org | ✅ | 실시간 GDP 추정 |
+| **FiscalData** | 미국재무부 TGA 잔고 등 | fiscaldata.treasury.gov | ✅ | 무료 API |
+| **TREASURY** | 미국재무부 국채금리 | treasury.gov | ✅ | 일일 수익률 곡선 |
+| **TreasuryDirect** | 미국국채 입찰정보 | treasurydirect.gov | ⚠️ | 크롤링 필요 |
+| **CBO** | Congressional Budget Office | cbo.gov | ⚠️ | 예산 전망 보고서 |
+| **SEC** | 미국증권거래위원회 | sec.gov | ✅ | EDGAR API 무료 |
+
+### 2.2 국제기구
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **IMF** | 국제통화기금 | imf.org | ✅ | 무료 API |
+| **BIS Data Portal** | 국제결제은행 | bis.org | ✅ | 무료 API |
+| **OECD** | 경제협력개발기구 | oecd.org | ✅ | 무료 API |
+
+### 2.3 시장 심리 및 예측
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **CME FED WATCH** | 기준금리 인상/인하 확률 예측 | cmegroup.com | ⚠️ | 크롤링 필요 |
+| **Fear & Greed Index** | CNN 공포&탐욕지수 | money.cnn.com | ✅ | 크롤링/비공식 API |
+
+### 2.4 금융 정보 플랫폼
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Investing.com** | 종합 금융정보 | investing.com | ⚠️ | 유료 API |
+| **Google Finance** | 구글 금융 | google.com/finance | ⚠️ | 제한적 |
+| **Yahoo Finance** | 야후 금융 | finance.yahoo.com | ✅ | yfinance 라이브러리 |
+| **TRADING ECONOMICS** | 세계경제지표 | tradingeconomics.com | ⚠️ | 유료 API |
+| **Statista** | 산업통계 | statista.com | ⚠️ | 유료 구독 |
+
+### 2.5 대체 데이터 (Alternative Data)
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **MarineTraffic** | 실시간 선박물류흐름 | marinetraffic.com | ⚠️ | 유료 API, 무역량 선행지표 |
+| **Flightradar24** | 실시간 항공 추적 | flightradar24.com | ⚠️ | 유료 API, 경기활동 지표 |
+
+---
+
+## 3. 해외 주식 분석 데이터 소스
+
+### 3.1 주식 스크리너 및 시각화
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Finviz** | 시각화, 스크리너 | finviz.com | ✅ | 크롤링/Elite API(유료) |
+| **Stockrow** | 시각화 | stockrow.com | ⚠️ | 크롤링 필요 |
+| **FinChat** | 투자 ChatGPT | finchat.io | ❌ | 수동 사용 |
+
+### 3.2 재무제표 및 기업 분석
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Roai.ai** | 장기 재무제표 | roai.ai | ⚠️ | 크롤링 필요 |
+| **GuruFocus** | 재무제표 및 구루 투자 | gurufocus.com | ⚠️ | 유료 API |
+| **Wallmine** | 스크리너+기본재무 | wallmine.com | ⚠️ | 크롤링 필요 |
+| **Stock Analysis** | 기업 분석 | stockanalysis.com | ⚠️ | 크롤링 필요 |
+| **Seeking Alpha** | 기업토론 및 분석자료 | seekingalpha.com | ⚠️ | 유료 API |
+| **Companies MarketCap** | 산업별 마켓캡 순위 | companiesmarketcap.com | ✅ | 크롤링 가능 |
+
+### 3.3 밸류에이션 도구
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **MarketScreener** | 원가 평균 EPS등 예측치 | marketscreener.com | ⚠️ | 유료 |
+| **Discounted Cash Flow** | DCF 계산기 | discountedcashflow.com | ❌ | 계산 도구 |
+| **Discounting Cash Flows** | 쉽게 보는 DCF | discountingcashflows.com | ❌ | 계산 도구 |
+| **Morning Star** | 가치투자 분석 | morningstar.com | ⚠️ | 유료 API |
+
+### 3.4 배당 및 성장 분석
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Dividend Growth Investing** | 배당성장 예측 | - | ⚠️ | 크롤링 필요 |
+| **Portfolio Visualizer** | 백테스팅 | portfoliovisualizer.com | ❌ | 수동 도구 |
+
+### 3.5 기관/내부자 투자 동향 (13F)
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Whale Wisdom** | 13F 공시 (기관 포트폴리오) | whalewisdom.com | ✅ | 크롤링 가능 |
+| **Valuesider** | 13F, 투자 구루 포트폴리오 | valuesider.com | ⚠️ | 크롤링 필요 |
+| **DATAROMA** | 13F 슈퍼인베스터 추적 | dataroma.com | ✅ | 크롤링 가능 |
+| **SecForm4** | 내부자거래 확인 | secform4.com | ✅ | SEC API 연동 가능 |
+
+### 3.6 뉴스 및 리서치
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **Investopedia** | 뉴스 | investopedia.com | ⚠️ | 크롤링 필요 |
+| **Global Market Monitor** | 뉴스 | globalmarketmonitor.com | ⚠️ | 크롤링 필요 |
+| **MarketWatch** | 뉴스 | marketwatch.com | ⚠️ | 크롤링 필요 |
+| **Substack** | financial 전문가 글 | substack.com | ❌ | 수동 |
+
+### 3.7 에너지 및 원자재
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **U.S. EIA** | 미국 에너지정보청 | eia.gov | ✅ | 무료 API |
+
+---
+
+## 4. 국내 경제 데이터 소스
+
+### 4.1 금융 및 통화
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **한국은행** | ECOS 경제통계시스템 | ecos.bok.or.kr | ✅ | 무료 API |
+| **은행연합회** | COFIX 금리 | kfb.or.kr | ✅ | 크롤링 가능 |
+| **서울외국환중개** | 세계통화환율 | smbs.biz | ✅ | 크롤링 가능 |
+| **국제금융센터** | 금리·CDS프리미엄 | kcif.or.kr | ✅ | 크롤링 가능 |
+
+### 4.2 증권 및 자본시장
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **한국거래소** | 정보데이터시스템 | krx.co.kr | ✅ | API/크롤링 |
+| **금융투자협회** | 증권·채권시장동향 | kofia.or.kr | ✅ | 크롤링 가능 |
+| **DART** | 전자공시시스템 | dart.fss.or.kr | ✅ | **무료 API (필수)** |
+| **SEIBro** | 외화증권예탁결제·보관금액 | seibro.or.kr | ✅ | 크롤링 가능 |
+
+### 4.3 정부 통계
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **통계청** | KOSIS 국가통계포털 | kosis.kr | ✅ | 무료 API |
+| **기획재정부** | 재정분석통계 | moef.go.kr | ⚠️ | 크롤링 필요 |
+| **지표누리** | 지표통합서비스 | index.go.kr | ✅ | 크롤링 가능 |
+| **KDI경제e정표** | 경제정책시계열서비스 | eiec.kdi.re.kr | ✅ | 크롤링 가능 |
+
+### 4.4 부동산
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **국토교통부** | 통계누리 | stat.molit.go.kr | ✅ | API 제공 |
+| **한국부동산원** | R-ONE 부동산통계정보시스템 | r-one.co.kr | ✅ | API 제공 |
+| **주택금융공사** | 주택금융통계시스템 | hf.go.kr | ✅ | 크롤링 가능 |
+
+### 4.5 무역 및 산업
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **관세청** | 수출입무역통계 | customs.go.kr | ✅ | API 제공 |
+| **한국무역협회** | K-stat 글로벌무역통계서비스 | kita.net | ✅ | API 제공 |
+| **산업통상자원부** | 월간 수출입 동향 | motie.go.kr | ✅ | 크롤링 가능 |
+| **한국석유공사** | Petronet 원유수입정보 | petronet.co.kr | ✅ | 크롤링 가능 |
+
+### 4.6 기관 투자 및 기타
+
+| 사이트명 | 설명 | URL | 자동화 | 비고 |
+|---------|------|-----|:------:|------|
+| **국민연금기금운용본부** | 기금공시·기금운용위원회회의결과 | fund.nps.or.kr | ✅ | 크롤링 가능 |
+| **Whale Wisdom** | 국민연금 매매종목 (13F) | whalewisdom.com | ✅ | 크롤링 가능 |
+| **생명보험협회** | 사업개황·경영효율·효력상실해약률 | klia.or.kr | ⚠️ | 크롤링 필요 |
+| **법원통계월보** | 파산/회생 통계 | scourt.go.kr | ⚠️ | 크롤링 필요 |
+| **인덱서고** | 비교차트 | indexergo.com | ⚠️ | 참고용 |
+
+---
+
+## 5. 자동 매매 시스템 활용 분석
+
+### 5.1 투자 대가 프레임워크별 필요 데이터
+
+#### 거시경제 분석 (레이 달리오, 하워드 막스)
+
+| 데이터 | 소스 | API/방법 | 활용 |
+|--------|------|----------|------|
+| 미국 금리 (FFR, 국채) | FRED | `fredapi` 라이브러리 | 경기사이클 판단 |
+| 금리 인하/인상 확률 | CME FED WATCH | Selenium 크롤링 | 금리 방향 예측 |
+| Fear & Greed Index | CNN Money | 크롤링/비공식 API | 시장 심리 측정 |
+| 한국 기준금리 | 한국은행 ECOS | 공식 API | 국내 경기 판단 |
+| 원/달러 환율 | 서울외국환중개 | 크롤링 | 외국인 자금 흐름 |
+| GDP 예측 | GDPNow | 크롤링 | 경기 선행지표 |
+| 고용 지표 | FRED (UNRATE, PAYEMS) | API | 경기 사이클 |
+| 인플레이션 | FRED (CPIAUCSL) | API | 금리 정책 예측 |
+
+#### 기업 재무 분석 (버핏, 그레이엄, 그린블랫)
+
+| 데이터 | 소스 | API/방법 | 활용 |
+|--------|------|----------|------|
+| 미국 재무제표 | SEC EDGAR | 공식 API | PER, PBR, ROE 계산 |
+| 한국 재무제표 | DART | 공식 API (무료) | 가치평가 지표 |
+| 실시간 주가 | Yahoo Finance | `yfinance` | 매매 시그널 |
+| 밸류에이션 멀티플 | Finviz | 크롤링 | 스크리닝 |
+| EPS 컨센서스 | MarketScreener | 크롤링 | PEG 계산 |
+| 배당 데이터 | Yahoo Finance | `yfinance` | 배당 성장 분석 |
+
+#### 수급/투자자 동향 (칼 아이칸, 빌 애크먼, 박영옥)
+
+| 데이터 | 소스 | API/방법 | 활용 |
+|--------|------|----------|------|
+| 13F 공시 (구루 포트폴리오) | Whale Wisdom, DATAROMA | 크롤링 | 대형 투자자 추종 |
+| 내부자 거래 | SecForm4, SEC | API | 내부자 시그널 |
+| 국민연금 매매 | Whale Wisdom | 크롤링 | 한국 기관 동향 |
+| 외국인/기관 수급 | 한국거래소 | 크롤링/API | 수급 분석 |
+
+#### 퀀트/선행지표 (짐 사이먼스)
+
+| 데이터 | 소스 | API/방법 | 활용 |
+|--------|------|----------|------|
+| 선박 물류 | MarineTraffic | 유료 API | 무역량 예측 |
+| 항공 운항 | Flightradar24 | 유료 API | 경기 활동 예측 |
+| 에너지 데이터 | U.S. EIA | 무료 API | 원자재 분석 |
+| 수출입 통계 | 관세청, 무역협회 | API | 수출주 분석 |
+
+### 5.2 즉시 구현 가능한 무료 API 목록
+
+| 용도 | 미국 | 한국 |
+|------|------|------|
+| **거시경제** | FRED API | 한국은행 ECOS API |
+| **재무제표** | SEC EDGAR API | DART OpenAPI |
+| **주가 데이터** | Yahoo Finance (yfinance) | 한국투자증권 API / pykrx |
+| **통계** | OECD, IMF, BIS | 통계청 KOSIS API |
+| **무역** | - | 관세청 API, 무역협회 API |
+| **부동산** | - | 한국부동산원 API |
+| **에너지** | U.S. EIA API | 한국석유공사 (크롤링) |
+
+---
+
+## 6. 시스템 아키텍처 제안
+
+### 6.1 전체 시스템 구조
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           데이터 수집 레이어 (Data Collection)                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐  ┌─────────────┐  │
+│  │   거시경제     │  │   재무데이터   │  │   수급동향     │  │  뉴스/심리   │  │
+│  │               │  │               │  │               │  │             │  │
+│  │ • FRED        │  │ • DART        │  │ • Whale       │  │ • Fear &    │  │
+│  │ • ECOS        │  │ • SEC EDGAR   │  │   Wisdom      │  │   Greed     │  │
+│  │ • FedWatch    │  │ • yfinance    │  │ • KRX 수급    │  │ • News API  │  │
+│  │ • Treasury    │  │ • Finviz      │  │ • DATAROMA    │  │ • RSS Feed  │  │
+│  │ • BIS/IMF     │  │               │  │ • SecForm4    │  │             │  │
+│  └───────────────┘  └───────────────┘  └───────────────┘  └─────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        데이터 정제/저장 레이어 (Data Storage)                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                        PostgreSQL / MongoDB                         │   │
+│  │                                                                     │   │
+│  │  • 거시경제 시계열 데이터                                             │   │
+│  │  • 기업 재무제표 (정규화)                                             │   │
+│  │  • 일별 주가/거래량                                                   │   │
+│  │  • 수급 데이터 (외국인, 기관, 개인)                                    │   │
+│  │  • 13F 포트폴리오 변동                                                │   │
+│  │  • 뉴스/감성 분석 결과                                                │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          LLM 분석 레이어 (AI Analysis)                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │              13+4 투자 대가 프레임워크 프롬프트 시스템                  │   │
+│  │                                                                     │   │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌───────────┐  │   │
+│  │  │ 가치 분석    │  │ 성장 분석    │  │ 사이클 분석  │  │ 퀀트 분석  │  │   │
+│  │  │             │  │             │  │             │  │           │  │   │
+│  │  │ • 버핏      │  │ • 린치      │  │ • 달리오    │  │ • 사이먼스 │  │   │
+│  │  │ • 그레이엄  │  │ • 피셔      │  │ • 막스      │  │ • 그린블랫 │  │   │
+│  │  │ • 멍거     │  │             │  │ • 소로스    │  │           │  │   │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘  └───────────┘  │   │
+│  │                                                                     │   │
+│  │  ┌─────────────┐  ┌─────────────┐                                  │   │
+│  │  │ 행동주의    │  │ 한국형 분석  │                                  │   │
+│  │  │             │  │             │                                  │   │
+│  │  │ • 아이칸   │  │ • 박영옥    │                                  │   │
+│  │  │ • 애크먼   │  │ • VIP자산   │                                  │   │
+│  │  │ • 테퍼     │  │ • 남석관    │                                  │   │
+│  │  │            │  │ • 정의정    │                                  │   │
+│  │  └─────────────┘  └─────────────┘                                  │   │
+│  │                                                                     │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│                              Claude API / GPT-4                             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         매매 결정 레이어 (Decision Engine)                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                     │   │
+│  │   투자자별 스코어 집계  →  컨센서스 도출  →  최종 결정                  │   │
+│  │                                                                     │   │
+│  │   • 매수(BUY) / 매도(SELL) / 보유(HOLD)                              │   │
+│  │   • 확신도: HIGH / MEDIUM / LOW                                      │   │
+│  │   • 포지션 사이징: 포트폴리오 대비 %                                   │   │
+│  │   • 손절가 / 목표가 설정                                              │   │
+│  │                                                                     │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           실행 레이어 (Execution)                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────────────────┐  ┌─────────────────────────────────────┐  │
+│  │        한국 주식            │  │           미국 주식                  │  │
+│  │                             │  │                                     │  │
+│  │  • 한국투자증권 API         │  │  • Alpaca API                       │  │
+│  │  • 키움증권 API             │  │  • Interactive Brokers API          │  │
+│  │                             │  │                                     │  │
+│  └─────────────────────────────┘  └─────────────────────────────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          모니터링 레이어 (Monitoring)                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  • Streamlit 대시보드                                                       │
+│  • 포트폴리오 현황                                                          │
+│  • 실시간 손익                                                              │
+│  • 매매 기록                                                                │
+│  • 알림 (Telegram, Slack)                                                   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 6.2 데이터 흐름도
+
+```
+[스케줄러 (APScheduler / Cron)]
+           │
+           ├── 매일 06:00 ── 거시경제 데이터 수집 (FRED, ECOS)
+           ├── 매일 09:00 ── 한국 장 시작 전 분석
+           ├── 매일 18:00 ── 한국 장 마감 후 수급 데이터 수집
+           ├── 매일 22:00 ── 미국 장 시작 전 분석
+           ├── 매주 토요일 ── 13F 데이터 업데이트
+           └── 매월 1일 ── 재무제표 업데이트 (DART, SEC)
+```
+
+---
+
+## 7. 구현 우선순위 및 로드맵
+
+### Phase 1: 핵심 데이터 수집기 구축 (2-3주)
+
+**목표:** 필수 데이터 소스 연동
+
+| 순서 | 작업 | 데이터 소스 | 난이도 |
+|:----:|------|------------|:------:|
+| 1 | 미국 거시경제 수집기 | FRED API | ⭐ |
+| 2 | 한국 거시경제 수집기 | ECOS API | ⭐ |
+| 3 | 한국 재무제표 수집기 | DART API | ⭐⭐ |
+| 4 | 주가 데이터 수집기 | yfinance, pykrx | ⭐ |
+| 5 | 데이터베이스 설계 및 구축 | PostgreSQL | ⭐⭐ |
+
+**산출물:**
+- `data_collector/fred_collector.py`
+- `data_collector/ecos_collector.py`
+- `data_collector/dart_collector.py`
+- `data_collector/price_collector.py`
+- `database/schema.sql`
+
+### Phase 2: 분석 데이터 확장 (2-3주)
+
+**목표:** 심리 지표 및 수급 데이터 추가
+
+| 순서 | 작업 | 데이터 소스 | 난이도 |
+|:----:|------|------------|:------:|
+| 1 | Fear & Greed Index 크롤러 | CNN Money | ⭐⭐ |
+| 2 | CME FED WATCH 크롤러 | CME Group | ⭐⭐⭐ |
+| 3 | 13F 데이터 크롤러 | Whale Wisdom, DATAROMA | ⭐⭐ |
+| 4 | 한국 수급 데이터 크롤러 | KRX | ⭐⭐ |
+| 5 | Finviz 스크리너 크롤러 | Finviz | ⭐⭐ |
+
+**산출물:**
+- `crawlers/fear_greed_crawler.py`
+- `crawlers/fedwatch_crawler.py`
+- `crawlers/whalewisdom_crawler.py`
+- `crawlers/krx_supply_crawler.py`
+- `crawlers/finviz_crawler.py`
+
+### Phase 3: LLM 분석 시스템 (2-3주)
+
+**목표:** 투자 대가 프레임워크 기반 분석
+
+| 순서 | 작업 | 설명 | 난이도 |
+|:----:|------|------|:------:|
+| 1 | 프롬프트 템플릿 시스템 | 데이터 자동 매핑 | ⭐⭐ |
+| 2 | 미국 주식 분석 모듈 | 13명 대가 프레임워크 | ⭐⭐⭐ |
+| 3 | 한국 주식 분석 모듈 | 13+4명 프레임워크 | ⭐⭐⭐ |
+| 4 | 분석 결과 파싱 및 저장 | JSON 구조화 | ⭐⭐ |
+
+**산출물:**
+- `analysis/prompt_templates/us_stock_prompt.py`
+- `analysis/prompt_templates/kr_stock_prompt.py`
+- `analysis/llm_analyzer.py`
+- `analysis/result_parser.py`
+
+### Phase 4: 매매 실행 시스템 (2-3주)
+
+**목표:** 실제 매매 연동
+
+| 순서 | 작업 | 설명 | 난이도 |
+|:----:|------|------|:------:|
+| 1 | 한국투자증권 API 연동 | 한국 주식 매매 | ⭐⭐⭐ |
+| 2 | Alpaca API 연동 | 미국 주식 매매 | ⭐⭐ |
+| 3 | 포지션 관리 시스템 | 포트폴리오 관리 | ⭐⭐ |
+| 4 | 리스크 관리 모듈 | 손절/익절 자동화 | ⭐⭐⭐ |
+
+**산출물:**
+- `execution/kis_api.py`
+- `execution/alpaca_api.py`
+- `execution/position_manager.py`
+- `execution/risk_manager.py`
+
+### Phase 5: 모니터링 및 알림 (1-2주)
+
+**목표:** 운영 대시보드 구축
+
+| 순서 | 작업 | 설명 | 난이도 |
+|:----:|------|------|:------:|
+| 1 | Streamlit 대시보드 | 포트폴리오 현황 | ⭐⭐ |
+| 2 | 텔레그램 알림 | 매매 알림 | ⭐ |
+| 3 | 로깅 시스템 | 매매 기록 | ⭐ |
+
+**산출물:**
+- `dashboard/app.py`
+- `notification/telegram_bot.py`
+- `utils/logger.py`
+
+---
+
+## 8. API 연동 코드 예시
+
+### 8.1 FRED API (미국 거시경제)
+
+```python
+"""
+FRED API를 활용한 미국 거시경제 데이터 수집기
+필요 패키지: pip install fredapi pandas
+"""
+
+from fredapi import Fred
+import pandas as pd
+from datetime import datetime, timedelta
+
+class FredCollector:
+    """FRED 데이터 수집기"""
+    
+    # 주요 지표 코드
+    INDICATORS = {
+        # 금리
+        'federal_funds_rate': 'FEDFUNDS',      # 연방기금금리
+        'treasury_10y': 'DGS10',                # 10년 국채금리
+        'treasury_2y': 'DGS2',                  # 2년 국채금리
+        'treasury_3m': 'DTB3',                  # 3개월 국채금리
+        
+        # 고용
+        'unemployment_rate': 'UNRATE',          # 실업률
+        'nonfarm_payrolls': 'PAYEMS',           # 비농업 고용
+        'initial_claims': 'ICSA',               # 신규 실업수당 청구
+        
+        # 인플레이션
+        'cpi': 'CPIAUCSL',                      # 소비자물가지수
+        'core_cpi': 'CPILFESL',                 # 근원 CPI
+        'pce': 'PCE',                           # 개인소비지출
+        
+        # 경기
+        'gdp': 'GDP',                           # GDP
+        'industrial_production': 'INDPRO',      # 산업생산지수
+        'retail_sales': 'RSXFS',                # 소매판매
+        
+        # 주택
+        'housing_starts': 'HOUST',              # 주택착공
+        'existing_home_sales': 'EXHOSLUSM495S', # 기존주택판매
+        
+        # 금융
+        'sp500': 'SP500',                       # S&P 500
+        'vix': 'VIXCLS',                        # VIX 변동성 지수
+        'm2': 'M2SL',                           # M2 통화량
+    }
+    
+    def __init__(self, api_key: str):
+        """
+        Args:
+            api_key: FRED API 키 (https://fred.stlouisfed.org/docs/api/api_key.html)
+        """
+        self.fred = Fred(api_key=api_key)
+    
+    def get_indicator(self, indicator_name: str, 
+                      start_date: str = None, 
+                      end_date: str = None) -> pd.Series:
+        """
+        단일 지표 데이터 조회
+        
+        Args:
+            indicator_name: INDICATORS 딕셔너리의 키 이름
+            start_date: 시작일 (YYYY-MM-DD)
+            end_date: 종료일 (YYYY-MM-DD)
+        
+        Returns:
+            pd.Series: 시계열 데이터
+        """
+        if indicator_name not in self.INDICATORS:
+            raise ValueError(f"Unknown indicator: {indicator_name}")
+        
+        series_id = self.INDICATORS[indicator_name]
+        
+        if start_date is None:
+            start_date = (datetime.now() - timedelta(days=365*5)).strftime('%Y-%m-%d')
+        if end_date is None:
+            end_date = datetime.now().strftime('%Y-%m-%d')
+        
+        return self.fred.get_series(series_id, 
+                                    observation_start=start_date,
+                                    observation_end=end_date)
+    
+    def get_all_indicators(self, start_date: str = None) -> pd.DataFrame:
+        """
+        모든 주요 지표 데이터 조회
+        
+        Returns:
+            pd.DataFrame: 모든 지표가 컬럼으로 포함된 데이터프레임
+        """
+        data = {}
+        for name in self.INDICATORS.keys():
+            try:
+                data[name] = self.get_indicator(name, start_date)
+            except Exception as e:
+                print(f"Error fetching {name}: {e}")
+        
+        return pd.DataFrame(data)
+    
+    def get_yield_curve(self) -> dict:
+        """
+        수익률 곡선 데이터 조회 (장단기 금리차)
+        
+        Returns:
+            dict: 현재 수익률 곡선 및 스프레드
+        """
+        t10y = self.get_indicator('treasury_10y').iloc[-1]
+        t2y = self.get_indicator('treasury_2y').iloc[-1]
+        t3m = self.get_indicator('treasury_3m').iloc[-1]
+        
+        return {
+            'treasury_10y': t10y,
+            'treasury_2y': t2y,
+            'treasury_3m': t3m,
+            'spread_10y_2y': t10y - t2y,  # 장단기 금리차
+            'spread_10y_3m': t10y - t3m,
+            'yield_curve_inverted': t10y < t2y  # 역전 여부
+        }
+
+
+# 사용 예시
+if __name__ == "__main__":
+    # API 키 설정
+    FRED_API_KEY = "your_api_key_here"
+    
+    collector = FredCollector(FRED_API_KEY)
+    
+    # 단일 지표 조회
+    unemployment = collector.get_indicator('unemployment_rate', '2020-01-01')
+    print("실업률:\n", unemployment.tail())
+    
+    # 수익률 곡선 조회
+    yield_curve = collector.get_yield_curve()
+    print("\n수익률 곡선:", yield_curve)
+    
+    # 전체 지표 조회
+    all_data = collector.get_all_indicators('2023-01-01')
+    print("\n전체 지표:\n", all_data.tail())
+```
+
+### 8.2 한국은행 ECOS API (한국 거시경제)
+
+```python
+"""
+한국은행 ECOS API를 활용한 한국 거시경제 데이터 수집기
+필요 패키지: pip install requests pandas
+API 키 발급: https://ecos.bok.or.kr/api/
+"""
+
+import requests
+import pandas as pd
+from datetime import datetime
+
+class EcosCollector:
+    """한국은행 ECOS 데이터 수집기"""
+    
+    BASE_URL = "https://ecos.bok.or.kr/api/StatisticSearch"
+    
+    # 주요 지표 코드 (통계표코드/항목코드1/항목코드2/항목코드3)
+    INDICATORS = {
+        # 금리
+        'base_rate': ('722Y001', 'AA11', None, None),           # 기준금리
+        'call_rate': ('817Y002', '010101000', None, None),       # 콜금리
+        'cd_91d': ('817Y002', '010502000', None, None),          # CD금리 91일
+        'treasury_3y': ('817Y002', '010200000', None, None),     # 국고채 3년
+        'treasury_10y': ('817Y002', '010210000', None, None),    # 국고채 10년
+        
+        # 통화
+        'm1': ('101Y002', 'BBFA00', None, None),                 # M1
+        'm2': ('101Y003', 'BBGA00', None, None),                 # M2
+        
+        # 경제성장
+        'gdp_growth': ('200Y002', '10101', None, None),          # GDP 성장률
+        
+        # 물가
+        'cpi': ('901Y009', '0', None, None),                     # 소비자물가지수
+        'ppi': ('404Y014', '*AA', None, None),                   # 생산자물가지수
+        
+        # 고용
+        'unemployment_rate': ('901Y027', 'I41C', None, None),    # 실업률
+        
+        # 무역
+        'export': ('403Y003', '*AA', None, None),                # 수출
+        'import': ('403Y003', '*AB', None, None),                # 수입
+        
+        # 환율
+        'usd_krw': ('731Y001', '0000001', None, None),           # 원/달러 환율
+    }
+    
+    def __init__(self, api_key: str):
+        """
+        Args:
+            api_key: ECOS API 키
+        """
+        self.api_key = api_key
+    
+    def get_indicator(self, indicator_name: str,
+                      start_date: str = None,
+                      end_date: str = None,
+                      freq: str = 'M') -> pd.DataFrame:
+        """
+        단일 지표 데이터 조회
+        
+        Args:
+            indicator_name: INDICATORS 딕셔너리의 키 이름
+            start_date: 시작일 (YYYYMM 또는 YYYYMMDD)
+            end_date: 종료일
+            freq: 주기 (D:일, M:월, Q:분기, A:연)
+        
+        Returns:
+            pd.DataFrame: 시계열 데이터
+        """
+        if indicator_name not in self.INDICATORS:
+            raise ValueError(f"Unknown indicator: {indicator_name}")
+        
+        stat_code, item_code1, item_code2, item_code3 = self.INDICATORS[indicator_name]
+        
+        if start_date is None:
+            start_date = '202001'
+        if end_date is None:
+            end_date = datetime.now().strftime('%Y%m')
+        
+        # URL 구성
+        url_parts = [
+            self.BASE_URL,
+            self.api_key,
+            'json',
+            'kr',
+            '1',
+            '1000',
+            stat_code,
+            freq,
+            start_date,
+            end_date,
+            item_code1
+        ]
+        
+        if item_code2:
+            url_parts.append(item_code2)
+        if item_code3:
+            url_parts.append(item_code3)
+        
+        url = '/'.join(url_parts)
+        
+        response = requests.get(url)
+        data = response.json()
+        
+        if 'StatisticSearch' not in data:
+            print(f"API Error: {data}")
+            return pd.DataFrame()
+        
+        rows = data['StatisticSearch']['row']
+        df = pd.DataFrame(rows)
+        
+        if 'TIME' in df.columns and 'DATA_VALUE' in df.columns:
+            df['TIME'] = pd.to_datetime(df['TIME'], format='%Y%m')
+            df['DATA_VALUE'] = pd.to_numeric(df['DATA_VALUE'], errors='coerce')
+            df = df.set_index('TIME')[['DATA_VALUE', 'STAT_NAME', 'ITEM_NAME1']]
+            df.columns = ['value', 'stat_name', 'item_name']
+        
+        return df
+    
+    def get_base_rate(self) -> dict:
+        """현재 기준금리 조회"""
+        df = self.get_indicator('base_rate')
+        if not df.empty:
+            return {
+                'date': df.index[-1].strftime('%Y-%m-%d'),
+                'rate': df['value'].iloc[-1]
+            }
+        return None
+    
+    def get_exchange_rate(self) -> dict:
+        """현재 환율 조회"""
+        df = self.get_indicator('usd_krw', freq='D')
+        if not df.empty:
+            return {
+                'date': df.index[-1].strftime('%Y-%m-%d'),
+                'usd_krw': df['value'].iloc[-1]
+            }
+        return None
+
+
+# 사용 예시
+if __name__ == "__main__":
+    # API 키 설정
+    ECOS_API_KEY = "your_api_key_here"
+    
+    collector = EcosCollector(ECOS_API_KEY)
+    
+    # 기준금리 조회
+    base_rate = collector.get_base_rate()
+    print("기준금리:", base_rate)
+    
+    # 환율 조회
+    exchange_rate = collector.get_exchange_rate()
+    print("환율:", exchange_rate)
+    
+    # 소비자물가지수 조회
+    cpi = collector.get_indicator('cpi', '202301')
+    print("\nCPI:\n", cpi.tail())
+```
+
+### 8.3 DART API (한국 기업 재무제표)
+
+```python
+"""
+DART OpenAPI를 활용한 한국 기업 재무제표 수집기
+필요 패키지: pip install requests pandas
+API 키 발급: https://opendart.fss.or.kr/
+"""
+
+import requests
+import pandas as pd
+import zipfile
+import io
+import xml.etree.ElementTree as ET
+
+class DartCollector:
+    """DART 재무제표 수집기"""
+    
+    BASE_URL = "https://opendart.fss.or.kr/api"
+    
+    def __init__(self, api_key: str):
+        """
+        Args:
+            api_key: DART OpenAPI 키
+        """
+        self.api_key = api_key
+        self.corp_codes = None
+    
+    def load_corp_codes(self) -> pd.DataFrame:
+        """기업 고유번호 목록 로드"""
+        url = f"{self.BASE_URL}/corpCode.xml"
+        params = {'crtfc_key': self.api_key}
+        
+        response = requests.get(url, params=params)
+        
+        with zipfile.ZipFile(io.BytesIO(response.content)) as z:
+            with z.open('CORPCODE.xml') as f:
+                tree = ET.parse(f)
+                root = tree.getroot()
+        
+        corps = []
+        for corp in root.findall('list'):
+            corps.append({
+                'corp_code': corp.findtext('corp_code'),
+                'corp_name': corp.findtext('corp_name'),
+                'stock_code': corp.findtext('stock_code'),
+                'modify_date': corp.findtext('modify_date')
+            })
+        
+        self.corp_codes = pd.DataFrame(corps)
+        # 상장기업만 필터 (stock_code가 있는 경우)
+        self.corp_codes = self.corp_codes[self.corp_codes['stock_code'].notna() & 
+                                          (self.corp_codes['stock_code'] != ' ')]
+        return self.corp_codes
+    
+    def get_corp_code(self, stock_code: str) -> str:
+        """종목코드로 기업고유번호 조회"""
+        if self.corp_codes is None:
+            self.load_corp_codes()
+        
+        result = self.corp_codes[self.corp_codes['stock_code'] == stock_code]
+        if len(result) > 0:
+            return result.iloc[0]['corp_code']
+        return None
+    
+    def get_financial_statements(self, corp_code: str,
+                                  year: str,
+                                  report_code: str = '11011') -> pd.DataFrame:
+        """
+        재무제표 조회
+        
+        Args:
+            corp_code: 기업고유번호
+            year: 사업연도 (YYYY)
+            report_code: 보고서 종류
+                - 11011: 사업보고서
+                - 11012: 반기보고서
+                - 11013: 1분기보고서
+                - 11014: 3분기보고서
+        
+        Returns:
+            pd.DataFrame: 재무제표 데이터
+        """
+        url = f"{self.BASE_URL}/fnlttSinglAcntAll.json"
+        params = {
+            'crtfc_key': self.api_key,
+            'corp_code': corp_code,
+            'bsns_year': year,
+            'reprt_code': report_code,
+            'fs_div': 'CFS'  # CFS: 연결재무제표, OFS: 개별재무제표
+        }
+        
+        response = requests.get(url, params=params)
+        data = response.json()
+        
+        if data.get('status') != '000':
+            print(f"API Error: {data.get('message')}")
+            return pd.DataFrame()
+        
+        return pd.DataFrame(data.get('list', []))
+    
+    def get_key_financials(self, stock_code: str, year: str) -> dict:
+        """
+        주요 재무지표 추출
+        
+        Returns:
+            dict: 주요 재무지표 (매출액, 영업이익, 당기순이익, 자산, 부채, 자본)
+        """
+        corp_code = self.get_corp_code(stock_code)
+        if not corp_code:
+            return None
+        
+        df = self.get_financial_statements(corp_code, year)
+        if df.empty:
+            return None
+        
+        # 주요 항목 추출
+        key_items = {
+            '매출액': ['매출액', '영업수익', '수익(매출액)'],
+            '영업이익': ['영업이익', '영업이익(손실)'],
+            '당기순이익': ['당기순이익', '당기순이익(손실)'],
+            '자산총계': ['자산총계'],
+            '부채총계': ['부채총계'],
+            '자본총계': ['자본총계']
+        }
+        
+        result = {}
+        for key, possible_names in key_items.items():
+            for name in possible_names:
+                match = df[df['account_nm'].str.contains(name, na=False)]
+                if len(match) > 0:
+                    # 당기 금액 사용
+                    value = match.iloc[0].get('thstrm_amount', '0')
+                    value = value.replace(',', '') if value else '0'
+                    result[key] = int(value) if value.lstrip('-').isdigit() else 0
+                    break
+        
+        return result
+    
+    def calculate_ratios(self, financials: dict) -> dict:
+        """재무비율 계산"""
+        if not financials:
+            return None
+        
+        ratios = {}
+        
+        # 영업이익률
+        if financials.get('매출액') and financials.get('영업이익'):
+            ratios['영업이익률'] = round(
+                financials['영업이익'] / financials['매출액'] * 100, 2
+            )
+        
+        # 순이익률
+        if financials.get('매출액') and financials.get('당기순이익'):
+            ratios['순이익률'] = round(
+                financials['당기순이익'] / financials['매출액'] * 100, 2
+            )
+        
+        # ROE
+        if financials.get('자본총계') and financials.get('당기순이익'):
+            ratios['ROE'] = round(
+                financials['당기순이익'] / financials['자본총계'] * 100, 2
+            )
+        
+        # 부채비율
+        if financials.get('자본총계') and financials.get('부채총계'):
+            ratios['부채비율'] = round(
+                financials['부채총계'] / financials['자본총계'] * 100, 2
+            )
+        
+        return ratios
+
+
+# 사용 예시
+if __name__ == "__main__":
+    # API 키 설정
+    DART_API_KEY = "your_api_key_here"
+    
+    collector = DartCollector(DART_API_KEY)
+    
+    # 삼성전자 (005930) 재무제표 조회
+    stock_code = "005930"
+    year = "2023"
+    
+    financials = collector.get_key_financials(stock_code, year)
+    print("재무제표:", financials)
+    
+    ratios = collector.calculate_ratios(financials)
+    print("재무비율:", ratios)
+```
+
+### 8.4 Fear & Greed Index 크롤러
+
+```python
+"""
+CNN Fear & Greed Index 크롤러
+필요 패키지: pip install requests
+"""
+
+import requests
+from datetime import datetime
+
+class FearGreedCollector:
+    """Fear & Greed Index 수집기"""
+    
+    # CNN 비공식 API 엔드포인트
+    API_URL = "https://production.dataviz.cnn.io/index/fearandgreed/graphdata"
+    
+    @staticmethod
+    def get_current_index() -> dict:
+        """
+        현재 Fear & Greed Index 조회
+        
+        Returns:
+            dict: {
+                'score': 점수 (0-100),
+                'rating': 등급 (Extreme Fear/Fear/Neutral/Greed/Extreme Greed),
+                'timestamp': 조회 시간
+            }
+        """
+        try:
+            response = requests.get(FearGreedCollector.API_URL, timeout=10)
+            data = response.json()
+            
+            # 현재 값 추출
+            current = data.get('fear_and_greed', {})
+            score = current.get('score', 0)
+            
+            # 등급 분류
+            if score <= 25:
+                rating = "Extreme Fear"
+            elif score <= 45:
+                rating = "Fear"
+            elif score <= 55:
+                rating = "Neutral"
+            elif score <= 75:
+                rating = "Greed"
+            else:
+                rating = "Extreme Greed"
+            
+            return {
+                'score': round(score, 2),
+                'rating': rating,
+                'previous_close': current.get('previous_close'),
+                'previous_1_week': current.get('previous_1_week'),
+                'previous_1_month': current.get('previous_1_month'),
+                'previous_1_year': current.get('previous_1_year'),
+                'timestamp': datetime.now().isoformat()
+            }
+        except Exception as e:
+            print(f"Error fetching Fear & Greed Index: {e}")
+            return None
+    
+    @staticmethod
+    def get_historical_data() -> list:
+        """과거 데이터 조회"""
+        try:
+            response = requests.get(FearGreedCollector.API_URL, timeout=10)
+            data = response.json()
+            
+            historical = data.get('fear_and_greed_historical', {}).get('data', [])
+            
+            result = []
+            for item in historical:
+                result.append({
+                    'date': datetime.fromtimestamp(item['x'] / 1000).strftime('%Y-%m-%d'),
+                    'score': item['y'],
+                    'rating': item['rating']
+                })
+            
+            return result
+        except Exception as e:
+            print(f"Error fetching historical data: {e}")
+            return []
+
+
+# 사용 예시
+if __name__ == "__main__":
+    collector = FearGreedCollector()
+    
+    # 현재 지수 조회
+    current = collector.get_current_index()
+    print("현재 Fear & Greed Index:")
+    print(f"  점수: {current['score']}")
+    print(f"  등급: {current['rating']}")
+    print(f"  1주전: {current['previous_1_week']}")
+    print(f"  1개월전: {current['previous_1_month']}")
+    
+    # 과거 데이터 조회
+    historical = collector.get_historical_data()
+    print(f"\n최근 5일 데이터:")
+    for item in historical[:5]:
+        print(f"  {item['date']}: {item['score']} ({item['rating']})")
+```
+
+### 8.5 Yahoo Finance (yfinance)
+
+```python
+"""
+Yahoo Finance를 활용한 주가 및 재무 데이터 수집기
+필요 패키지: pip install yfinance pandas
+"""
+
+import yfinance as yf
+import pandas as pd
+from datetime import datetime, timedelta
+
+class YFinanceCollector:
+    """Yahoo Finance 데이터 수집기"""
+    
+    def __init__(self, ticker: str):
+        """
+        Args:
+            ticker: 종목 심볼 (예: AAPL, MSFT, 005930.KS)
+        """
+        self.ticker = ticker
+        self.stock = yf.Ticker(ticker)
+    
+    def get_info(self) -> dict:
+        """기업 기본 정보 조회"""
+        info = self.stock.info
+        return {
+            'name': info.get('longName'),
+            'sector': info.get('sector'),
+            'industry': info.get('industry'),
+            'market_cap': info.get('marketCap'),
+            'currency': info.get('currency'),
+            'exchange': info.get('exchange')
+        }
+    
+    def get_price_data(self, period: str = '1y', interval: str = '1d') -> pd.DataFrame:
+        """
+        주가 데이터 조회
+        
+        Args:
+            period: 기간 (1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max)
+            interval: 간격 (1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo)
+        """
+        return self.stock.history(period=period, interval=interval)
+    
+    def get_financials(self) -> dict:
+        """재무제표 조회"""
+        return {
+            'income_statement': self.stock.income_stmt,
+            'balance_sheet': self.stock.balance_sheet,
+            'cash_flow': self.stock.cash_flow
+        }
+    
+    def get_valuation_metrics(self) -> dict:
+        """밸류에이션 지표 조회"""
+        info = self.stock.info
+        return {
+            'pe_ratio': info.get('trailingPE'),
+            'forward_pe': info.get('forwardPE'),
+            'pb_ratio': info.get('priceToBook'),
+            'ps_ratio': info.get('priceToSalesTrailing12Months'),
+            'peg_ratio': info.get('pegRatio'),
+            'ev_ebitda': info.get('enterpriseToEbitda'),
+            'dividend_yield': info.get('dividendYield'),
+            'payout_ratio': info.get('payoutRatio')
+        }
+    
+    def get_growth_metrics(self) -> dict:
+        """성장 지표 조회"""
+        info = self.stock.info
+        return {
+            'revenue_growth': info.get('revenueGrowth'),
+            'earnings_growth': info.get('earningsGrowth'),
+            'earnings_quarterly_growth': info.get('earningsQuarterlyGrowth')
+        }
+    
+    def get_profitability_metrics(self) -> dict:
+        """수익성 지표 조회"""
+        info = self.stock.info
+        return {
+            'profit_margin': info.get('profitMargins'),
+            'operating_margin': info.get('operatingMargins'),
+            'gross_margin': info.get('grossMargins'),
+            'roe': info.get('returnOnEquity'),
+            'roa': info.get('returnOnAssets')
+        }
+    
+    def get_analyst_recommendations(self) -> pd.DataFrame:
+        """애널리스트 추천 조회"""
+        return self.stock.recommendations
+    
+    def get_institutional_holders(self) -> pd.DataFrame:
+        """기관 투자자 보유 현황"""
+        return self.stock.institutional_holders
+    
+    def get_all_data_for_analysis(self) -> dict:
+        """분석에 필요한 모든 데이터 수집"""
+        price_data = self.get_price_data()
+        current_price = price_data['Close'].iloc[-1] if not price_data.empty else None
+        
+        return {
+            'ticker': self.ticker,
+            'info': self.get_info(),
+            'current_price': current_price,
+            'price_52w_high': price_data['High'].max() if not price_data.empty else None,
+            'price_52w_low': price_data['Low'].min() if not price_data.empty else None,
+            'valuation': self.get_valuation_metrics(),
+            'growth': self.get_growth_metrics(),
+            'profitability': self.get_profitability_metrics(),
+            'volume_avg': price_data['Volume'].mean() if not price_data.empty else None
+        }
+
+
+# 사용 예시
+if __name__ == "__main__":
+    # 애플 주식 분석
+    collector = YFinanceCollector("AAPL")
+    
+    # 기본 정보
+    info = collector.get_info()
+    print("기업 정보:", info)
+    
+    # 밸류에이션
+    valuation = collector.get_valuation_metrics()
+    print("\n밸류에이션:")
+    for key, value in valuation.items():
+        print(f"  {key}: {value}")
+    
+    # 수익성
+    profitability = collector.get_profitability_metrics()
+    print("\n수익성:")
+    for key, value in profitability.items():
+        if value:
+            print(f"  {key}: {value*100:.2f}%")
+    
+    # 분석용 전체 데이터
+    all_data = collector.get_all_data_for_analysis()
+    print("\n전체 분석 데이터 수집 완료")
+```
+
+---
+
+## 부록: 프로젝트 디렉토리 구조
+
+```
+stock-trading-system/
+│
+├── config/
+│   ├── settings.py              # 환경 설정
+│   └── api_keys.py              # API 키 관리 (gitignore)
+│
+├── data_collectors/
+│   ├── __init__.py
+│   ├── fred_collector.py        # FRED API
+│   ├── ecos_collector.py        # 한국은행 ECOS API
+│   ├── dart_collector.py        # DART API
+│   ├── yfinance_collector.py    # Yahoo Finance
+│   └── base_collector.py        # 기본 수집기 클래스
+│
+├── crawlers/
+│   ├── __init__.py
+│   ├── fear_greed_crawler.py    # Fear & Greed Index
+│   ├── fedwatch_crawler.py      # CME FedWatch
+│   ├── whalewisdom_crawler.py   # 13F 데이터
+│   ├── krx_crawler.py           # KRX 수급 데이터
+│   └── finviz_crawler.py        # Finviz 스크리너
+│
+├── database/
+│   ├── __init__.py
+│   ├── models.py                # SQLAlchemy 모델
+│   ├── schema.sql               # 데이터베이스 스키마
+│   └── db_manager.py            # DB 연결 관리
+│
+├── analysis/
+│   ├── __init__.py
+│   ├── prompt_templates/
+│   │   ├── us_stock_prompt.py   # 미국 주식 분석 프롬프트
+│   │   └── kr_stock_prompt.py   # 한국 주식 분석 프롬프트
+│   ├── llm_analyzer.py          # LLM 분석기
+│   ├── result_parser.py         # 결과 파서
+│   └── data_mapper.py           # 데이터-프롬프트 매핑
+│
+├── execution/
+│   ├── __init__.py
+│   ├── kis_api.py               # 한국투자증권 API
+│   ├── alpaca_api.py            # Alpaca API
+│   ├── position_manager.py      # 포지션 관리
+│   └── risk_manager.py          # 리스크 관리
+│
+├── dashboard/
+│   ├── __init__.py
+│   ├── app.py                   # Streamlit 메인
+│   └── components/              # 대시보드 컴포넌트
+│
+├── notification/
+│   ├── __init__.py
+│   └── telegram_bot.py          # 텔레그램 알림
+│
+├── scheduler/
+│   ├── __init__.py
+│   └── jobs.py                  # 스케줄링 작업
+│
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py                # 로깅
+│   └── helpers.py               # 유틸리티 함수
+│
+├── tests/
+│   └── ...                      # 테스트 코드
+│
+├── requirements.txt
+├── docker-compose.yml
+├── Dockerfile
+└── README.md
+```
+
+---
+
+## 참고 자료
+
+### API 문서
+- FRED API: https://fred.stlouisfed.org/docs/api/
+- 한국은행 ECOS: https://ecos.bok.or.kr/api/
+- DART OpenAPI: https://opendart.fss.or.kr/
+- Yahoo Finance (yfinance): https://pypi.org/project/yfinance/
+- 한국투자증권 API: https://apiportal.koreainvestment.com/
+
+### 관련 라이브러리
+```
+pip install fredapi pandas requests yfinance pykrx selenium beautifulsoup4 sqlalchemy streamlit python-telegram-bot apscheduler
+```
+
+---
+
+*본 문서는 주식 자동 매매 시스템 구축을 위한 참고 자료입니다. 실제 투자에 앞서 충분한 테스트와 검증이 필요합니다.*
