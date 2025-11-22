@@ -9,13 +9,16 @@ from sqlalchemy.ext.declarative import declarative_base
 from contextlib import contextmanager
 from typing import Generator
 
-from app.config import settings
+from app.config import settings, get_database_url
 from app.utils.logger import db_logger
 
 
-# Create SQLAlchemy engine
+# Create SQLAlchemy engine with Supabase support
+database_url = get_database_url()
+db_logger.info(f"Connecting to database: {database_url.split('@')[1] if '@' in database_url else 'local'}")
+
 engine = create_engine(
-    settings.DATABASE_URL,
+    database_url,
     pool_size=settings.DB_POOL_SIZE,
     max_overflow=settings.DB_MAX_OVERFLOW,
     pool_pre_ping=True,  # Verify connections before using

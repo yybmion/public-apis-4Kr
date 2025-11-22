@@ -21,10 +21,23 @@ class Settings(BaseSettings):
     API_PORT: int = Field(default=8000, description="API port")
     DASHBOARD_PORT: int = Field(default=8501, description="Dashboard port")
 
-    # Database
-    DATABASE_URL: str = Field(
-        default="postgresql://stockuser:stockpass@localhost:5432/stockdb",
-        description="PostgreSQL connection URL"
+    # Database - Supabase (PostgreSQL)
+    SUPABASE_URL: str = Field(
+        default="https://your-project.supabase.co",
+        description="Supabase project URL"
+    )
+    SUPABASE_KEY: str = Field(
+        default="",
+        description="Supabase anon/service key"
+    )
+    SUPABASE_DB_URL: str = Field(
+        default="postgresql://postgres:password@db.your-project.supabase.co:5432/postgres",
+        description="Supabase PostgreSQL direct connection URL"
+    )
+    # Legacy support - falls back to Supabase URL
+    DATABASE_URL: Optional[str] = Field(
+        default=None,
+        description="PostgreSQL connection URL (legacy, use SUPABASE_DB_URL)"
     )
     DB_POOL_SIZE: int = Field(default=5, description="Database connection pool size")
     DB_MAX_OVERFLOW: int = Field(default=10, description="Database max overflow")
@@ -84,6 +97,12 @@ class Settings(BaseSettings):
         description="BigKinds API base URL"
     )
 
+    # LLM APIs - Multi-Agent System
+    ANTHROPIC_API_KEY: str = Field(default="", description="Anthropic Claude API Key")
+    OPENAI_API_KEY: str = Field(default="", description="OpenAI GPT-4 API Key")
+    GOOGLE_API_KEY: str = Field(default="", description="Google Gemini API Key")
+    XAI_API_KEY: str = Field(default="", description="xAI Grok API Key")
+
     # AWS Configuration
     AWS_ACCESS_KEY_ID: Optional[str] = Field(default=None, description="AWS Access Key ID")
     AWS_SECRET_ACCESS_KEY: Optional[str] = Field(default=None, description="AWS Secret Access Key")
@@ -125,6 +144,23 @@ class Settings(BaseSettings):
 
 # Global settings instance
 settings = Settings()
+
+
+def get_database_url() -> str:
+    """
+    Get database URL with Supabase priority
+
+    Returns:
+        Database connection URL
+    """
+    # Priority: SUPABASE_DB_URL > DATABASE_URL > default
+    if settings.SUPABASE_DB_URL and "your-project" not in settings.SUPABASE_DB_URL:
+        return settings.SUPABASE_DB_URL
+    elif settings.DATABASE_URL:
+        return settings.DATABASE_URL
+    else:
+        # Fallback to default local PostgreSQL
+        return "postgresql://stockuser:stockpass@localhost:5432/stockdb"
 
 
 # Configuration validation

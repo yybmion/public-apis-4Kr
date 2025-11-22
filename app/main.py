@@ -16,6 +16,7 @@ import os
 from app.config import settings, validate_config
 from app.database.session import get_db, init_db
 from app.models.stock import Stock, StockPrice, USIndex, Recommendation, BacktestResult, StockNews
+from app.models.llm_analysis import LLMAnalysis, LLMConsensus, LLMPerformance
 from app.collectors.kis_collector import KISCollector
 from app.collectors.yahoo_collector import YahooCollector
 from app.collectors.dart_collector import DARTCollector
@@ -26,6 +27,7 @@ from app.analyzers.backtest_engine import BacktestEngine, SP500MAStrategy, Golde
 from app.analyzers.chart_ocr import ChartOCRAnalyzer, MockChartAnalyzer
 from app.recommenders.beginner_recommender import BeginnerRecommender
 from app.recommenders.sector_analyzer import SectorAnalyzer
+from app.llm.orchestrator import LLMOrchestrator
 from app.utils.logger import api_logger
 
 
@@ -47,6 +49,16 @@ class BacktestRequest(BaseModel):
     ma_period: Optional[int] = 20
     fast_period: Optional[int] = 5
     slow_period: Optional[int] = 20
+
+
+class LLMAnalyzeRequest(BaseModel):
+    stock_code: str
+    stock_name: str
+    analysis_type: str = "combined_signal"  # 'news_risk', 'combined_signal', 'explanation'
+    technical_data: Optional[Dict] = None
+    fundamental_data: Optional[Dict] = None
+    us_market_data: Optional[Dict] = None
+    news_data: Optional[Dict] = None
 
 
 # Initialize FastAPI app
@@ -1178,6 +1190,307 @@ async def get_sentiment_analysis(
         raise
     except Exception as e:
         api_logger.error(f"Error getting sentiment for {stock_code}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==================== LLM Multi-Agent Endpoints ====================
+
+@app.post("/api/v1/llm/analyze-multi")
+async def analyze_with_multi_llm(request: LLMAnalyzeRequest, db: Session = Depends(get_db)):
+    """
+    Analyze stock with multiple LLM agents in parallel
+
+    Args:
+        request: Analysis request with stock data
+        db: Database session
+
+    Returns:
+        Multi-agent consensus analysis
+    """
+    try:
+        orchestrator = LLMOrchestrator(db)
+
+        result = await orchestrator.analyze_multi_agent(
+            stock_code=request.stock_code,
+            stock_name=request.stock_name,
+            technical_data=request.technical_data,
+            fundamental_data=request.fundamental_data,
+            us_market_data=request.us_market_data,
+            news_data=request.news_data,
+            analysis_type=request.analysis_type
+        )
+
+        return {
+            "status": "success",
+            "data": result
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error in multi-LLM analysis for {request.stock_code}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/llm/consensus/{stock_code}")
+async def get_llm_consensus(
+    stock_code: str,
+    limit: int = 10,
+    analysis_type: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    """
+    Get LLM consensus results for a stock
+
+    Args:
+        stock_code: Stock code (6 digits)
+        limit: Maximum number of records
+        analysis_type: Filter by analysis type
+        db: Database session
+
+    Returns:
+        Consensus results
+    """
+    try:
+        query = db.query(LLMConsensus).filter(LLMConsensus.stock_code == stock_code)
+
+        if analysis_type:
+            query = query.filter(LLMConsensus.analysis_type == analysis_type)
+
+        results = query.order_by(LLMConsensus.created_at.desc()).limit(limit).all()
+
+        return {
+            "status": "success",
+            "data": {
+                "stock_code": stock_code,
+                "consensus_results": [
+                    {
+                        "id": r.id,
+                        "analysis_type": r.analysis_type,
+                        "consensus_decision": r.consensus_decision,
+                        "consensus_confidence": r.consensus_confidence,
+                        "agreement_level": r.agreement_level,
+                        "votes": {
+                            "buy": r.buy_votes,
+                            "sell": r.sell_votes,
+                            "hold": r.hold_votes
+                        },
+                        "recommendation": r.recommendation,
+                        "created_at": r.created_at.isoformat()
+                    }
+                    for r in results
+                ],
+                "total": len(results)
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting consensus for {stock_code}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/llm/performance")
+async def get_llm_performance(
+    model_name: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    """
+    Get LLM model performance metrics
+
+    Args:
+        model_name: Specific model name (claude, gpt4, gemini, grok) or None for all
+        db: Database session
+
+    Returns:
+        Performance metrics
+    """
+    try:
+        orchestrator = LLMOrchestrator(db)
+        performance = orchestrator.get_model_performance(model_name)
+
+        return {
+            "status": "success",
+            "data": performance
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting LLM performance: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/llm/history/{stock_code}")
+async def get_llm_analysis_history(
+    stock_code: str,
+    limit: int = 20,
+    model_name: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    """
+    Get LLM analysis history for a stock
+
+    Args:
+        stock_code: Stock code (6 digits)
+        limit: Maximum number of records
+        model_name: Filter by model name
+        db: Database session
+
+    Returns:
+        Analysis history
+    """
+    try:
+        query = db.query(LLMAnalysis).filter(LLMAnalysis.stock_code == stock_code)
+
+        if model_name:
+            query = query.filter(LLMAnalysis.llm_model == model_name)
+
+        results = query.order_by(LLMAnalysis.created_at.desc()).limit(limit).all()
+
+        return {
+            "status": "success",
+            "data": {
+                "stock_code": stock_code,
+                "analyses": [
+                    {
+                        "id": r.id,
+                        "llm_model": r.llm_model,
+                        "analysis_type": r.analysis_type,
+                        "decision": r.decision,
+                        "confidence": r.confidence,
+                        "tokens_used": r.tokens_used,
+                        "cost": r.cost,
+                        "latency_ms": r.latency_ms,
+                        "success": r.success,
+                        "created_at": r.created_at.isoformat()
+                    }
+                    for r in results
+                ],
+                "total": len(results)
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting LLM history for {stock_code}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/v1/llm/analyze-signal/{stock_code}")
+async def analyze_stock_signal_with_llm(
+    stock_code: str,
+    db: Session = Depends(get_db)
+):
+    """
+    Comprehensive stock analysis with multi-LLM consensus
+
+    Collects all necessary data and runs multi-agent analysis
+
+    Args:
+        stock_code: Stock code (6 digits)
+        db: Database session
+
+    Returns:
+        Complete analysis with LLM consensus
+    """
+    try:
+        # Get stock info
+        stock = db.query(Stock).filter(Stock.code == stock_code).first()
+        if not stock:
+            raise HTTPException(status_code=404, detail=f"Stock {stock_code} not found")
+
+        # Collect technical data
+        prices = (
+            db.query(StockPrice)
+            .filter(StockPrice.stock_code == stock_code)
+            .order_by(StockPrice.date.desc())
+            .limit(100)
+            .all()
+        )
+
+        if len(prices) < 20:
+            raise HTTPException(status_code=400, detail="Insufficient price data")
+
+        price_df = pd.DataFrame([
+            {
+                'date': p.date,
+                'open': p.open,
+                'high': p.high,
+                'low': p.low,
+                'close': p.close,
+                'volume': p.volume
+            }
+            for p in reversed(prices)
+        ])
+
+        # Calculate technical indicators
+        analyzer = TechnicalAnalyzer()
+        technical_data = analyzer.calculate_all_indicators(price_df)
+
+        # Get US market data
+        sp500 = (
+            db.query(USIndex)
+            .filter(USIndex.symbol == '^GSPC')
+            .order_by(USIndex.date.desc())
+            .first()
+        )
+
+        us_market_data = {
+            "sp500_close": float(sp500.close) if sp500 else None,
+            "sp500_ma_20": float(sp500.ma_20) if sp500 and sp500.ma_20 else None,
+            "sp500_above_ma": sp500.above_ma if sp500 else None,
+            "signal": "BULLISH" if sp500 and sp500.above_ma else "BEARISH"
+        } if sp500 else None
+
+        # Get fundamental data (if available)
+        fundamental_data = {
+            "market_cap": stock.market_cap,
+            "sector": stock.sector,
+            "market": stock.market
+        }
+
+        # Get news data
+        start_date = datetime.now() - timedelta(days=7)
+        news = (
+            db.query(StockNews)
+            .filter(
+                StockNews.stock_code == stock_code,
+                StockNews.published_at >= start_date
+            )
+            .order_by(StockNews.published_at.desc())
+            .limit(20)
+            .all()
+        )
+
+        news_data = {
+            "articles": [
+                {
+                    "title": n.title,
+                    "sentiment_label": n.sentiment_label,
+                    "sentiment_score": n.sentiment_score,
+                    "published_at": n.published_at.isoformat() if n.published_at else None
+                }
+                for n in news
+            ],
+            "total": len(news)
+        } if news else None
+
+        # Run multi-LLM analysis
+        orchestrator = LLMOrchestrator(db)
+        result = await orchestrator.analyze_multi_agent(
+            stock_code=stock_code,
+            stock_name=stock.name,
+            technical_data=technical_data,
+            fundamental_data=fundamental_data,
+            us_market_data=us_market_data,
+            news_data=news_data,
+            analysis_type="combined_signal"
+        )
+
+        return {
+            "status": "success",
+            "data": result
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        api_logger.error(f"Error analyzing {stock_code} with LLM: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
