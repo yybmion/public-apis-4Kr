@@ -344,7 +344,7 @@ stock-intelligence-system/
 │  data_collection_logs    │
 ├──────────────────────────┤
 │ PK id                    │
-│    collector_type        │  -- 'kis', 'yahoo', 'dart', 'news'
+│    collector_type        │  -- 'kis', 'yahoo', 'dart', 'news', 'social'
 │    action                │
 │    target_code           │
 │    success               │
@@ -354,6 +354,32 @@ stock-intelligence-system/
 │    metadata (JSON)       │
 │    created_at            │
 └──────────────────────────┘
+
+┌────────────────────────── Social Media Tables ─────────────────────────────┐
+
+┌──────────────────────────┐      ┌──────────────────────────┐
+│ social_media_mentions    │      │ social_influencer_posts  │
+├──────────────────────────┤      ├──────────────────────────┤
+│ PK id                    │      │ PK id                    │
+│    source                │      │    username              │
+│    platform              │      │    platform              │
+│    ticker                │      │    post_id (unique)      │
+│    stock_code            │      │    post_url              │
+│    mention_count         │      │    post_text             │
+│    rank                  │      │    mentioned_tickers     │
+│    sentiment             │      │    sentiment             │
+│    sentiment_score       │      │    sentiment_score       │
+│    bullish_ratio         │      │    like_count            │
+│    impact_score          │      │    retweet_count         │
+│    comment_count         │      │    reply_count           │
+│    upvote_count          │      │    impact_score          │
+│    raw_data (JSON)       │      │    posted_at             │
+│    data_date             │      │    collected_at          │
+│    collected_at          │      │    created_at            │
+│    created_at            │      └──────────────────────────┘
+└──────────────────────────┘
+  Source: WallStreetBets, StockTwits
+  실시간 투자자 감성 추적
 ```
 
 ### 2.2 테이블 상세 스키마
@@ -660,6 +686,90 @@ CREATE TABLE data_collection_logs (
 
     INDEX idx_collector_type (collector_type),
     INDEX idx_target_code (target_code),
+    INDEX idx_created_at (created_at DESC)
+);
+```
+
+#### 2.2.13 social_media_mentions (소셜 미디어 종목 멘션)
+
+```sql
+CREATE TABLE social_media_mentions (
+    id SERIAL PRIMARY KEY,
+
+    -- 소스 정보
+    source VARCHAR(50) NOT NULL,        -- 'wallstreetbets', 'stocktwits'
+    platform VARCHAR(50),               -- 'reddit', 'twitter', 'stocktwits'
+
+    -- 종목 정보
+    ticker VARCHAR(20) NOT NULL,        -- 주식 티커 ('TSLA', 'AAPL', etc.)
+    stock_code VARCHAR(10),             -- 한국 종목 코드 (매핑용)
+
+    -- 멘션 데이터
+    mention_count INTEGER DEFAULT 1,
+    rank INTEGER,                       -- 순위 (1 = 가장 많이 언급됨)
+
+    -- 감성 분석
+    sentiment VARCHAR(20),              -- 'BULLISH', 'BEARISH', 'NEUTRAL'
+    sentiment_score DECIMAL(5,2),       -- -1.0 ~ 1.0
+    bullish_ratio DECIMAL(5,2),         -- 0.0 ~ 1.0 (긍정 비율)
+
+    -- 영향력 지표
+    impact_score DECIMAL(10,2),
+    comment_count INTEGER,
+    upvote_count INTEGER,
+
+    -- 원본 데이터
+    raw_data JSONB,
+
+    -- 메타데이터
+    data_date TIMESTAMP WITH TIME ZONE,
+    collected_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    INDEX idx_source (source),
+    INDEX idx_ticker (ticker),
+    INDEX idx_rank (rank ASC),
+    INDEX idx_data_date (data_date DESC),
+    INDEX idx_created_at (created_at DESC)
+);
+```
+
+#### 2.2.14 social_influencer_posts (인플루언서 포스트)
+
+```sql
+CREATE TABLE social_influencer_posts (
+    id SERIAL PRIMARY KEY,
+
+    -- 인플루언서 정보
+    username VARCHAR(100) NOT NULL,     -- 'elonmusk', 'WarrenBuffett', etc.
+    platform VARCHAR(50) NOT NULL,      -- 'twitter', 'reddit'
+
+    -- 포스트 정보
+    post_id VARCHAR(100) UNIQUE,        -- 원본 포스트 ID
+    post_url VARCHAR(500),
+    post_text TEXT,
+
+    -- 언급된 종목
+    mentioned_tickers JSONB,            -- ['TSLA', 'DOGE', ...]
+
+    -- 감성 분석
+    sentiment VARCHAR(20),              -- 'POSITIVE', 'NEGATIVE', 'NEUTRAL'
+    sentiment_score DECIMAL(5,2),
+
+    -- 영향력 지표
+    like_count INTEGER DEFAULT 0,
+    retweet_count INTEGER DEFAULT 0,
+    reply_count INTEGER DEFAULT 0,
+    impact_score DECIMAL(10,2),
+
+    -- 메타데이터
+    posted_at TIMESTAMP WITH TIME ZONE,
+    collected_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    INDEX idx_username (username),
+    INDEX idx_platform (platform),
+    INDEX idx_posted_at (posted_at DESC),
     INDEX idx_created_at (created_at DESC)
 );
 ```
@@ -1038,6 +1148,120 @@ Query Parameters:
 Query Parameters:
 - `limit`: 조회 개수 (default: 20)
 - `model_name`: 모델 필터 (옵션)
+
+#### 3.1.7 소셜 미디어 분석 API
+
+**POST /social/collect**
+
+소셜 미디어 데이터 수집 (WallStreetBets + StockTwits)
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "wallstreetbets_mentions": 50,
+    "stocktwits_mentions": 20,
+    "total_collected": 70,
+    "timestamp": "2025-11-22T10:00:00+09:00"
+  }
+}
+```
+
+**GET /social/wallstreetbets/trending**
+
+WallStreetBets 트렌딩 주식 조회
+
+Query Parameters:
+- `limit`: 조회 개수 (default: 20)
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "trending_stocks": [
+      {
+        "rank": 1,
+        "ticker": "NVDA",
+        "mention_count": 1250,
+        "sentiment": "BULLISH",
+        "sentiment_score": 0.75,
+        "data_date": "2025-11-22T00:00:00+09:00"
+      },
+      {
+        "rank": 2,
+        "ticker": "TSLA",
+        "mention_count": 980,
+        "sentiment": "BULLISH",
+        "sentiment_score": 0.62,
+        "data_date": "2025-11-22T00:00:00+09:00"
+      }
+    ],
+    "total": 20,
+    "source": "r/wallstreetbets",
+    "timestamp": "2025-11-22T10:00:00+09:00"
+  }
+}
+```
+
+**GET /social/stocktwits/{ticker}**
+
+특정 종목의 StockTwits 투자자 감성 조회
+
+Path Parameters:
+- `ticker`: 주식 티커 (예: 'TSLA', 'AAPL')
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "ticker": "TSLA",
+    "sentiment": "BULLISH",
+    "sentiment_score": 0.45,
+    "bullish_ratio": 0.725,
+    "mention_count": 345,
+    "sentiment_breakdown": {
+      "bullish": 250,
+      "bearish": 95,
+      "neutral": 0
+    },
+    "data_date": "2025-11-22T10:00:00+09:00",
+    "collected_at": "2025-11-22T10:15:30+09:00"
+  }
+}
+```
+
+**GET /social/trending-combined**
+
+통합 소셜 미디어 트렌드 (WSB + StockTwits)
+
+Query Parameters:
+- `limit`: 조회 개수 (default: 30)
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "trending_stocks": [
+      {
+        "ticker": "NVDA",
+        "wsb_rank": 1,
+        "wsb_mentions": 1250,
+        "wsb_sentiment": "BULLISH",
+        "stocktwits_sentiment": "BULLISH",
+        "stocktwits_bullish_ratio": 0.78,
+        "combined_score": 1328.0
+      }
+    ],
+    "total": 30,
+    "sources": ["wallstreetbets", "stocktwits"],
+    "timestamp": "2025-11-22T10:00:00+09:00"
+  }
+}
+```
 
 ### 3.2 에러 응답 형식
 
@@ -1967,3 +2191,9 @@ def test_get_recommendations():
 |  |  | - LLM 분석 추적 테이블 4개 추가 (llm_analyses, llm_consensus, llm_performance, data_collection_logs) | |
 |  |  | - Multi-LLM API 엔드포인트 5개 추가 | |
 |  |  | - 투표 기반 합의 메커니즘 설계 | |
+| 2.1 | 2025-11-22 | 소셜 미디어 데이터 수집 시스템 추가 | AI Assistant |
+|  |  | - WallStreetBets 트렌딩 주식 수집 (Tradestie API) | |
+|  |  | - StockTwits 종목별 투자자 감성 분석 | |
+|  |  | - 소셜 미디어 테이블 2개 추가 (social_media_mentions, social_influencer_posts) | |
+|  |  | - 소셜 미디어 API 엔드포인트 4개 추가 | |
+|  |  | - 무료 API 기반 실시간 감성 추적 시스템 구현 | |
