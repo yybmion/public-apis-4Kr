@@ -42,12 +42,13 @@
 │                       API Gateway Layer                      │
 │                         (FastAPI)                            │
 ├─────────────────────────────────────────────────────────────┤
-│  GET  /api/v1/stocks/{code}          # 종목 정보           │
-│  GET  /api/v1/recommendations         # 추천 종목          │
-│  POST /api/v1/chart/analyze           # 차트 분석          │
-│  GET  /api/v1/market/overview         # 시장 현황          │
-│  POST /api/v1/llm/analyze-multi       # Multi-LLM 분석     │
-│  POST /api/v1/llm/analyze-signal/{code} # LLM 종합 분석   │
+│  GET  /api/v1/stocks/{code}             # 종목 정보        │
+│  GET  /api/v1/recommendations            # 추천 종목       │
+│  POST /api/v1/chart/analyze              # 차트 분석       │
+│  GET  /api/v1/market/overview            # 시장 현황       │
+│  POST /api/v1/llm/analyze-signal/{code}  # LLM 종합 분석  │
+│  POST /api/v1/social/collect             # SNS 데이터 수집 │
+│  GET  /api/v1/social/trending-combined   # SNS 트렌드     │
 └─────────────────────────────────────────────────────────────┘
                               │
         ┌─────────────────────┼─────────────────────┐
@@ -64,6 +65,28 @@
 └────────────────┘  └────────────────┘  └────────────────┘
         │                     │                     │
         └─────────────────────┼─────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│                 Social Media Collection Layer                │
+│                   (실시간 투자자 감성 추적)                    │
+├─────────────────────────────────────────────────────────────┤
+│  ┌──────────────────┐          ┌──────────────────┐        │
+│  │ WallStreetBets   │          │   StockTwits     │        │
+│  │   Collector      │          │    Collector     │        │
+│  ├──────────────────┤          ├──────────────────┤        │
+│  │ • Tradestie API  │          │ • StockTwits API │        │
+│  │ • Top 50 Stocks  │          │ • Ticker Sentiment│       │
+│  │ • Sentiment Score│          │ • Bullish/Bearish│        │
+│  │ • Mention Count  │          │ • Message Volume │        │
+│  └──────────────────┘          └──────────────────┘        │
+│         ↓                               ↓                   │
+│  ┌─────────────────────────────────────────────────┐       │
+│  │      Social Sentiment Aggregator                │       │
+│  │  • 통합 트렌드 분석                              │       │
+│  │  • 감성 점수 계산                                │       │
+│  │  • 영향력 있는 종목 탐지                         │       │
+│  └─────────────────────────────────────────────────┘       │
+└─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │                   Multi-LLM Analysis Layer                   │
@@ -97,6 +120,8 @@
 │  • 주가/종목   │  │                │  │                │
 │  • LLM분석기록 │  │                │  │                │
 │  • 합의결과    │  │                │  │                │
+│  • SNS멘션추적 │  │                │  │                │
+│  • 투자자감성  │  │                │  │                │
 └────────────────┘  └────────────────┘  └────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -108,6 +133,7 @@
 │  • 16:00: 일일 백테스팅 실행                                 │
 │  • 18:00: 뉴스 감성 분석                                     │
 │  • 매시 정각: 경제 지표 업데이트                             │
+│  • 매 30분: 소셜 미디어 트렌드 수집 (WSB + StockTwits)      │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -159,7 +185,8 @@ stock-intelligence-system/
 │   │   ├── dart_collector.py     # 전자공시
 │   │   ├── yahoo_collector.py    # Yahoo Finance
 │   │   ├── ecos_collector.py     # 한국은행
-│   │   └── news_collector.py     # 뉴스 수집
+│   │   ├── news_collector.py     # 뉴스 수집
+│   │   └── social_collector.py   # 소셜 미디어 수집 (WSB + StockTwits)
 │   │
 │   ├── analyzers/                 # 분석기
 │   │   ├── __init__.py
@@ -191,7 +218,8 @@ stock-intelligence-system/
 │   │   ├── price.py
 │   │   ├── financial.py
 │   │   ├── user.py
-│   │   └── llm_analysis.py        # LLM 분석 추적 모델
+│   │   ├── llm_analysis.py        # LLM 분석 추적 모델
+│   │   └── social_media.py        # 소셜 미디어 멘션/감성 모델
 │   │
 │   ├── schemas/                   # Pydantic 스키마
 │   │   ├── __init__.py
