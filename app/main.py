@@ -17,10 +17,12 @@ from app.config import settings, validate_config
 from app.database.session import get_db, init_db
 from app.models.stock import Stock, StockPrice, USIndex, Recommendation, BacktestResult, StockNews
 from app.models.llm_analysis import LLMAnalysis, LLMConsensus, LLMPerformance
+from app.models.social_media import SocialMediaMention
 from app.collectors.kis_collector import KISCollector
 from app.collectors.yahoo_collector import YahooCollector
 from app.collectors.dart_collector import DARTCollector
 from app.collectors.news_collector import NewsCollector, SentimentAnalyzer
+from app.collectors.social_collector import TradestieCollector, StockTwitsCollector, collect_all_social_data
 from app.analyzers.technical_analyzer import TechnicalAnalyzer
 from app.analyzers.signal_detector import SignalDetector
 from app.analyzers.backtest_engine import BacktestEngine, SP500MAStrategy, GoldenCrossStrategy
@@ -1491,6 +1493,262 @@ async def analyze_stock_signal_with_llm(
         raise
     except Exception as e:
         api_logger.error(f"Error analyzing {stock_code} with LLM: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==================== Social Media Endpoints ====================
+
+@app.post("/api/v1/social/collect")
+async def collect_social_media_data(db: Session = Depends(get_db)):
+    """
+    소셜 미디어 데이터 수집 (WallStreetBets + StockTwits)
+
+    Returns:
+        수집된 데이터 통계
+    """
+    try:
+        api_logger.info("Starting social media data collection...")
+
+        # 모든 소셜 데이터 수집
+        results = await collect_all_social_data(db)
+
+        return {
+            "status": "success",
+            "data": {
+                "wallstreetbets_mentions": results.get('wallstreetbets', 0),
+                "stocktwits_mentions": results.get('stocktwits', 0),
+                "total_collected": sum(results.values()),
+                "timestamp": datetime.now().isoformat()
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error collecting social media data: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/social/wallstreetbets/trending")
+async def get_wsb_trending(
+    limit: int = 20,
+    db: Session = Depends(get_db)
+):
+    """
+    WallStreetBets 트렌딩 주식 조회
+
+    Args:
+        limit: 조회 개수 (default: 20)
+        db: Database session
+
+    Returns:
+        트렌딩 주식 리스트 (멘션 많은 순)
+    """
+    try:
+        # 오늘 수집된 WSB 데이터 조회
+        today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+
+        trending = (
+            db.query(SocialMediaMention)
+            .filter(
+                SocialMediaMention.source == 'wallstreetbets',
+                SocialMediaMention.data_date >= today_start
+            )
+            .order_by(SocialMediaMention.rank.asc())
+            .limit(limit)
+            .all()
+        )
+
+        if not trending:
+            # 데이터가 없으면 수집 실행
+            api_logger.info("No WSB data found, collecting now...")
+            collector = TradestieCollector()
+            mentions = await collector.collect()
+            collector.save_to_database(mentions, db)
+
+            # 다시 조회
+            trending = (
+                db.query(SocialMediaMention)
+                .filter(
+                    SocialMediaMention.source == 'wallstreetbets',
+                    SocialMediaMention.data_date >= today_start
+                )
+                .order_by(SocialMediaMention.rank.asc())
+                .limit(limit)
+                .all()
+            )
+
+        return {
+            "status": "success",
+            "data": {
+                "trending_stocks": [
+                    {
+                        "rank": t.rank,
+                        "ticker": t.ticker,
+                        "mention_count": t.mention_count,
+                        "sentiment": t.sentiment,
+                        "sentiment_score": t.sentiment_score,
+                        "data_date": t.data_date.isoformat() if t.data_date else None
+                    }
+                    for t in trending
+                ],
+                "total": len(trending),
+                "source": "r/wallstreetbets",
+                "timestamp": datetime.now().isoformat()
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting WSB trending: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/social/stocktwits/{ticker}")
+async def get_stocktwits_sentiment(
+    ticker: str,
+    db: Session = Depends(get_db)
+):
+    """
+    특정 종목의 StockTwits 감성 조회
+
+    Args:
+        ticker: 주식 티커 (예: 'TSLA', 'AAPL')
+        db: Database session
+
+    Returns:
+        종목별 투자자 감성
+    """
+    try:
+        ticker = ticker.upper()
+
+        # DB에서 최신 데이터 조회 (오늘)
+        today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+
+        sentiment_data = (
+            db.query(SocialMediaMention)
+            .filter(
+                SocialMediaMention.source == 'stocktwits',
+                SocialMediaMention.ticker == ticker,
+                SocialMediaMention.data_date >= today_start
+            )
+            .order_by(SocialMediaMention.collected_at.desc())
+            .first()
+        )
+
+        if not sentiment_data:
+            # 데이터가 없으면 실시간 수집
+            api_logger.info(f"No StockTwits data for {ticker}, collecting now...")
+            collector = StockTwitsCollector()
+            mention = await collector.collect_symbol(ticker)
+
+            if mention:
+                collector.save_to_database([mention], db)
+                sentiment_data = (
+                    db.query(SocialMediaMention)
+                    .filter(
+                        SocialMediaMention.source == 'stocktwits',
+                        SocialMediaMention.ticker == ticker
+                    )
+                    .order_by(SocialMediaMention.collected_at.desc())
+                    .first()
+                )
+
+        if not sentiment_data:
+            return {
+                "status": "success",
+                "data": {
+                    "ticker": ticker,
+                    "sentiment": "NO_DATA",
+                    "message": f"No StockTwits data available for {ticker}"
+                }
+            }
+
+        return {
+            "status": "success",
+            "data": {
+                "ticker": ticker,
+                "sentiment": sentiment_data.sentiment,
+                "sentiment_score": sentiment_data.sentiment_score,
+                "bullish_ratio": sentiment_data.bullish_ratio,
+                "mention_count": sentiment_data.mention_count,
+                "sentiment_breakdown": sentiment_data.raw_data.get('sentiment_breakdown', {}),
+                "data_date": sentiment_data.data_date.isoformat() if sentiment_data.data_date else None,
+                "collected_at": sentiment_data.collected_at.isoformat()
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting StockTwits sentiment for {ticker}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/social/trending-combined")
+async def get_combined_social_trends(
+    limit: int = 30,
+    db: Session = Depends(get_db)
+):
+    """
+    통합 소셜 미디어 트렌드 (WSB + StockTwits)
+
+    Args:
+        limit: 조회 개수
+        db: Database session
+
+    Returns:
+        통합 트렌드 데이터
+    """
+    try:
+        today_start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+
+        # WSB + StockTwits 데이터 모두 조회
+        all_mentions = (
+            db.query(SocialMediaMention)
+            .filter(SocialMediaMention.data_date >= today_start)
+            .all()
+        )
+
+        # 티커별로 그룹화
+        ticker_data = {}
+        for mention in all_mentions:
+            ticker = mention.ticker
+            if ticker not in ticker_data:
+                ticker_data[ticker] = {
+                    'ticker': ticker,
+                    'wsb_rank': None,
+                    'wsb_mentions': 0,
+                    'wsb_sentiment': None,
+                    'stocktwits_sentiment': None,
+                    'stocktwits_bullish_ratio': None,
+                    'combined_score': 0
+                }
+
+            if mention.source == 'wallstreetbets':
+                ticker_data[ticker]['wsb_rank'] = mention.rank
+                ticker_data[ticker]['wsb_mentions'] = mention.mention_count
+                ticker_data[ticker]['wsb_sentiment'] = mention.sentiment
+                ticker_data[ticker]['combined_score'] += mention.mention_count * 1.0
+            elif mention.source == 'stocktwits':
+                ticker_data[ticker]['stocktwits_sentiment'] = mention.sentiment
+                ticker_data[ticker]['stocktwits_bullish_ratio'] = mention.bullish_ratio
+                ticker_data[ticker]['combined_score'] += (mention.bullish_ratio or 0.5) * 100
+
+        # 점수 기준 정렬
+        sorted_data = sorted(
+            ticker_data.values(),
+            key=lambda x: x['combined_score'],
+            reverse=True
+        )[:limit]
+
+        return {
+            "status": "success",
+            "data": {
+                "trending_stocks": sorted_data,
+                "total": len(sorted_data),
+                "sources": ["wallstreetbets", "stocktwits"],
+                "timestamp": datetime.now().isoformat()
+            }
+        }
+
+    except Exception as e:
+        api_logger.error(f"Error getting combined social trends: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
