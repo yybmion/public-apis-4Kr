@@ -1,7 +1,7 @@
 # PRD: 한국 주식 자동매매 지원 시스템
 ## Product Requirements Document
 
-**문서 버전**: 2.1
+**문서 버전**: 2.2
 **작성일**: 2025-11-21
 **최종 업데이트**: 2025-11-22
 **프로젝트명**: Stock Intelligence System (SIS)
@@ -347,6 +347,141 @@ if ticker == "NVDA":
 - [REQ-045] 미국 주식 트렌드와 한국 주식 매핑 로직
 - [REQ-046] 감성 점수 급변 시 알림 (예: 0.8 → 0.3)
 - [REQ-047] 데이터 수집 실패 시 재시도 (3회, exponential backoff)
+
+#### 3.1.8 FRED API 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+미국 연방준비은행의 80만+ 경제 지표 수집을 통한 글로벌 경제 분석
+
+**데이터 소스**
+- **API**: FRED (Federal Reserve Economic Data)
+- **제공 데이터**: 800,000+ US economic time series
+- **비용**: 무료 (120 requests/minute limit)
+
+**주요 지표 (25개 사전 정의)**
+
+| 카테고리 | 지표 |
+|---------|------|
+| **금리** | Federal Funds Rate, 10Y/2Y/3M Treasury Yields |
+| **고용** | Unemployment Rate, Nonfarm Payrolls, Initial Claims |
+| **인플레이션** | CPI, Core CPI, PCE, Core PCE |
+| **GDP** | GDP, GDP Growth, Industrial Production, Retail Sales |
+| **주택** | Housing Starts, Existing Home Sales, Case-Shiller Index |
+| **금융 시장** | S&P 500, VIX, M2 Money Supply, Consumer Sentiment |
+
+**자동 계산 기능**
+```python
+# Yield Curve Analysis with Recession Signals
+{
+  'yields': {'treasury_10y': 4.5, 'treasury_2y': 4.7, 'treasury_3m': 5.0},
+  'spreads': {'10y_2y': -0.2, '10y_3m': -0.5},
+  'yield_curve_inverted': True,
+  'recession_signal': True  # 역사적으로 경기 침체 선행 지표
+}
+```
+
+**요구사항**
+- [REQ-048] FRED API 25개 지표 자동 수집 (일 1회)
+- [REQ-049] Yield Curve 계산 및 경기 침체 신호 자동 탐지
+- [REQ-050] API 호출 실패 시 3회 재시도 (exponential backoff)
+- [REQ-051] 모든 데이터에 출처 메타데이터 포함
+
+#### 3.1.9 ECOS API 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+한국은행 경제통계시스템의 10만+ 한국 경제 지표 수집
+
+**데이터 소스**
+- **API**: ECOS (Economic Statistics System, Bank of Korea)
+- **제공 데이터**: 100,000+ Korean economic statistics
+- **비용**: 무료 (공식 API)
+
+**주요 지표 (25개 사전 정의)**
+
+| 카테고리 | 지표 |
+|---------|------|
+| **금리** | 기준금리, 콜금리, CD 91일물, 국고채 3년/10년 |
+| **통화량** | M1, M2, Lf (광의유동성) |
+| **GDP** | GDP 성장률 (QoQ, YoY) |
+| **인플레이션** | CPI, Core CPI, PPI |
+| **고용** | 실업률, 고용률 |
+| **무역** | 수출, 수입, 무역수지 |
+| **환율** | USD/KRW, EUR/KRW, JPY/KRW |
+| **심리지표** | BSI 제조업, CSI (소비자심리지수) |
+
+**경제 스냅샷 자동 생성**
+```python
+# Daily Economic Snapshot
+{
+  'base_rate': {'value': 3.5, 'date': '2024-11'},
+  'usd_krw': {'value': 1330.5, 'date': '2024-11-22'},
+  'cpi': {'value': 105.2, 'date': '2024-10'},
+  'unemployment_rate': {'value': 2.8, 'date': '2024-10'},
+  ...
+}
+```
+
+**요구사항**
+- [REQ-052] ECOS API 25개 지표 자동 수집 (일 1회)
+- [REQ-053] 경제 스냅샷 생성 및 DB 저장
+- [REQ-054] 환율 데이터 실시간 수집 (장중 매 10분)
+- [REQ-055] 한국 경제 주요 지표 대시보드 제공
+
+#### 3.1.10 Fear & Greed Index 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+CNN Fear & Greed Index를 통한 시장 심리 분석 및 역발상 투자 신호 생성
+
+**데이터 소스**
+- **API**: CNN Fear & Greed Index (unofficial endpoint)
+- **제공 데이터**: 시장 심리 점수 (0-100), 역사적 데이터
+- **비용**: 무료, API 키 불필요
+
+**심리 지표 분류**
+
+| 점수 범위 | 등급 | 신호 | 투자 전략 |
+|----------|------|------|----------|
+| 0-25 | Extreme Fear | STRONG_BUY | 극단적 공포 - 역발상 매수 기회 |
+| 25-45 | Fear | BUY / WEAK_BUY | 공포 - 분할 매수 고려 |
+| 45-55 | Neutral | HOLD | 중립 - 관망 |
+| 55-75 | Greed | WEAK_SELL / SELL | 탐욕 - 분할 매도 고려 |
+| 75-100 | Extreme Greed | STRONG_SELL | 극단적 탐욕 - 적극 매도 고려 |
+
+**자동 분석 기능**
+```python
+# Market Sentiment Analysis
+{
+  'score': 35.5,
+  'rating': 'Fear',
+  'signal': {'signal': 'BUY', 'description': '공포 - 매수 기회'},
+  'trends': {
+    'daily_change': -5.2,
+    'weekly_change': -10.5,
+    'monthly_change': -15.0
+  },
+  'contrarian_opportunity': True  # 역발상 기회
+}
+```
+
+**추세 분석**
+```python
+# 30-day Trend Analysis
+{
+  'average_score': 42.3,
+  'average_sentiment': 'Fear',
+  'trend_direction': 'decreasing',  # 공포 증가 중
+  'extreme_fear_days': 5,
+  'extreme_greed_days': 0,
+  'volatility': 8.5
+}
+```
+
+**요구사항**
+- [REQ-056] Fear & Greed Index 매일 수집 (1회)
+- [REQ-057] 자동 투자 신호 생성 (5단계)
+- [REQ-058] 30일 추세 분석 제공
+- [REQ-059] 극단적 공포/탐욕 시 알림 (optional)
+- [REQ-060] 역사적 데이터 저장 (최소 1년)
 
 ---
 
@@ -1047,6 +1182,13 @@ def send_kakao_alert(message):
 | 2.1 | 2025-11-22 | Multi-LLM 분석 시스템 (4-Agent 합의 메커니즘) 추가 | AI Assistant |
 |  |  | 소셜 미디어 데이터 수집 (WallStreetBets + StockTwits) 추가 | |
 |  |  | 요구사항 REQ-040 ~ REQ-047 추가 | |
+| 2.2 | 2025-11-22 | Phase 1 데이터 수집기 통합 완료 | AI Assistant |
+|  |  | - FRED API 수집기 (REQ-048 ~ REQ-051) | |
+|  |  | - ECOS API 수집기 (REQ-052 ~ REQ-055) | |
+|  |  | - Fear & Greed Index 수집기 (REQ-056 ~ REQ-060) | |
+|  |  | - 미국 경제 지표 80만+ 추가 | |
+|  |  | - 한국 경제 지표 10만+ 추가 | |
+|  |  | - 시장 심리 분석 및 역발상 투자 신호 추가 | |
 
 ---
 
