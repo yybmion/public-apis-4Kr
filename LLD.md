@@ -1,8 +1,9 @@
 # LLD: 한국 주식 자동매매 지원 시스템
 ## Low-Level Design Document
 
-**문서 버전**: 1.0
+**문서 버전**: 2.0
 **작성일**: 2025-11-21
+**최종 업데이트**: 2025-11-22
 **프로젝트명**: Stock Intelligence System (SIS)
 
 ---
@@ -45,6 +46,8 @@
 │  GET  /api/v1/recommendations         # 추천 종목          │
 │  POST /api/v1/chart/analyze           # 차트 분석          │
 │  GET  /api/v1/market/overview         # 시장 현황          │
+│  POST /api/v1/llm/analyze-multi       # Multi-LLM 분석     │
+│  POST /api/v1/llm/analyze-signal/{code} # LLM 종합 분석   │
 └─────────────────────────────────────────────────────────────┘
                               │
         ┌─────────────────────┼─────────────────────┐
@@ -63,6 +66,25 @@
         └─────────────────────┼─────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
+│                   Multi-LLM Analysis Layer                   │
+│                    (LLM Orchestrator)                        │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐       │
+│  │ Claude  │  │  GPT-4  │  │ Gemini  │  │  Grok   │       │
+│  │ Sonnet 4│  │ Turbo   │  │  Pro    │  │   2     │       │
+│  └─────────┘  └─────────┘  └─────────┘  └─────────┘       │
+│       ↓            ↓            ↓            ↓              │
+│  ┌─────────────────────────────────────────────────┐       │
+│  │         Consensus Voting Mechanism              │       │
+│  │  • BUY/SELL/HOLD 투표                           │       │
+│  │  • 신뢰도 가중 평균                             │       │
+│  │  • 동의 수준 계산                               │       │
+│  └─────────────────────────────────────────────────┘       │
+└─────────────────────────────────────────────────────────────┘
+        │                     │                     │
+        └─────────────────────┼─────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
 │                     Data Access Layer                        │
 │                    (SQLAlchemy ORM)                          │
 └─────────────────────────────────────────────────────────────┘
@@ -70,8 +92,11 @@
         ┌─────────────────────┼─────────────────────┐
         ↓                     ↓                     ↓
 ┌────────────────┐  ┌────────────────┐  ┌────────────────┐
-│   PostgreSQL   │  │     Redis      │  │   AWS S3       │
-│   (Main DB)    │  │   (Cache)      │  │  (차트 이미지)  │
+│   Supabase     │  │     Redis      │  │   AWS S3       │
+│  (PostgreSQL)  │  │   (Cache)      │  │  (차트 이미지)  │
+│  • 주가/종목   │  │                │  │                │
+│  • LLM분석기록 │  │                │  │                │
+│  • 합의결과    │  │                │  │                │
 └────────────────┘  └────────────────┘  └────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -97,9 +122,13 @@
 |-------|-----------|---------|
 | **Frontend** | Streamlit | 1.28+ |
 | **API Server** | FastAPI | 0.104+ |
-| **Database** | PostgreSQL | 15+ |
+| **Database** | Supabase (PostgreSQL) | 15+ |
 | **Cache** | Redis | 7+ |
 | **ORM** | SQLAlchemy | 2.0+ |
+| **LLM - Agent 1** | Anthropic Claude Sonnet 4 | latest |
+| **LLM - Agent 2** | OpenAI GPT-4 Turbo | gpt-4-turbo |
+| **LLM - Agent 3** | Google Gemini Pro | latest |
+| **LLM - Agent 4** | xAI Grok 2 | grok-2 |
 | **Task Queue** | AWS Lambda | - |
 | **Storage** | AWS S3 | - |
 | **Monitoring** | CloudWatch | - |
@@ -145,12 +174,24 @@ stock-intelligence-system/
 │   │   ├── sector_analyzer.py
 │   │   └── scoring.py
 │   │
+│   ├── llm/                       # Multi-LLM 분석 시스템
+│   │   ├── __init__.py
+│   │   ├── orchestrator.py        # LLM 조정자 (투표 메커니즘)
+│   │   └── agents/                # LLM 에이전트
+│   │       ├── __init__.py
+│   │       ├── base_agent.py      # 추상 기본 클래스
+│   │       ├── claude_agent.py    # Claude Sonnet 4
+│   │       ├── gpt4_agent.py      # GPT-4 Turbo
+│   │       ├── gemini_agent.py    # Gemini Pro
+│   │       └── grok_agent.py      # Grok 2
+│   │
 │   ├── models/                    # 데이터 모델
 │   │   ├── __init__.py
 │   │   ├── stock.py
 │   │   ├── price.py
 │   │   ├── financial.py
-│   │   └── user.py
+│   │   ├── user.py
+│   │   └── llm_analysis.py        # LLM 분석 추적 모델
 │   │
 │   ├── schemas/                   # Pydantic 스키마
 │   │   ├── __init__.py
@@ -272,6 +313,47 @@ stock-intelligence-system/
 │    created_at        │      │    win_rate          │
 └──────────────────────┘      │    created_at        │
                               └──────────────────────┘
+
+┌─────────────────────────────────── LLM Analysis Tables ────────────────────────────────┐
+
+┌──────────────────────┐      ┌──────────────────────┐      ┌──────────────────────┐
+│   llm_analyses       │      │   llm_consensus      │      │  llm_performance     │
+├──────────────────────┤      ├──────────────────────┤      ├──────────────────────┤
+│ PK id                │      │ PK id                │      │ PK id                │
+│ FK stock_code        │  ┌───│ FK stock_code        │      │    llm_model         │
+│    stock_name        │  │   │    analysis_type     │      │    total_requests    │
+│    analysis_type     │  │   │    claude_analysis_id├──┐   │    total_tokens      │
+│    llm_model         │◄─┘   │    gpt4_analysis_id  │  │   │    total_cost        │
+│    model_version     │  ┌───│    gemini_analysis_id│  │   │    avg_latency_ms    │
+│    input_data (JSON) │  │┌──│    grok_analysis_id  │  │   │    success_rate      │
+│    llm_response      │  ││  │    buy_votes         │  │   │    accuracy          │
+│    parsed_result     │  ││  │    sell_votes        │  │   │    buy_count         │
+│    decision          │  ││  │    hold_votes        │  │   │    sell_count        │
+│    confidence        │  ││  │    consensus_decision│  │   │    hold_count        │
+│    tokens_used       │  ││  │    consensus_conf    │  │   │    last_used_at      │
+│    cost              │  ││  │    agreement_level   │  │   │    updated_at        │
+│    latency_ms        │  ││  │    avg_confidence    │  │   └──────────────────────┘
+│    success           │  ││  │    recommendation    │  │
+│    created_at        │  ││  │    created_at        │  │
+└──────────────────────┘  ││  └──────────────────────┘  │
+        │  │  │  │        ││                            │
+        └──┴──┴──┴────────┴┴────────────────────────────┘
+         Claude GPT4 Gemini Grok (4-way relationship)
+
+┌──────────────────────────┐
+│  data_collection_logs    │
+├──────────────────────────┤
+│ PK id                    │
+│    collector_type        │  -- 'kis', 'yahoo', 'dart', 'news'
+│    action                │
+│    target_code           │
+│    success               │
+│    records_collected     │
+│    duration_ms           │
+│    error_message         │
+│    metadata (JSON)       │
+│    created_at            │
+└──────────────────────────┘
 ```
 
 ### 2.2 테이블 상세 스키마
@@ -452,6 +534,133 @@ CREATE TABLE backtest_results (
 
     INDEX idx_strategy (strategy_name),
     INDEX idx_sharpe (sharpe_ratio DESC)
+);
+```
+
+#### 2.2.9 llm_analyses (LLM 분석 기록)
+
+```sql
+CREATE TABLE llm_analyses (
+    id SERIAL PRIMARY KEY,
+    stock_code VARCHAR(10) NOT NULL,
+    stock_name VARCHAR(100),
+    analysis_type VARCHAR(50),          -- 'news_risk', 'combined_signal', 'explanation'
+    llm_model VARCHAR(50) NOT NULL,     -- 'claude', 'gpt4', 'gemini', 'grok'
+    model_version VARCHAR(50),
+
+    input_data JSONB,                   -- 입력 데이터
+    llm_response TEXT,                  -- 원본 LLM 응답
+    parsed_result JSONB,                -- 파싱된 결과
+
+    decision VARCHAR(20),               -- 'BUY', 'SELL', 'HOLD'
+    confidence DECIMAL(5,2),            -- 신뢰도 (0-100)
+
+    tokens_used INTEGER,                -- 토큰 사용량
+    cost DECIMAL(10,6),                 -- 비용 (USD)
+    latency_ms INTEGER,                 -- 응답 시간 (ms)
+
+    success BOOLEAN DEFAULT TRUE,
+    error_message TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+
+    INDEX idx_stock_code (stock_code),
+    INDEX idx_llm_model (llm_model),
+    INDEX idx_created_at (created_at DESC),
+    FOREIGN KEY (stock_code) REFERENCES stocks(code)
+);
+```
+
+#### 2.2.10 llm_consensus (LLM 합의 결과)
+
+```sql
+CREATE TABLE llm_consensus (
+    id SERIAL PRIMARY KEY,
+    stock_code VARCHAR(10) NOT NULL,
+    stock_name VARCHAR(100),
+    analysis_type VARCHAR(50),
+
+    claude_analysis_id INTEGER,         -- FK to llm_analyses
+    gpt4_analysis_id INTEGER,
+    gemini_analysis_id INTEGER,
+    grok_analysis_id INTEGER,
+
+    buy_votes INTEGER DEFAULT 0,
+    sell_votes INTEGER DEFAULT 0,
+    hold_votes INTEGER DEFAULT 0,
+
+    consensus_decision VARCHAR(20),     -- 'BUY', 'SELL', 'HOLD', 'NO_CONSENSUS'
+    consensus_confidence DECIMAL(5,2),  -- 0-100
+    agreement_level DECIMAL(3,2),       -- 0-1 (동의 비율)
+
+    avg_confidence DECIMAL(5,2),
+    total_cost DECIMAL(10,6),
+    total_latency_ms INTEGER,
+
+    recommendation TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+
+    INDEX idx_stock_code (stock_code),
+    INDEX idx_created_at (created_at DESC),
+    FOREIGN KEY (stock_code) REFERENCES stocks(code),
+    FOREIGN KEY (claude_analysis_id) REFERENCES llm_analyses(id),
+    FOREIGN KEY (gpt4_analysis_id) REFERENCES llm_analyses(id),
+    FOREIGN KEY (gemini_analysis_id) REFERENCES llm_analyses(id),
+    FOREIGN KEY (grok_analysis_id) REFERENCES llm_analyses(id)
+);
+```
+
+#### 2.2.11 llm_performance (LLM 성능 지표)
+
+```sql
+CREATE TABLE llm_performance (
+    id SERIAL PRIMARY KEY,
+    llm_model VARCHAR(50) UNIQUE NOT NULL,  -- 'claude', 'gpt4', 'gemini', 'grok'
+
+    total_requests INTEGER DEFAULT 0,
+    total_tokens INTEGER DEFAULT 0,
+    total_cost DECIMAL(10,4) DEFAULT 0.0,
+
+    avg_latency_ms DECIMAL(8,2),
+    success_rate DECIMAL(5,4),          -- 0-1
+
+    correct_predictions INTEGER DEFAULT 0,
+    total_predictions INTEGER DEFAULT 0,
+    accuracy DECIMAL(5,4),              -- 0-1 (실제 결과와 비교 시)
+
+    buy_count INTEGER DEFAULT 0,
+    sell_count INTEGER DEFAULT 0,
+    hold_count INTEGER DEFAULT 0,
+
+    last_used_at TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT NOW(),
+
+    INDEX idx_accuracy (accuracy DESC)
+);
+```
+
+#### 2.2.12 data_collection_logs (데이터 수집 로그)
+
+```sql
+CREATE TABLE data_collection_logs (
+    id SERIAL PRIMARY KEY,
+    collector_type VARCHAR(50) NOT NULL,  -- 'kis', 'yahoo', 'dart', 'news'
+    action VARCHAR(100),
+    target_code VARCHAR(20),
+    target_name VARCHAR(100),
+
+    success BOOLEAN DEFAULT TRUE,
+    records_collected INTEGER DEFAULT 0,
+    error_message TEXT,
+
+    metadata JSONB,
+    started_at TIMESTAMP,
+    completed_at TIMESTAMP,
+    duration_ms INTEGER,
+    created_at TIMESTAMP DEFAULT NOW(),
+
+    INDEX idx_collector_type (collector_type),
+    INDEX idx_target_code (target_code),
+    INDEX idx_created_at (created_at DESC)
 );
 ```
 
@@ -694,6 +903,141 @@ Query Parameters:
   }
 }
 ```
+
+#### 3.1.6 Multi-LLM 분석 API
+
+**POST /llm/analyze-signal/{code}**
+
+종목 코드로 Multi-LLM 종합 분석 실행 (데이터 자동 수집 + 4-Agent 병렬 분석)
+
+Path Parameters:
+- `code`: 종목코드 (예: '005930')
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "consensus_id": 123,
+    "stock_code": "005930",
+    "stock_name": "삼성전자",
+    "analysis_type": "combined_signal",
+    "individual_results": {
+      "claude": {
+        "success": true,
+        "decision": "BUY",
+        "confidence": 85.5,
+        "tokens_used": 1250,
+        "cost": 0.0125,
+        "latency_ms": 1420
+      },
+      "gpt4": {
+        "success": true,
+        "decision": "BUY",
+        "confidence": 78.2,
+        "tokens_used": 980,
+        "cost": 0.0196,
+        "latency_ms": 1150
+      },
+      "gemini": {
+        "success": true,
+        "decision": "HOLD",
+        "confidence": 62.0,
+        "tokens_used": 1100,
+        "cost": 0.0033,
+        "latency_ms": 980
+      },
+      "grok": {
+        "success": true,
+        "decision": "BUY",
+        "confidence": 72.8,
+        "tokens_used": 1050,
+        "cost": 0.0105,
+        "latency_ms": 1230
+      }
+    },
+    "consensus": {
+      "decision": "BUY",
+      "confidence": 78.6,
+      "agreement_level": 0.75,
+      "strength": "STRONG",
+      "votes": {
+        "buy": 3,
+        "sell": 0,
+        "hold": 1
+      },
+      "successful_models": 4,
+      "total_models": 4
+    },
+    "total_duration_ms": 1520,
+    "timestamp": "2025-11-22T10:30:00+09:00"
+  }
+}
+```
+
+**GET /llm/consensus/{code}**
+
+종목의 LLM 합의 결과 이력 조회
+
+Query Parameters:
+- `limit`: 조회 개수 (default: 10)
+- `analysis_type`: 분석 유형 필터 (옵션)
+
+**GET /llm/performance**
+
+LLM 모델별 성능 지표 조회
+
+Query Parameters:
+- `model_name`: 특정 모델 필터 (claude, gpt4, gemini, grok) - 옵션
+
+응답 예시:
+```json
+{
+  "status": "success",
+  "data": {
+    "models": [
+      {
+        "model": "claude",
+        "total_requests": 1250,
+        "total_tokens": 1563000,
+        "total_cost": 15.63,
+        "avg_latency_ms": 1345.2,
+        "success_rate": 99.2,
+        "accuracy": 67.5,
+        "decisions": {
+          "buy": 520,
+          "sell": 380,
+          "hold": 350
+        },
+        "last_used": "2025-11-22T10:30:00+09:00"
+      },
+      {
+        "model": "gpt4",
+        "total_requests": 1250,
+        "total_tokens": 1225000,
+        "total_cost": 24.50,
+        "avg_latency_ms": 1180.5,
+        "success_rate": 98.8,
+        "accuracy": 65.2,
+        "decisions": {
+          "buy": 490,
+          "sell": 420,
+          "hold": 340
+        }
+      }
+    ],
+    "total_models": 4
+  }
+}
+```
+
+**GET /llm/history/{code}**
+
+종목의 LLM 분석 이력 조회
+
+Query Parameters:
+- `limit`: 조회 개수 (default: 20)
+- `model_name`: 모델 필터 (옵션)
 
 ### 3.2 에러 응답 형식
 
@@ -1617,3 +1961,9 @@ def test_get_recommendations():
 | 버전 | 날짜 | 변경 내용 | 작성자 |
 |------|------|-----------|--------|
 | 1.0 | 2025-11-21 | 초안 작성 | AI Assistant |
+| 2.0 | 2025-11-22 | Supabase 통합 및 Multi-LLM 분석 시스템 추가 | AI Assistant |
+|  |  | - Supabase (PostgreSQL) 데이터베이스 통합 | |
+|  |  | - Multi-LLM 레이어 추가 (Claude, GPT-4, Gemini, Grok) | |
+|  |  | - LLM 분석 추적 테이블 4개 추가 (llm_analyses, llm_consensus, llm_performance, data_collection_logs) | |
+|  |  | - Multi-LLM API 엔드포인트 5개 추가 | |
+|  |  | - 투표 기반 합의 메커니즘 설계 | |
