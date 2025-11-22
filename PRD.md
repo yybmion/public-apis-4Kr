@@ -1,8 +1,9 @@
 # PRD: 한국 주식 자동매매 지원 시스템
 ## Product Requirements Document
 
-**문서 버전**: 2.0
+**문서 버전**: 2.1
 **작성일**: 2025-11-21
+**최종 업데이트**: 2025-11-22
 **프로젝트명**: Stock Intelligence System (SIS)
 **상태**: Draft
 
@@ -232,6 +233,120 @@ result = sentiment("삼성전자, 반도체 수주 급증으로 실적 개선 �
 **요구사항**
 - [REQ-011] 출처가 Tier 1이 아닌 뉴스는 경고 표시
 - [REQ-012] 감성 점수 +0.7 이상: 긍정, -0.7 이하: 부정
+
+#### 3.1.6 Multi-LLM 분석 시스템 ⭐ (Must Have)
+
+**기능 설명**
+4개의 서로 다른 LLM을 병렬로 실행하여 투자 의견을 수렴하고, 투표 메커니즘으로 최종 결론 도출
+
+**4-Agent 구성**
+| LLM | 모델 | 특징 | 비용 |
+|-----|------|------|------|
+| **Claude Sonnet 4** | claude-sonnet-4-5-20250929 | 논리적 분석 우수 | 종량제 |
+| **GPT-4 Turbo** | gpt-4-turbo | 범용성 우수 | 종량제 |
+| **Gemini Pro** | gemini-pro | Google 생태계 연동 | 종량제 |
+| **Grok 2** | grok-2 | 실시간 정보 반영 | 종량제 |
+
+**합의 메커니즘 (Consensus Voting)**
+```python
+# 각 LLM의 분석 결과
+results = [
+    {"model": "claude", "decision": "BUY", "confidence": 0.85},
+    {"model": "gpt4", "decision": "BUY", "confidence": 0.78},
+    {"model": "gemini", "decision": "HOLD", "confidence": 0.65},
+    {"model": "grok", "decision": "BUY", "confidence": 0.72}
+]
+
+# 투표 결과
+votes = {"BUY": 3, "SELL": 0, "HOLD": 1}
+consensus_decision = "BUY"  # 다수결
+agreement_level = "STRONG"  # 3-4개 일치: STRONG, 2개: MODERATE
+
+# 신뢰도 가중 평균
+weighted_confidence = (0.85 + 0.78 + 0.72) / 3 = 0.78
+```
+
+**분석 유형**
+```python
+analysis_types = [
+    "news_risk",        # 뉴스 기반 리스크 평가
+    "technical_signal",  # 기술적 지표 분석
+    "fundamental",       # 재무제표 분석
+    "combined_signal"    # 종합 매매 신호
+]
+```
+
+**데이터 추적**
+- 각 LLM의 토큰 사용량, 비용, 레이턴시 기록
+- 정확도 추적 (예측 vs 실제 결과)
+- 모델별 성과 비교 대시보드
+
+**요구사항**
+- [REQ-040] 4개 LLM 병렬 실행으로 응답 시간 최소화 (< 10초)
+- [REQ-041] 투표 결과에 동의 수준(agreement_level) 명시
+- [REQ-042] 각 LLM의 근거(reasoning) 투명하게 제공
+- [REQ-043] 비용 추적 및 월별 리포트 생성
+
+#### 3.1.7 소셜 미디어 데이터 수집 ⭐ (Must Have)
+
+**기능 설명**
+Reddit WallStreetBets와 StockTwits에서 실시간 투자자 감성 및 트렌딩 종목 수집
+
+**데이터 소스**
+
+**1. WallStreetBets (r/wallstreetbets)**
+- **API**: Tradestie API (무료, 인증 불필요)
+- **제공 데이터**: Top 50 트렌딩 주식
+```python
+{
+    "ticker": "NVDA",
+    "rank": 1,
+    "mention_count": 1250,           # 멘션 횟수
+    "sentiment": "BULLISH",          # 감성
+    "sentiment_score": 0.75,         # -1.0 ~ 1.0
+    "no_of_comments": 845
+}
+```
+
+**2. StockTwits**
+- **API**: StockTwits Public API (무료, 인증 불필요)
+- **제공 데이터**: 종목별 투자자 감성
+```python
+{
+    "ticker": "TSLA",
+    "sentiment": "BULLISH",
+    "bullish_ratio": 0.725,          # 긍정 비율 (0-1)
+    "message_count": 345,
+    "sentiment_breakdown": {
+        "bullish": 250,
+        "bearish": 95
+    }
+}
+```
+
+**활용 전략**
+```python
+# WallStreetBets 트렌드 + StockTwits 감성 결합
+if wsb_rank <= 10 and stocktwits_bullish_ratio > 0.7:
+    signal = "STRONG_BUY"  # 강력 매수 신호
+elif wsb_rank <= 20 and stocktwits_bullish_ratio > 0.6:
+    signal = "BUY"         # 매수 신호
+
+# 한국 종목 매핑
+if ticker == "NVDA":
+    related_korean_stocks = ["005930"]  # 삼성전자 (반도체)
+```
+
+**수집 주기**
+- WallStreetBets: 매 30분마다 Top 50 수집
+- StockTwits: 관심 종목에 대해 실시간 수집
+- 데이터 보관: 최근 30일
+
+**요구사항**
+- [REQ-044] 무료 API만 사용하여 비용 제로
+- [REQ-045] 미국 주식 트렌드와 한국 주식 매핑 로직
+- [REQ-046] 감성 점수 급변 시 알림 (예: 0.8 → 0.3)
+- [REQ-047] 데이터 수집 실패 시 재시도 (3회, exponential backoff)
 
 ---
 
@@ -929,6 +1044,9 @@ def send_kakao_alert(message):
 |------|------|-----------|--------|
 | 1.0 | 2025-11-21 | 초안 작성 | AI Assistant |
 | 2.0 | 2025-11-21 | 미국-한국 증시 연관성, 백테스팅, 구체적 기술 스택 추가 | AI Assistant |
+| 2.1 | 2025-11-22 | Multi-LLM 분석 시스템 (4-Agent 합의 메커니즘) 추가 | AI Assistant |
+|  |  | 소셜 미디어 데이터 수집 (WallStreetBets + StockTwits) 추가 | |
+|  |  | 요구사항 REQ-040 ~ REQ-047 추가 | |
 
 ---
 

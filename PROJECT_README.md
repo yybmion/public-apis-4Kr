@@ -33,13 +33,14 @@ Stock Intelligence System (SIS)은 **한국 주식 시장**에서 투자하는 �
 │              Streamlit Web Dashboard                     │
 │          (초보자 친화적 UI, 실시간 차트)                   │
 └─────────────────────────────────────────────────────────┘
-                          │ HTTP
+                          │ HTTPS
                           ↓
 ┌─────────────────────────────────────────────────────────┐
 │                  FastAPI Backend                         │
-│    - RESTful API                                         │
+│    - RESTful API (30+ 엔드포인트)                        │
 │    - 데이터 수집 스케줄링                                  │
 │    - 추천 알고리즘 엔진                                    │
+│    - Multi-LLM 분석 오케스트레이터                        │
 └─────────────────────────────────────────────────────────┘
                           │
         ┌─────────────────┼─────────────────┐
@@ -53,8 +54,17 @@ Stock Intelligence System (SIS)은 **한국 주식 시장**에서 투자하는 �
         ┌─────────────────┼─────────────────┐
         ↓                 ↓                 ↓
 ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ PostgreSQL   │  │ Redis        │  │ AWS S3       │
-│ (메인 DB)     │  │ (캐시)        │  │ (차트 이미지) │
+│ WallStreet   │  │ StockTwits   │  │ Multi-LLM    │
+│ Bets API     │  │ API          │  │ Analysis     │
+│ (소셜 트렌드) │  │ (투자 감성)   │  │ (4개 Agent)  │
+└──────────────┘  └──────────────┘  └──────────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ↓                 ↓                 ↓
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ Supabase     │  │ Redis        │  │ AWS S3       │
+│ (PostgreSQL) │  │ (캐시)        │  │ (차트 이미지) │
+│ 14개 테이블   │  │              │  │              │
 └──────────────┘  └──────────────┘  └──────────────┘
 ```
 
@@ -76,22 +86,30 @@ Stock Intelligence System (SIS)은 **한국 주식 시장**에서 투자하는 �
   - Docker 컨테이너화
   - 실시간 시장 현황 표시
 
-### Phase 2: 핵심 기능 (Week 5-8) 🚧
+### Phase 2: 핵심 기능 (Week 5-8) ✅
 
-- [ ] **투자 추천 시스템**
+- [x] **투자 추천 시스템**
   - 초보자 성향 분석 (5문항 설문)
   - 초보자 적합도 점수 (0-100)
   - 위험도별 종목 필터링 (LOW/MEDIUM/HIGH)
   - 섹터별 가이드
 
-- [ ] **백테스팅 엔진**
+- [x] **백테스팅 엔진**
   - Backtrader 프레임워크 구축
   - S&P 500 이평선 전략 (2018-2023)
   - 성과 지표 (CAGR, MDD, Sharpe)
 
-- [ ] **차트 이미지 분석**
-  - Upstage OCR로 데이터 추출
-  - CLOVA AI로 패턴 분석
+- [x] **Multi-LLM 분석 시스템**
+  - 4개 LLM 에이전트 병렬 실행 (Claude, GPT-4, Gemini, Grok)
+  - 투표 기반 합의 메커니즘 (BUY/SELL/HOLD)
+  - 성능 추적 및 비용 모니터링
+  - 5개 API 엔드포인트 구현
+
+- [x] **소셜 미디어 수집 시스템**
+  - WallStreetBets Top 50 트렌딩 (Tradestie API)
+  - StockTwits 종목별 투자자 감성 분석
+  - 4개 API 엔드포인트 구현
+  - 실시간 소셜 감성 추적
 
 ### Phase 3: 완성 및 배포 (Week 9-12) 📋
 
@@ -171,6 +189,8 @@ docker-compose up -d
 | 미국 지수 | Yahoo Finance | 야후 파이낸스 | ⭐⭐⭐⭐ |
 | 경제 지표 | ECOS | 한국은행 | ⭐⭐⭐⭐⭐ |
 | 뉴스 | 빅카인즈 | 한국언론진흥재단 | ⭐⭐⭐⭐ |
+| 소셜 트렌드 | Tradestie (WSB) | Reddit WallStreetBets | ⭐⭐⭐ |
+| 투자 감성 | StockTwits API | StockTwits 커뮤니티 | ⭐⭐⭐ |
 
 ---
 
@@ -210,10 +230,16 @@ public-apis-4Kr/
 │   ├── collectors/               # 데이터 수집기
 │   │   ├── kis_collector.py     # 한국투자증권 API
 │   │   ├── yahoo_collector.py   # Yahoo Finance
-│   │   └── dart_collector.py    # DART API
+│   │   ├── dart_collector.py    # DART API
+│   │   └── social_collector.py  # 소셜 미디어 (WSB + StockTwits)
 │   ├── analyzers/                # 분석 엔진
 │   ├── recommenders/             # 추천 시스템
+│   ├── llm/                      # Multi-LLM 분석 시스템
+│   │   ├── orchestrator.py      # LLM 오케스트레이터
+│   │   └── agents/              # 4개 LLM 에이전트
 │   ├── models/                   # DB 모델
+│   │   ├── llm_analysis.py      # LLM 분석 추적
+│   │   └── social_media.py      # 소셜 미디어 데이터
 │   └── main.py                   # FastAPI 앱
 │
 ├── dashboard/                    # Streamlit 대시보드
@@ -233,6 +259,7 @@ public-apis-4Kr/
 │   ├── PRD.md                   # 제품 요구사항
 │   ├── LLD.md                   # 기술 설계
 │   ├── PLAN.md                  # 프로젝트 계획
+│   ├── SNS_CRAWLING_FEASIBILITY.md  # SNS 크롤링 연구
 │   └── BEGINNER_GUIDE.md        # 초보자 가이드
 │
 ├── requirements.txt              # Python 의존성
@@ -297,9 +324,10 @@ curl http://localhost:8000/api/v1/market/overview
 
 ### Backend
 - **Framework**: FastAPI 0.104+
-- **Database**: PostgreSQL 15+
+- **Database**: Supabase (PostgreSQL 15+)
 - **Cache**: Redis 7+
 - **ORM**: SQLAlchemy 2.0+
+- **LLM Integration**: Anthropic Claude, OpenAI GPT-4, Google Gemini, xAI Grok
 
 ### Frontend
 - **Framework**: Streamlit 1.28+
@@ -310,6 +338,7 @@ curl http://localhost:8000/api/v1/market/overview
 - **US Markets**: yfinance
 - **Financials**: DART Open API
 - **Economic Data**: 한국은행 ECOS API
+- **Social Media**: Tradestie API (WallStreetBets), StockTwits API
 
 ### Analysis
 - **Backtesting**: Backtrader
@@ -336,22 +365,27 @@ curl http://localhost:8000/api/v1/market/overview
 - [x] Streamlit 대시보드
 - [x] Docker 컨테이너화
 
-### 🚧 진행 중 (Week 3-4)
+### ✅ 완료 (Week 3-4)
 
-- [ ] 기술적 지표 계산 (MA, RSI, MACD)
-- [ ] S&P 500 신호 생성
-- [ ] 실시간 차트 시각화
-- [ ] 종목 검색 및 상세 페이지
+- [x] 기술적 지표 계산 (MA, RSI, MACD)
+- [x] S&P 500 신호 생성
+- [x] 실시간 차트 시각화
+- [x] 종목 검색 및 상세 페이지
 
-### 📋 예정 (Week 5-12)
+### ✅ 완료 (Week 5-8)
 
-- [ ] 초보자 추천 시스템
-- [ ] 백테스팅 엔진
-- [ ] 차트 이미지 분석
-- [ ] 뉴스 감성 분석
-- [ ] 카카오톡 알림
-- [ ] AWS 배포
-- [ ] 모의투자 테스트
+- [x] 초보자 추천 시스템
+- [x] 백테스팅 엔진
+- [x] Multi-LLM 분석 시스템
+- [x] 소셜 미디어 수집 시스템
+
+### 📋 예정 (Week 9-12)
+
+- [ ] 차트 이미지 분석 (OCR + AI)
+- [ ] 뉴스 감성 분석 (한국어 BERT)
+- [ ] 카카오톡 알림 시스템
+- [ ] AWS 배포 (EC2, RDS, Lambda)
+- [ ] 모의투자 실전 테스트 (3주)
 
 ---
 
