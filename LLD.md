@@ -1037,6 +1037,211 @@ CREATE TABLE sentiment_history (
 );
 ```
 
+**`sec_companies` - SEC 등록 기업 정보 (Phase 2)**
+
+미국 SEC (증권거래위원회) 등록 기업의 기본 정보
+CIK (Central Index Key)는 SEC의 10자리 고유 식별자
+
+```sql
+CREATE TABLE sec_companies (
+    id SERIAL PRIMARY KEY,
+
+    -- SEC 식별자
+    cik VARCHAR(10) NOT NULL UNIQUE,            -- 10자리 CIK (예: '0000320193' - Apple)
+    ticker VARCHAR(10),                         -- 주식 티커 (상장 폐지 시 NULL 가능)
+    company_name VARCHAR(500) NOT NULL,
+
+    -- 기업 상세 정보
+    sic VARCHAR(10),                            -- 산업 분류 코드 (Standard Industrial Classification)
+    sic_description VARCHAR(200),               -- SIC 설명
+    category VARCHAR(100),                      -- 카테고리
+    entity_type VARCHAR(100),                   -- 법인 유형
+
+    -- 주소 정보 (JSON)
+    business_address JSONB,                     -- 사업장 주소
+    mailing_address JSONB,                      -- 우편 주소
+
+    -- 연락처
+    phone VARCHAR(50),
+    website VARCHAR(500),
+
+    -- 상태
+    is_active BOOLEAN DEFAULT TRUE,             -- 활성 여부
+    former_names JSONB,                         -- 이전 회사명 목록 (배열)
+
+    -- 메타데이터
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP,
+
+    INDEX idx_sec_company_cik (cik),
+    INDEX idx_sec_company_ticker (ticker),
+    INDEX idx_sec_company_name (company_name),
+    INDEX idx_sec_company_sic (sic)
+);
+```
+
+**`sec_filings` - SEC 공시 (Phase 2)**
+
+10-K (연간), 10-Q (분기), 8-K (중요 사건), 13F-HR (기관 투자자 보유) 등 모든 SEC 공시 정보
+
+```sql
+CREATE TABLE sec_filings (
+    id SERIAL PRIMARY KEY,
+
+    -- 외래 키
+    company_id INTEGER NOT NULL REFERENCES sec_companies(id) ON DELETE CASCADE,
+
+    -- 공시 식별자
+    cik VARCHAR(10) NOT NULL,
+    accession_number VARCHAR(25) NOT NULL UNIQUE,  -- 고유 공시 번호 (예: 0000320193-23-000077)
+
+    -- 공시 세부사항
+    form_type VARCHAR(20) NOT NULL,                -- 10-K, 10-Q, 8-K 등
+    filing_date DATE NOT NULL,                     -- 제출일
+    report_date DATE,                              -- 보고 기간 종료일 (정기 보고용)
+    accepted_date TIMESTAMP,                       -- 접수 일시
+
+    -- 문서 정보
+    primary_document VARCHAR(255),                 -- 주요 문서 파일명
+    primary_doc_description VARCHAR(500),
+    document_url VARCHAR(1000),                    -- 문서 전체 URL
+
+    -- 파일 크기
+    size INTEGER,                                  -- 파일 크기 (bytes)
+    file_count INTEGER,                            -- 제출 파일 수
+
+    -- 수정 정보
+    is_amendment BOOLEAN DEFAULT FALSE,            -- 수정 공시 여부
+    is_xbrl BOOLEAN DEFAULT FALSE,                 -- XBRL 데이터 포함 여부
+
+    -- 메타데이터
+    items JSONB,                                   -- 항목 번호 목록 (8-K 등)
+    raw_data JSONB,                                -- API 원본 데이터
+
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP,
+
+    INDEX idx_sec_filing_company_id (company_id),
+    INDEX idx_sec_filing_cik (cik),
+    INDEX idx_sec_filing_accession (accession_number),
+    INDEX idx_sec_filing_form_type (form_type),
+    INDEX idx_sec_filing_date (filing_date),
+    INDEX idx_sec_filing_company_form_date (company_id, form_type, filing_date),
+    INDEX idx_sec_filing_cik_date (cik, filing_date),
+    INDEX idx_sec_filing_form_date (form_type, filing_date)
+);
+```
+
+**`sec_financial_facts` - XBRL 재무 데이터 (Phase 2)**
+
+XBRL 형식의 구조화된 재무 데이터 (Revenue, Assets, Liabilities 등)
+
+```sql
+CREATE TABLE sec_financial_facts (
+    id SERIAL PRIMARY KEY,
+
+    -- 외래 키
+    company_id INTEGER NOT NULL REFERENCES sec_companies(id) ON DELETE CASCADE,
+
+    -- 식별자
+    cik VARCHAR(10) NOT NULL,
+
+    -- XBRL 분류체계
+    taxonomy VARCHAR(50) NOT NULL,                 -- 'us-gaap', 'dei', 'srt' 등
+    concept VARCHAR(200) NOT NULL,                 -- 'Revenue', 'Assets' 등
+    label VARCHAR(500),                            -- 사람이 읽을 수 있는 레이블
+
+    -- 기간
+    end_date DATE NOT NULL,                        -- 기간 종료일
+    start_date DATE,                               -- 기간 시작일 (기간 지표용)
+    fiscal_year INTEGER,                           -- 회계 연도
+    fiscal_period VARCHAR(10),                     -- 'FY', 'Q1', 'Q2', 'Q3', 'Q4'
+
+    -- 값
+    value NUMERIC(20, 4),                          -- 숫자 값
+    unit VARCHAR(20),                              -- 'USD', 'shares' 등
+    decimals INTEGER,                              -- 소수점 정밀도
+
+    -- 공시 참조
+    form_type VARCHAR(20),                         -- 출처 양식 (10-K, 10-Q 등)
+    filing_date DATE,
+    accession_number VARCHAR(25),
+
+    -- 프레임 정보
+    frame VARCHAR(50),                             -- 'CY2023Q4', 'CY2023' 등
+
+    -- 메타데이터
+    raw_data JSONB,                                -- 원본 fact 데이터
+
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP,
+
+    INDEX idx_sec_fact_company_id (company_id),
+    INDEX idx_sec_fact_cik (cik),
+    INDEX idx_sec_fact_concept (concept),
+    INDEX idx_sec_fact_end_date (end_date),
+    INDEX idx_sec_fact_fiscal_year (cik, fiscal_year),
+    INDEX idx_sec_fact_company_concept_date (company_id, concept, end_date),
+    INDEX idx_sec_fact_cik_concept (cik, concept),
+    INDEX idx_sec_fact_concept_date (concept, end_date)
+);
+```
+
+**`sec_institutional_holdings` - 기관 투자자 보유 현황 (Phase 2)**
+
+13F-HR 공시 데이터 - 자산 1억불 이상 기관 투자자의 분기별 포트폴리오
+(예: Berkshire Hathaway, Bridgewater 등)
+
+```sql
+CREATE TABLE sec_institutional_holdings (
+    id SERIAL PRIMARY KEY,
+
+    -- 공시 정보
+    filer_cik VARCHAR(10) NOT NULL,                -- 기관 투자자의 CIK
+    filer_name VARCHAR(500) NOT NULL,              -- 기관 이름
+    accession_number VARCHAR(25) NOT NULL,         -- 13F 공시 번호
+
+    -- 기간
+    report_date DATE NOT NULL,                     -- 분기 종료일
+    filing_date DATE,                              -- 제출일
+
+    -- 보유 정보
+    holding_company_name VARCHAR(500) NOT NULL,    -- 보유 기업명
+    holding_ticker VARCHAR(10),                    -- 보유 기업 티커
+    holding_cusip VARCHAR(9),                      -- CUSIP 식별자 (9자리)
+
+    -- 포지션 세부사항
+    shares NUMERIC(20, 4),                         -- 보유 주식 수
+    value NUMERIC(20, 2),                          -- 포지션 가치 (USD)
+    share_price NUMERIC(10, 4),                    -- 주당 가격 (암시적)
+
+    -- 포지션 유형
+    share_type VARCHAR(20),                        -- 'SH-SOLE', 'SH-SHARED', 'SH-NONE'
+    put_call VARCHAR(10),                          -- 'Put', 'Call', null
+
+    -- 변화 정보
+    shares_change NUMERIC(20, 4),                  -- 전 분기 대비 변화량
+    shares_change_pct NUMERIC(10, 4),              -- 전 분기 대비 변화율 (%)
+
+    -- 포트폴리오 정보
+    portfolio_weight NUMERIC(10, 6),               -- 포트폴리오 내 비중 (%)
+
+    -- 메타데이터
+    raw_data JSONB,
+
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP,
+
+    INDEX idx_sec_holding_filer_cik (filer_cik),
+    INDEX idx_sec_holding_ticker (holding_ticker),
+    INDEX idx_sec_holding_cusip (holding_cusip),
+    INDEX idx_sec_holding_report_date (report_date),
+    INDEX idx_sec_holding_filer_date (filer_cik, report_date),
+    INDEX idx_sec_holding_ticker_date (holding_ticker, report_date),
+    INDEX idx_sec_holding_filer_ticker (filer_cik, holding_ticker)
+);
+```
+
 ### 2.3 인덱스 전략
 
 | 테이블 | 인덱스 | 이유 |
