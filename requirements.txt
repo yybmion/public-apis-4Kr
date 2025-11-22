@@ -23,6 +23,7 @@ backtrader==1.9.78.123
 
 # Stock Market Data
 yfinance==0.2.32
+fredapi==0.5.1
 requests==2.31.0
 aiohttp==3.9.1
 

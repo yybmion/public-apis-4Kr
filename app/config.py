@@ -71,6 +71,13 @@ class Settings(BaseSettings):
         description="ECOS API base URL"
     )
 
+    # FRED (Federal Reserve Economic Data) API
+    FRED_API_KEY: str = Field(default="", description="FRED API Key")
+    FRED_BASE_URL: str = Field(
+        default="https://api.stlouisfed.org/fred",
+        description="FRED API base URL"
+    )
+
     # Upstage Document AI (OCR)
     UPSTAGE_API_KEY: str = Field(default="", description="Upstage API Key")
     UPSTAGE_BASE_URL: str = Field(
