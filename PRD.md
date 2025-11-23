@@ -1,0 +1,1405 @@
+# PRD: 한국 주식 자동매매 지원 시스템
+## Product Requirements Document
+
+**문서 버전**: 2.3
+**작성일**: 2025-11-21
+**최종 업데이트**: 2025-11-23
+**프로젝트명**: Stock Intelligence System (SIS)
+**상태**: Draft
+
+---
+
+## 📋 문서 개요
+
+이 문서는 **초보 투자자를 위한 데이터 기반 주식 투자 지원 시스템**의 제품 요구사항을 정의합니다.
+시스템은 공식 API를 통해 검증된 데이터를 수집하고, 미국-한국 증시 연관성을 활용하며, 백테스팅으로 검증된 전략을 제공합니다.
+
+---
+
+## 1. 제품 비전 및 목표
+
+### 1.1 핵심 비전
+> "초보 투자자도 기관 수준의 정보력과 데이터 기반 투자 전략으로 안전하게 수익을 창출할 수 있는 시스템"
+
+### 1.2 핵심 가치 제안
+- ✅ **검증된 데이터**: 공식 API (한국투자증권, DART, 한국은행)만 사용
+- ✅ **과학적 접근**: 미국-한국 증시 상관계수 0.85 활용
+- ✅ **리스크 최소화**: 백테스팅으로 검증된 전략만 제공
+- ✅ **초보자 친화**: 쉬운 용어 설명과 학습 모드
+
+### 1.3 성공 지표 (3개월 목표)
+| 지표 | 목표 | 측정 방법 |
+|-----|------|----------|
+| 추천 종목 승률 | 60% 이상 | 1개월 수익률 기준 |
+| 시스템 예측 정확도 | 70% 이상 | 백테스팅 결과 |
+| 최대 낙폭(MDD) | -20% 이내 | 포트폴리오 추적 |
+| 샤프 비율 | 1.0 이상 | 위험 대비 수익률 |
+| 사용자 재방문율 | 70% 이상 | 주간 활성 사용자 |
+
+---
+
+## 2. 타겟 사용자
+
+### 2.1 Primary Persona: 주식 초보자 "김투자"
+- **나이**: 25-35세
+- **투자 경험**: 1년 미만
+- **투자 금액**: 500만원 ~ 3,000만원
+- **Pain Points**:
+  - 어떤 종목을 사야 할지 모름
+  - 뉴스가 진짜인지 가짜인지 판단 어려움
+  - 차트를 봐도 이해 안 됨
+  - 언제 사고 팔아야 할지 모름
+- **Needs**:
+  - 쉬운 용어로 된 종목 추천
+  - 투자 근거를 명확히 알고 싶음
+  - 손실을 최소화하고 싶음
+
+### 2.2 Secondary Persona: 바쁜 직장인 "이자동"
+- **나이**: 30-45세
+- **투자 경험**: 2-5년
+- **Pain Points**:
+  - 시장 모니터링 시간 부족
+  - 수동으로 여러 사이트 방문 피곤
+  - 감정적 매매로 손실
+- **Needs**:
+  - 자동화된 데이터 수집
+  - 알림 시스템
+  - 백테스팅 검증된 전략
+
+---
+
+## 3. 핵심 기능 요구사항
+
+> **📌 API 및 데이터 소스 전체 목록**
+>
+> 본 시스템은 **19개의 API 및 데이터 소스**를 사용합니다:
+> - **필수 데이터 수집 API (5개)**: KIS API, DART API, ECOS API, FRED API, BigKinds API
+> - **API 키 불필요 (5개)**: Yahoo Finance, Fear & Greed Index, SEC EDGAR, Tradestie (WallStreetBets), StockTwits
+> - **선택 AI 기능 API (6개)**: Upstage, CLOVA Studio, Claude, GPT-4, Gemini, Grok
+> - **선택 알림 API (3개)**: Telegram, Kakao Talk, Gmail SMTP
+>
+> **상세 가이드**: 각 API의 발급 방법, 비용, Rate Limit 등은 **`API_SUMMARY.md`** 참조
+>
+> **예상 소요 시간**:
+> - 최소 설정 (5개 필수 API만): 1-2시간
+> - 알림 추가: +15분
+> - AI 기능 추가: +30분
+
+### 3.1 데이터 수집 모듈 ⭐ (Must Have)
+
+#### 3.1.1 한국 주식 시세 데이터
+
+**기능 설명**
+KOSPI/KOSDAQ 전 종목의 실시간 및 과거 시세 데이터 수집
+
+**데이터 소스**
+| 우선순위 | API | 이유 | 비용 |
+|---------|-----|------|------|
+| 1순위 | **한국투자증권 KIS Developers** | 모의투자 지원, REST+WebSocket, Python 라이브러리 | 무료 |
+| 2순위 | 키움증권 Open API | 백업용 (Windows 전용) | 무료 |
+| 3순위 | pykrx (한국거래소 크롤링) | 과거 데이터 수집용 | 무료 |
+
+**수집 데이터 항목**
+```python
+{
+    "code": "005930",           # 종목코드
+    "name": "삼성전자",         # 종목명
+    "current_price": 75000,     # 현재가
+    "open": 74500,              # 시가
+    "high": 75500,              # 고가
+    "low": 74000,               # 저가
+    "close": 75000,             # 종가 (전일)
+    "volume": 15234567,         # 거래량
+    "trading_value": 1142592525000,  # 거래대금
+    "change_rate": 2.5,         # 등락률 (%)
+    "change": 1850,             # 등락폭
+    "market_cap": 445000000000000,  # 시가총액
+    "52w_high": 86000,          # 52주 최고가
+    "52w_low": 60000,           # 52주 최저가
+    "foreign_ownership": 52.3,  # 외국인 보유 비율 (%)
+    "timestamp": "2025-11-21 15:30:00"
+}
+```
+
+**요구사항**
+- [REQ-001] API 호출 지연 시간 < 2초
+- [REQ-002] 1순위 API 장애 시 자동으로 2순위 API 전환
+- [REQ-003] 장중(09:00-15:30)에는 10초마다 갱신, 장외에는 1일 1회
+- [REQ-004] 모든 데이터에 출처(source) 메타데이터 포함
+
+#### 3.1.2 미국 증시 데이터 (핵심 차별점!)
+
+**기능 설명**
+미국-한국 증시 상관계수 0.85를 활용한 선행 지표 분석
+
+**과학적 근거**
+- S&P 500과 코스피 상관계수: **0.85** (1980-2023년)
+- 나스닥과 코스닥 상관계수: **0.81**
+- 시차 효과: 미국 증시(전날 밤) → 한국 증시(다음날) 영향
+
+**데이터 소스**
+| API | 제공 데이터 | 비용 |
+|-----|-----------|------|
+| **Yahoo Finance (yfinance)** | S&P 500, 나스닥, 다우존스 | 무료 |
+| **Polygon.io** | 실시간 미국 주식 (무료 제한) | 무료/유료 |
+| **Alpha Vantage** | 기술 지표 포함 | 무료 제한 |
+
+**수집 데이터**
+```python
+{
+    "^GSPC": {  # S&P 500
+        "close": 4550.50,
+        "change_rate": -1.2,
+        "ma_20": 4530.00,  # 20일 이동평균선
+        "ma_60": 4480.00,  # 60일 이동평균선
+        "above_ma": False  # 이평선 위 여부
+    },
+    "^IXIC": {  # 나스닥
+        "close": 14200.30,
+        "change_rate": -0.8
+    },
+    "^DJI": {  # 다우존스
+        "close": 35400.00,
+        "change_rate": -1.0
+    }
+}
+```
+
+**활용 전략**
+```python
+# S&P 500 이동평균선 전략 (백테스트 검증됨)
+if sp500_close > sp500_ma_20:
+    signal = "BULLISH"  # 한국 주식 매수 포지션
+else:
+    signal = "BEARISH"  # 현금 보유 또는 매도
+
+# 역사적 성과: 코스피 단순 보유 대비 높은 수익률 + 낮은 MDD
+```
+
+**요구사항**
+- [REQ-005] 미국 장 마감 직후(한국 시간 06:00) 데이터 자동 수집
+- [REQ-006] S&P 500의 20일/60일 이동평균선 자동 계산
+- [REQ-007] 한국 증시 개장 전(09:00) 미국 시장 분석 리포트 생성
+
+#### 3.1.3 재무제표 및 공시
+
+**데이터 소스**: DART (금융감독원 전자공시시스템)
+
+**수집 항목**
+- 매출액, 영업이익, 당기순이익
+- 총자산, 부채, 자본
+- PER, PBR, ROE, 부채비율
+- 주요 공시 (유상증자, 배당, 합병 등)
+
+**요구사항**
+- [REQ-008] 분기 실적 발표 후 24시간 이내 반영
+- [REQ-009] 중요 공시 발생 시 1시간 이내 알림
+
+#### 3.1.4 경제 지표
+
+**한국 경제 지표** (한국은행 ECOS API)
+```python
+{
+    "base_rate": 3.50,           # 기준금리 (%)
+    "usd_krw": 1330.50,          # 달러/원 환율
+    "cpi": 105.2,                # 소비자물가지수
+    "industrial_production": 98.5 # 산업생산지수
+}
+```
+
+**미국 경제 지표** (FRED API)
+```python
+{
+    "fed_rate": 5.25,            # 연준 기준금리 (%)
+    "us_gdp_growth": 2.8,        # GDP 성장률 (%)
+    "unemployment": 3.8,         # 실업률 (%)
+    "inflation": 3.2             # 인플레이션 (%)
+}
+```
+
+**요구사항**
+- [REQ-010] 금리 변경 시 영향받는 섹터 자동 분석
+  - 금리 상승 → 은행주 수혜, 건설주 악영향
+  - 환율 상승 → 수출주 수혜
+
+#### 3.1.5 뉴스 감성 분석
+
+**데이터 소스**
+- 빅카인즈 (한국 언론 통합 뉴스)
+- NewsAPI (글로벌 뉴스)
+
+**분석 기술**
+```python
+# 한국어 감성 분석
+from transformers import pipeline
+sentiment = pipeline("sentiment-analysis", model="beomi/kcbert-base")
+
+result = sentiment("삼성전자, 반도체 수주 급증으로 실적 개선 전망")
+# Output: {'label': 'positive', 'score': 0.95}
+```
+
+**신뢰도 평가**
+| Tier | 출처 | 신뢰도 점수 |
+|------|------|-----------|
+| Tier 1 | 연합뉴스, 한국경제, 매일경제 | 90-100 |
+| Tier 2 | 파이낸셜뉴스, 이데일리 | 70-89 |
+| Tier 3 | 블로그, 커뮤니티 | 30-69 |
+
+**요구사항**
+- [REQ-011] 출처가 Tier 1이 아닌 뉴스는 경고 표시
+- [REQ-012] 감성 점수 +0.7 이상: 긍정, -0.7 이하: 부정
+
+#### 3.1.6 Multi-LLM 분석 시스템 ⭐ (Must Have)
+
+**기능 설명**
+4개의 서로 다른 LLM을 병렬로 실행하여 투자 의견을 수렴하고, 투표 메커니즘으로 최종 결론 도출
+
+**4-Agent 구성**
+| LLM | 모델 | 특징 | 비용 |
+|-----|------|------|------|
+| **Claude Sonnet 4** | claude-sonnet-4-5-20250929 | 논리적 분석 우수 | 종량제 |
+| **GPT-4 Turbo** | gpt-4-turbo | 범용성 우수 | 종량제 |
+| **Gemini Pro** | gemini-pro | Google 생태계 연동 | 종량제 |
+| **Grok 2** | grok-2 | 실시간 정보 반영 | 종량제 |
+
+**합의 메커니즘 (Consensus Voting)**
+```python
+# 각 LLM의 분석 결과
+results = [
+    {"model": "claude", "decision": "BUY", "confidence": 0.85},
+    {"model": "gpt4", "decision": "BUY", "confidence": 0.78},
+    {"model": "gemini", "decision": "HOLD", "confidence": 0.65},
+    {"model": "grok", "decision": "BUY", "confidence": 0.72}
+]
+
+# 투표 결과
+votes = {"BUY": 3, "SELL": 0, "HOLD": 1}
+consensus_decision = "BUY"  # 다수결
+agreement_level = "STRONG"  # 3-4개 일치: STRONG, 2개: MODERATE
+
+# 신뢰도 가중 평균
+weighted_confidence = (0.85 + 0.78 + 0.72) / 3 = 0.78
+```
+
+**분석 유형**
+```python
+analysis_types = [
+    "news_risk",        # 뉴스 기반 리스크 평가
+    "technical_signal",  # 기술적 지표 분석
+    "fundamental",       # 재무제표 분석
+    "combined_signal"    # 종합 매매 신호
+]
+```
+
+**데이터 추적**
+- 각 LLM의 토큰 사용량, 비용, 레이턴시 기록
+- 정확도 추적 (예측 vs 실제 결과)
+- 모델별 성과 비교 대시보드
+
+**요구사항**
+- [REQ-040] 4개 LLM 병렬 실행으로 응답 시간 최소화 (< 10초)
+- [REQ-041] 투표 결과에 동의 수준(agreement_level) 명시
+- [REQ-042] 각 LLM의 근거(reasoning) 투명하게 제공
+- [REQ-043] 비용 추적 및 월별 리포트 생성
+
+#### 3.1.7 소셜 미디어 데이터 수집 ⭐ (Must Have)
+
+**기능 설명**
+Reddit WallStreetBets와 StockTwits에서 실시간 투자자 감성 및 트렌딩 종목 수집
+
+**데이터 소스**
+
+**1. WallStreetBets (r/wallstreetbets)**
+- **API**: Tradestie API (무료, 인증 불필요)
+- **제공 데이터**: Top 50 트렌딩 주식
+```python
+{
+    "ticker": "NVDA",
+    "rank": 1,
+    "mention_count": 1250,           # 멘션 횟수
+    "sentiment": "BULLISH",          # 감성
+    "sentiment_score": 0.75,         # -1.0 ~ 1.0
+    "no_of_comments": 845
+}
+```
+
+**2. StockTwits**
+- **API**: StockTwits Public API (무료, 인증 불필요)
+- **제공 데이터**: 종목별 투자자 감성
+```python
+{
+    "ticker": "TSLA",
+    "sentiment": "BULLISH",
+    "bullish_ratio": 0.725,          # 긍정 비율 (0-1)
+    "message_count": 345,
+    "sentiment_breakdown": {
+        "bullish": 250,
+        "bearish": 95
+    }
+}
+```
+
+**활용 전략**
+```python
+# WallStreetBets 트렌드 + StockTwits 감성 결합
+if wsb_rank <= 10 and stocktwits_bullish_ratio > 0.7:
+    signal = "STRONG_BUY"  # 강력 매수 신호
+elif wsb_rank <= 20 and stocktwits_bullish_ratio > 0.6:
+    signal = "BUY"         # 매수 신호
+
+# 한국 종목 매핑
+if ticker == "NVDA":
+    related_korean_stocks = ["005930"]  # 삼성전자 (반도체)
+```
+
+**수집 주기**
+- WallStreetBets: 매 30분마다 Top 50 수집
+- StockTwits: 관심 종목에 대해 실시간 수집
+- 데이터 보관: 최근 30일
+
+**요구사항**
+- [REQ-044] 무료 API만 사용하여 비용 제로
+- [REQ-045] 미국 주식 트렌드와 한국 주식 매핑 로직
+- [REQ-046] 감성 점수 급변 시 알림 (예: 0.8 → 0.3)
+- [REQ-047] 데이터 수집 실패 시 재시도 (3회, exponential backoff)
+
+#### 3.1.8 FRED API 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+미국 연방준비은행의 80만+ 경제 지표 수집을 통한 글로벌 경제 분석
+
+**데이터 소스**
+- **API**: FRED (Federal Reserve Economic Data)
+- **제공 데이터**: 800,000+ US economic time series
+- **비용**: 무료 (120 requests/minute limit)
+
+**주요 지표 (25개 사전 정의)**
+
+| 카테고리 | 지표 |
+|---------|------|
+| **금리** | Federal Funds Rate, 10Y/2Y/3M Treasury Yields |
+| **고용** | Unemployment Rate, Nonfarm Payrolls, Initial Claims |
+| **인플레이션** | CPI, Core CPI, PCE, Core PCE |
+| **GDP** | GDP, GDP Growth, Industrial Production, Retail Sales |
+| **주택** | Housing Starts, Existing Home Sales, Case-Shiller Index |
+| **금융 시장** | S&P 500, VIX, M2 Money Supply, Consumer Sentiment |
+
+**자동 계산 기능**
+```python
+# Yield Curve Analysis with Recession Signals
+{
+  'yields': {'treasury_10y': 4.5, 'treasury_2y': 4.7, 'treasury_3m': 5.0},
+  'spreads': {'10y_2y': -0.2, '10y_3m': -0.5},
+  'yield_curve_inverted': True,
+  'recession_signal': True  # 역사적으로 경기 침체 선행 지표
+}
+```
+
+**요구사항**
+- [REQ-048] FRED API 25개 지표 자동 수집 (일 1회)
+- [REQ-049] Yield Curve 계산 및 경기 침체 신호 자동 탐지
+- [REQ-050] API 호출 실패 시 3회 재시도 (exponential backoff)
+- [REQ-051] 모든 데이터에 출처 메타데이터 포함
+
+#### 3.1.9 ECOS API 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+한국은행 경제통계시스템의 10만+ 한국 경제 지표 수집
+
+**데이터 소스**
+- **API**: ECOS (Economic Statistics System, Bank of Korea)
+- **제공 데이터**: 100,000+ Korean economic statistics
+- **비용**: 무료 (공식 API)
+
+**주요 지표 (25개 사전 정의)**
+
+| 카테고리 | 지표 |
+|---------|------|
+| **금리** | 기준금리, 콜금리, CD 91일물, 국고채 3년/10년 |
+| **통화량** | M1, M2, Lf (광의유동성) |
+| **GDP** | GDP 성장률 (QoQ, YoY) |
+| **인플레이션** | CPI, Core CPI, PPI |
+| **고용** | 실업률, 고용률 |
+| **무역** | 수출, 수입, 무역수지 |
+| **환율** | USD/KRW, EUR/KRW, JPY/KRW |
+| **심리지표** | BSI 제조업, CSI (소비자심리지수) |
+
+**경제 스냅샷 자동 생성**
+```python
+# Daily Economic Snapshot
+{
+  'base_rate': {'value': 3.5, 'date': '2024-11'},
+  'usd_krw': {'value': 1330.5, 'date': '2024-11-22'},
+  'cpi': {'value': 105.2, 'date': '2024-10'},
+  'unemployment_rate': {'value': 2.8, 'date': '2024-10'},
+  ...
+}
+```
+
+**요구사항**
+- [REQ-052] ECOS API 25개 지표 자동 수집 (일 1회)
+- [REQ-053] 경제 스냅샷 생성 및 DB 저장
+- [REQ-054] 환율 데이터 실시간 수집 (장중 매 10분)
+- [REQ-055] 한국 경제 주요 지표 대시보드 제공
+
+#### 3.1.10 Fear & Greed Index 수집기 ⭐ (Phase 1 Complete)
+
+**기능 설명**
+CNN Fear & Greed Index를 통한 시장 심리 분석 및 역발상 투자 신호 생성
+
+**데이터 소스**
+- **API**: CNN Fear & Greed Index (unofficial endpoint)
+- **제공 데이터**: 시장 심리 점수 (0-100), 역사적 데이터
+- **비용**: 무료, API 키 불필요
+
+**심리 지표 분류**
+
+| 점수 범위 | 등급 | 신호 | 투자 전략 |
+|----------|------|------|----------|
+| 0-25 | Extreme Fear | STRONG_BUY | 극단적 공포 - 역발상 매수 기회 |
+| 25-45 | Fear | BUY / WEAK_BUY | 공포 - 분할 매수 고려 |
+| 45-55 | Neutral | HOLD | 중립 - 관망 |
+| 55-75 | Greed | WEAK_SELL / SELL | 탐욕 - 분할 매도 고려 |
+| 75-100 | Extreme Greed | STRONG_SELL | 극단적 탐욕 - 적극 매도 고려 |
+
+**자동 분석 기능**
+```python
+# Market Sentiment Analysis
+{
+  'score': 35.5,
+  'rating': 'Fear',
+  'signal': {'signal': 'BUY', 'description': '공포 - 매수 기회'},
+  'trends': {
+    'daily_change': -5.2,
+    'weekly_change': -10.5,
+    'monthly_change': -15.0
+  },
+  'contrarian_opportunity': True  # 역발상 기회
+}
+```
+
+**추세 분석**
+```python
+# 30-day Trend Analysis
+{
+  'average_score': 42.3,
+  'average_sentiment': 'Fear',
+  'trend_direction': 'decreasing',  # 공포 증가 중
+  'extreme_fear_days': 5,
+  'extreme_greed_days': 0,
+  'volatility': 8.5
+}
+```
+
+**요구사항**
+- [REQ-056] Fear & Greed Index 매일 수집 (1회)
+- [REQ-057] 자동 투자 신호 생성 (5단계)
+- [REQ-058] 30일 추세 분석 제공
+- [REQ-059] 극단적 공포/탐욕 시 알림 (optional)
+- [REQ-060] 역사적 데이터 저장 (최소 1년)
+
+#### 3.1.11 SEC EDGAR API 수집기 ⭐ (Phase 2 Complete)
+
+**기능 설명**
+미국 SEC (증권거래위원회)의 공식 EDGAR 데이터베이스를 통한 미국 기업 재무정보 및 SEC 공시 수집
+
+**데이터 소스**
+- **API**: SEC EDGAR API (https://www.sec.gov/edgar)
+- **제공 데이터**: 10-K/10-Q 보고서, XBRL 재무 데이터, 기관 투자자 보유 현황 (13F)
+- **비용**: 무료, API 키 불필요 (User-Agent 헤더만 필수)
+- **Rate Limit**: 10 requests/second (자동 제한)
+
+**핵심 가치**
+```python
+# 미국 기업 재무 데이터 활용 시나리오
+# 1. 한국 기업의 미국 경쟁사 분석
+#    - 삼성전자 vs Apple, Intel
+#    - 현대차 vs Tesla, GM
+#
+# 2. 글로벌 기관투자자 포트폴리오 추적
+#    - Berkshire Hathaway (워런 버핏)
+#    - Bridgewater (레이 달리오)
+#
+# 3. 미국 상장 한국 기업 분석
+#    - Coupang, Kakao 등
+```
+
+**수집 데이터 항목**
+
+**1) 회사 기본 정보**
+```python
+{
+    'cik': '0000320193',        # SEC 고유 식별자
+    'ticker': 'AAPL',           # 주식 티커
+    'company_name': 'Apple Inc.',
+    'sic': '3571',              # 산업 분류 코드
+    'sic_description': 'Electronic Computers',
+    'business_address': {...},
+    'is_active': True
+}
+```
+
+**2) SEC 공시 (Filings)**
+```python
+{
+    'form_type': '10-K',        # 공시 유형
+    'filing_date': '2023-10-27',
+    'accession_number': '0000320193-23-000106',
+    'document_url': 'https://www.sec.gov/...',
+
+    # 주요 공시 유형
+    # 10-K: 연간 보고서
+    # 10-Q: 분기 보고서
+    # 8-K: 중요 사건 보고
+    # 13F-HR: 기관투자자 포트폴리오
+}
+```
+
+**3) 재무 데이터 (XBRL)**
+```python
+{
+    'concept': 'Revenues',      # 재무 항목
+    'value': 383285000000,      # 금액 (USD)
+    'end_date': '2023-09-30',   # 기준일
+    'fiscal_year': 2023,
+    'fiscal_period': 'FY',      # FY, Q1, Q2, Q3, Q4
+
+    # 주요 재무 항목 (US-GAAP)
+    # - Revenues: 매출
+    # - Assets: 자산
+    # - Liabilities: 부채
+    # - NetIncomeLoss: 순이익
+    # - EarningsPerShareBasic: 주당순이익
+    # - StockholdersEquity: 자본
+}
+```
+
+**4) 기관 투자자 보유 현황 (13F)**
+```python
+{
+    'filer_cik': '0001067983',  # 기관투자자 CIK
+    'filer_name': 'BERKSHIRE HATHAWAY INC',
+    'holding_ticker': 'AAPL',
+    'shares': 915560382,        # 보유 주식 수
+    'value': 157442395000,      # 보유액 (USD)
+    'portfolio_weight': 0.4532, # 포트폴리오 비중 (45.32%)
+    'report_date': '2023-12-31' # 분기말 기준
+}
+```
+
+**활용 전략**
+
+**1) 미국 Tech 기업 실적 → 한국 Tech 섹터 영향 분석**
+```python
+# Apple 실적 발표 후 → 삼성전자 주가 예측
+if apple_revenue_growth > 10:
+    signal = "삼성전자 매수 고려"  # 글로벌 수요 증가
+elif apple_revenue_growth < -5:
+    signal = "삼성전자 매도 고려"  # 업황 악화
+```
+
+**2) 버핏 포트폴리오 추적**
+```python
+# Berkshire Hathaway 13F 분석
+# - 신규 매수 종목 → 해당 섹터 한국 기업 매수
+# - 매도/감소 종목 → 해당 섹터 한국 기업 매도
+```
+
+**3) 미국 상장 한국 기업 모니터링**
+```python
+# Coupang, Kakao 등의 SEC 공시 추적
+# - 한국 본사 주가에 선행 지표로 활용
+```
+
+**수집 전략**
+- **회사 정보**: 초기 1회 + 월 1회 업데이트
+- **10-K (연간 보고서)**: 분기 종료 후 90일 이내 제출 → 즉시 수집
+- **10-Q (분기 보고서)**: 분기 종료 후 45일 이내 제출 → 즉시 수집
+- **13F (기관 보유)**: 분기 종료 후 45일 이내 제출 → 즉시 수집
+- **재무 데이터**: 신규 XBRL 데이터 발견 시 자동 파싱
+
+**데이터베이스 테이블**
+1. `sec_companies` - SEC 등록 기업 정보
+2. `sec_filings` - SEC 공시 이력
+3. `sec_financial_facts` - XBRL 재무 데이터
+4. `sec_institutional_holdings` - 기관 투자자 보유 현황
+
+**요구사항**
+- [REQ-061] SEC EDGAR API 호출 시 User-Agent 헤더 필수 포함
+- [REQ-062] Rate limit 준수 (10 req/sec, 자동 조절)
+- [REQ-063] 티커 → CIK 변환 캐시 (24시간 TTL)
+- [REQ-064] 10-K/10-Q 신규 제출 시 24시간 이내 수집
+- [REQ-065] 재무 데이터 (XBRL) 자동 파싱 및 DB 저장
+- [REQ-066] 13F 데이터 분기별 수집 (분기 종료 후 50일차)
+- [REQ-067] 네트워크 오류 시 재시도 (exponential backoff)
+- [REQ-068] CIK 10자리 패딩 처리 (예: 320193 → 0000320193)
+- [REQ-069] Document URL 자동 생성 및 검증
+- [REQ-070] 한국 투자자 관심 종목 우선 수집 (AAPL, TSLA, MSFT, GOOGL, AMZN)
+
+**테스트 스크립트**
+```bash
+# 간단한 테스트 (requests만 사용)
+python scripts/simple_test_sec_edgar.py
+
+# 전체 기능 테스트 (aiohttp 필요)
+python scripts/test_sec_edgar.py
+```
+
+**마이그레이션**
+```bash
+# 데이터베이스 테이블 생성
+psql -U your_user -d your_db -f scripts/migrations/002_add_sec_edgar_tables.sql
+```
+
+**수집 예제**
+```python
+from app.collectors.sec_edgar_collector import SECEdgarCollector
+
+# 초기화 (API 키 불필요)
+collector = SECEdgarCollector()
+
+# Apple의 최신 10-K 조회
+result = await collector.get_latest_10k("AAPL")
+# → 2023년 연간 보고서
+
+# Tesla 재무 데이터 조회
+cik = await collector.ticker_to_cik("TSLA")
+facts = await collector.get_company_facts(cik)
+# → Revenue, Assets, NetIncome 등 전체 XBRL 데이터
+```
+
+---
+
+### 3.2 차트 이미지 분석 모듈 ⭐ (Must Have)
+
+#### 3.2.1 OCR 기반 데이터 추출
+
+**기능**: 차트 스크린샷에서 가격, 지표 자동 추출
+
+**기술 스택**
+| 우선순위 | 기술 | 이유 | 비용 |
+|---------|------|------|------|
+| 1순위 | **Upstage Document AI** | 한국어 특화, 표 인식 우수 | 월 300건 무료 |
+| 2순위 | CLOVA OCR | 네이버 한국어 OCR | 무료 제한 |
+| 3순위 | Tesseract (오픈소스) | 무료 무제한, 정확도 낮음 | 무료 |
+
+**추출 항목**
+```python
+{
+    "current_price": 75000,
+    "ma_5": 74800,    # 5일 이동평균선
+    "ma_20": 73500,   # 20일 이동평균선
+    "ma_60": 71000,   # 60일 이동평균선
+    "rsi": 65,        # RSI 지표
+    "macd": 120,
+    "volume": 15234567
+}
+```
+
+**요구사항**
+- [REQ-013] 이미지 업로드 후 5초 이내 결과 반환
+- [REQ-014] OCR 정확도 90% 이상 (수동 검증)
+- [REQ-015] 한글/영문 차트 모두 지원
+
+#### 3.2.2 AI 차트 패턴 분석
+
+**기술**: CLOVA Studio (한국어 특화 GPT)
+
+**분석 질문 템플릿**
+```python
+questions = [
+    "이 차트에서 현재 추세는 상승인가요, 하락인가요?",
+    "지지선과 저항선의 가격대를 알려주세요.",
+    "골든크로스나 데드크로스가 발생했나요?",
+    "거래량이 급증한 구간을 표시해주세요.",
+    "현재 매수/매도 타이밍으로 적절한가요?"
+]
+```
+
+**응답 형식**
+```python
+{
+    "trend": "상승",
+    "confidence": 0.85,
+    "support_line": 74000,
+    "resistance_line": 76000,
+    "golden_cross": True,
+    "recommendation": "매수 관망 (저항선 돌파 시 매수)",
+    "risk_level": "MEDIUM"
+}
+```
+
+**요구사항**
+- [REQ-016] AI 분석에는 반드시 신뢰도 점수 포함
+- [REQ-017] 초보자가 이해할 수 있는 용어로 설명
+- [REQ-018] 월 300건 무료 한도 내 사용 (1일 10건 제한)
+
+---
+
+### 3.3 초보자 추천 시스템 ⭐ (Must Have)
+
+#### 3.3.1 투자 성향 분석 (5문항)
+
+**질문지**
+1. 투자 가능 금액은?
+   - [ ] 500만원 미만
+   - [ ] 500~1,000만원
+   - [ ] 1,000~3,000만원
+   - [ ] 3,000만원 이상
+
+2. 투자 목표 기간은?
+   - [ ] 1개월 이내 (단기)
+   - [ ] 3~6개월 (중기)
+   - [ ] 1년 이상 (장기)
+
+3. 투자 원금의 -10% 손실 발생 시?
+   - [ ] 매우 불안하다 → 리스크: LOW
+   - [ ] 견딜 수 있다 → 리스크: MEDIUM
+   - [ ] 기회로 본다 → 리스크: HIGH
+
+4. 선호하는 투자 스타일?
+   - [ ] 안정적인 배당주
+   - [ ] 성장하는 기술주
+   - [ ] 저평가된 가치주
+
+5. 관심 섹터는? (복수 선택)
+   - [ ] IT/반도체
+   - [ ] 금융
+   - [ ] 헬스케어
+   - [ ] 필수소비재
+   - [ ] 에너지
+   - [ ] 모르겠음 (시스템 추천)
+
+**요구사항**
+- [REQ-019] 5분 이내 완료 가능한 간단한 질문
+- [REQ-020] 결과를 시각적 차트로 표시
+
+#### 3.3.2 초보자 맞춤 종목 필터링
+
+**필터링 조건** (백테스팅으로 검증됨)
+
+| 조건 | 기준 | 이유 |
+|-----|------|------|
+| 시가총액 | 1조원 이상 | 대형주 = 안정성 |
+| 일평균 거래대금 | 100억 이상 | 유동성 = 쉬운 매도 |
+| 부채비율 | 200% 이하 | 재무 안정성 |
+| 외국인 보유 비율 | 20% 이상 | 기관의 신뢰 |
+| 최근 3년 실적 | 연속 흑자 | 수익성 |
+| 현재가 vs 52주 최고가 | < 95% | 고점 매수 방지 |
+| ROE | > 10% | 자기자본이익률 우수 |
+
+**추천 알고리즘**
+```python
+def calculate_beginner_score(stock):
+    score = 0
+
+    # 시가총액 (30점)
+    if stock.market_cap > 10_trillion:
+        score += 30
+    elif stock.market_cap > 5_trillion:
+        score += 20
+
+    # 변동성 (20점) - 낮을수록 좋음
+    if stock.volatility_20d < 1.5:
+        score += 20
+    elif stock.volatility_20d < 2.5:
+        score += 10
+
+    # ROE (20점)
+    if stock.roe > 15:
+        score += 20
+    elif stock.roe > 10:
+        score += 10
+
+    # 배당수익률 (15점)
+    if stock.dividend_yield > 3:
+        score += 15
+    elif stock.dividend_yield > 2:
+        score += 10
+
+    # 외국인 보유 (15점)
+    if stock.foreign_ownership > 30:
+        score += 15
+    elif stock.foreign_ownership > 20:
+        score += 10
+
+    return score  # 0~100점
+```
+
+**추천 결과 형식**
+```python
+{
+    "code": "005930",
+    "name": "삼성전자",
+    "sector": "IT/반도체",
+    "current_price": 75000,
+    "beginner_score": 85,  # 초보자 적합도
+    "reason": [
+        "시가총액 445조원으로 국내 최대 대형주",
+        "외국인 보유 비율 52%로 기관의 신뢰 높음",
+        "연간 배당수익률 2.5%로 안정적 배당"
+    ],
+    "risk_level": "LOW",
+    "expected_return_1m": "3~5%",  # 백테스팅 기반
+    "max_drawdown": "-8%",
+    "us_correlation": 0.78,  # S&P 500과의 상관관계
+    "us_signal": "BULLISH"   # 미국 증시 신호
+}
+```
+
+**요구사항**
+- [REQ-021] 상위 10~20개 종목만 추천
+- [REQ-022] 각 종목에 추천 이유 3가지 이상 명시
+- [REQ-023] 리스크 수준 명확히 표시
+
+#### 3.3.3 섹터/업종 가이드 (초보자 학습 모드)
+
+**제공 섹터**
+| 섹터 | 특징 | 리스크 | 대표 종목 | 관련 지표 |
+|------|------|--------|----------|----------|
+| **IT/반도체** | 고성장, 글로벌 경기 민감 | MEDIUM | 삼성전자, SK하이닉스 | 필라델피아 반도체 지수 |
+| **금융** | 금리 상승기 수혜 | MEDIUM | KB금융, 신한지주 | 한국은행 기준금리 |
+| **헬스케어** | 고령화 수혜, 안정적 | LOW | 삼성바이오로직스, 셀트리온 | 의료 지출 증가율 |
+| **필수소비재** | 경기 방어적, 변동성 낮음 | LOW | CJ제일제당, 오뚜기 | 소비자물가지수 |
+| **에너지** | 유가 연동, 배당 매력 | MEDIUM | SK이노베이션, S-Oil | WTI 유가 |
+
+**쉬운 설명 예시**
+```markdown
+### IT/반도체 섹터
+
+**이런 사람에게 추천**
+- 글로벌 기술 트렌드에 관심 많은 사람
+- 중장기 투자 가능한 사람
+
+**장점**
+- 🌟 한국의 강점 산업 (세계 1, 2위)
+- 📈 고성장 가능성
+- 💰 삼성전자 등 대형주 多
+
+**단점**
+- ⚠️ 경기에 민감 (불황 시 큰 하락)
+- 📉 변동성이 큼
+
+**지금 투자해도 될까?**
+- ✅ 미국 필라델피아 반도체 지수 상승 중
+- ✅ AI 열풍으로 수요 증가
+- ⚠️ 중국 리스크 주의
+
+**대표 종목**
+1. 삼성전자: 메모리 반도체 1위
+2. SK하이닉스: HBM (AI 반도체) 강자
+```
+
+**요구사항**
+- [REQ-024] 초등학생도 이해할 수 있는 쉬운 용어
+- [REQ-025] 현재 트렌드 (상승/하락) 표시
+- [REQ-026] 매주 월요일 자동 업데이트
+
+---
+
+### 3.4 백테스팅 시스템 ⭐ (Must Have - 핵심!)
+
+#### 3.4.1 전략 검증
+
+**목적**: 모든 추천 전략을 과거 데이터로 검증하여 신뢰성 확보
+
+**백테스팅 프레임워크**
+```python
+# Backtrader 사용
+import backtrader as bt
+
+class Strategy(bt.Strategy):
+    def __init__(self):
+        self.ma20 = bt.indicators.SMA(period=20)
+        self.ma60 = bt.indicators.SMA(period=60)
+
+    def next(self):
+        # 골든크로스 매수
+        if self.ma20[0] > self.ma60[0] and self.ma20[-1] <= self.ma60[-1]:
+            self.buy()
+
+        # 데드크로스 매도
+        elif self.ma20[0] < self.ma60[0] and self.ma20[-1] >= self.ma60[-1]:
+            self.sell()
+```
+
+**평가 지표**
+| 지표 | 설명 | 목표 기준 |
+|-----|------|----------|
+| **총 수익률** | 전체 기간 수익 | > 코스피 수익률 |
+| **연평균 수익률 (CAGR)** | 복리 기준 | > 10% |
+| **최대 낙폭 (MDD)** | 최고점 대비 최대 하락 | < -20% |
+| **샤프 비율** | 위험 대비 수익 | > 1.0 (우수: > 2.0) |
+| **승률** | 수익 거래 비율 | > 55% |
+| **Profit Factor** | 총 수익 / 총 손실 | > 1.5 |
+
+**백테스팅 기간**
+- 최소 5년 과거 데이터
+- 2008년 금융위기, 2020년 코로나 포함 필수
+- Walk-forward 검증 (시간 순 이동 테스트)
+
+**예시: S&P 500 이동평균선 전략 백테스트 결과**
+```
+기간: 2010-2023년 (13년)
+총 수익률: +285%
+연평균 수익률: 12.3%
+최대 낙폭(MDD): -15.2%
+샤프 비율: 1.8
+승률: 58%
+
+vs 코스피 단순 보유:
+총 수익률: +120%
+MDD: -35%
+```
+
+**요구사항**
+- [REQ-027] 신규 전략은 반드시 5년 백테스팅 통과 후 제공
+- [REQ-028] 백테스팅 결과를 사용자에게 투명하게 공개
+- [REQ-029] 과최적화 방지: 훈련 데이터 70% + 검증 데이터 30%
+
+---
+
+### 3.5 리스크 관리 시스템 ⭐ (Must Have)
+
+#### 3.5.1 손절매 (Stop Loss)
+
+**규칙**
+```python
+# 기본 손절매: -5%
+if current_price <= buy_price * 0.95:
+    sell_all()
+    send_alert("손절매 실행: {}".format(stock_name))
+
+# 변동성 기반 손절매 (리스크 HIGH인 경우)
+if stock.volatility > 3.0:
+    stop_loss_rate = 0.93  # -7%
+```
+
+**요구사항**
+- [REQ-030] 손절매 기준을 사용자가 설정 가능 (기본 -5%)
+- [REQ-031] 손절매 발생 시 즉시 카카오톡 알림
+
+#### 3.5.2 포지션 크기 조절
+
+**규칙**
+```python
+# 한 종목에 최대 20% 투자
+max_position_per_stock = total_capital * 0.20
+
+# 리스크 수준별 포지션 크기
+if risk_level == "LOW":
+    position = total_capital * 0.15
+elif risk_level == "MEDIUM":
+    position = total_capital * 0.10
+else:  # HIGH
+    position = total_capital * 0.05
+```
+
+**요구사항**
+- [REQ-032] 시스템이 자동으로 포지션 크기 계산
+- [REQ-033] 초보자는 리스크 HIGH 종목 투자 제한
+
+#### 3.5.3 분산 투자
+
+**규칙**
+- 최소 5개 종목 보유 (한 종목 폭락 시 피해 최소화)
+- 같은 섹터에 40% 이상 투자 금지
+- 초보자 포트폴리오 예시:
+  - IT/반도체: 30%
+  - 금융: 20%
+  - 헬스케어: 20%
+  - 필수소비재: 20%
+  - 현금: 10%
+
+---
+
+### 3.6 알림 시스템 (Should Have)
+
+#### 3.6.1 카카오톡 알림
+
+**알림 유형**
+1. **목표가 도달**: "삼성전자가 목표가 76,000원에 도달했습니다!"
+2. **급등/급락**: "SK하이닉스 +7% 급등 (거래량 3배 증가)"
+3. **중요 공시**: "삼성바이오로직스 분기 실적 발표 (영업이익 전년 대비 +30%)"
+4. **미국 시장 신호**: "S&P 500이 20일선을 하향 돌파 → 매도 신호 발생"
+5. **손절매 실행**: "NAVER 손절매 실행 (-5% 도달)"
+
+**구현**
+```python
+# 카카오톡 메시지 API (README.md:351)
+import requests
+
+def send_kakao_alert(message):
+    url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
+    headers = {"Authorization": f"Bearer {access_token}"}
+
+    data = {
+        "template_object": json.dumps({
+            "object_type": "text",
+            "text": message,
+            "link": {
+                "web_url": "https://finance.naver.com"
+            }
+        })
+    }
+
+    requests.post(url, headers=headers, data=data)
+```
+
+**요구사항**
+- [REQ-034] 장중에만 알림 (09:00-15:30)
+- [REQ-035] 알림 종류별 on/off 설정 가능
+- [REQ-036] 하루 최대 10건 (알림 피로 방지)
+
+---
+
+### 3.7 웹 대시보드 (Must Have)
+
+#### 3.7.1 메인 대시보드
+
+**표시 정보**
+```
+┌─────────────────────────────────────────────────┐
+│ 📊 시장 현황                                     │
+├─────────────────────────────────────────────────┤
+│ KOSPI: 2,530.50 (+1.2%) ↗️                       │
+│ KOSDAQ: 850.20 (-0.5%) ↘️                        │
+│ S&P 500: 4,550.30 (-1.3%) ↘️ → ⚠️ 한국 증시 주의 │
+└─────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────┐
+│ 💡 오늘의 추천 (초보자 맞춤)                      │
+├─────────────────────────────────────────────────┤
+│ 1. 삼성전자 (★★★★★ 85점)                        │
+│    현재가: 75,000원 | 목표가: 78,000원           │
+│    이유: 대형주 안정성 + HBM 수요 증가            │
+│                                                 │
+│ 2. KB금융 (★★★★☆ 78점)                          │
+│    현재가: 52,000원 | 목표가: 55,000원           │
+│    이유: 금리 상승기 은행주 수혜                  │
+└─────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────┐
+│ 📰 최신 뉴스 (Tier 1 출처만)                      │
+├─────────────────────────────────────────────────┤
+│ • [한국경제] 반도체 수출 3개월 연속 증가          │
+│ • [연합뉴스] 미 연준, 금리 동결 예상              │
+└─────────────────────────────────────────────────┘
+```
+
+**기술 스택**
+- **Frontend**: Streamlit (빠른 구축) 또는 Dash (고급 UI)
+- **Chart**: Plotly (인터랙티브 차트)
+- **Backend**: FastAPI (REST API 서버)
+
+**요구사항**
+- [REQ-037] 페이지 로딩 시간 < 3초
+- [REQ-038] 모바일 반응형 디자인
+- [REQ-039] 30초마다 자동 갱신
+
+#### 3.7.2 종목 상세 페이지
+
+**표시 정보**
+```
+┌─────────────────────────────────────────────────┐
+│ 삼성전자 (005930)                                │
+│ 현재가: 75,000원 (+2.5% ↗️)                      │
+└─────────────────────────────────────────────────┘
+
+📈 가격 차트 (Plotly 캔들스틱)
+- 1개월 / 3개월 / 6개월 / 1년 선택 가능
+- 이동평균선 (5일, 20일, 60일) 표시
+- 거래량 차트
+
+💰 재무 정보
+- PER: 15.2배 (적정 수준)
+- PBR: 1.8배
+- ROE: 12.5% (우수)
+- 부채비율: 45% (안정적)
+- 배당수익률: 2.5%
+
+📰 관련 뉴스 (최근 7일)
+- [한국경제] 삼성전자, HBM 수주 증가...
+- [매일경제] 반도체 업황 회복 기대...
+
+🤖 AI 분석 결과
+- 추세: 상승
+- 지지선: 74,000원
+- 저항선: 76,500원
+- 추천: 매수 관망 (저항선 돌파 시 매수)
+
+🎓 초보자를 위한 설명
+삼성전자는 한국을 대표하는 IT 기업으로, 메모리 반도체(D램, 낸드플래시)에서 세계 1위입니다.
+현재 AI 열풍으로 고성능 반도체(HBM) 수요가 증가하고 있어, 실적 개선이 기대됩니다.
+시가총액 445조원으로 매우 안정적이며, 연 2.5%의 배당도 받을 수 있습니다.
+```
+
+---
+
+## 4. 기술 스택
+
+### 4.1 데이터 수집
+
+| 컴포넌트 | 기술 | 이유 |
+|---------|------|------|
+| 한국 주식 | 한국투자증권 KIS API (`python-kis`) | 공식 API, 모의투자 지원 |
+| 미국 주식 | `yfinance` | 무료, 간단, 안정적 |
+| 재무제표 | DART API (`dart-fss`) | 금융감독원 공식 |
+| 경제지표 | 한국은행 ECOS API, FRED API | 공식 출처 |
+| 뉴스 | 빅카인즈 API, NewsAPI | 통합 뉴스 소스 |
+
+### 4.2 데이터 처리 및 분석
+
+| 용도 | 라이브러리 |
+|-----|----------|
+| 데이터 처리 | `pandas`, `numpy` |
+| 기술적 지표 | `ta`, `TA-Lib` |
+| 감성 분석 | `transformers`, `konlpy` |
+| OCR | Upstage Document AI API |
+| AI 차트 분석 | CLOVA Studio API |
+
+### 4.3 백테스팅 및 시각화
+
+| 용도 | 라이브러리 |
+|-----|----------|
+| 백테스팅 | `backtrader` |
+| 차트 | `plotly`, `mplfinance` |
+| 대시보드 | `streamlit` |
+
+### 4.4 인프라
+
+| 컴포넌트 | 기술 | 비용 |
+|---------|------|------|
+| 서버 | AWS EC2 (t2.micro) | 1년 무료 |
+| 데이터베이스 | PostgreSQL | 무료 |
+| 캐싱 | Redis | 무료 (Upstash) |
+| 스케줄링 | AWS Lambda + CloudWatch | 무료 제한 |
+| 알림 | 카카오톡 메시지 API | 무료 |
+
+---
+
+## 5. 비기능 요구사항
+
+### 5.1 성능
+- [NFR-001] API 평균 응답 시간 < 1초
+- [NFR-002] 대시보드 페이지 로딩 < 3초
+- [NFR-003] 동시 사용자 100명 지원
+
+### 5.2 보안
+- [NFR-004] API Key는 환경 변수 또는 AWS Secrets Manager 사용
+- [NFR-005] HTTPS 필수
+- [NFR-006] 사용자 데이터 암호화 (AES-256)
+
+### 5.3 안정성
+- [NFR-007] 시스템 가용성 99% 이상
+- [NFR-008] API 실패 시 3회 재시도 (exponential backoff)
+- [NFR-009] 모든 에러 로그 기록 (CloudWatch Logs)
+
+### 5.4 데이터 신뢰성
+- [NFR-010] 모든 데이터에 출처 메타데이터 포함
+- [NFR-011] 공식 API 데이터만 사용 (크롤링 최소화)
+- [NFR-012] 데이터 교차 검증 (오차 1% 이상 시 경고)
+
+### 5.5 확장성
+- [NFR-013] 향후 미국 주식 자동매매 추가 가능한 구조
+- [NFR-014] 새로운 데이터 소스 쉽게 추가 (플러그인 방식)
+
+---
+
+## 6. 개발 로드맵 (3개월)
+
+### Phase 1: MVP (1개월)
+**Week 1-2: 데이터 수집**
+- [ ] 한국투자증권 KIS API 연동
+- [ ] yfinance로 미국 지수 수집
+- [ ] PostgreSQL 데이터베이스 구축
+- [ ] 일일 데이터 자동 수집 스크립트
+
+**Week 3: 기술적 지표 계산**
+- [ ] 이동평균선, RSI, MACD, 볼린저 밴드
+- [ ] S&P 500 이동평균선 신호 생성
+
+**Week 4: 기본 대시보드**
+- [ ] Streamlit 메인 페이지
+- [ ] 시장 현황 표시
+- [ ] 종목 검색 기능
+
+### Phase 2: 핵심 기능 (2개월차)
+**Week 5-6: 초보자 추천 시스템**
+- [ ] 투자 성향 분석 설문
+- [ ] 종목 필터링 알고리즘
+- [ ] 초보자 적합도 점수 계산
+- [ ] 섹터 가이드 작성
+
+**Week 7: 백테스팅**
+- [ ] Backtrader 프레임워크 구축
+- [ ] S&P 500 이평선 전략 백테스트
+- [ ] 골든크로스/데드크로스 전략 검증
+- [ ] 결과 시각화
+
+**Week 8: 차트 이미지 분석**
+- [ ] Upstage Document AI 연동
+- [ ] CLOVA Studio 차트 분석
+- [ ] 이미지 업로드 UI
+
+### Phase 3: 완성 (3개월차)
+**Week 9-10: 뉴스 및 감성 분석**
+- [ ] 빅카인즈 API 연동
+- [ ] 한국어 감성 분석 모델 (BERT)
+- [ ] 뉴스 신뢰도 평가 시스템
+
+**Week 11: 알림 시스템**
+- [ ] 카카오톡 메시지 API 연동
+- [ ] 목표가 알림
+- [ ] 급등/급락 알림
+- [ ] 미국 시장 신호 알림
+
+**Week 12: AWS 배포 및 테스트**
+- [ ] EC2 인스턴스 설정
+- [ ] Lambda + CloudWatch 스케줄링
+- [ ] 모의투자 3주 실전 테스트
+- [ ] 버그 수정 및 최적화
+
+---
+
+## 7. 예상 비용
+
+> **📌 API 비용 상세**: 각 API별 비용, Rate Limit, 무료 한도는 **`API_SUMMARY.md`** 참조
+
+### 7.1 무료 티어로 시작 가능
+
+**핵심 기능 (무료):**
+- **필수 데이터 수집 API (5개)**: KIS, DART, ECOS, FRED, BigKinds - 모두 무료
+- **API 키 불필요 (5개)**: Yahoo Finance, Fear & Greed, SEC EDGAR, Tradestie, StockTwits - 모두 무료
+- **알림 API**: Telegram, Gmail SMTP - 무료
+
+**AI 기능 (선택):**
+- Upstage: 월 300회 무료
+- CLOVA Studio: 월 100회 무료
+- Gemini: 분당 60회 무료
+- Claude, GPT-4: 각 $5 무료 크레딧 후 과금
+
+**인프라 비용:**
+
+| 항목 | 무료 한도 | 초과 시 비용 |
+|-----|----------|-------------|
+| AWS EC2 (t2.micro) | 월 750시간 (1년) | $0.0116/시간 |
+| PostgreSQL (RDS) | 월 750시간 (1년) | 무료 |
+| AWS Lambda | 월 100만 요청 | 무료 제한 |
+
+**예상 월 비용**
+- 1~6개월: **0원** (무료 티어, AI 무료 한도 내 사용 시)
+- 7~12개월: **10,000~30,000원** (EC2, AI API 유료 사용 시)
+
+### 7.2 비용 최적화 방법
+- Lambda로 특정 시간만 실행 (장중: 09:00-15:30)
+- 이미지 분석은 월 300건 제한 (1일 10건)
+- 캐싱으로 API 호출 최소화
+
+---
+
+## 8. 리스크 및 대응 방안
+
+| 리스크 | 영향도 | 확률 | 대응 방안 |
+|--------|-------|------|----------|
+| API 정책 변경 | High | Medium | 백업 API 2개 준비 (키움증권, LS증권) |
+| 데이터 정확도 이슈 | High | Low | 교차 검증 시스템 구축 |
+| AWS 비용 초과 | Medium | Low | 알림 설정 + 일일 모니터링 |
+| 백테스팅과 실전 괴리 | High | Medium | 모의투자 3개월 필수 + 보수적 전략 |
+| 사용자 부족 | Low | Medium | 커뮤니티 홍보 (네이버 카페, 디시인사이드) |
+
+---
+
+## 9. 법적 고려사항
+
+### 9.1 금융투자업 라이선스
+- ⚠️ **자동매매 대행은 금융투자업 라이선스 필요**
+- ✅ 이 시스템은 "정보 제공" 목적 → 라이선스 불필요
+- ✅ 사용자가 직접 매매 판단 및 실행
+
+### 9.2 면책 고지
+```
+본 시스템은 투자 참고 정보를 제공할 뿐, 투자 권유가 아닙니다.
+모든 투자 결정 및 손익은 사용자 본인의 책임입니다.
+과거 수익률이 미래 수익을 보장하지 않습니다.
+```
+
+---
+
+## 10. 성공 사례 벤치마킹
+
+### 10.1 유사 시스템
+- **Quantopian** (폐쇄): 알고리즘 트레이딩 플랫폼
+- **TradingView**: 차트 및 커뮤니티
+- **Seeking Alpha**: 뉴스 및 분석
+- **국내**: 네이버 금융, 인베스팅닷컴 코리아
+
+### 10.2 차별점
+| 기능 | 기존 서비스 | 우리 시스템 |
+|-----|-----------|-----------|
+| 미국-한국 연관성 | ✗ | ✅ 상관계수 0.85 활용 |
+| 초보자 맞춤 추천 | △ 복잡함 | ✅ 간단한 5문항 |
+| 백테스팅 공개 | ✗ | ✅ 투명한 성과 공개 |
+| 차트 이미지 분석 | ✗ | ✅ AI 자동 분석 |
+| 데이터 출처 명시 | △ 일부만 | ✅ 모든 데이터 출처 표시 |
+
+---
+
+## 11. 향후 확장 계획 (Phase 4+)
+
+### 11.1 추가 기능
+- [ ] 미국 주식 자동매매
+- [ ] 포트폴리오 시뮬레이터
+- [ ] 커뮤니티 기능 (투자 아이디어 공유)
+- [ ] 모바일 앱 (React Native)
+
+### 11.2 AI 고도화
+- [ ] LSTM 딥러닝 주가 예측
+- [ ] 강화학습 기반 매매 전략
+- [ ] 자연어 처리 리포트 자동 생성
+
+---
+
+## 12. 승인 및 버전 관리
+
+| 역할 | 이름 | 승인 | 날짜 |
+|------|------|------|------|
+| Product Owner | - | ☐ | 2025-11-21 |
+| Tech Lead | - | ☐ | 2025-11-21 |
+| Stakeholder | - | ☐ | 2025-11-21 |
+
+---
+
+## 변경 이력
+
+| 버전 | 날짜 | 변경 내용 | 작성자 |
+|------|------|-----------|--------|
+| 1.0 | 2025-11-21 | 초안 작성 | AI Assistant |
+| 2.0 | 2025-11-21 | 미국-한국 증시 연관성, 백테스팅, 구체적 기술 스택 추가 | AI Assistant |
+| 2.1 | 2025-11-22 | Multi-LLM 분석 시스템 (4-Agent 합의 메커니즘) 추가 | AI Assistant |
+|  |  | 소셜 미디어 데이터 수집 (WallStreetBets + StockTwits) 추가 | |
+|  |  | 요구사항 REQ-040 ~ REQ-047 추가 | |
+| 2.2 | 2025-11-22 | Phase 1 데이터 수집기 통합 완료 | AI Assistant |
+|  |  | - FRED API 수집기 (REQ-048 ~ REQ-051) | |
+|  |  | - ECOS API 수집기 (REQ-052 ~ REQ-055) | |
+|  |  | - Fear & Greed Index 수집기 (REQ-056 ~ REQ-060) | |
+|  |  | - 미국 경제 지표 80만+ 추가 | |
+|  |  | - 한국 경제 지표 10만+ 추가 | |
+|  |  | - 시장 심리 분석 및 역발상 투자 신호 추가 | |
+| 2.3 | 2025-11-23 | API 요구사항 명확화 및 API_SUMMARY.md 참조 추가 | AI Assistant |
+|  |  | - 19개 API/데이터 소스 전체 목록 명시 (5개 필수 + 14개 선택) | |
+|  |  | - 섹션 3에 API 개요 추가 | |
+|  |  | - 섹션 7 비용 정보 업데이트 | |
+|  |  | - API_SUMMARY.md 상호 참조 추가 | |
+
+---
+
+## 참고 자료
+
+1. 한국투자증권 KIS Developers: https://apiportal.koreainvestment.com
+2. DART 전자공시: https://dart.fss.or.kr
+3. 한국은행 ECOS API: https://ecos.bok.or.kr/api/
+4. FRED API (미 연준): https://fred.stlouisfed.org/docs/api/
+5. Backtrader 문서: https://www.backtrader.com/docu/
+6. Upstage API: https://developers.upstage.ai/
+7. CLOVA Studio: https://api.ncloud-docs.com/docs/ai-naver-clovastudio
