@@ -2,10 +2,20 @@
 ## 한국 주식 자동매매 지원 시스템
 
 **프로젝트명**: Stock Intelligence System (SIS)
-**버전**: 2.1
+**버전**: 2.2
 **작성일**: 2025-11-21
-**최종 업데이트**: 2025-11-22
+**최종 업데이트**: 2025-11-23
 **기간**: 3개월 (12주)
+
+> **📌 API 준비 필수!**
+>
+> 프로젝트 시작 전 **19개 API/데이터 소스** 확인 필요:
+> - **필수 데이터 API (5개)**: KIS, DART, ECOS, FRED, BigKinds
+> - **API 키 불필요 (5개)**: Yahoo Finance, Fear & Greed, SEC EDGAR, Tradestie, StockTwits
+> - **선택 AI API (6개)**: Upstage, CLOVA Studio, Claude, GPT-4, Gemini, Grok
+> - **선택 알림 API (3개)**: Telegram, Kakao Talk, Gmail SMTP
+>
+> **상세 가이드**: **`API_SUMMARY.md`** 참조 (발급 방법, 소요 시간, 비용 등)
 
 ---
 
@@ -842,12 +852,25 @@ Day 21: 최종 수익률 +8.5%, MDD -3.2%
 
 ### 4.3 API 사용량 관리
 
+> **📌 전체 API 목록 및 상세 정보**: **`API_SUMMARY.md`** 참조
+
+**필수 데이터 수집 API (5개):**
+
+| API | 무료 한도 | Rate Limit | 특이사항 |
+|-----|----------|-----------|----------|
+| **KIS API** | 무제한 | 초당 20회 | 증권계좌 필수 |
+| **DART API** | 무제한 | 무제한 | 회원가입만 필요 |
+| **ECOS API** | 100회/day | - | 본인인증 필수 |
+| **FRED API** | 무제한 | 120회/min | 이메일 인증 |
+| **BigKinds API** | - | - | 회원가입 필요 |
+
+**선택 AI API (주요):**
+
 | API | 무료 한도 | 예상 사용량 | 대응 방안 |
 |-----|----------|-----------|----------|
-| KIS API | 무제한 | 1일 5,000건 | 문제 없음 |
 | Upstage OCR | 월 300건 | 월 200건 | 1일 10건 제한 |
-| CLOVA Studio | 체험판 | 월 100건 | 유료 전환 또는 대체 |
-| 빅카인즈 | 1일 1,000건 | 1일 500건 | 문제 없음 |
+| CLOVA Studio | 월 100회 | 월 100건 | 무료 한도 내 사용 |
+| Gemini | 60회/min | 적정 | 무료 tier 활용 |
 
 ---
 
@@ -1023,3 +1046,8 @@ Day 21: 최종 수익률 +8.5%, MDD -3.2%
 | 2.1 | 2025-11-22 | 소셜 미디어 수집 시스템 추가 | AI Assistant |
 |  |  | Week 8에 WallStreetBets + StockTwits 구현 반영 | |
 |  |  | SNS 크롤링 연구 완료 표시 | |
+| 2.2 | 2025-11-23 | API 요구사항 명확화 및 API_SUMMARY.md 참조 추가 | AI Assistant |
+|  |  | - 19개 API/데이터 소스 목록 명시 (5개 필수 + 14개 선택) | |
+|  |  | - API 준비 필수 안내 추가 | |
+|  |  | - API 사용량 관리 섹션 업데이트 | |
+|  |  | - API_SUMMARY.md 상호 참조 추가 | |

@@ -1,9 +1,9 @@
 # PRD: 한국 주식 자동매매 지원 시스템
 ## Product Requirements Document
 
-**문서 버전**: 2.2
+**문서 버전**: 2.3
 **작성일**: 2025-11-21
-**최종 업데이트**: 2025-11-22
+**최종 업데이트**: 2025-11-23
 **프로젝트명**: Stock Intelligence System (SIS)
 **상태**: Draft
 
@@ -69,6 +69,21 @@
 ---
 
 ## 3. 핵심 기능 요구사항
+
+> **📌 API 및 데이터 소스 전체 목록**
+>
+> 본 시스템은 **19개의 API 및 데이터 소스**를 사용합니다:
+> - **필수 데이터 수집 API (5개)**: KIS API, DART API, ECOS API, FRED API, BigKinds API
+> - **API 키 불필요 (5개)**: Yahoo Finance, Fear & Greed Index, SEC EDGAR, Tradestie (WallStreetBets), StockTwits
+> - **선택 AI 기능 API (6개)**: Upstage, CLOVA Studio, Claude, GPT-4, Gemini, Grok
+> - **선택 알림 API (3개)**: Telegram, Kakao Talk, Gmail SMTP
+>
+> **상세 가이드**: 각 API의 발급 방법, 비용, Rate Limit 등은 **`API_SUMMARY.md`** 참조
+>
+> **예상 소요 시간**:
+> - 최소 설정 (5개 필수 API만): 1-2시간
+> - 알림 추가: +15분
+> - AI 기능 추가: +30분
 
 ### 3.1 데이터 수집 모듈 ⭐ (Must Have)
 
@@ -1249,20 +1264,32 @@ def send_kakao_alert(message):
 
 ## 7. 예상 비용
 
+> **📌 API 비용 상세**: 각 API별 비용, Rate Limit, 무료 한도는 **`API_SUMMARY.md`** 참조
+
 ### 7.1 무료 티어로 시작 가능
+
+**핵심 기능 (무료):**
+- **필수 데이터 수집 API (5개)**: KIS, DART, ECOS, FRED, BigKinds - 모두 무료
+- **API 키 불필요 (5개)**: Yahoo Finance, Fear & Greed, SEC EDGAR, Tradestie, StockTwits - 모두 무료
+- **알림 API**: Telegram, Gmail SMTP - 무료
+
+**AI 기능 (선택):**
+- Upstage: 월 300회 무료
+- CLOVA Studio: 월 100회 무료
+- Gemini: 분당 60회 무료
+- Claude, GPT-4: 각 $5 무료 크레딧 후 과금
+
+**인프라 비용:**
 
 | 항목 | 무료 한도 | 초과 시 비용 |
 |-----|----------|-------------|
 | AWS EC2 (t2.micro) | 월 750시간 (1년) | $0.0116/시간 |
-| 한국투자증권 API | 무제한 | 무료 |
-| Upstage Document AI | 월 300건 | 유료 플랜 |
-| CLOVA Studio | 체험판 | 종량제 |
 | PostgreSQL (RDS) | 월 750시간 (1년) | 무료 |
-| 카카오톡 메시지 | 무제한 (나에게 보내기) | 무료 |
+| AWS Lambda | 월 100만 요청 | 무료 제한 |
 
 **예상 월 비용**
-- 1~6개월: **0원** (무료 티어)
-- 7~12개월: **10,000~30,000원** (EC2, OCR 초과분)
+- 1~6개월: **0원** (무료 티어, AI 무료 한도 내 사용 시)
+- 7~12개월: **10,000~30,000원** (EC2, AI API 유료 사용 시)
 
 ### 7.2 비용 최적화 방법
 - Lambda로 특정 시간만 실행 (장중: 09:00-15:30)
@@ -1359,6 +1386,11 @@ def send_kakao_alert(message):
 |  |  | - 미국 경제 지표 80만+ 추가 | |
 |  |  | - 한국 경제 지표 10만+ 추가 | |
 |  |  | - 시장 심리 분석 및 역발상 투자 신호 추가 | |
+| 2.3 | 2025-11-23 | API 요구사항 명확화 및 API_SUMMARY.md 참조 추가 | AI Assistant |
+|  |  | - 19개 API/데이터 소스 전체 목록 명시 (5개 필수 + 14개 선택) | |
+|  |  | - 섹션 3에 API 개요 추가 | |
+|  |  | - 섹션 7 비용 정보 업데이트 | |
+|  |  | - API_SUMMARY.md 상호 참조 추가 | |
 
 ---
 
