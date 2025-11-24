@@ -83,7 +83,7 @@
 | [통계청 KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                        | 국가통계포털의 134,586종 통계자료                                          | `apiKey` |
 | [한국환경공단 에어코리아](https://www.data.go.kr/data/15073861/openapi.do)                  | 실시간 대기오염정보 및 미세먼지 데이터                                          | `apiKey` |
 | [문화체육관광부 문화정보](https://www.culture.go.kr/data/openapi/openapiInfo.do)            | 공연, 전시, 문화재, 도서관 등 문화정보                                        | `apiKey` |
-| [농림축산식품부 AgriX](https://data.mafra.go.kr/apply/indexApiPrcuseReqst.do)           | 농업경영체, 스마트팜, 축산물이력제 정보                                         | `apiKey` |
+| [농림축산식품부](https://data.mafra.go.kr/main.do)                                      | 농촌, 농업, 축산, 유통소비 등 데이터 제공                                      | `apiKey` |
 | [한국도로공사 교통정보](https://www.data.go.kr/data/15076872/openapi.do)                   | 실시간 고속도로 교통량 및 교통정보                                            | `apiKey` |
 | [한국토지주택공사(LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사) | 분양임대공고, 사전청약, 임대주택 정보                                          | `apiKey` |
 | [예금보험공사](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=예금보험공사)         | 금융기관 예금자보호 및 영업정지저축은행 정보                                       | `apiKey` |
@@ -92,6 +92,7 @@
 | [국가지표통합 공유서비스](https://www.index.go.kr/unity/openApi/openApiIntro.do)            | 국가 통계포털 ‘지표누리’가 각종 공공 통계지표 제공                                  | `apiKey` |
 | [NTIS 국가과학기술정보](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)               | 국가R&D 과제정보, 성과정보 메타데이터 검색                                      | `apiKey` |
 | [정책정보포털 POINT](https://policy.nl.go.kr/pages/point/api.jsp)                      | 최신정책동향, 온라인 정부간행물, 정책정보종합목록 제공                                 | `apiKey` |
+| [소상공인 365 API](https://bigdata.sbiz.or.kr/#/apiMain/dataApi/intro)               | 전국 상가업소 조회                                                     | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -561,6 +562,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 11월 19일
+**마지막 업데이트**: 2025년 11월 24일
 
 **총 API 수**: 245+α(데이터셋)
