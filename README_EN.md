@@ -72,7 +72,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [KOSTAT KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                                              | 134,586 types of statistical data from the National Statistical Portal                                                                                                                               | `apiKey` |
 | [K-eco AirKorea](https://www.data.go.kr/data/15073861/openapi.do)                                         | Real-time air pollution information and fine dust data                                                                                                                                               | `apiKey` |
 | [MCST Cultural Information](https://www.culture.go.kr/data/openapi/openapiInfo.do)                        | Performances, exhibitions, cultural properties, libraries and other cultural information                                                                                                             | `apiKey` |
-| [MAFRA AgriX](https://data.mafra.go.kr/apply/indexApiPrcuseReqst.do)                                      | Agricultural business entities, smart farms, livestock traceability information                                                                                                                      | `apiKey` |
+| [Ministry of Agriculture, Food and Rural Affairs](https://data.mafra.go.kr/apply/indexApiPrcuseReqst.do)  | Provides data related to rural areas, agriculture, livestock, distribution and consumption                                                                                                           | `apiKey` |
 | [Korea Expressway Corporation Traffic Information](https://www.data.go.kr/data/15076872/openapi.do)       | Real-time highway traffic volume and traffic information                                                                                                                                             | `apiKey` |
 | [Korea Land & Housing Corporation (LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사) | Sale/rental announcements, pre-subscription, rental housing information                                                                                                                              | `apiKey` |
 | [Korea Deposit Insurance Corporation](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=예금보험공사)     | Financial institution depositor protection and business suspension savings bank information                                                                                                          | `apiKey` |
@@ -81,6 +81,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [National Integrated Index Sharing Service](https://www.index.go.kr/unity/openApi/openApiIntro.do)        | Provides various public statistical indicators from the national statistics portal ‘지표누리’                                                                                                            | `apiKey` |
 | [NTIS National Science & Technology Information](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)       | National R&D project information, performance information metadata search                                                                                                                            | `apiKey` |
 | [Policy Information Portal POINT](https://policy.nl.go.kr/pages/point/api.jsp)                            | Provides the latest policy trends, online government publications, and comprehensive policy information listings                                                                                     | `apiKey` |
+| [Small Business 365 API](https://bigdata.sbiz.or.kr/#/apiMain/dataApi/intro)                              | Nationwide store directory                                                                                                                                       | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -554,7 +555,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: November 11, 2025
+**Last Updated**: November 24, 2025
 
 **Total API Count**: 245+
 
