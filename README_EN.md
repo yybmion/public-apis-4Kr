@@ -231,6 +231,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [KOPIS Performing Arts Integrated Computer Network](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | Performance information, venue information, booking information                            | `apiKey` |
 | [Korea Culture Information Service Agency](https://www.kcisa.kr/kr/contents/open_openData/view.do)         | Cultural content open API                                                                  | `apiKey` |
 | [Data4Library](https://www.data4library.kr/apiUtilization)                                                 | Provides data collected from public libraries nationwide (members, holdings, loans, etc.)) | `apiKey` |
+| [National Museum of Korea eMuseum](https://www.emuseum.go.kr/openApi)                                      | Nationwide museum collection information                                                   | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -544,7 +545,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: November 25, 2025
+**Last Updated**: December 07, 2025
 
 **Total API Count**: 245+
 

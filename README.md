@@ -242,6 +242,7 @@
 | [KOPIS 공연예술통합전산망](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | 공연정보, 공연장정보, 예매정보                | `apiKey` |
 | [한국문화정보원](https://www.kcisa.kr/kr/contents/open_openData/view.do)        | 문화콘텐츠 오픈 API                     | `apiKey` |
 | [도서관 정보나루](https://www.data4library.kr/apiUtilization)                   | 전국 공공도서관에서 수집한 회원·장서·대출 데이터 등을 제공 | `apiKey` |
+| [국립중앙박물관 e뮤지엄](https://www.emuseum.go.kr/openApi)                   | 전국 박물관 소장품(유물) 정보 조회 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -551,6 +552,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 11월 25일
+**마지막 업데이트**: 2025년 12월 07일
 
 **총 API 수**: 245+α(데이터셋)
