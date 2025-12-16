@@ -330,9 +330,10 @@
 | API                                                                       | 설명                                           | 인증     |
 |---------------------------------------------------------------------------|----------------------------------------------| -------- |
 | [네이버 치지직 API](https://chzzk.gitbook.io/chzzk)                             | 네이버 라이브 스트리밍 플랫폼                             | `apiKey` |
+| [만화규장각](https://www.kmas.or.kr/guide/openapi)                                   | 최신의 만화/웹툰/작가 정보 제공                             | `apiKey` |
 | [영화진흥위원회 KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | 박스오피스, 영화정보, 영화사정보, 영화인정보                    | `apiKey` |
-| [KMDb 시네마테크KOFA 상영일정](https://www.kmdb.or.kr/info/api/apiDetail/3) | 한국영상자료원 상암본원 시네마테크 상영일정 (2002년~현재)           | `apiKey` |
-| [KMDb 영화상세정보](https://www.kmdb.or.kr/info/api/apiDetail/6) | 한국영화 제명, 제작년도, 제작사, 크레딧, 줄거리, 장르, 키워드 등 상세정보 | `apiKey` |
+| [KMDb 시네마테크KOFA 상영일정](https://www.kmdb.or.kr/info/api/apiDetail/3)        | 한국영상자료원 상암본원 시네마테크 상영일정 (2002년~현재)           | `apiKey` |
+| [KMDb 영화상세정보](https://www.kmdb.or.kr/info/api/apiDetail/6)                | 한국영화 제명, 제작년도, 제작사, 크레딧, 줄거리, 장르, 키워드 등 상세정보 | `apiKey` |
 | [SOOP](https://developers.afreecatv.com/?szWork=openapi)                  | SOOP 방송 리스트, 카테고리 정보                         | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
