@@ -321,6 +321,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [KMDb KOFA Cinema Schedule](https://www.kmdb.or.kr/info/api/apiDetail/3)             | Korea Film Archive Sangam headquarters cinema screening schedule (2002-present)     | `apiKey` |
 | [KMDb Movie Details](https://www.kmdb.or.kr/info/api/apiDetail/6)                    | Korean film titles, production year, companies, credits, synopsis, genres, keywords | `apiKey` |
 | [Korea Film Council KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | Box office data, movie info, film company & people info                             | `apiKey` |
+| [Korean Comics Archive (KMAS)](https://www.kmas.or.kr/guide/openapi)                 | Provides up-to-date information on comics, webtoons, and creators                   | `apiKey` |
 | [NAVER Chzzk API](https://chzzk.gitbook.io/chzzk)                                    | NAVER live streaming platform                                                       | `apiKey` |
 | [SOOP](https://developers.afreecatv.com/?szWork=openapi)                             | SOOP broadcast list, category information                                           | `apiKey` |
 
