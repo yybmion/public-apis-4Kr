@@ -55,7 +55,6 @@ Updated with the latest information as of 2025, and will be periodically updated
 | [Gov24 Public Service API](https://www.gov.kr/openapi/info)                                               | Government public service information Open API, real-time administrative information                                                                                                                 | `apiKey` |
 | [Green Nuri Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                | Ministry of Environment eco-friendly lifestyle and environmental information                                                                                                                         | `apiKey` |
 | [Gyeonggi Data Dream](https://data.gg.go.kr/portal/data/dataset/searchDatasetPage.do)                     | A unified portal providing Gyeonggi Province’s public datasets, including transportation, welfare, tourism, economy, education, and housing and more                                                 | `apiKey` |
-| [HIRA Hospital Information](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do)                  | Basic information and medical departments of medical institutions nationwide                                                                                                                         | `apiKey` |
 | [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)                   | National qualifications, process evaluation qualifications, work-learning parallel qualification information                                                                                         | `apiKey` |
 | [K-eco AirKorea](https://www.data.go.kr/data/15073861/openapi.do)                                         | Real-time air pollution information and fine dust data                                                                                                                                               | `apiKey` |
 | [KMA Living Weather Index](https://data.kma.go.kr/api/selectApiList.do?pgmNo=42)                          | UV index, air stagnation index, apparent temperature and other living weather information                                                                                                            | `apiKey` |
@@ -318,6 +317,7 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 | API                                                                                  | Description                                                                         | Auth     |
 |--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------| -------- |
+| [DeepSearch News API](https://news.deepsearch.com)                                   | Collects news from 150 domestic & 50 international sources                          | `apiKey` |
 | [KMDb KOFA Cinema Schedule](https://www.kmdb.or.kr/info/api/apiDetail/3)             | Korea Film Archive Sangam headquarters cinema screening schedule (2002-present)     | `apiKey` |
 | [KMDb Movie Details](https://www.kmdb.or.kr/info/api/apiDetail/6)                    | Korean film titles, production year, companies, credits, synopsis, genres, keywords | `apiKey` |
 | [Korea Film Council KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | Box office data, movie info, film company & people info                             | `apiKey` |
@@ -546,7 +546,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: December 07, 2025
+**Last Updated**: December 23, 2025
 
 **Total API Count**: 245+
 
