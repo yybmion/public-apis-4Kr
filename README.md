@@ -11,7 +11,7 @@
 이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 **공개 API**를 체계적으로 정리한 목록입니다.
 
 
-2025년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+2026년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
 
 > ### 🌍 글로벌 API 리소스
 >
@@ -366,26 +366,28 @@
 
 ### 과학 & 연구
 
-| API                                                                               | 설명                            | 인증     |
-|-----------------------------------------------------------------------------------|-------------------------------| -------- |
-| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do)              | 국가기록 및 역사정보 검색                | `apiKey` |
-| [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)               | 소장자료, 디지털컬렉션 검색               | `apiKey` |
-| [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                   | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
+| API                                                                              | 설명                            | 인증     |
+|----------------------------------------------------------------------------------|-------------------------------| -------- |
+| [국가기록원 기록정보](https://www.archives.go.kr/next/newsearch/openAPI01.do)             | 국가기록 및 역사정보 검색                | `apiKey` |
+| [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)              | 소장자료, 디지털컬렉션 검색               | `apiKey` |
+| [근현대사 아카이브](https://archive.much.go.kr/cnts/cont01/page03.do)       | 박물관 소장품, 역사문화경관, 기록영상 등 근현대사 자료 | `apiKey` |
+| [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                  | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
 | [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터               | `apiKey` |
-| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                             | 학술논문 검색 (기관 라이선스)             | `apiKey` |
+| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                            | 학술논문 검색 (기관 라이선스)             | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
 ### 비즈니스 & 기업
 
-| API                                                                    | 설명                                             | 인증          |
-| ---------------------------------------------------------------------- | ------------------------------------------------ | ------------- |
-| [네이버웍스 경영지원 API](https://developers.worksmobile.com/kr/)      | B2B 업무 자동화, 결재·근태·인사·사업장 관리 통합 | `OAuth`       |
-| [삼성 녹스 API](https://developer.samsung.com/knox)                    | 기업용 모바일 보안 및 관리 솔루션                | `Partnership` |
-| [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK)    | `apiKey`      |
-| [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs)          | 중소기업 지원정책 및 사업정보                    | `apiKey`      |
-| [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)            | 직업훈련, 자격증, 취업정보                       | `apiKey`      |
-| [CODEF 오픈API](https://codef.io/)                                     | 금융, 보험, 통신, 공공기관 스크래핑 API          | `OAuth`       |
+| API                                                               | 설명                                           | 인증          |
+|-------------------------------------------------------------------|----------------------------------------------| ------------- |
+| [네이버웍스 API](https://developers.worksmobile.com/kr)                | Bot 사용, 조직 및 그룹 관리, 파일 업로드/다운로드 외 다양한 기능과 리소스 | `OAuth`       |
+| [비즈노 API](https://bizno.net/openapi)                              | 사업자등록번호, 상호명으로 사업자정보 조회                     | `apiKey` |
+| [삼성 녹스 API](https://developer.samsung.com/knox)                   | 기업용 모바일 보안 및 관리 솔루션                          | `Partnership` |
+| [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK)                 | `apiKey`      |
+| [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs)                | 중소기업 지원정책 및 사업정보                             | `apiKey`      |
+| [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)               | 직업훈련, 자격증, 취업정보                              | `apiKey`      |
+| [CODEF 오픈API](https://codef.io/)                                  | 금융, 보험, 통신, 공공기관 스크래핑 API                    | `OAuth`       |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -450,7 +452,7 @@
 
 | API                                                                  | 설명                              | 인증       |
 |----------------------------------------------------------------------|---------------------------------| -------- |
-| [생활안전정보](https://safemap.go.kr/opna/data/dataList.do)                | 범죄발생현황, 교통사고, 화재, 생활안전시설 위치정보   | `apiKey` |
+| [생활안전정보](https://safemap.go.kr/opna/data/dataListRenew.do)                | 범죄발생현황, 교통사고, 화재, 생활안전시설 위치정보   | `apiKey` |
 | [소방청 공공데이터](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | 화재정보, 구급출동, 소방시설 위치 등 소방안전정보    | `apiKey` |
 | [안전드림 실종/안전 API](https://www.safe182.go.kr/home/api/guideMain.do)    | 실종자 정보 및 생활안전 정보 제공 (경찰청)       | `apiKey` |
 | [재난안전데이터 공유플랫폼](https://www.safetydata.go.kr/disaster-data/list2)    | 재난 발생 현황, 피해 통계, 안전 관련 등 재난안전정보 | `apiKey` |
@@ -553,6 +555,6 @@
 
 ---
 
-**마지막 업데이트**: 2025년 12월 23일
+**마지막 업데이트**: 2026년 1월 1일
 
 **총 API 수**: 245+α(데이터셋)
