@@ -6,7 +6,7 @@
 This project systematically organizes all public APIs that developers can utilize in South Korea.
 
 
-Updated with the latest information as of 2025, and will be periodically updated going forward.
+Updated with the latest information as of 2026, and will be periodically updated going forward.
 
 ## Table of Contents
 
@@ -355,26 +355,28 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Science & Research
 
-| API                                                                                                                           | Description                                                        | Auth     |
-|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------| -------- |
-| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                                                                         | Academic paper search (institutional license)                      | `apiKey` |
-| [Korea Institute of Science and Technology Information KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do)  | Science and technology information and research data               | `apiKey` |
-| [National Archives Record Information](https://www.archives.go.kr/next/newsearch/openAPI01.do)                                | National archives and historical information search                | `apiKey` |
-| [National Library of Korea OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                                         | Search library holdings and digital collections                    | `apiKey` |
-| [Seoul Institute Open API](https://www.si.re.kr/content.do?key=2411210021)                                                    | Research outputs including reports, periodicals, and policy papers | `apiKey` |
+| API                                                                                                                          | Description                                                                      | Auth     |
+|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------| -------- |
+| [Korea Modern History Archive](https://archive.much.go.kr/cnts/cont01/page03.do)                                             | Museum collections, historical sites, archival videos & modern history materials | `apiKey` |
+| [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                                                                        | Academic paper search (institutional license)                                    | `apiKey` |
+| [Korea Institute of Science and Technology Information KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | Science and technology information and research data                             | `apiKey` |
+| [National Archives Record Information](https://www.archives.go.kr/next/newsearch/openAPI01.do)                               | National archives and historical information search                              | `apiKey` |
+| [National Library of Korea OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                                        | Search library holdings and digital collections                                  | `apiKey` |
+| [Seoul Institute Open API](https://www.si.re.kr/content.do?key=2411210021)                                                   | Research outputs including reports, periodicals, and policy papers               | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
 ### Business & Enterprise
 
-| API                                                                                        | Description                                                                    | Auth          |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------- |
-| [Airbridge API](https://help.airbridge.io/ko/references/introduction)                      | Mobile app marketing attribution (multi-platform SDK)                          | `apiKey`      |
-| [CODEF Open API](https://codef.io/)                                                        | Finance, insurance, telecommunications, public institution scraping API        | `OAuth`       |
-| [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)    | Vocational training, certification, employment information                     | `apiKey`      |
-| [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information                                  | `apiKey`      |
-| [Naver Works Business Support API](https://developers.worksmobile.com/kr/)                 | B2B workflow automation for approval, attendance, HR, and workplace management | `OAuth`       |
-| [Samsung Knox API](https://developer.samsung.com/knox)                                     | Enterprise mobile security and management solutions                            | `Partnership` |
+| API                                                                                        | Description                                                                                                 | Auth          |
+|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------|
+| [Airbridge API](https://help.airbridge.io/ko/references/introduction)                      | Mobile app marketing attribution (multi-platform SDK)                                                       | `apiKey`      |
+| [Bizno API](https://bizno.net/openapi)                                                     | Business info lookup by registration number or company name                                                 | `apiKey`      |
+| [CODEF Open API](https://codef.io/)                                                        | Finance, insurance, telecommunications, public institution scraping API                                     | `OAuth`       |
+| [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)    | Vocational training, certification, employment information                                                  | `apiKey`      |
+| [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information                                                               | `apiKey`      |
+| [Naver Works Business Support API](https://developers.worksmobile.com/kr)                  | Comprehensive features and resources covering message bots, directory/group management, file I/O, and more. | `OAuth`       |
+| [Samsung Knox API](https://developer.samsung.com/knox)                                     | Enterprise mobile security and management solutions                                                         | `Partnership` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -437,12 +439,12 @@ Updated with the latest information as of 2025, and will be periodically updated
 
 ### Public Safety
 
-| API                                                                                         | Description                                                                                      | Auth     |
-|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| -------- |
-| [Disaster Safety Data Sharing Platform](https://www.safetydata.go.kr/disaster-data/list2)   | Disaster occurrences, damage statistics, and safety-related disaster information                 | `apiKey` |
-| [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
-| [Public Safety Information](https://safemap.go.kr/opna/data/dataList.do)                    | Crime statistics, traffic accidents, fire incidents, and locations of public safety facilities   | `apiKey` |
-| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)   | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
+| API                                                                                           | Description                                                                                      | Auth     |
+|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| -------- |
+| [Disaster Safety Data Sharing Platform](https://www.safetydata.go.kr/disaster-data/list2)     | Disaster occurrences, damage statistics, and safety-related disaster information                 | `apiKey` |
+| [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/)   | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
+| [Public Safety Information](https://safemap.go.kr/opna/data/dataListRenew.do)                 | Crime statistics, traffic accidents, fire incidents, and locations of public safety facilities   | `apiKey` |
+| [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)     | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -546,7 +548,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: December 23, 2025
+**Last Updated**: January 1, 2026
 
 **Total API Count**: 245+
 
