@@ -59,38 +59,39 @@
 
 ### 정부 & 공공기관
 
-| API                                                                         | 설명                                                             | 인증       |
-|-----------------------------------------------------------------------------|----------------------------------------------------------------|----------|
-| [경기데이터드림](https://data.gg.go.kr/portal/data/dataset/searchDatasetPage.do)   | 경기도가 보유한 공공데이터(교통, 복지, 관광, 경제, 교육, 주택 등) 통합 제공 포털              | `apiKey` |
-| [공공데이터포털](https://www.data.go.kr/)                                          | 정부 및 공공기관의 모든 데이터를 통합 제공하는 중앙 플랫폼 (10만개 이상 데이터셋)               | `apiKey` |
-| [국가기록원 검색 API](https://www.archives.go.kr/next/newsearch/openAPI01.do)      | 나라기록물 검색서비스, RSS 형식 제공 (일 1000건 제한)                            | `apiKey` |
-| [국가지표통합 공유서비스](https://www.index.go.kr/unity/openApi/openApiIntro.do)       | 국가 통계포털 ‘지표누리’가 각종 공공 통계지표 제공                                  | `apiKey` |
-| [국토교통부 실거래가](https://www.data.go.kr/dataset/3050988/openapi.do)             | 아파트, 오피스텔, 단독다가구 등 실거래가 정보                                     | `apiKey` |
-| [기상청 단기예보](https://www.data.go.kr/data/15084084/openapi.do)                 | 초단기실황, 초단기예보, 단기예보 정보 제공                                       | `apiKey` |
-| [기상청 생활기상지수](https://data.kma.go.kr/api/selectApiList.do?pgmNo=42)          | 자외선지수, 대기정체지수, 체감온도 등 생활기상정보                                   | `apiKey` |
-| [기상청 중기예보](https://www.data.go.kr/data/15059468/openapi.do)                 | 중기 기상예보 정보 조회 서비스                                              | `apiKey` |
-| [농림축산식품부](https://data.mafra.go.kr/main.do)                                 | 농촌, 농업, 축산, 유통소비 등 데이터 제공                                      | `apiKey` |
-| [마이데이터 통합지원 API](https://www.kdata.or.kr/mydata)                            | 한국데이터산업진흥원 마이데이터 표준 API 서비스                                    | `OAuth`  |
-| [문화체육관광부 문화정보](https://www.culture.go.kr/data/openapi/openapiInfo.do)       | 공연, 전시, 문화재, 도서관 등 문화정보                                        | `apiKey` |
-| [보건복지부](https://www.mohw.go.kr/menu.es?mid=a10104010100)                    | 보건복지부의 정책, 법령, 재정, 감사, 연구정보 등 제공                               | `OAuth` |
-| [부산광역시 빅데이터](https://data.busan.go.kr/bdip/opendata/dataSet.do)             | 부산시 및 16개 구·군·공공기관의 공공데이터(교육, 공공행정, 문화, 식품, 안전, 교통 등) 통합 제공 포털 | `apiKey` |
-| [서울시 열린데이터광장](https://data.seoul.go.kr/)                                    | 서울시 모든 공공데이터 통합 플랫폼                                            | `apiKey` |
-| [소상공인 365 API](https://bigdata.sbiz.or.kr/#/apiMain/dataApi/intro)          | 전국 상가업소 조회                                                     | `apiKey` |
-| [열린국회정보 확장 API](https://open.assembly.go.kr/portal/openapi/main.do)         | 국회의원 표결정보, 발의법률안, 의안 상세정보, 연구보고서                               | `apiKey` |
-| [예금보험공사](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=예금보험공사)    | 금융기관 예금자보호 및 영업정지저축은행 정보                                       | `apiKey` |
-| [정부24 공공서비스 API](https://www.gov.kr/openapi/info)                           | 정부 공공서비스 정보 오픈API, 실시간 행정정보 제공                                 | `apiKey` |
-| [정책정보포털 POINT](https://policy.nl.go.kr/pages/point/api.jsp)                 | 최신정책동향, 온라인 정부간행물, 정책정보종합목록 제공                                 | `apiKey` |
-| [초록누리 Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)        | 환경부 환경정보 및 친환경 생활정보 제공                                         | `apiKey` |
-| [통계청 KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                   | 국가통계포털의 134,586종 통계자료                                          | `apiKey` |
-| [한국관광공사 TourAPI](https://api.visitkorea.or.kr/)                             | 관광지, 숙박, 음식점, 축제 등 관광정보                                        | `apiKey` |
-| [한국도로공사 교통정보](https://www.data.go.kr/data/15076872/openapi.do)              | 실시간 고속도로 교통량 및 교통정보                                            | `apiKey` |
-| [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)                         | 국가자격, 과정평가형자격, 일학습병행자격 정보 제공                                   | `apiKey` |
-| [한국철도공사 열차운행정보](https://www.data.go.kr/data/15125762/openapi.do)            | KTX, 새마을호 등 열차 운행정보                                            | `apiKey` |
-| [한국토지주택공사(LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사) | 분양임대공고, 사전청약, 임대주택 정보                                          | `apiKey` |
-| [한국환경공단 에어코리아](https://www.data.go.kr/data/15073861/openapi.do)             | 실시간 대기오염정보 및 미세먼지 데이터                                          | `apiKey` |
-| [행정안전부 행정표준코드](https://www.data.go.kr/data/15077871/openapi.do)             | 법정동코드, 행정구역코드 등 표준코드 정보                                        | `apiKey` |
-| [환경공간정보서비스 지도 API](https://egis.me.go.kr/api/intro.do)                      | 환경부 토지피복지도, 환경주제도, 생태자연도 공간정보                                  | `apiKey` |
-| [NTIS 국가과학기술정보](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)          | 국가R&D 과제정보, 성과정보 메타데이터 검색                                      | `apiKey` |
+| API                                                                                                              | 설명                                                             | 인증       |
+|------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|----------|
+| [경기데이터드림](https://data.gg.go.kr/portal/data/dataset/searchDatasetPage.do)                                        | 경기도가 보유한 공공데이터(교통, 복지, 관광, 경제, 교육, 주택 등) 통합 제공 포털              | `apiKey` |
+| [공공데이터포털](https://www.data.go.kr/)                                                                               | 정부 및 공공기관의 모든 데이터를 통합 제공하는 중앙 플랫폼 (10만개 이상 데이터셋)               | `apiKey` |
+| [국가기록원 검색 API](https://www.archives.go.kr/next/newsearch/openAPI01.do)                                           | 나라기록물 검색서비스, RSS 형식 제공 (일 1000건 제한)                            | `apiKey` |
+| [국가지표통합 공유서비스](https://www.index.go.kr/unity/openApi/openApiIntro.do)                                            | 국가 통계포털 ‘지표누리’가 각종 공공 통계지표 제공                                  | `apiKey` |
+| [국토교통부 실거래가](https://www.data.go.kr/dataset/3050988/openapi.do)                                                  | 아파트, 오피스텔, 단독다가구 등 실거래가 정보                                     | `apiKey` |
+| [기상청 단기예보](https://www.data.go.kr/data/15084084/openapi.do)                                                      | 초단기실황, 초단기예보, 단기예보 정보 제공                                       | `apiKey` |
+| [기상청 생활기상지수](https://data.kma.go.kr/api/selectApiList.do?pgmNo=42)                                               | 자외선지수, 대기정체지수, 체감온도 등 생활기상정보                                   | `apiKey` |
+| [기상청 중기예보](https://www.data.go.kr/data/15059468/openapi.do)                                                      | 중기 기상예보 정보 조회 서비스                                              | `apiKey` |
+| [농림축산식품부](https://data.mafra.go.kr/main.do)                                                                      | 농촌, 농업, 축산, 유통소비 등 데이터 제공                                      | `apiKey` |
+| [마이데이터 통합지원 API](https://www.kdata.or.kr/mydata)                                                                 | 한국데이터산업진흥원 마이데이터 표준 API 서비스                                    | `OAuth`  |
+| [문화체육관광부 문화정보](https://www.culture.go.kr/data/openapi/openapiInfo.do)                                            | 공연, 전시, 문화재, 도서관 등 문화정보                                        | `apiKey` |
+| [보건복지부](https://www.mohw.go.kr/menu.es?mid=a10104010100)                                                         | 보건복지부의 정책, 법령, 재정, 감사, 연구정보 등 제공                               | `OAuth`  |
+| [부산광역시 빅데이터](https://data.busan.go.kr/bdip/opendata/dataSet.do)                                                  | 부산시 및 16개 구·군·공공기관의 공공데이터(교육, 공공행정, 문화, 식품, 안전, 교통 등) 통합 제공 포털 | `apiKey` |
+| [서울시 열린데이터광장](https://data.seoul.go.kr/)                                                                         | 서울시 모든 공공데이터 통합 플랫폼                                            | `apiKey` |
+| [소상공인 365 API](https://bigdata.sbiz.or.kr/#/apiMain/dataApi/intro)                                               | 전국 상가업소 조회                                                     | `apiKey` |
+| [열린국회정보 확장 API](https://open.assembly.go.kr/portal/openapi/main.do)                                              | 국회의원 표결정보, 발의법률안, 의안 상세정보, 연구보고서                               | `apiKey` |
+| [예금보험공사](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=예금보험공사)                                         | 금융기관 예금자보호 및 영업정지저축은행 정보                                       | `apiKey` |
+| [정부24 공공서비스 API](https://www.gov.kr/openapi/info)                                                                | 정부 공공서비스 정보 오픈API, 실시간 행정정보 제공                                 | `apiKey` |
+| [정책정보포털 POINT](https://policy.nl.go.kr/pages/point/api.jsp)                                                      | 최신정책동향, 온라인 정부간행물, 정책정보종합목록 제공                                 | `apiKey` |
+| [초록누리 Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                             | 환경부 환경정보 및 친환경 생활정보 제공                                         | `apiKey` |
+| [키프리스 플러스 API](https://plus.kipris.or.kr/portal/data/service/List.do?subTab=SC001&amp;entYn=N&amp;menuNo=200100) | 특허·상표·디자인 등 지식재산권 정보 검색                                        | `apiKey` |
+| [통계청 KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                                                        | 국가통계포털의 134,586종 통계자료                                          | `apiKey` |
+| [한국관광공사 TourAPI](https://api.visitkorea.or.kr/)                                                                  | 관광지, 숙박, 음식점, 축제 등 관광정보                                        | `apiKey` |
+| [한국도로공사 교통정보](https://www.data.go.kr/data/15076872/openapi.do)                                                   | 실시간 고속도로 교통량 및 교통정보                                            | `apiKey` |
+| [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)                                                              | 국가자격, 과정평가형자격, 일학습병행자격 정보 제공                                   | `apiKey` |
+| [한국철도공사 열차운행정보](https://www.data.go.kr/data/15125762/openapi.do)                                                 | KTX, 새마을호 등 열차 운행정보                                            | `apiKey` |
+| [한국토지주택공사(LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사)                                 | 분양임대공고, 사전청약, 임대주택 정보                                          | `apiKey` |
+| [한국환경공단 에어코리아](https://www.data.go.kr/data/15073861/openapi.do)                                                  | 실시간 대기오염정보 및 미세먼지 데이터                                          | `apiKey` |
+| [행정안전부 행정표준코드](https://www.data.go.kr/data/15077871/openapi.do)                                                  | 법정동코드, 행정구역코드 등 표준코드 정보                                        | `apiKey` |
+| [환경공간정보서비스 지도 API](https://egis.me.go.kr/api/intro.do)                                                           | 환경부 토지피복지도, 환경주제도, 생태자연도 공간정보                                  | `apiKey` |
+| [NTIS 국가과학기술정보](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)                                               | 국가R&D 과제정보, 성과정보 메타데이터 검색                                  | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -555,6 +556,6 @@
 
 ---
 
-**마지막 업데이트**: 2026년 1월 1일
+**마지막 업데이트**: 2026년 1월 6일
 
 **총 API 수**: 245+α(데이터셋)
