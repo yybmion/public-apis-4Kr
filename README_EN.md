@@ -163,6 +163,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [AirKorea Real-time Air Pollution Information](https://www.data.go.kr/data/15073861/openapi.do)                          | Real-time air quality measurement information by city/province                                         | `apiKey` |
 | [Eco-friendly Resource Circulation Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_12.html) | Provides information related to eco-friendly resource circulation                                      | `apiKey` |
 | [Electric Vehicle Charger Information](https://chargeinfo.ksga.org/front/cs/api/infomation)                              | Charging operator charging station location and charger status                                         | `apiKey` |
+| [Environmental Satellite Center API](https://nesc.nier.go.kr/ko/html/svc/openapi/explain.do)                             | Environmental satellite (GEMS) data and imagery                                                        | `apiKey` |
 | [Flora and Fauna Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_11.html)                   | Provides survey data on flora and fauna and information related to ecosystem conservation              | `apiKey` |
 | [Greenhouse Gas Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)                    | Provides greenhouse gas investigation and prediction data for environmental impact assessment projects | `apiKey` |
 | [Hydrology and Water Resources Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)     | Provides investigation and prediction data on hydrology and water resources                            | `apiKey` |
@@ -549,7 +550,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: January 6, 2026
+**Last Updated**: January 15, 2026
 
 **Total API Count**: 245+
 
