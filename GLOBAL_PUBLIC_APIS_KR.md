@@ -696,6 +696,7 @@
 | [Cloudmersive](https://www.cloudmersive.com/image-recognition-and-processing-api) | 이미지 캡션, 얼굴 인식, NSFW 분류           | `apiKey` |  Yes  |   Yes   |
 |          [Deepcode](https://www.deepcode.ai/docs/Overview%252FOverview)           | 코드 리뷰를 위한 AI                         |    No    |  Yes  | Unknown |
 |                       [Dialogflow](https://dialogflow.com)                        | 자연어 처리                                 | `apiKey` |  Yes  | Unknown |
+| [HOL Registry Broker](https://hol.org/docs/registry-broker/) | AI 에이전트 및 MCP 서버 검색/검증/채팅 API (OpenAPI 제공) | `apiKey` |  Yes  |   Yes   |
 |                            [Keen IO](https://keen.io/)                            | 데이터 분석                                 | `apiKey` |  Yes  | Unknown |
 |                     [Unplugg](https://unplu.gg/test_api.html)                     | 시계열 데이터 예측 API                      | `apiKey` |  Yes  | Unknown |
 |                             [Wit.ai](https://wit.ai/)                             | 자연어 처리                                 | `OAuth`  |  Yes  | Unknown |
