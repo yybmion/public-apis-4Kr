@@ -68,6 +68,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Korea Public Data Portal](https://www.data.go.kr/)                                                         | Central platform providing integrated data from government and public institutions (100,000+ datasets)                                                                                               | `apiKey` |
 | [Korea Tourism Organization TourAPI](https://api.visitkorea.or.kr/)                                         | Tourist attractions, accommodation, restaurants, festivals and other tourism information                                                                                                             | `apiKey` |
 | [KOSTAT KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                                                | 134,586 types of statistical data from the National Statistical Portal                                                                                                                               | `apiKey` |
+| [Local Admin License API](https://www.localdata.go.kr/main.do)                                              | Nationwide business permit dataset (animal, medical, culture, lifestyle ...)                                                                                                                         | `apiKey` |
 | [MCST Cultural Information](https://www.culture.go.kr/data/openapi/openapiInfo.do)                          | Performances, exhibitions, cultural properties, libraries and other cultural information                                                                                                             | `apiKey` |
 | [Ministry of Agriculture, Food and Rural Affairs](https://data.mafra.go.kr/apply/indexApiPrcuseReqst.do)    | Provides data related to rural areas, agriculture, livestock, distribution and consumption                                                                                                           | `apiKey` |
 | [Ministry of Health and Welfare](https://www.mohw.go.kr/menu.es?mid=a10104010100)                           | Provides policies, laws, finances, audits, and research information related to health and welfare                                                                                                    | `OAuth` |
@@ -550,7 +551,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: January 15, 2026
+**Last Updated**: January 27, 2026
 
-**Total API Count**: 245+
+**Total API Count**: 250+
 
