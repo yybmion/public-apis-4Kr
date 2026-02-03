@@ -12,6 +12,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 
 - [🏛 Government & Public Institutions](#government--public-institutions)
 - [🗺 Maps & Location](#maps--location)
+- [📍 Regional Public Data](#regional-public-data)
 - [💵 Finance & Payment](#finance--payment)
 - [📱 Telecommunications](#telecommunications)
 - [🚗 Transportation](#transportation)
@@ -50,11 +51,9 @@ Updated with the latest information as of 2026, and will be periodically updated
 
 | API                                                                                                         | Description                                                                                                                                                                                          | Auth     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| [Busan Big Data Portal](https://data.busan.go.kr/bdip/opendata/dataSet.do)                                  | A comprehensive portal offering public datasets from Busan City and its 16 districts and public agencies, covering education, public administration, culture, food, safety, transportation, and more | `apiKey` |
 | [Environmental Spatial Information Service API](https://egis.me.go.kr/api/intro.do)                         | Ministry of Environment land cover maps, environmental thematic maps, ecological spatial data                                                                                                        | `apiKey` |
 | [Gov24 Public Service API](https://www.gov.kr/openapi/info)                                                 | Government public service information Open API, real-time administrative information                                                                                                                 | `apiKey` |
 | [Green Nuri Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                  | Ministry of Environment eco-friendly lifestyle and environmental information                                                                                                                         | `apiKey` |
-| [Gyeonggi Data Dream](https://data.gg.go.kr/portal/data/dataset/searchDatasetPage.do)                       | A unified portal providing Gyeonggi Province’s public datasets, including transportation, welfare, tourism, economy, education, and housing and more                                                 | `apiKey` |
 | [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)                     | National qualifications, process evaluation qualifications, work-learning parallel qualification information                                                                                         | `apiKey` |
 | [K-eco AirKorea](https://www.data.go.kr/data/15073861/openapi.do)                                           | Real-time air pollution information and fine dust data                                                                                                                                               | `apiKey` |
 | [KIPRIS Plus API](https://plus.kipris.or.kr/portal/data/service/List.do?subTab=SC001&entYn=N&menuNo=200100) | Intellectual property search (patents, trademarks, designs...)                                                                                                                                       | `apiKey` |
@@ -80,7 +79,6 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [NTIS National Science & Technology Information](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)         | National R&D project information, performance information metadata search                                                                                                                            | `apiKey` |
 | [Open National Assembly Information API](https://open.assembly.go.kr/portal/openapi/main.do)                | National Assembly member voting records, proposed bills, bill details, research reports                                                                                                              | `apiKey` |
 | [Policy Information Portal POINT](https://policy.nl.go.kr/pages/point/api.jsp)                              | Provides the latest policy trends, online government publications, and comprehensive policy information listings                                                                                     | `apiKey` |
-| [Seoul Open Data Plaza](https://data.seoul.go.kr/)                                                          | Seoul Metropolitan Government integrated public data platform                                                                                                                                        | `apiKey` |
 | [Small Business 365 API](https://bigdata.sbiz.or.kr/#/apiMain/dataApi/intro)                                | Nationwide store directory                                                                                                                                                                           | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -95,6 +93,29 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Naver Map](https://www.ncloud.com/product/applicationService/maps)                     | Map API, Geocoding, Directions, Panorama                                               | `apiKey` |
 | [T Map API](https://openapi.sk.com/)                                                    | SK Telecom's navigation and route search API                                           | `apiKey` |
 | [V-World](https://www.vworld.kr/v4po_openapi_s001.do)                                   | National Geographic Information Institute's 3D maps and spatial information            | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Regional Public Data
+
+| API                                                                                             | Description                                                                    | Auth     |
+|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|----------|
+| [Gyeonggi Data Dream](https://data.gg.go.kr)                                                    | Gyeonggi Province and municipal public data                                    | `apiKey` |
+| [Gyeongnam Big Data Hub](https://bigdata.gyeongnam.go.kr)                                       | Gyeongsangnam-do public data                                                   | `apiKey` |
+| [Gyeongbuk Public Data Portal](https://www.gb.go.kr/Main/open_contents/section/data/index.html) | Gyeongsangbuk-do public data                                                   | `apiKey` |
+| [Gwangju Public Data Portal](https://www.gjcity.go.kr/bigdata/)                                 | Gwangju Metropolitan City public data                                          | `apiKey` |
+| [Daegu Public Data Portal](https://data.daegu.go.kr)                                            | Daegu Metropolitan City life, transportation, tourism                          | `apiKey` |
+| [Daejeon Data Portal](https://bigdata.daejeon.go.kr/)                                           | Daejeon Metropolitan City urban, transportation, environment                   | `apiKey` |
+| [Busan Public Data Portal](https://data.busan.go.kr)                                            | Busan Metropolitan City bus, subway, culture, safety                           | `apiKey` |
+| [Seoul Open Data Plaza](https://data.seoul.go.kr)                                               | Seoul Metropolitan Government transportation, environment, facilities, welfare | `apiKey` |
+| [Sejong Data Portal](https://www.sejong.go.kr/stat/index.do)                                    | Sejong Special Self-Governing City administration, living data                 | `apiKey` |
+| [Ulsan Data Portal](https://data.ulsan.go.kr)                                                   | Ulsan Metropolitan City industry, environment                                  | `apiKey` |
+| [Incheon Data Portal](https://data.incheon.go.kr)                                               | Incheon Metropolitan City public data                                          | `apiKey` |
+| [Jeonnam Public Data Portal](https://data.jeonnam.go.kr)                                        | Jeollanam-do public data                                                       | `apiKey` |
+| [Jeonbuk Public Data Portal](https://www.bigdatahub.go.kr/index.jeonbuk)                        | Jeonbuk Special Self-Governing Province public data                            | `apiKey` |
+| [Jeju Public Data Portal](https://www.jejudatahub.net/)                                         | Jeju Special Self-Governing Province public data                               | `apiKey` |
+| [Chungnam Data Portal Alldam](https://alldam.chungnam.go.kr)                                    | Chungcheongnam-do public data                                                  | `apiKey` |
+| [Chungbuk Public Data Portal](https://data.chungbuk.go.kr)                                      | Chungcheongbuk-do public data                                                  | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -435,7 +456,6 @@ Updated with the latest information as of 2026, and will be periodically updated
 
 | API                                                                                | Description                                        | Auth     |
 | ---------------------------------------------------------------------------------- | -------------------------------------------------- | -------- |
-| [GeranGeokyo Malicious IP API](https://www.bigdata-policing.kr/page/openapi)       | Phishing and malware IP address information        | `apiKey` |
 | [WHOIS Domain/IP Information API](https://www.data.go.kr/data/15094277/openapi.do) | WHOIS information for .kr domains and IP addresses | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -551,7 +571,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: January 27, 2026
+**Last Updated**: February 3, 2026
 
 **Total API Count**: 250+
 
