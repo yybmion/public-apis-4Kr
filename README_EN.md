@@ -401,6 +401,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information                                                               | `apiKey`      |
 | [Naver Works Business Support API](https://developers.worksmobile.com/kr)                  | Comprehensive features and resources covering message bots, directory/group management, file I/O, and more. | `OAuth`       |
 | [Samsung Knox API](https://developer.samsung.com/knox)                                     | Enterprise mobile security and management solutions                                                         | `Partnership` |
+| [Open DART API](https://engopendart.fss.or.kr/)                                            | Repository of South Korea's corporate filings, financial statements, and company overviews                  | `apiKey`      |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -574,4 +575,5 @@ This project is distributed under the MIT License.
 **Last Updated**: February 3, 2026
 
 **Total API Count**: 250+
+
 
