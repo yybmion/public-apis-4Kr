@@ -412,6 +412,7 @@
 | [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs)                | 중소기업 지원정책 및 사업정보                             | `apiKey`      |
 | [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)               | 직업훈련, 자격증, 취업정보                              | `apiKey`      |
 | [CODEF 오픈API](https://codef.io/)                                  | 금융, 보험, 통신, 공공기관 스크래핑 API                    | `OAuth`       |
+| [Open DART API](https://opendart.fss.or.kr/)                       | 상장법인 공시보고서 원문, 주요 재무정보 및 기업 개황 데이터      | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
