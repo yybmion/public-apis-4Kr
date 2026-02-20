@@ -83,7 +83,7 @@
 | [키프리스 플러스 API](https://plus.kipris.or.kr/portal/data/service/List.do?subTab=SC001&amp;entYn=N&amp;menuNo=200100) | 특허·상표·디자인 등 지식재산권 정보 검색                                          | `apiKey` |
 | [통계청 KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                                                        | 국가통계포털의 134,586종 통계자료                                            | `apiKey` |
 | [한국관광공사 TourAPI](https://api.visitkorea.or.kr/)                                                                  | 관광지, 숙박, 음식점, 축제 등 관광정보                                          | `apiKey` |
-| [한국도로공사 교통정보](https://www.data.go.kr/data/15076872/openapi.do)                                                   | 실시간 고속도로 교통량 및 교통정보                                              | `apiKey` |
+| [한국도로공사 교통정보](https://data.ex.co.kr/)                                                                          | 실시간 고속도로 교통량 및 교통정보                                              | `apiKey` |
 | [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)                                                              | 국가자격, 과정평가형자격, 일학습병행자격 정보 제공                                     | `apiKey` |
 | [한국철도공사 열차운행정보](https://www.data.go.kr/data/15125762/openapi.do)                                                 | KTX, 새마을호 등 열차 운행정보                                              | `apiKey` |
 | [한국토지주택공사(LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사)                                 | 분양임대공고, 사전청약, 임대주택 정보                                            | `apiKey` |
