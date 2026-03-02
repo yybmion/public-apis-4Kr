@@ -397,6 +397,7 @@
 | [근현대사 아카이브](https://archive.much.go.kr/cnts/cont01/page03.do)       | 박물관 소장품, 역사문화경관, 기록영상 등 근현대사 자료 | `apiKey` |
 | [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                  | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
 | [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터               | `apiKey` |
+| [한국농촌경제연구원 KREI](https://www.krei.re.kr/krei/page/474)                    | 농업·농촌 연구보고서 및 정보 조회               | `apiKey` |
 | [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                            | 학술논문 검색 (기관 라이선스)             | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -579,6 +580,6 @@
 
 ---
 
-**마지막 업데이트**: 2026년 2월 03일
+**마지막 업데이트**: 2026년 3월 02일
 
 **총 API 수**: 260+α(데이터셋)
