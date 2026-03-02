@@ -387,6 +387,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [National Archives Record Information](https://www.archives.go.kr/next/newsearch/openAPI01.do)                               | National archives and historical information search                              | `apiKey` |
 | [National Library of Korea OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)                                        | Search library holdings and digital collections                                  | `apiKey` |
 | [Seoul Institute Open API](https://www.si.re.kr/content.do?key=2411210021)                                                   | Research outputs including reports, periodicals, and policy papers               | `apiKey` |
+| [KREI Open API](https://www.krei.re.kr/krei/page/474)                                                                        | Agricultural and rural research reports and data                                 | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -572,8 +573,9 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: February 3, 2026
+**Last Updated**: March 2, 2026
 
-**Total API Count**: 250+
+**Total API Count**: 260+
+
 
 
