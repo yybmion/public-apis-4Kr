@@ -52,6 +52,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | API                                                                                                         | Description                                                                                                                                                                                          | Auth     |
 |-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
 | [Environmental Spatial Information Service API](https://egis.me.go.kr/api/intro.do)                         | Ministry of Environment land cover maps, environmental thematic maps, ecological spatial data                                                                                                        | `apiKey` |
+| [FairData Portal (KFTC)](https://fairdata.go.kr/ext/data/useGuidance.do)                                    | Fair Trade Commission franchise business Open API (brand store info, contract status, average sales by region)                                                                                       | `apiKey` |
 | [Gov24 Public Service API](https://www.gov.kr/openapi/info)                                                 | Government public service information Open API, real-time administrative information                                                                                                                 | `apiKey` |
 | [Green Nuri Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                  | Ministry of Environment eco-friendly lifestyle and environmental information                                                                                                                         | `apiKey` |
 | [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)                     | National qualifications, process evaluation qualifications, work-learning parallel qualification information                                                                                         | `apiKey` |
@@ -573,7 +574,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: March 2, 2026
+**Last Updated**: March 13, 2026
 
 **Total API Count**: 260+
 
