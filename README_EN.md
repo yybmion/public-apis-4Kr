@@ -478,9 +478,10 @@ Updated with the latest information as of 2026, and will be periodically updated
 
 | API                                                                                                              | Description                                                                | Auth     |
 | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- |
-| [Aircraft Operation Information API](https://www.data.go.kr/data/15000126/openapi.do)                            | Real-time flight operation information for domestic airports               | `apiKey` |
-| [Domestic Aviation Operation Information API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y) | Domestic flight schedules (Ministry of Land, Infrastructure and Transport) | `apiKey` |
-| [Incheon Airport Passenger Flight Status API](https://www.data.go.kr/data/15095074/openapi.do)                   | Incheon Airport flight arrival/departure status                            | `apiKey` |
+| [Aircraft Operation Information API](https://www.data.go.kr/data/15000126/openapi.do)                            | Real-time flight operation information for domestic airports                                              | `apiKey` |
+| [Domestic Aviation Operation Information API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y) | Domestic flight schedules (Ministry of Land, Infrastructure and Transport)                                | `apiKey` |
+| [Incheon Airport Passenger Flight Status API](https://www.data.go.kr/data/15095074/openapi.do)                   | Incheon Airport flight arrival/departure status                                                           | `apiKey` |
+| [Korea Airports Corporation (KAC) Open API](https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=1270)       | Integrated Open API for 14 domestic airports (Gimpo, Gimhae, Jeju, etc.) — flights, parking, noise, retail | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 

@@ -489,9 +489,10 @@
 
 | API                                                                                       | 설명                                  | 인증     |
 | ----------------------------------------------------------------------------------------- | ------------------------------------- | -------- |
-| [국내항공운항정보 API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y) | 국내선 항공편 운항 일정 조회 (국토부) | `apiKey` |
-| [인천공항 여객운항 현황 API](https://www.data.go.kr/data/15095074/openapi.do)             | 인천공항 항공편 출도착 현황 조회      | `apiKey` |
-| [항공기 운항정보 API](https://www.data.go.kr/data/15000126/openapi.do)                    | 국내 공항 항공편 실시간 운항정보 조회 | `apiKey` |
+| [국내항공운항정보 API](https://www.data.go.kr/data/15098526/openapi.do?recommendDataYn=Y)     | 국내선 항공편 운항 일정 조회 (국토부)                                | `apiKey` |
+| [인천공항 여객운항 현황 API](https://www.data.go.kr/data/15095074/openapi.do)                 | 인천공항 항공편 출도착 현황 조회                                     | `apiKey` |
+| [한국공항공사(KAC) Open API](https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=1270)   | 김포·김해·제주 등 14개 국내공항 통합 OpenAPI (운항·주차·소음·상업시설) | `apiKey` |
+| [항공기 운항정보 API](https://www.data.go.kr/data/15000126/openapi.do)                        | 국내 공항 항공편 실시간 운항정보 조회                                | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
