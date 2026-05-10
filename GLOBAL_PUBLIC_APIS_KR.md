@@ -934,6 +934,7 @@
 |                     [vk](https://vk.com/dev/sites)                     | vk 데이터 읽기 및 쓰기                                                           | `OAuth`  |  Yes  | Unknown |
 |              [SharedCount](http://docs.sharedcount.com/)               | Pinterest 및 Facebook 공유 추적                                                 | `apiKey` |  Yes  | Unknown |
 |                  [TwitterApi](http://twitterapi.io/)                   | 대량 Twitter 데이터 읽기 API                                                    | `apiKey` |  Yes  |   No    |
+|                  [Xquik](https://docs.xquik.com/api-reference/overview) | X(Twitter) 데이터 API. 트윗 검색, 프로필 트윗, 팔로워 내보내기, 미디어 다운로드, 게시, 모니터링, 웹훅 지원 | `apiKey` |  Yes  | Unknown |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
