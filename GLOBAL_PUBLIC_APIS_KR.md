@@ -3,7 +3,6 @@
 > 번역 저장소 안내 👀
 >
 > 이 문서는 한국어 사용 개발자를 위해 [public-apis/public-apis](https://github.com/public-apis/public-apis) 저장소의 공개 API 목록을 한국어로 옮긴 문서입니다.
-> 원본 기준: `master` 커밋 [`67c9716`](https://github.com/public-apis/public-apis/commit/67c9716530789b09d388bd2c6443af7a215e81e5) (2026-05-11 05:50:32 UTC)
 >
 > 원본 저장소와 동일하게 MIT 라이선스 하에 번역 및 배포됩니다.
 
