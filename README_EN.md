@@ -135,6 +135,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [KFTC Open Banking](https://openapi.kftc.or.kr/service/openBanking)                | Integrated account inquiry, transfer, and payment services for 19+ banks                     | `OAuth`       |
 | [Korea Development Bank Open API](https://www.koreaexim.go.kr/ir/HPHKIR019M01)     | Current exchange rates, loan rates, international rates                                      | `apiKey` |
 | [Korea Investment Securities KIS API](https://apiportal.koreainvestment.com/intro) | Domestic and overseas stock quotes and order API                            | `OAuth`       |
+| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | Korea Exchange market data including indices, stocks, bonds, and derivatives | `apiKey` |
 | [Naver Pay API](https://developers.pay.naver.com/)                                 | Naver Pay payment, regular payment, automatic payment API                                    | `OAuth`       |
 | [NH Nonghyup Bank Open API](https://developers.nonghyup.com/center/CE_1020)        | Nonghyup financial API developer center                                                      | `OAuth`       |
 | [PAYCO](https://developers.payco.com/guide)                                        | NHN integrated ID and membership integration service                                         | `OAuth`       |
@@ -191,6 +192,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Greenhouse Gas Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)                    | Provides greenhouse gas investigation and prediction data for environmental impact assessment projects | `apiKey` |
 | [Hydrology and Water Resources Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)     | Provides investigation and prediction data on hydrology and water resources                            | `apiKey` |
 | [K-eco Electric Vehicle Charging Stations](https://www.data.go.kr/data/15076352/openapi.do)                              | Nationwide electric vehicle charging station information, charger status information                   | `apiKey` |
+| [K-water Open Data API](https://opendata.kwater.or.kr/open/data/guide/view.do)                                           | K-water public data including water resources, dams, water quality, and tap water data                 | `apiKey` |
 | [KMA API Hub](https://apihub.kma.go.kr/)                                                                                 | Weather observation, forecast, satellite, radar data across 12 categories                              | `apiKey` |
 | [KMA Local Forecast](https://www.data.go.kr/dataset/15000099/openapi.do)                                                 | Local forecast for eup/myeon/dong units provided at 3-hour intervals                                   | `apiKey` |
 | [KMA Medium-term Forecast](https://www.data.go.kr/data/15059468/openapi.do)                                              | 11-day weather forecast beyond short-term predictions                                                  | `apiKey` |
@@ -266,6 +268,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Bank of Korea Economic Statistics](https://ecos.bok.or.kr/api/#/)              | Interest rates, exchange rates, price index and other economic statistics | `apiKey` |
 | [BIG KINDS](https://www.bigkinds.or.kr/)                                        | Korea Press Foundation News Big Data Analysis (login required)            | `apiKey` |
 | [KOSTAT KOSIS Statistical Data](https://kosis.kr/openapi/?sso=ok)               | National statistics data inquiry service                                  | `apiKey` |
+| [SGIS Statistical Geographic Information Service Open API](https://sgis.kostat.go.kr/developer/html/home.html) | Spatial statistics data including maps, boundaries, population, households, housing, and businesses | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -400,6 +403,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 | [Bizno API](https://bizno.net/openapi)                                                     | Business info lookup by registration number or company name                                                 | `apiKey`      |
 | [CODEF Open API](https://codef.io/)                                                        | Finance, insurance, telecommunications, public institution scraping API                                     | `OAuth`       |
 | [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)    | Vocational training, certification, employment information                                                  | `apiKey`      |
+| [KOTRA Overseas Market News Open API](https://dream.kotra.or.kr/kotranews/cms/com/index.do?MENU_ID=710) | Overseas market news, country information, product databases, and export market data                       | `apiKey`      |
 | [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information                                                               | `apiKey`      |
 | [Naver Works Business Support API](https://developers.worksmobile.com/kr)                  | Comprehensive features and resources covering message bots, directory/group management, file I/O, and more. | `OAuth`       |
 | [Samsung Knox API](https://developer.samsung.com/knox)                                     | Enterprise mobile security and management solutions                                                         | `Partnership` |
@@ -520,6 +524,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 
 | API                                                                                                     | Description                                                                                              | Auth      |
 |---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|-----------|
+| [NABOSTATS Open API](https://www.nabostats.go.kr/portal/openapi/openApiIntroPage.do)                    | Fiscal, tax, local finance, public institution, and economic statistics from the National Assembly Budget Office | `apiKey` |
 | [Open Fiscal Data System](https://www.openfiscaldata.go.kr/op/ko/ds/UOPKODSA06?utm_source=chatgpt.com)  | National and local government budget/expenditure, subsidies, and treasury-supported project information  | `apiKey`  |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -575,9 +580,9 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: March 13, 2026
+**Last Updated**: May 29, 2026
 
-**Total API Count**: 260+
+**Total API Count**: 270+
 
 
 
