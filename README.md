@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-260+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-270+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -154,6 +154,7 @@
 | [CODEF API](https://developer.codef.io/)                              | 금융, 보험, 통신 데이터 통합 연동                   | `OAuth`       |
 | [KB API 포탈](https://apiportal.kbfg.com/)                            | KB금융그룹 종합 금융 API 서비스 (800+ API 제공)     | `OAuth`       |
 | [KB국민은행 Open API](https://obizapi.kbstar.com/quics?page=C108082)  | KB 종합 금융서비스 및 BaaS 플랫폼                 | `OAuth`       |
+| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | 한국거래소 지수, 주식, 채권, 파생상품 등 시장 데이터 | `apiKey` |
 | [NH농협은행 Open API](https://developers.nonghyup.com/center/CE_1020) | 농협 금융 API 개발자센터                        | `OAuth`       |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -216,6 +217,7 @@
 | [한국환경공단 전기차충전소](https://www.data.go.kr/data/15076352/openapi.do)                  | 전국 전기차 충전소 정보, 충전기 상태정보      | `apiKey`  |
 | [환경위성센터 API](https://nesc.nier.go.kr/ko/html/svc/openapi/explain.do)              | 환경위성(GEMS) Data, Image 자료 제공 | `apiKey` |
 | [해양환경정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_07.html)     | 해양환경분야 조사·예측 정보 제공           | `apiKey`  |
+| [K-water 공공데이터 Open API](https://opendata.kwater.or.kr/open/data/guide/view.do) | 수자원, 댐, 수질, 수도 등 K-water 공공데이터 제공 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -275,6 +277,7 @@
 | API                                                               | 설명                           | 인증        |
 |-------------------------------------------------------------------|------------------------------|-----------|
 | [빅카인즈(BIG KINDS)](https://www.bigkinds.or.kr/)                    | 한국언론진흥재단 뉴스 빅데이터 분석 (로그인 필요) |  `apiKey` |
+| [SGIS 통계지리정보서비스 Open API](https://sgis.kostat.go.kr/developer/html/home.html) | 지도, 경계, 인구·가구·주택·사업체 통계 등 공간통계 데이터 | `apiKey` |
 | [통계청 KOSIS 통계자료](https://kosis.kr/openapi/?sso=ok)                | 국가통계 데이터 조회 서비스              | `apiKey`  |
 | [한국은행 경제통계](https://ecos.bok.or.kr/api/#/)                        | 금리, 환율, 물가지수 등 경제통계          | `apiKey`  |
 
@@ -414,6 +417,7 @@
 | [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs)                | 중소기업 지원정책 및 사업정보                             | `apiKey`      |
 | [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)               | 직업훈련, 자격증, 취업정보                              | `apiKey`      |
 | [CODEF 오픈API](https://codef.io/)                                  | 금융, 보험, 통신, 공공기관 스크래핑 API                    | `OAuth`       |
+| [KOTRA 해외시장뉴스 Open API](https://dream.kotra.or.kr/kotranews/cms/com/index.do?MENU_ID=710) | 해외시장 뉴스, 국가정보, 상품DB 등 해외진출 데이터 제공 | `apiKey` |
 | [Open DART API](https://opendart.fss.or.kr/)                       | 상장법인 공시보고서 원문, 주요 재무정보 및 기업 개황 데이터      | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -531,6 +535,7 @@
 
 | API                                                                       | 설명                               | 인증        |
 |---------------------------------------------------------------------------|----------------------------------|-----------|
+| [NABOSTATS Open API](https://www.nabostats.go.kr/portal/openapi/openApiIntroPage.do) | 국회예산정책처 재정·경제통계 데이터 제공 | `apiKey` |
 | [열린재정 재정정보공개시스템](https://www.openfiscaldata.go.kr/op/ko/ds/UOPKODSA06)    | 국가 및 지방재정 예산/결산, 보조금, 국고보조사업 정보  | `apiKey`  |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -582,6 +587,6 @@
 
 ---
 
-**마지막 업데이트**: 2026년 3월 13일
+**마지막 업데이트**: 2026년 5월 29일
 
-**총 API 수**: 260+α(데이터셋)
+**총 API 수**: 270+α(데이터셋)
