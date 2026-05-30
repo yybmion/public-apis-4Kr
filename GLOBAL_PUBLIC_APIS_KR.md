@@ -1593,6 +1593,7 @@
 | [Twitch](https://dev.twitch.tv/docs) | 게임 스트리밍 API | `OAuth` | Yes | Unknown |
 | [Twitter](https://developer.twitter.com/en/docs) | Twitter 데이터 읽기 및 쓰기 | `OAuth` | Yes | No |
 | [vk](https://vk.com/dev/sites) | vk 데이터 읽기 및 쓰기 | `OAuth` | Yes | Unknown |
+| [Xquik](https://docs.xquik.com/api-reference/overview) | X(Twitter) 데이터 API. 트윗 검색, 사용자 조회, 팔로워 내보내기, 미디어 다운로드, 게시, 모니터링, 웹훅 지원 | `apiKey` | Yes | Unknown |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
