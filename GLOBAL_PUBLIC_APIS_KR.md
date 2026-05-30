@@ -1507,6 +1507,7 @@
 | [Hashable](https://hashable.space/pages/api/) | 높은 수준의 암호화 기능 및 방법에 액세스하기 위한 REST API | No | Yes | Yes |
 | [HaveIBeenPwned](https://haveibeenpwned.com/API/v3) | 이전에 데이터 침해에서 노출된 비밀번호 | `apiKey` | Yes | Unknown |
 | [Intelligence X](https://github.com/IntelligenceX/SDK/blob/master/Intelligence%20X%20API.pdf) | Intelligence X를 통해 OSINT 수행 | `apiKey` | Yes | Unknown |
+| [IPASIS](https://ipasis.com/docs) | IP 평판, 이메일 검증, 봇 탐지를 결합한 실시간 사기 방지 API. 20ms 미만 응답. | `apiKey` | Yes | Yes |
 | [IPLogs](https://iplogs.com/docs) | 무료 VPN, 프록시, Tor 및 데이터 센터 IP 감지. 13개 소스, 활성 프로빙. | No | Yes | Yes |
 | [LoginRadius](https://www.loginradius.com/docs/) | 관리형 사용자 인증 서비스 | `apiKey` | Yes | Yes |
 | [Microsoft Security Response Center (MSRC)](https://msrc.microsoft.com/report/developer) | MSRC(Microsoft 보안 대응 센터)와 협력하기 위한 프로그래밍 방식 인터페이스 | No | Yes | Unknown |
