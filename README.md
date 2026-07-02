@@ -33,6 +33,7 @@
 - [🏘 부동산](#부동산)
 - [🎭 문화 & 관광](#문화--관광)
 - [📊 통계 & 데이터](#통계--데이터)
+- [📚 데이터셋 & 데이터 포털](#데이터셋--데이터-포털)
 - [🤖 AI & 머신러닝](#ai--머신러닝)
 - [🛍 쇼핑 & 이커머스](#쇼핑--이커머스)
 - [📦 배송 & 물류](#배송--물류)
@@ -62,7 +63,6 @@
 
 | API                                                                                                              | 설명                                                               | 인증       |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|----------|
-| [공공데이터포털](https://www.data.go.kr/)                                                                               | 정부 및 공공기관의 모든 데이터를 통합 제공하는 중앙 플랫폼 (10만개 이상 데이터셋)                 | `apiKey` |
 | [공정위 데이터포털 FairData](https://fairdata.go.kr/ext/data/useGuidance.do)                                             | 공정거래위원회 프랜차이즈 가맹사업 오픈API (브랜드별 가맹점·직영점 정보, 매출액, 계약상태 등)         | `apiKey` |
 | [국가기록원 검색 API](https://www.archives.go.kr/next/newsearch/openAPI01.do)                                           | 나라기록물 검색서비스, RSS 형식 제공 (일 1000건 제한)                              | `apiKey` |
 | [국가지표통합 공유서비스](https://www.index.go.kr/unity/openApi/openApiIntro.do)                                            | 국가 통계포털 ‘지표누리’가 각종 공공 통계지표 제공                                    | `apiKey` |
@@ -82,7 +82,6 @@
 | [정책정보포털 POINT](https://policy.nl.go.kr/pages/point/api.jsp)                                                      | 최신정책동향, 온라인 정부간행물, 정책정보종합목록 제공                                   | `apiKey` |
 | [초록누리 Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                             | 환경부 환경정보 및 친환경 생활정보 제공                                           | `apiKey` |
 | [키프리스 플러스 API](https://plus.kipris.or.kr/portal/data/service/List.do?subTab=SC001&amp;entYn=N&amp;menuNo=200100) | 특허·상표·디자인 등 지식재산권 정보 검색                                          | `apiKey` |
-| [통계청 KOSIS](https://kosis.kr/serviceInfo/openAPIGuide.do)                                                        | 국가통계포털의 134,586종 통계자료                                            | `apiKey` |
 | [한국관광공사 TourAPI](https://api.visitkorea.or.kr/)                                                                  | 관광지, 숙박, 음식점, 축제 등 관광정보                                          | `apiKey` |
 | [한국도로공사 교통정보](https://data.ex.co.kr/)                                                                          | 실시간 고속도로 교통량 및 교통정보                                              | `apiKey` |
 | [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)                                                              | 국가자격, 과정평가형자격, 일학습병행자격 정보 제공                                     | `apiKey` |
@@ -154,7 +153,6 @@
 | [CODEF API](https://developer.codef.io/)                              | 금융, 보험, 통신 데이터 통합 연동                   | `OAuth`       |
 | [KB API 포탈](https://apiportal.kbfg.com/)                            | KB금융그룹 종합 금융 API 서비스 (800+ API 제공)     | `OAuth`       |
 | [KB국민은행 Open API](https://obizapi.kbstar.com/quics?page=C108082)  | KB 종합 금융서비스 및 BaaS 플랫폼                 | `OAuth`       |
-| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | 한국거래소 지수, 주식, 채권, 파생상품 등 시장 데이터 | `apiKey` |
 | [NH농협은행 Open API](https://developers.nonghyup.com/center/CE_1020) | 농협 금융 API 개발자센터                        | `OAuth`       |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -183,6 +181,9 @@
 | [서울시 지하철 실시간 도착정보](https://data.seoul.go.kr/dataList/OA-12764/A/1/datasetView.do) | 서울 지하철 2~8호선 실시간 도착정보               | `apiKey` |
 | [카카오T 비즈니스](https://kakaotbusinessapiinfo.oopy.io/)                                     | 업무용 카카오T 이용내역 연동 서비스               | `apiKey` |
 | [카카오모빌리티 길찾기](https://developers.kakaomobility.com/product/api)                      | 모빌리티 서비스 개발용 기술제품                   | `apiKey` |
+| [TAGO 국가대중교통정보 Open API](https://www.tago.go.kr/use/openapi)                           | 버스, 대중교통 노선·정류장·도착정보 등 국가대중교통정보 | `apiKey` |
+| [교통카드 빅데이터 시스템](https://stcis.go.kr/wps/openapi/devsvc/openApiDevList.do) | 대중교통 이용 통계, 교통수단별 통행량, 환승·목적별 통행 데이터 | `apiKey` |
+| [한국도로교통공단 교통사고정보](https://opendata.koroad.or.kr/)                                    | 교통사고 다발지역, 사고 통계, 도로위험지수 등 교통사고정보 | `apiKey` |
 | [한국도로공사 실시간 교통량](https://www.data.go.kr/data/15076872/openapi.do)                  | 고속도로 실시간 영업소별 교통량 정보              | `apiKey` |
 | [현대자동차 Developers](https://developers.hyundai.com/)                                      | 차량 제원, 운행정보, 주행거리, 차량상태, 운전습관 | `OAuth`  |
 | [ODsay 대중교통 API](https://lab.odsay.com/guide/guide)                                       | 전국 대중교통, 고속버스, 항공편 통합 정보         | `apiKey` |
@@ -198,11 +199,13 @@
 | [기상청 중기예보](https://www.data.go.kr/data/15059468/openapi.do)                       | 단기예보 이후 향후 11일까지의 기상전망 제공    | `apiKey`  |
 | [대기질정보 서비스](https://www.data.go.kr/data/15028236/openapi.do)                      | 연돌기준, 대기질분야 조사·예측 정보 및 공간정보 제공 | `apiKey`  |
 | [동식물상정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_11.html)     | 동식물상 조사 정보 및 생태계 보전 관련 정보    | `apiKey`  |
+| [한반도의 생물다양성 API 서비스](https://species.nibr.go.kr/api-guide) | 국가생물종목록, 생물다양성 정보, 멀티미디어 자료 제공 | `apiKey` |
 | [사업구역정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_15.html)     | 환경영향평가 사업구역 정보 제공            | `apiKey`  |
 | [소음진동정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_13.html)     | 소음·진동 조사·예측 정보 제공            | `apiKey`  |
 | [수리수문정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)     | 수리수문분야 조사·예측 정보 제공           | `apiKey`  |
 | [수질정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_05.html)       | 수질조사 개요·조사·예측 정보 및 조사지점 공간정보 | `apiKey`  |
 | [악취정보 서비스](https://www.data.go.kr/data/15083164/fileData.do)                      | 악취분야 조사·예측 속성정보 및 조사지점 공간정보 제공 | `apiKey`  |
+| [홍수위험지도 정보제공포털](https://data.floodmap.go.kr/main/board/api_data_list_query) | 국가·지방하천 및 도시침수 홍수위험지도 통계와 침수심 조회 API | `apiKey` |
 | [에어코리아 대기오염 예보정보](https://www.data.go.kr/data/15109350/openapi.do)                | 미세먼지, 초미세먼지, 오존 예보           | `apiKey`  |
 | [에어코리아 실시간 대기오염정보](https://www.data.go.kr/data/15073861/openapi.do)               | 시도별 실시간 대기질 측정정보             | `apiKey`  |
 | [온실가스정보 서비스](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)     | 환경영향평가 사업의 온실가스 조사·예측 정보 제공  | `apiKey`  |
@@ -226,9 +229,9 @@
 | API                                                                            | 설명                                                    | 인증            |
 |--------------------------------------------------------------------------------|-------------------------------------------------------|---------------|
 | [국민건강보험공단](https://www.nhis.or.kr/nhis/together/wbhaec10800m01.do)             | 장기요양 시설 정보와 건강검진 기관 정보, 예약 및 검진 일정 정보                                       | `apiKey`      |
-| [보건의료빅데이터 확장 API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 건강보험심사평가원 의료빅데이터 활용 Open API                          | `apiKey`      |
+| [국가암정보센터 OPEN API](https://cancer.go.kr/lay1/S1T523C850/contents.do)        | 암 예방, 암정보, 암환자 생활백서, 암정보사전 콘텐츠 제공                  | `apiKey`      |
 | [삼성헬스 SDK](https://developer.samsung.com/health)                               | 건강 데이터 읽기/쓰기 (심박수, 산소포화도, 혈당, 혈압 등)                   | `Partnership` |
-| [식품의약품 데이터](https://data.mfds.go.kr/OPCAA01F01)                                | 식품·의약품·의료기기 등 국민 보건 및 안전 관련 분야의 다양한 데이터               | `apiKey`      |
+| [식품안전나라 공공데이터활용](https://www.foodsafetykorea.go.kr/api/datasetList.do?menu_grp=MENU_GRP31&menu_no=17879&cl_cd=API_SRT01)              | HACCP 인증, 식품 회수·판매중지, 식품안전 관련 공공데이터 API              | `apiKey`      |
 | [중앙응급의료센터](https://www.e-gen.or.kr/nemc/open_api.do)                           | 병의원/약국 위치, AED 설치정보 등                                 | `apiKey`      |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -264,8 +267,6 @@
 | API                                                                      | 설명                               | 인증     |
 |--------------------------------------------------------------------------|----------------------------------| -------- |
 | [국립중앙박물관 e뮤지엄](https://www.emuseum.go.kr/openApi)                   | 전국 박물관 소장품(유물) 정보 조회 | `apiKey` |
-| [도서관 정보나루](https://www.data4library.kr/apiUtilization)                   | 전국 공공도서관에서 수집한 회원·장서·대출 데이터 등을 제공 | `apiKey` |
-| [문화공공데이터광장](https://www.culture.go.kr/data/main/main.do)                 | 박물관, 미술관, 공연, 문화재 정보             | `apiKey` |
 | [한국관광공사 TourAPI 4.0](https://api.visitkorea.or.kr/)                      | 관광지, 숙박, 음식점, 축제 등 관광정보          | `apiKey` |
 | [한국문화정보원](https://www.kcisa.kr/kr/contents/open_openData/view.do)        | 문화콘텐츠 오픈 API                     | `apiKey` |
 | [KOPIS 공연예술통합전산망](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | 공연정보, 공연장정보, 예매정보                | `apiKey` |
@@ -276,10 +277,41 @@
 
 | API                                                               | 설명                           | 인증        |
 |-------------------------------------------------------------------|------------------------------|-----------|
-| [빅카인즈(BIG KINDS)](https://www.bigkinds.or.kr/)                    | 한국언론진흥재단 뉴스 빅데이터 분석 (로그인 필요) |  `apiKey` |
-| [SGIS 통계지리정보서비스 Open API](https://sgis.kostat.go.kr/developer/html/home.html) | 지도, 경계, 인구·가구·주택·사업체 통계 등 공간통계 데이터 | `apiKey` |
-| [통계청 KOSIS 통계자료](https://kosis.kr/openapi/?sso=ok)                | 국가통계 데이터 조회 서비스              | `apiKey`  |
 | [한국은행 경제통계](https://ecos.bok.or.kr/api/#/)                        | 금리, 환율, 물가지수 등 경제통계          | `apiKey`  |
+
+**[⬆ 목차로 돌아가기](#목차)**
+
+### 데이터셋 & 데이터 포털
+
+| API | 설명 | 인증 |
+|---|---|---|
+| [공공데이터포털](https://www.data.go.kr/) | 정부 및 공공기관 데이터셋·오픈API 통합 포털 | `apiKey` |
+| [원윈도우](https://www.data1window.kr/) | 공공·민간 데이터를 통합 검색할 수 있는 데이터 카탈로그 | ✕ |
+| [KOSIS 국가통계포털](https://kosis.kr/serviceInfo/openAPIGuide.do) | 국가승인통계, 인구·산업·경제 통계 데이터 | `apiKey` |
+| [MDIS 마이크로데이터 통합서비스](https://mdis.kostat.go.kr/) | 통계청 마이크로데이터 검색·다운로드·이용신청 서비스 | `Login` |
+| [통계데이터센터](https://data.mods.go.kr/) | 통계 원자료 분석 환경 및 승인형 데이터 이용 지원 | `Request` |
+| [SGIS 통계지리정보서비스](https://sgis.kostat.go.kr/developer/html/home.html) | 지도, 경계, 인구·가구·사업체 등 공간통계 데이터 | `apiKey` |
+| [AI Hub](https://aihub.or.kr) | 한국어, 이미지, 음성, 헬스케어 등 AI 학습용 데이터셋 | `Login` |
+| [언어정보나눔터 / 모두의 말뭉치](https://corpus.korean.go.kr/) | 국립국어원 한국어 말뭉치와 언어자원 데이터 | `Login` |
+| [Hugging Face Korean Datasets](https://huggingface.co/datasets?language=language%3Ako) | Hugging Face의 한국어 태그 데이터셋 탐색 허브 | ✕ |
+| [DataON](https://dataon.kisti.re.kr/) | KISTI 연구데이터 검색·공유 플랫폼 | `Login` |
+| [K-BDS 국가 바이오 데이터 스테이션](https://www.kbds.re.kr/) | 국가 바이오 연구데이터 저장·공유 플랫폼 | `Login` |
+| [KOSSDA 한국사회과학자료원](https://kossda.snu.ac.kr/) | 사회과학 조사자료·연구 데이터 아카이브 | `Login` |
+| [교육데이터 활용 지원 서비스](https://data.edmgr.kr/) | 교육 분야 데이터 검색·활용 지원 포털 | `Login` |
+| [빅카인즈(BIG KINDS)](https://www.bigkinds.or.kr/) | 한국언론진흥재단 뉴스 빅데이터 분석 플랫폼 | `Login` |
+| [문화공공데이터광장](https://www.culture.go.kr/data/main/main.do) | 문화, 관광, 공연, 전시, 문화재 공공데이터 포털 | `apiKey` |
+| [도서관 정보나루](https://www.data4library.kr/apiUtilization) | 공공도서관 장서, 대출, 인기 도서 데이터 | `apiKey` |
+| [한국관광 데이터랩](https://datalab.visitkorea.or.kr/) | 관광 방문자, 소비, 이동, 트렌드 빅데이터 | `Login` |
+| [국가교통 데이터 오픈마켓](https://bigdata-transportation.kr/) | 교통 빅데이터 상품·데이터셋 거래/활용 포털 | `Login` |
+| [국토교통부 데이터 통합채널](https://data.molit.go.kr/) | 국토교통부 보유 데이터 통합 검색·활용 채널 | ✕ |
+| [KTDB 국가교통DB](https://www.ktdb.go.kr/) | 국가교통조사, 교통통계, 교통 DB 제공 | ✕ |
+| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | 한국거래소 지수, 주식, 채권, 파생상품 시장 데이터 | `apiKey` |
+| [금융데이터거래소](https://www.findatamall.or.kr/) | 금융권 데이터 상품 검색·거래 플랫폼 | `Login` |
+| [전력데이터서비스마켓](https://bigdata.kepco.co.kr/) | 전력 사용량·수요 관련 데이터 상품/서비스 | `Login` |
+| [EPSIS 전력통계정보시스템](https://epsis.kpx.or.kr/) | 전력시장, 발전량, 수급, 전력거래 통계 | ✕ |
+| [식품의약품 데이터](https://data.mfds.go.kr/OPCAA01F01) | 식품·의약품·의료기기 등 보건안전 데이터 포털 | `apiKey` |
+| [보건의료빅데이터 확장 API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | 건강보험심사평가원 보건의료 빅데이터 활용 API | `apiKey` |
+| [지오빅데이터 오픈플랫폼](https://data.kigam.re.kr/) | 지질·자원·지구과학 데이터 제공 플랫폼 | `Login` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -292,7 +324,6 @@
 | [네이버 클라우드 CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary)     | 한국어 특화 생성형 AI 플랫폼                    | `apiKey` |
 | [삼성 빅스비 API](https://developer.samsung.com/bixby)                                          | 음성 인식 및 AI 어시스턴트 통합                  | `apiKey` |
 | [삼성SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                        | 멀티 LLM 기업용 생성형 AI 플랫폼                | `apiKey` |
-| [AI Hub](https://aihub.or.kr)                                                              | AI 학습용 데이터셋                              | `apiKey` |
 | [ETRI AI Open API](https://epretx.etri.re.kr/)                                             | ETRI에서 개발된 최첨단 인공지능 기술 제공                 | `apiKey` |
 | [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                           | 한국어 특화 대규모 언어모델                      | `apiKey` |
 | [Upstage Document AI](https://developers.upstage.ai/)                                      | 문서 파싱, 레이아웃 분석, 정보 추출                | `apiKey` |
@@ -371,10 +402,12 @@
 | API                                                                                     | 설명                                                | 인증      |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------- | --------- |
 | [가비아 문자/알림톡 API](https://message.gabia.com/api/documentation/)                  | SMS, LMS, MMS, 카카오 알림톡 통합 (8개 언어 지원)   | `OAuth`   |
+| [채널톡 Open API](https://developers.channel.io/)                                      | 고객상담, CRM, 메시지, Webhook 연동                | `apiKey`  |
 | [네이버 블로그 API](https://developers.naver.com/docs/serviceapi/search/blog/blog.md)   | 네이버 블로그 포스팅 API                            | `OAuth`   |
 | [네이버 카페 API](https://developers.naver.com/docs/login/cafe-api/cafe-api.md)         | 네이버 카페 글 작성 및 관리                         | `OAuth`   |
 | [라인 API](https://developers.line.biz/)                                                | LINE Login, Messaging API, LINE Pay, LIFF, MINI App | `OAuth`   |
 | [센드버드 채팅 플랫폼 API](https://sendbird.com/docs)             | 실시간 채팅, 음성/영상 통화, AI 챗봇 기능 | `apiKey` |
+| [스티비 API](https://developers.stibee.com/)                                           | 뉴스레터 발송, 주소록·구독자 관리                  | `apiKey`  |
 | [잔디(JANDI) 웹훅](https://support.jandi.com/)                                          | 외부 서비스 실시간 연동 인커밍 웹훅                 | `webhook` |
 | [카카오톡 공유하기](https://developers.kakao.com/docs/latest/ko/kakaotalk-share/common) | 웹/앱에서 카카오톡으로 콘텐츠 공유                  | `apiKey`  |
 | [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/kakaotalk-message/common) | 카카오톡 텍스트/이미지 메시지 전송                  | `OAuth`   |
@@ -400,6 +433,7 @@
 | [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)              | 소장자료, 디지털컬렉션 검색               | `apiKey` |
 | [근현대사 아카이브](https://archive.much.go.kr/cnts/cont01/page03.do)       | 박물관 소장품, 역사문화경관, 기록영상 등 근현대사 자료 | `apiKey` |
 | [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                  | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
+| [KCI Open API](https://www.kci.go.kr/kciportal/po/openapi/openApiMain.kci) | 국내 학술지, 논문, 참고문헌, 인용정보 조회 | `apiKey` |
 | [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터               | `apiKey` |
 | [한국농촌경제연구원 KREI](https://www.krei.re.kr/krei/page/474)                    | 농업·농촌 연구보고서 및 정보 조회               | `apiKey` |
 | [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                            | 학술논문 검색 (기관 라이선스)             | `apiKey` |
@@ -410,12 +444,16 @@
 
 | API                                                               | 설명                                           | 인증          |
 |-------------------------------------------------------------------|----------------------------------------------| ------------- |
+| [모두싸인 API](https://developers.modusign.co.kr/docs/api-%EC%86%8C%EA%B0%9C) | 전자계약·전자서명 요청, 문서 조회, Webhook 연동 | `apiKey` |
 | [네이버웍스 API](https://developers.worksmobile.com/kr)                | Bot 사용, 조직 및 그룹 관리, 파일 업로드/다운로드 외 다양한 기능과 리소스 | `OAuth`       |
 | [비즈노 API](https://bizno.net/openapi)                              | 사업자등록번호, 상호명으로 사업자정보 조회                     | `apiKey` |
+| [팝빌 Developers](https://developers.popbill.com/)                  | 전자세금계산서, 현금영수증, 홈택스, 문자·팩스 연동 API | `apiKey` |
+| [사람인 채용정보 API](https://oapi.saramin.co.kr/)                  | 사람인 채용공고 데이터 조회 API                    | `apiKey` |
 | [삼성 녹스 API](https://developer.samsung.com/knox)                   | 기업용 모바일 보안 및 관리 솔루션                          | `Partnership` |
 | [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK)                 | `apiKey`      |
 | [중소벤처기업부 기업정보](https://www.smes.go.kr/main/dbCnrs)                | 중소기업 지원정책 및 사업정보                             | `apiKey`      |
 | [한국산업인력공단 HRD](https://openapi.hrdkorea.or.kr/main)               | 직업훈련, 자격증, 취업정보                              | `apiKey`      |
+| [KBIOIS Open API](https://www.kbiois.or.kr/portal/openapi/openApiIntroPage.do) | 한국바이오산업 기업·제품·통계 정보 제공 | `apiKey` |
 | [CODEF 오픈API](https://codef.io/)                                  | 금융, 보험, 통신, 공공기관 스크래핑 API                    | `OAuth`       |
 | [KOTRA 해외시장뉴스 Open API](https://dream.kotra.or.kr/kotranews/cms/com/index.do?MENU_ID=710) | 해외시장 뉴스, 국가정보, 상품DB 등 해외진출 데이터 제공 | `apiKey` |
 | [Open DART API](https://opendart.fss.or.kr/)                       | 상장법인 공시보고서 원문, 주요 재무정보 및 기업 개황 데이터      | `apiKey` |
@@ -427,8 +465,10 @@
 | API                                                                      | 설명                                                 | 인증     |
 | ------------------------------------------------------------------------ | ---------------------------------------------------- | -------- |
 | [가비아 g클라우드](https://cloud.gabia.com/)                             | CSAP 인증 중소기업 친화적 클라우드                   | `apiKey` |
+| [NHN Cloud Public API](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/service-api/) | 클라우드 리소스 제어·자동화 API | `AccessKey` |
 | [네이버 클라우드 플랫폼](https://api.ncloud-docs.com/docs/common-ncpapi) | 종합 클라우드 서비스 (AI, Maps, SMS, Object Storage) | `apiKey` |
 | [KT Cloud API](https://cloud.kt.com/)                                    | 공공/금융/제조업 특화 클라우드 (NPU 지원)            | `apiKey` |
+| [와탭 Open API](https://docs.whatap.io/openapi-spec)                    | APM, 서버, DB, 쿠버네티스 모니터링 데이터 조회       | `apiToken` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -474,6 +514,7 @@
 
 | API                                                                         | 설명                                 | 인증     |
 | --------------------------------------------------------------------------- | ------------------------------------ | -------- |
+| [NICE API](https://www.niceapi.co.kr/) / [PASS 인증서 개발자센터](https://devcenter.passauth.co.kr/) | 본인확인·실명확인·PASS 인증서 전자서명 연동 | `Partnership` |
 | [WHOIS 도메인/IP 정보 API](https://www.data.go.kr/data/15094277/openapi.do) | .kr 도메인과 IP 주소 WHOIS 정보 조회 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -482,11 +523,12 @@
 
 | API                                                                  | 설명                              | 인증       |
 |----------------------------------------------------------------------|---------------------------------| -------- |
+| [외교부 해외안전융합정보](https://opendata.mofa.go.kr/lod/)                  | 국가·지역별 해외안전 및 외교 관련 공공데이터 제공 | `apiKey` |
 | [생활안전정보](https://safemap.go.kr/opna/data/dataListRenew.do)                | 범죄발생현황, 교통사고, 화재, 생활안전시설 위치정보   | `apiKey` |
 | [소방청 공공데이터](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/) | 화재정보, 구급출동, 소방시설 위치 등 소방안전정보    | `apiKey` |
 | [안전드림 실종/안전 API](https://www.safe182.go.kr/home/api/guideMain.do)    | 실종자 정보 및 생활안전 정보 제공 (경찰청)       | `apiKey` |
 | [재난안전데이터 공유플랫폼](https://www.safetydata.go.kr/disaster-data/list2)    | 재난 발생 현황, 피해 통계, 안전 관련 등 재난안전정보 | `apiKey` |
- 
+
 **[⬆ 목차로 돌아가기](#목차)**
 
 ### 항공
@@ -515,6 +557,7 @@
 
 | API                                                                                              | 설명                                              | 인증     |
 |--------------------------------------------------------------------------------------------------|-------------------------------------------------| -------- |
+| [KAMIS 농수축산물 유통 Open API](https://www.kamis.or.kr/customer/reference/openapi_list.do?action=detail&boardno=1) | 농수축산물 도·소매 가격, 친환경농산물, 식재료 아카이브 정보 | `apiKey` |
 | [국립농업과학원 토양환경정보 Open API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | 지번 코드(PNU) 또는 법정동 코드를 통해 지역별 토양 화학성 등 상세 토양특성 정보 | `apiKey` |
 | [국립수산과학원](https://www.nifs.go.kr/openApi/actionOpenapiInfoList.do)                               | 해양환경 및 수산정보                                     | `apiKey` |
 | [농식품올바로](https://koreanfood.rda.go.kr/kfi/openapi/useNewGuidance)                                | 농산물성분, 농산물효능 등 다양한 농산물 정보                       | `apiKey` |
@@ -527,6 +570,7 @@
 |---------------------------------------------------------------------------------------------------------------------------|-----------------------|-----------|
 | [주유소 가격 정보](https://www.opinet.co.kr/user/custapi/custApiInfo.do)                                                         | 전국 주유소 휘발유/경유 가격      | `apiKey`  |
 | [지역화폐 가맹점 현황](https://data.gg.go.kr/portal/data/service/selectServicePage.do?infId=3NPA52LBMO36CQEQ1GMY28894927&infSeq=1) | 경기도 각 시군의 지역화폐 가맹점 현황 | `apiKey`  |
+| [소비자24 소비자 안전정보](https://www.consumer.go.kr/user/ftc/consumer/openApiSvcUser/120/selectOpenApiSvcList.do)                     | 생활용품·식품 안전정보, 상품 비교정보, 소비생활 안전 안내 제공 | `apiKey`  |
 | [한국소비자원 참가격](https://www.data.go.kr/dataset/3043385/openapi.do)                                                           | 생필품 가격 정보 실시간 조회      | `apiKey`  |
 
 **[⬆ 목차로 돌아가기](#목차)**
@@ -589,4 +633,4 @@
 
 **마지막 업데이트**: 2026년 5월 29일
 
-**총 API 수**: 270+α(데이터셋)
+**총 API 수**: 270+α(데이터셋/데이터 포털)
