@@ -63,6 +63,7 @@
 
 | API                                                                                                              | 설명                                                               | 인증       |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|----------|
+| [공공데이터포털](https://www.data.go.kr/)                                                                               | 정부 및 공공기관의 모든 데이터를 통합 제공하는 중앙 플랫폼 (10만개 이상 데이터셋)                 | `apiKey` |
 | [공정위 데이터포털 FairData](https://fairdata.go.kr/ext/data/useGuidance.do)                                             | 공정거래위원회 프랜차이즈 가맹사업 오픈API (브랜드별 가맹점·직영점 정보, 매출액, 계약상태 등)         | `apiKey` |
 | [국가기록원 검색 API](https://www.archives.go.kr/next/newsearch/openAPI01.do)                                           | 나라기록물 검색서비스, RSS 형식 제공 (일 1000건 제한)                              | `apiKey` |
 | [국가지표통합 공유서비스](https://www.index.go.kr/unity/openApi/openApiIntro.do)                                            | 국가 통계포털 ‘지표누리’가 각종 공공 통계지표 제공                                    | `apiKey` |
@@ -285,7 +286,6 @@
 
 | API | 설명 | 인증 |
 |---|---|---|
-| [공공데이터포털](https://www.data.go.kr/) | 정부 및 공공기관 데이터셋·오픈API 통합 포털 | `apiKey` |
 | [원윈도우](https://www.data1window.kr/) | 공공·민간 데이터를 통합 검색할 수 있는 데이터 카탈로그 | ✕ |
 | [KOSIS 국가통계포털](https://kosis.kr/serviceInfo/openAPIGuide.do) | 국가승인통계, 인구·산업·경제 통계 데이터 | `apiKey` |
 | [MDIS 마이크로데이터 통합서비스](https://mdis.kostat.go.kr/) | 통계청 마이크로데이터 검색·다운로드·이용신청 서비스 | `Login` |
@@ -402,12 +402,10 @@
 | API                                                                                     | 설명                                                | 인증      |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------- | --------- |
 | [가비아 문자/알림톡 API](https://message.gabia.com/api/documentation/)                  | SMS, LMS, MMS, 카카오 알림톡 통합 (8개 언어 지원)   | `OAuth`   |
-| [채널톡 Open API](https://developers.channel.io/)                                      | 고객상담, CRM, 메시지, Webhook 연동                | `apiKey`  |
 | [네이버 블로그 API](https://developers.naver.com/docs/serviceapi/search/blog/blog.md)   | 네이버 블로그 포스팅 API                            | `OAuth`   |
 | [네이버 카페 API](https://developers.naver.com/docs/login/cafe-api/cafe-api.md)         | 네이버 카페 글 작성 및 관리                         | `OAuth`   |
 | [라인 API](https://developers.line.biz/)                                                | LINE Login, Messaging API, LINE Pay, LIFF, MINI App | `OAuth`   |
 | [센드버드 채팅 플랫폼 API](https://sendbird.com/docs)             | 실시간 채팅, 음성/영상 통화, AI 챗봇 기능 | `apiKey` |
-| [스티비 API](https://developers.stibee.com/)                                           | 뉴스레터 발송, 주소록·구독자 관리                  | `apiKey`  |
 | [잔디(JANDI) 웹훅](https://support.jandi.com/)                                          | 외부 서비스 실시간 연동 인커밍 웹훅                 | `webhook` |
 | [카카오톡 공유하기](https://developers.kakao.com/docs/latest/ko/kakaotalk-share/common) | 웹/앱에서 카카오톡으로 콘텐츠 공유                  | `apiKey`  |
 | [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/kakaotalk-message/common) | 카카오톡 텍스트/이미지 메시지 전송                  | `OAuth`   |
@@ -433,7 +431,6 @@
 | [국립중앙도서관 OpenAPI](https://www.nl.go.kr/NL/contents/N31101030700.do)              | 소장자료, 디지털컬렉션 검색               | `apiKey` |
 | [근현대사 아카이브](https://archive.much.go.kr/cnts/cont01/page03.do)       | 박물관 소장품, 역사문화경관, 기록영상 등 근현대사 자료 | `apiKey` |
 | [서울연구원 OpenAPI](https://www.si.re.kr/content.do?key=2411210021)                  | 연구보고서, 정기간행물, 정책리포트 등 연구성과 정보 | `apiKey` |
-| [KCI Open API](https://www.kci.go.kr/kciportal/po/openapi/openApiMain.kci) | 국내 학술지, 논문, 참고문헌, 인용정보 조회 | `apiKey` |
 | [한국과학기술정보연구원 KISTI](https://scienceon.kisti.re.kr/apigateway/api/main/mainForm.do) | 과학기술 정보 및 연구데이터               | `apiKey` |
 | [한국농촌경제연구원 KREI](https://www.krei.re.kr/krei/page/474)                    | 농업·농촌 연구보고서 및 정보 조회               | `apiKey` |
 | [DBpia API](https://api.dbpia.co.kr/openApi/index.do)                            | 학술논문 검색 (기관 라이선스)             | `apiKey` |
@@ -447,7 +444,6 @@
 | [모두싸인 API](https://developers.modusign.co.kr/docs/api-%EC%86%8C%EA%B0%9C) | 전자계약·전자서명 요청, 문서 조회, Webhook 연동 | `apiKey` |
 | [네이버웍스 API](https://developers.worksmobile.com/kr)                | Bot 사용, 조직 및 그룹 관리, 파일 업로드/다운로드 외 다양한 기능과 리소스 | `OAuth`       |
 | [비즈노 API](https://bizno.net/openapi)                              | 사업자등록번호, 상호명으로 사업자정보 조회                     | `apiKey` |
-| [팝빌 Developers](https://developers.popbill.com/)                  | 전자세금계산서, 현금영수증, 홈택스, 문자·팩스 연동 API | `apiKey` |
 | [사람인 채용정보 API](https://oapi.saramin.co.kr/)                  | 사람인 채용공고 데이터 조회 API                    | `apiKey` |
 | [삼성 녹스 API](https://developer.samsung.com/knox)                   | 기업용 모바일 보안 및 관리 솔루션                          | `Partnership` |
 | [에어브릿지 API](https://help.airbridge.io/ko/references/introduction) | 모바일 앱 마케팅 어트리뷰션 (다중 플랫폼 SDK)                 | `apiKey`      |
@@ -468,7 +464,6 @@
 | [NHN Cloud Public API](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/service-api/) | 클라우드 리소스 제어·자동화 API | `AccessKey` |
 | [네이버 클라우드 플랫폼](https://api.ncloud-docs.com/docs/common-ncpapi) | 종합 클라우드 서비스 (AI, Maps, SMS, Object Storage) | `apiKey` |
 | [KT Cloud API](https://cloud.kt.com/)                                    | 공공/금융/제조업 특화 클라우드 (NPU 지원)            | `apiKey` |
-| [와탭 Open API](https://docs.whatap.io/openapi-spec)                    | APM, 서버, DB, 쿠버네티스 모니터링 데이터 조회       | `apiToken` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
