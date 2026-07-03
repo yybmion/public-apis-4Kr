@@ -4,7 +4,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-270+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs & Resources](https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-290+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -672,6 +672,30 @@ Source: 공공데이터 이슈 및 추천데이터
 | 리소스 | 설명 | 이용 방식 |
 |---|---|---|
 | [한국은행 경제통계](https://ecos.bok.or.kr/api/#/) | 금리, 환율, 물가지수 등 경제통계 | `apiKey` |
+| [내고장알리미](https://laiis.go.kr/) | 지방자치단체 행정·지역 지표 | ✕ |
+| [국토교통통계누리](https://stat.molit.go.kr/) | 국토·교통·주택 관련 공식 통계 | ✕ |
+| [고용노동통계](https://laborstat.moel.go.kr/) | 고용·노동시장 통계 | ✕ |
+| [산업재해통계](https://portal.kosha.or.kr/archive/indus-acc-statis/industrial-acc-statu) | 산업재해 현황 통계 | ✕ |
+| [환경통계포털](https://stat.mcee.go.kr/portal/main/indexPage.do) | 환경 분야 공식 통계 | ✕ |
+| [물환경정보시스템](http://water.nier.go.kr/) | 수질·물환경 관측/통계 정보 | ✕ |
+| [ISTANS 산업통계분석시스템](https://istans.or.kr/) | 산업연구원 산업별 통계·분석 | ✕ |
+| [보건산업통계 KHISS](https://khiss.go.kr/) | 보건산업 관련 통계 | ✕ |
+| [보건복지데이터통계](https://www.kihasa.re.kr/dataportal/main.html) | 보건복지 분야 데이터·통계 | ✕ |
+| [관세청 수출입 무역통계](https://tradedata.go.kr/cts/index.do) | 수출입 무역 통계 | ✕ |
+| [KITA 무역통계](https://stat.kita.net/) | 한국무역협회 무역 통계 | ✕ |
+| [TRASS](https://www.bandtrass.or.kr/) | 한국무역통계 정보포털 | ✕ |
+| [중소기업통계](https://www.mss.go.kr/site/smba/submain/submain04.do) | 중소벤처기업부 중소기업 통계 | ✕ |
+| [중소기업통계DB](https://www.kbiz.or.kr/ko/contents/contents/contents.do?mnSeq=319) | 중소기업중앙회 통계 DB | ✕ |
+| [방송통계포털](https://www.mediastat.or.kr/) | 방송 산업·이용 통계 | ✕ |
+| [방송통신광고 통계시스템](https://adstat.kobaco.co.kr/) | 방송통신광고 통계 | ✕ |
+| [미디어통계포털 KISDI](https://stat.kisdi.re.kr/kor/mediaIndustUseStats/MediaIndustUseStatsList.html) | 미디어 산업·이용 통계 | ✕ |
+| [콘텐츠산업 통계](https://www.kocca.kr/kocca/bbs/list/B0158948.do?menuNo=204156) | 콘텐츠산업 통계 자료 | ✕ |
+| [국가도서관통계시스템](https://www.libsta.go.kr/) | 도서관 운영·이용 통계 | ✕ |
+| [교육통계서비스 KESS](https://kess.kedi.re.kr/index) | 교육 기본통계 | ✕ |
+| [농업관측통계정보시스템](https://oasis.krei.re.kr/) | 농산물 수급·가격·관측 통계 | ✕ |
+| [농어촌알리미](https://www.alimi.or.kr/dataview/a/selectAreaInterest.do) | 지역 농업·농어촌 지표 | ✕ |
+| [농식품수출정보 KATI](https://www.kati.net/board/exportNewsList.do?menu_dept3=72) | 농식품 수출 통계/동향 | ✕ |
+| [네이버 데이터랩](https://datalab.naver.com/) | 검색어·쇼핑 트렌드 지표 | ✕ |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -685,4 +709,4 @@ Source: 공공데이터 이슈 및 추천데이터
 
 **마지막 업데이트**: 2026년 7월 3일
 
-**총 API 수**: 270+α(데이터셋/데이터 포털)
+**총 API/리소스 수**: 290+α(데이터셋/데이터 포털/통계 지표)

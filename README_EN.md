@@ -661,6 +661,30 @@ These resources are separate from the API catalog and can be used for market res
 | Resource | Description | Access |
 |---|---|---|
 | [Bank of Korea Economic Statistics](https://ecos.bok.or.kr/api/#/) | Interest rates, exchange rates, price index and other economic statistics | `apiKey` |
+| [Local Administration Integrated Information System](https://laiis.go.kr/) | Local government administration and regional indicators | No |
+| [MOLIT Statistics System](https://stat.molit.go.kr/) | Official statistics for land, transport, and housing | No |
+| [Labor Statistics](https://laborstat.moel.go.kr/) | Employment and labor market statistics | No |
+| [Industrial Accident Statistics](https://portal.kosha.or.kr/archive/indus-acc-statis/industrial-acc-statu) | Industrial accident status statistics | No |
+| [Environmental Statistics Portal](https://stat.mcee.go.kr/portal/main/indexPage.do) | Official environmental statistics | No |
+| [Water Environment Information System](http://water.nier.go.kr/) | Water quality and water environment observation/statistics | No |
+| [ISTANS Industrial Statistics Analysis System](https://istans.or.kr/) | Industry statistics and analysis from the Korea Institute for Industrial Economics & Trade | No |
+| [KHISS Health Industry Statistics](https://khiss.go.kr/) | Health industry statistics | No |
+| [KIHASA Health and Welfare Data Portal](https://www.kihasa.re.kr/dataportal/main.html) | Health and welfare data and statistics | No |
+| [Korea Customs Service Trade Statistics](https://tradedata.go.kr/cts/index.do) | Import and export trade statistics | No |
+| [KITA Trade Statistics](https://stat.kita.net/) | Trade statistics from the Korea International Trade Association | No |
+| [TRASS](https://www.bandtrass.or.kr/) | Korea trade statistics information portal | No |
+| [SME Statistics](https://www.mss.go.kr/site/smba/submain/submain04.do) | SME statistics from the Ministry of SMEs and Startups | No |
+| [SME Statistics DB](https://www.kbiz.or.kr/ko/contents/contents/contents.do?mnSeq=319) | SME statistics database from the Korea Federation of SMEs | No |
+| [MediaStat Broadcasting Statistics Portal](https://www.mediastat.or.kr/) | Broadcasting industry and usage statistics | No |
+| [KOBACO Advertising Statistics System](https://adstat.kobaco.co.kr/) | Broadcasting and communications advertising statistics | No |
+| [KISDI Media Statistics Portal](https://stat.kisdi.re.kr/kor/mediaIndustUseStats/MediaIndustUseStatsList.html) | Media industry and usage statistics | No |
+| [Content Industry Statistics](https://www.kocca.kr/kocca/bbs/list/B0158948.do?menuNo=204156) | Content industry statistical materials | No |
+| [National Library Statistics System](https://www.libsta.go.kr/) | Library operation and usage statistics | No |
+| [KESS Education Statistics Service](https://kess.kedi.re.kr/index) | Basic education statistics | No |
+| [KREI Agricultural Outlook Statistics](https://oasis.krei.re.kr/) | Agricultural supply, demand, price, and outlook statistics | No |
+| [Rural Community Indicator Service](https://www.alimi.or.kr/dataview/a/selectAreaInterest.do) | Regional agriculture and rural community indicators | No |
+| [KATI Agricultural Food Export Information](https://www.kati.net/board/exportNewsList.do?menu_dept3=72) | Agricultural food export statistics and trends | No |
+| [Naver DataLab](https://datalab.naver.com/) | Search and shopping trend indicators | No |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -678,7 +702,7 @@ This project is distributed under the MIT License.
 
 **Last Updated**: July 3, 2026
 
-**Total API Count**: 270+α (datasets/data portals)
+**Total API/Resource Count**: 290+α (datasets/data portals/statistical indicators)
 
 
 
