@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./assets/public-api-wordmark.svg" width="560" alt="Public API Korea" />
+  <img src="./assets/api-image.png" width="180" alt="Public API Korea" />
 </h1>
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
