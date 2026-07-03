@@ -702,7 +702,7 @@ This project is distributed under the MIT License.
 
 **Last Updated**: July 3, 2026
 
-**Total API/Resource Count**: 290+α (datasets/data portals/statistical indicators)
+**Total API/Resource Count**: 300+ (including datasets/data portals/statistical indicators)
 
 
 

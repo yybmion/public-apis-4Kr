@@ -4,7 +4,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs & Resources](https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-290+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs & Resources](https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-300+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -709,4 +709,4 @@ Source: 공공데이터 이슈 및 추천데이터
 
 **마지막 업데이트**: 2026년 7월 3일
 
-**총 API/리소스 수**: 290+α(데이터셋/데이터 포털/통계 지표)
+**총 API/리소스 수**: 300+(데이터셋/데이터 포털/통계 지표 포함)
