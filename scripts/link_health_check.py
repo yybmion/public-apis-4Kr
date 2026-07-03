@@ -2,12 +2,14 @@
 
 import asyncio
 import aiohttp
+import argparse
 import json
 import re
 import sys
 import time
 from datetime import datetime
-from typing import List, Dict, Tuple, Optional
+from pathlib import Path
+from typing import List, Tuple, Optional
 from dataclasses import dataclass, asdict
 
 @dataclass
@@ -23,9 +25,12 @@ class LinkResult:
   redirect_url: Optional[str] = None
 
 class KoreanAPILinkChecker:
-  def __init__(self, max_concurrent: int = 30, timeout: int = 15):
+  def __init__(self, max_concurrent: int = 30, timeout: int = 15,
+      retries: int = 1, retry_delay: float = 1.0):
     self.max_concurrent = max_concurrent
     self.timeout = timeout
+    self.retries = retries
+    self.retry_delay = retry_delay
     self.semaphore = asyncio.Semaphore(max_concurrent)
     self.user_agents = [
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -59,105 +64,136 @@ class KoreanAPILinkChecker:
 
     return links
 
+  def is_retryable_result(self, result: LinkResult) -> bool:
+    if result.is_working:
+      return False
+
+    if result.error_type in {"TIMEOUT", "CONNECTION_ERROR", "SERVER_DISCONNECTED"}:
+      return True
+
+    return result.status_code in {408, 429, 500, 502, 503, 504}
+
   async def check_single_link(self, session: aiohttp.ClientSession,
       url: str, api_name: str, category: str) -> LinkResult:
     async with self.semaphore:
-      start_time = time.time()
+      result = None
+      attempts = self.retries + 1
 
-      try:
-        import random
-        headers = {
-          'User-Agent': random.choice(self.user_agents),
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3',
-          'Accept-Encoding': 'gzip, deflate',
-          'Connection': 'keep-alive',
-          'Upgrade-Insecure-Requests': '1',
-        }
+      for attempt in range(1, attempts + 1):
+        start_time = time.time()
 
-        async with session.get(
-            url,
-            headers=headers,
-            timeout=aiohttp.ClientTimeout(total=self.timeout),
-            allow_redirects=True,
-            ssl=False
-        ) as response:
-          response_time = time.time() - start_time
-          redirect_url = str(response.url) if str(response.url) != url else None
-          is_working = response.status < 400
-          error_type = ""
-          error_message = ""
+        try:
+          import random
+          headers = {
+            'User-Agent': random.choice(self.user_agents),
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+          }
 
-          if not is_working:
-            if response.status == 403:
-              error_type = "FORBIDDEN"
-              error_message = "접근 거부 (IP 차단 또는 지역 제한 가능)"
-            elif response.status == 404:
-              error_type = "NOT_FOUND"
-              error_message = "페이지를 찾을 수 없음"
-            elif response.status == 500:
-              error_type = "SERVER_ERROR"
-              error_message = "서버 내부 오류"
-            else:
-              error_type = "HTTP_ERROR"
-              error_message = f"HTTP {response.status}"
+          async with session.get(
+              url,
+              headers=headers,
+              timeout=aiohttp.ClientTimeout(total=self.timeout),
+              allow_redirects=True,
+              ssl=False
+          ) as response:
+            response_time = time.time() - start_time
+            redirect_url = str(response.url) if str(response.url) != url else None
+            is_working = response.status < 400
+            error_type = ""
+            error_message = ""
 
+            if not is_working:
+              if response.status == 403:
+                error_type = "FORBIDDEN"
+                error_message = "접근 거부 (IP 차단 또는 지역 제한 가능)"
+              elif response.status == 404:
+                error_type = "NOT_FOUND"
+                error_message = "페이지를 찾을 수 없음"
+              elif response.status >= 500:
+                error_type = "SERVER_ERROR"
+                error_message = f"서버 오류 HTTP {response.status}"
+              else:
+                error_type = "HTTP_ERROR"
+                error_message = f"HTTP {response.status}"
+
+            result = LinkResult(
+                url=url,
+                api_name=api_name,
+                category=category,
+                status_code=response.status,
+                is_working=is_working,
+                error_type=error_type,
+                error_message=error_message,
+                response_time=response_time,
+                redirect_url=redirect_url
+            )
+
+        except asyncio.TimeoutError:
+          result = LinkResult(
+              url=url,
+              api_name=api_name,
+              category=category,
+              status_code=0,
+              is_working=False,
+              error_type="TIMEOUT",
+              error_message=f"{self.timeout}초 시간 초과",
+              response_time=self.timeout
+          )
+        except aiohttp.ClientConnectorError:
+          result = LinkResult(
+              url=url,
+              api_name=api_name,
+              category=category,
+              status_code=0,
+              is_working=False,
+              error_type="CONNECTION_ERROR",
+              error_message="연결 실패 (도메인 오류 또는 네트워크 문제)",
+              response_time=time.time() - start_time
+          )
+        except aiohttp.ServerDisconnectedError:
+          result = LinkResult(
+              url=url,
+              api_name=api_name,
+              category=category,
+              status_code=0,
+              is_working=False,
+              error_type="SERVER_DISCONNECTED",
+              error_message="서버가 연결을 종료함",
+              response_time=time.time() - start_time
+          )
+        except aiohttp.ClientSSLError:
           return LinkResult(
               url=url,
               api_name=api_name,
               category=category,
-              status_code=response.status,
-              is_working=is_working,
-              error_type=error_type,
-              error_message=error_message,
-              response_time=response_time,
-              redirect_url=redirect_url
+              status_code=0,
+              is_working=False,
+              error_type="SSL_ERROR",
+              error_message="SSL 인증서 문제",
+              response_time=time.time() - start_time
+          )
+        except Exception as e:
+          result = LinkResult(
+              url=url,
+              api_name=api_name,
+              category=category,
+              status_code=0,
+              is_working=False,
+              error_type="UNKNOWN_ERROR",
+              error_message=str(e)[:100],
+              response_time=time.time() - start_time
           )
 
-      except asyncio.TimeoutError:
-        return LinkResult(
-            url=url,
-            api_name=api_name,
-            category=category,
-            status_code=0,
-            is_working=False,
-            error_type="TIMEOUT",
-            error_message=f"{self.timeout}초 시간 초과",
-            response_time=self.timeout
-        )
-      except aiohttp.ClientConnectorError:
-        return LinkResult(
-            url=url,
-            api_name=api_name,
-            category=category,
-            status_code=0,
-            is_working=False,
-            error_type="CONNECTION_ERROR",
-            error_message="연결 실패 (도메인 오류 또는 네트워크 문제)",
-            response_time=0
-        )
-      except aiohttp.ClientSSLError:
-        return LinkResult(
-            url=url,
-            api_name=api_name,
-            category=category,
-            status_code=0,
-            is_working=False,
-            error_type="SSL_ERROR",
-            error_message="SSL 인증서 문제",
-            response_time=0
-        )
-      except Exception as e:
-        return LinkResult(
-            url=url,
-            api_name=api_name,
-            category=category,
-            status_code=0,
-            is_working=False,
-            error_type="UNKNOWN_ERROR",
-            error_message=str(e)[:100],
-            response_time=0
-        )
+        if attempt == attempts or not self.is_retryable_result(result):
+          return result
+
+        await asyncio.sleep(self.retry_delay * attempt)
+
+      return result
 
   async def check_all_links(self, links: List[Tuple[str, str, str]]) -> List[LinkResult]:
     connector = aiohttp.TCPConnector(
@@ -174,7 +210,7 @@ class KoreanAPILinkChecker:
       ]
 
       results = []
-      batch_size = 20
+      batch_size = self.max_concurrent
 
       for i in range(0, len(tasks), batch_size):
         batch = tasks[i:i + batch_size]
@@ -258,6 +294,10 @@ class KoreanAPILinkChecker:
     return report
 
   def save_results(self, results: List[LinkResult], filename: str = 'link_health_report.json'):
+    output_path = Path(filename)
+    if output_path.parent != Path('.'):
+      output_path.parent.mkdir(parents=True, exist_ok=True)
+
     data = {
       'generated_at': datetime.now().isoformat(),
       'total_links': len(results),
@@ -266,39 +306,72 @@ class KoreanAPILinkChecker:
       'results': [asdict(result) for result in results]
     }
 
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
       json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"📄 상세 결과가 {filename}에 저장되었습니다.")
+    print(f"📄 상세 결과가 {output_path}에 저장되었습니다.")
+
+
+def parse_args():
+  parser = argparse.ArgumentParser(
+      description="README에 있는 한국 Public API 링크 상태를 검사합니다."
+  )
+  parser.add_argument("filename", help="검사할 README 파일 경로")
+  parser.add_argument("--save-json", action="store_true", help="검사 결과를 JSON으로 저장")
+  parser.add_argument(
+      "--output",
+      default="link_health_report.json",
+      help="--save-json 사용 시 저장할 JSON 파일 경로"
+  )
+  parser.add_argument("--concurrent", type=int, default=30, help="동시 요청 수")
+  parser.add_argument("--timeout", type=int, default=15, help="링크별 요청 제한 시간(초)")
+  parser.add_argument("--retries", type=int, default=1, help="일시적 실패 재시도 횟수")
+  parser.add_argument(
+      "--retry-delay",
+      type=float,
+      default=1.0,
+      help="재시도 전 대기 시간(초). 재시도 횟수에 비례해 증가"
+  )
+  parser.add_argument(
+      "--allow-broken",
+      action="store_true",
+      help="깨진 링크가 있어도 종료 코드를 0으로 반환"
+  )
+
+  args = parser.parse_args()
+
+  if args.concurrent < 1:
+    parser.error("--concurrent 값은 1 이상이어야 합니다.")
+  if args.timeout < 1:
+    parser.error("--timeout 값은 1 이상이어야 합니다.")
+  if args.retries < 0:
+    parser.error("--retries 값은 0 이상이어야 합니다.")
+  if args.retry_delay < 0:
+    parser.error("--retry-delay 값은 0 이상이어야 합니다.")
+
+  return args
 
 
 async def main():
-  if len(sys.argv) < 2:
-    print("사용법: python link_health_check.py <README파일> [--save-json] [--concurrent N]")
-    print("예시: python link_health_check.py README.md --save-json --concurrent 20")
-    sys.exit(1)
-
-  filename = sys.argv[1]
-  save_json = '--save-json' in sys.argv
-
-  concurrent = 30
-  if '--concurrent' in sys.argv:
-    try:
-      idx = sys.argv.index('--concurrent')
-      concurrent = int(sys.argv[idx + 1])
-    except (IndexError, ValueError):
-      print("⚠️ concurrent 값이 잘못되었습니다. 기본값 30을 사용합니다.")
+  args = parse_args()
 
   print(f"🚀 한국 Public API 링크 상태 검사 시작")
-  print(f"📄 파일: {filename}")
-  print(f"⚡ 동시 요청 수: {concurrent}")
+  print(f"📄 파일: {args.filename}")
+  print(f"⚡ 동시 요청 수: {args.concurrent}")
+  print(f"⏱️ 타임아웃: {args.timeout}초")
+  print(f"🔁 재시도: {args.retries}회")
   print("-" * 50)
 
-  checker = KoreanAPILinkChecker(max_concurrent=concurrent)
+  checker = KoreanAPILinkChecker(
+      max_concurrent=args.concurrent,
+      timeout=args.timeout,
+      retries=args.retries,
+      retry_delay=args.retry_delay
+  )
 
   try:
     print("🔍 README에서 API 링크 추출 중...")
-    links = checker.extract_api_links(filename)
+    links = checker.extract_api_links(args.filename)
     print(f"📊 총 {len(links)}개 API 링크 발견")
 
     if not links:
@@ -317,13 +390,13 @@ async def main():
     report = checker.generate_report(results)
     print(report)
 
-    if save_json:
-      checker.save_results(results)
+    if args.save_json:
+      checker.save_results(results, args.output)
 
     if broken_count > 0:
       print(f"\n💥 {broken_count}개의 깨진 링크가 발견되었습니다!")
       print("🔧 위의 링크들을 수정하거나 제거해주세요.")
-      sys.exit(1)
+      sys.exit(0 if args.allow_broken else 1)
     else:
       print("\n🎉 모든 링크가 정상적으로 작동합니다!")
       sys.exit(0)
