@@ -1,6 +1,6 @@
-<p align="center">
+<h1 align="center" style="border-bottom: none; padding-bottom: 0;">
   <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" /> public-apis-kr
-</p>
+</h1>
 
 <p align="center">
   <a href="https://github.com/yybmion/public-apis-4Kr/actions"><img src="https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg" alt="Link Health Check" /></a>
