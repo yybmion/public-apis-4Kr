@@ -24,7 +24,7 @@
 </p>
 
 <details>
-<summary align="center"><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></summary>
+<summary><div align="center"><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></div></summary>
 
 <p align="center">Source: 공공데이터 이슈 및 추천데이터</p>
 
@@ -44,7 +44,7 @@
 </details>
 
 <details>
-<summary align="center"><strong>🏆 2026 Year-to-Date Public Data Open API Request TOP 20</strong></summary>
+<summary><div align="center"><strong>🏆 2026 Year-to-Date Public Data Open API Request TOP 20</strong></div></summary>
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|
@@ -72,7 +72,7 @@
 </details>
 
 <details>
-<summary align="center"><strong>🏆 2011-May 2026 All-Time Public Data Open API Request TOP 20</strong></summary>
+<summary><div align="center"><strong>🏆 2011-May 2026 All-Time Public Data Open API Request TOP 20</strong></div></summary>
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|

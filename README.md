@@ -34,7 +34,7 @@
 </p>
 
 <details>
-<summary align="center"><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></summary>
+<summary><div align="center"><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></div></summary>
 
 <p align="center">Source: 공공데이터 이슈 및 추천데이터</p>
 
@@ -54,7 +54,7 @@
 </details>
 
 <details>
-<summary align="center"><strong>🏆 2026년 5월(26년 누적) 공공데이터 활용신청 TOP 20</strong></summary>
+<summary><div align="center"><strong>🏆 2026년 5월(26년 누적) 공공데이터 활용신청 TOP 20</strong></div></summary>
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
@@ -82,7 +82,7 @@
 </details>
 
 <details>
-<summary align="center"><strong>🏆 2011~2026년 5월(전체 누적) 공공데이터 활용신청 TOP 20</strong></summary>
+<summary><div align="center"><strong>🏆 2011~2026년 5월(전체 누적) 공공데이터 활용신청 TOP 20</strong></div></summary>
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
