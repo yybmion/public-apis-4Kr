@@ -1,6 +1,7 @@
-<h1 align="center" style="border-bottom: none; padding-bottom: 0;">
-  <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" /> public-apis-kr
-</h1>
+<p align="center">
+  <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" />
+  <strong><font size="7">public-apis-kr</font></strong>
+</p>
 
 <p align="center">
   <a href="https://github.com/yybmion/public-apis-4Kr/actions"><img src="https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg" alt="Link Health Check" /></a>
@@ -21,16 +22,6 @@
 
 <p align="center">
   2026년 7월 3일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
-</p>
-
-<h3 align="center">🌍 글로벌 API 리소스</h3>
-
-<p align="center">
-  한국 API 외에도 전세계의 다양한 Public API를 찾고 계신가요?
-</p>
-
-<p align="center">
-  👉 <a href="./GLOBAL_PUBLIC_APIS_KR.md">Global Public APIs 문서</a>를 참고해주세요!
 </p>
 
 <details>
