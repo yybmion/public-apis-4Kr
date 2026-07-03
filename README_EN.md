@@ -11,7 +11,7 @@ Updated with the latest information as of 2026, and will be periodically updated
 <details>
 <summary><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></summary>
 
-Source: [Korea Public Data Portal issue and recommended data](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
+Source: 공공데이터 이슈 및 추천데이터
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|
@@ -30,8 +30,6 @@ Source: [Korea Public Data Portal issue and recommended data](https://www.data.g
 
 <details>
 <summary><strong>🏆 2026 Year-to-Date Public Data Open API Request TOP 20</strong></summary>
-
-Source: [Korea Public Data Portal issue and recommended data](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|
@@ -60,8 +58,6 @@ Source: [Korea Public Data Portal issue and recommended data](https://www.data.g
 
 <details>
 <summary><strong>🏆 2011-May 2026 All-Time Public Data Open API Request TOP 20</strong></summary>
-
-Source: [Korea Public Data Portal issue and recommended data](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|

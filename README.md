@@ -22,7 +22,7 @@
 <details>
 <summary><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></summary>
 
-출처: [공공데이터포털 이슈 및 추천데이터](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
+출처: 공공데이터 이슈 및 추천데이터
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
@@ -41,8 +41,6 @@
 
 <details>
 <summary><strong>🏆 2026년 5월(26년 누적) 공공데이터 활용신청 TOP 20</strong></summary>
-
-출처: [공공데이터포털 이슈 및 추천데이터](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
@@ -71,8 +69,6 @@
 
 <details>
 <summary><strong>🏆 2011~2026년 5월(전체 누적) 공공데이터 활용신청 TOP 20</strong></summary>
-
-출처: [공공데이터포털 이슈 및 추천데이터](https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&issueType=USE&sortType=sort_order&perPage=10&useMonth=5)
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
