@@ -2,18 +2,31 @@
   <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" /> public-apis-kr
 </h1>
 
+<p align="center">
+  <a href="https://github.com/yybmion/public-apis-4Kr/actions"><img src="https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg" alt="Link Health Check" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
+  <a href="https://github.com/yybmion/public-apis-4Kr"><img src="https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-300+-blue.svg" alt="Korean APIs and Resources 300+" /></a>
+  <a href="https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md"><img src="https://img.shields.io/badge/Global%20APIs-780+-blue.svg" alt="Global APIs 780+" /></a>
+</p>
+
+---
+
 <h3 align='center'>Comprehensive Collection of Public APIs Available in South Korea</h3>
 
 
-This project systematically organizes all public APIs that developers can utilize in South Korea.
+<p align="center">
+  This project systematically organizes all public APIs that developers can utilize in South Korea.
+</p>
 
 
-Updated with the latest information as of July 3, 2026, and will be periodically updated going forward.
+<p align="center">
+  Updated with the latest information as of July 3, 2026, and will be periodically updated going forward.
+</p>
 
 <details>
-<summary><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></summary>
+<summary align="center"><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></summary>
 
-Source: 공공데이터 이슈 및 추천데이터
+<p align="center">Source: 공공데이터 이슈 및 추천데이터</p>
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|
@@ -31,7 +44,7 @@ Source: 공공데이터 이슈 및 추천데이터
 </details>
 
 <details>
-<summary><strong>🏆 2026 Year-to-Date Public Data Open API Request TOP 20</strong></summary>
+<summary align="center"><strong>🏆 2026 Year-to-Date Public Data Open API Request TOP 20</strong></summary>
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|
@@ -59,7 +72,7 @@ Source: 공공데이터 이슈 및 추천데이터
 </details>
 
 <details>
-<summary><strong>🏆 2011-May 2026 All-Time Public Data Open API Request TOP 20</strong></summary>
+<summary align="center"><strong>🏆 2011-May 2026 All-Time Public Data Open API Request TOP 20</strong></summary>
 
 | Rank | Organization | Open API | URL | Type |
 |---:|---|---|---|---|

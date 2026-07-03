@@ -2,29 +2,41 @@
   <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" /> public-apis-kr
 </h1>
 
-[![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs & Resources](https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-300+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
-[![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
+<p align="center">
+  <a href="https://github.com/yybmion/public-apis-4Kr/actions"><img src="https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg" alt="Link Health Check" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
+  <a href="https://github.com/yybmion/public-apis-4Kr"><img src="https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-300+-blue.svg" alt="Korean APIs and Resources 300+" /></a>
+  <a href="https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md"><img src="https://img.shields.io/badge/Global%20APIs-780+-blue.svg" alt="Global APIs 780+" /></a>
+</p>
 
-🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
+---
 
+<p align="center">
+  🇺🇸 <a href="./README_EN.md">English</a> | 🇰🇷 <a href="./README.md">한국어</a> | 🌏 <a href="./GLOBAL_PUBLIC_APIS_KR.md">글로벌 public API</a>
+</p>
 
-이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 **공개 API**를 체계적으로 정리한 목록입니다.
+<p align="center">
+  이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 <strong>공개 API</strong>를 체계적으로 정리한 목록입니다.
+</p>
 
+<p align="center">
+  2026년 7월 3일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+</p>
 
-2026년 7월 3일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+<h3 align="center">🌍 글로벌 API 리소스</h3>
 
-> ### 🌍 글로벌 API 리소스
->
-> 한국 API 외에도 전세계의 다양한 Public API를 찾고 계신가요?
->
-> 👉 [Global Public APIs 문서](./GLOBAL_PUBLIC_APIS_KR.md)를 참고해주세요!
+<p align="center">
+  한국 API 외에도 전세계의 다양한 Public API를 찾고 계신가요?
+</p>
+
+<p align="center">
+  👉 <a href="./GLOBAL_PUBLIC_APIS_KR.md">Global Public APIs 문서</a>를 참고해주세요!
+</p>
 
 <details>
-<summary><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></summary>
+<summary align="center"><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></summary>
 
-Source: 공공데이터 이슈 및 추천데이터
+<p align="center">Source: 공공데이터 이슈 및 추천데이터</p>
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
@@ -42,7 +54,7 @@ Source: 공공데이터 이슈 및 추천데이터
 </details>
 
 <details>
-<summary><strong>🏆 2026년 5월(26년 누적) 공공데이터 활용신청 TOP 20</strong></summary>
+<summary align="center"><strong>🏆 2026년 5월(26년 누적) 공공데이터 활용신청 TOP 20</strong></summary>
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
@@ -70,7 +82,7 @@ Source: 공공데이터 이슈 및 추천데이터
 </details>
 
 <details>
-<summary><strong>🏆 2011~2026년 5월(전체 누적) 공공데이터 활용신청 TOP 20</strong></summary>
+<summary align="center"><strong>🏆 2011~2026년 5월(전체 누적) 공공데이터 활용신청 TOP 20</strong></summary>
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
