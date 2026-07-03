@@ -1,4 +1,6 @@
-# <img src="./assets/public-api-icon.png" width="50" height="50"/> Public API - Korea
+<h1 align="center">
+  <img src="./assets/public-api-wordmark.svg" width="560" alt="Public API Korea" />
+</h1>
 
 <h3 align='center'>Comprehensive Collection of Public APIs Available in South Korea</h3>
 
@@ -97,8 +99,6 @@ Source: 공공데이터 이슈 및 추천데이터
 - [🎓 Education](#education)
 - [🏘 Real Estate](#real-estate)
 - [🎭 Culture & Tourism](#culture--tourism)
-- [📊 Statistics & Data](#statistics--data)
-- [📚 Datasets & Data Portals](#datasets--data-portals)
 - [🤖 AI & Machine Learning](#ai--machine-learning)
 - [🛍 Shopping & E-commerce](#shopping--e-commerce)
 - [📦 Delivery & Logistics](#delivery--logistics)
@@ -123,6 +123,9 @@ Source: 공공데이터 이슈 및 추천데이터
 - [🏦 Finance & Budget](#Finance--Budget)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
+- [📚 Data & Statistics Resources](#data--statistics-resources)
+  - [Datasets & Data Portals](#datasets--data-portals)
+  - [Statistics & Indicators](#statistics--indicators)
 
 ### Government & Public Institutions
 
@@ -132,18 +135,14 @@ Source: 공공데이터 이슈 및 추천데이터
 | [FairData Portal (KFTC)](https://fairdata.go.kr/ext/data/useGuidance.do)                                    | Fair Trade Commission franchise business Open API (brand store info, contract status, average sales by region)                                                                                       | `apiKey` |
 | [Gov24 Public Service API](https://www.gov.kr/openapi/info)                                                 | Government public service information Open API, real-time administrative information                                                                                                                 | `apiKey` |
 | [Green Nuri Open API](https://ecolife.me.go.kr/ecolife/infoCenter/openApi)                                  | Ministry of Environment eco-friendly lifestyle and environmental information                                                                                                                         | `apiKey` |
-| [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)                     | National qualifications, process evaluation qualifications, work-learning parallel qualification information                                                                                         | `apiKey` |
-| [K-eco AirKorea](https://www.data.go.kr/data/15073861/openapi.do)                                           | Real-time air pollution information and fine dust data                                                                                                                                               | `apiKey` |
 | [KIPRIS Plus API](https://plus.kipris.or.kr/portal/data/service/List.do?subTab=SC001&entYn=N&menuNo=200100) | Intellectual property search (patents, trademarks, designs...)                                                                                                                                       | `apiKey` |
 | [KMA Living Weather Index](https://data.kma.go.kr/api/selectApiList.do?pgmNo=42)                            | UV index, air stagnation index, apparent temperature and other living weather information                                                                                                            | `apiKey` |
-| [KMA Medium-term Forecast](https://www.data.go.kr/data/15059468/openapi.do)                                 | Medium-term weather forecast information inquiry service                                                                                                                                             | `apiKey` |
 | [KMA Short-term Forecast](https://www.data.go.kr/data/15084084/openapi.do)                                  | Ultra-short-term current conditions, ultra-short-term forecast, short-term forecast information                                                                                                      | `apiKey` |
 | [KORAIL Train Operation Information](https://www.data.go.kr/data/15125762/openapi.do)                       | KTX, Saemaul-ho and other train operation information                                                                                                                                                | `apiKey` |
 | [Korea Deposit Insurance Corporation](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=예금보험공사)       | Financial institution depositor protection and business suspension savings bank information                                                                                                          | `apiKey` |
-| [Korea Expressway Corporation Traffic Information](https://www.data.go.kr/data/15076872/openapi.do)         | Real-time highway traffic volume and traffic information                                                                                                                                             | `apiKey` |
+| [Korea Expressway Corporation Traffic Information](https://data.ex.co.kr/)                                  | Real-time highway traffic volume and traffic information                                                                                                                                             | `apiKey` |
 | [Korea Land & Housing Corporation (LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사)   | Sale/rental announcements, pre-subscription, rental housing information                                                                                                                              | `apiKey` |
 | [Korea Public Data Portal](https://www.data.go.kr/)                                                         | Central platform providing integrated data from government and public institutions (100,000+ datasets)                                                                                               | `apiKey` |
-| [Korea Tourism Organization TourAPI](https://api.visitkorea.or.kr/)                                         | Tourist attractions, accommodation, restaurants, festivals and other tourism information                                                                                                             | `apiKey` |
 | [Local Admin License API](https://www.localdata.go.kr/main.do)                                              | Nationwide business permit dataset (animal, medical, culture, lifestyle ...)                                                                                                                         | `apiKey` |
 | [MCST Cultural Information](https://www.culture.go.kr/data/openapi/openapiInfo.do)                          | Performances, exhibitions, cultural properties, libraries and other cultural information                                                                                                             | `apiKey` |
 | [Ministry of Agriculture, Food and Rural Affairs](https://data.mafra.go.kr/apply/indexApiPrcuseReqst.do)    | Provides data related to rural areas, agriculture, livestock, distribution and consumption                                                                                                           | `apiKey` |
@@ -151,7 +150,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [MOIS Administrative Standard Codes](https://www.data.go.kr/data/15077871/openapi.do)                       | Legal district codes, administrative area codes and other standard code information                                                                                                                  | `apiKey` |
 | [MOLIT Real Estate Transaction Prices](https://www.data.go.kr/dataset/3050988/openapi.do)                   | Real transaction prices for apartments, officetels, detached houses, etc.                                                                                                                            | `apiKey` |
 | [MyData Integrated Support API](https://www.kdata.or.kr/mydata)                                             | Korea Data Industry Promotion Institute MyData standard API service                                                                                                                                  | `OAuth`  |
-| [National Archives Search API](https://www.archives.go.kr/next/newsearch/openAPI01.do)                      | National archives search service, RSS format (daily limit of 1,000 cases)                                                                                                                            | `apiKey` |
 | [National Integrated Index Sharing Service](https://www.index.go.kr/unity/openApi/openApiIntro.do)          | Provides various public statistical indicators from the national statistics portal ‘지표누리’                                                                                                            | `apiKey` |
 | [NTIS National Science & Technology Information](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)         | National R&D project information, performance information metadata search                                                                                                                            | `apiKey` |
 | [Open National Assembly Information API](https://open.assembly.go.kr/portal/openapi/main.do)                | National Assembly member voting records, proposed bills, bill details, research reports                                                                                                              | `apiKey` |
@@ -168,7 +166,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [Kakao Map](https://apis.map.kakao.com/web/guide/)                                      | Map display, place search, coordinate conversion, route navigation                     | `apiKey` |
 | [National Land Information Platform](https://map.ngii.go.kr/mi/openKey/openKeyInfo.do)  | Digital maps, aerial imagery, orthophotos, DEM, and national points of interest (POI)  | `apiKey` |
 | [Naver Map](https://www.ncloud.com/product/applicationService/maps)                     | Map API, Geocoding, Directions, Panorama                                               | `apiKey` |
-| [T Map API](https://openapi.sk.com/)                                                    | SK Telecom's navigation and route search API                                           | `apiKey` |
 | [V-World](https://www.vworld.kr/v4po_openapi_s001.do)                                   | National Geographic Information Institute's 3D maps and spatial information            | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -209,7 +206,7 @@ Source: 공공데이터 이슈 및 추천데이터
 | [KB API Portal](https://apiportal.kbfg.com/)                                       | KB Financial Group comprehensive financial API service (800+ APIs provided)                   | `OAuth`       |
 | [KB Kookmin Bank Open API](https://obizapi.kbstar.com/quics?page=C108082)          | KB comprehensive financial services and BaaS platform                                        | `OAuth`       |
 | [KFTC Open Banking](https://openapi.kftc.or.kr/service/openBanking)                | Integrated account inquiry, transfer, and payment services for 19+ banks                     | `OAuth`       |
-| [Korea Development Bank Open API](https://www.koreaexim.go.kr/ir/HPHKIR019M01)     | Current exchange rates, loan rates, international rates                                      | `apiKey` |
+| [Korea Eximbank Open API](https://www.koreaexim.go.kr/ir/HPHKIR019M01)             | Current exchange rates, loan rates, international rates                                      | `apiKey` |
 | [Korea Investment Securities KIS API](https://apiportal.koreainvestment.com/intro) | Domestic and overseas stock quotes and order API                            | `OAuth`       |
 | [Naver Pay API](https://developers.pay.naver.com/)                                 | Naver Pay payment, regular payment, automatic payment API                                    | `OAuth`       |
 | [NH Nonghyup Bank Open API](https://developers.nonghyup.com/center/CE_1020)        | Nonghyup financial API developer center                                                      | `OAuth`       |
@@ -239,7 +236,7 @@ Source: 공공데이터 이슈 및 추천데이터
 | [Gyeonggi Province Bus Information](https://www.data.go.kr/data/15058012/openapi.do)                        | Real-time information for Gyeonggi Province city/intercity buses                       | `apiKey` |
 | [Hyundai Motor Developers](https://developers.hyundai.com/)                                                 | Vehicle specifications, operation information, mileage, vehicle status, driving habits | `OAuth`  |
 | [Kakao Mobility Navigation](https://developers.kakaomobility.com/product/api)                               | Technical products for mobility service development                                    | `apiKey` |
-| [Kakao T Business](https://kakaotbusinessapiinfo.oopy.io/)                                                  | Business Kakao T usage history integration service                                     | `apiKey` |
+| [Kakao T Business](https://kakaotbusinessapiinfo.oopy.io/)                                                  | Business Kakao T usage history integration service                                     | `Partnership` |
 | [Kia Motors Developers](https://developers.kia.com/)                                                        | KIA Connect vehicle data and operation information                                     | `OAuth`  |
 | [Korea Expressway Corporation Real-time Traffic Volume](https://www.data.go.kr/data/15076872/openapi.do)    | Real-time traffic volume information by highway tollgate                               | `apiKey` |
 | [Korea Road Traffic Authority Traffic Accident Data](https://opendata.koroad.or.kr/)                        | Traffic accident hotspots, accident statistics, and road risk index data               | `apiKey` |
@@ -271,7 +268,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [Flood Hazard Map Portal](https://data.floodmap.go.kr/main/board/api_data_list_query)                                   | Flood hazard map statistics and flood-depth APIs for national rivers, local rivers, and urban flooding | `apiKey` |
 | [Greenhouse Gas Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_02.html)                    | Provides greenhouse gas investigation and prediction data for environmental impact assessment projects | `apiKey` |
 | [Hydrology and Water Resources Information Service](https://www.eiass.go.kr/openapiguide/kei_html/chapter04_06.html)     | Provides investigation and prediction data on hydrology and water resources                            | `apiKey` |
-| [K-eco Electric Vehicle Charging Stations](https://www.data.go.kr/data/15076352/openapi.do)                              | Nationwide electric vehicle charging station information, charger status information                   | `apiKey` |
 | [K-water Open Data API](https://opendata.kwater.or.kr/open/data/guide/view.do)                                           | K-water public data including water resources, dams, water quality, and tap water data                 | `apiKey` |
 | [KMA API Hub](https://apihub.kma.go.kr/)                                                                                 | Weather observation, forecast, satellite, radar data across 12 categories                              | `apiKey` |
 | [KMA Local Forecast](https://www.data.go.kr/dataset/15000099/openapi.do)                                                 | Local forecast for eup/myeon/dong units provided at 3-hour intervals                                   | `apiKey` |
@@ -298,7 +294,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [National Cancer Information Center OPEN API](https://cancer.go.kr/lay1/S1T523C850/contents.do) | Cancer prevention, cancer information, patient life guides, and cancer glossary content                                  | `apiKey`      |
 | [National Emergency Medical Center](https://www.e-gen.or.kr/nemc/open_api.do)                   | Information on hospital/pharmacy locations and AED installations                                                          | `apiKey`      |
 | [NHIS](https://www.nhis.or.kr/nhis/together/wbhaec10800m01.do)                                  | Provides information on long-term care facilities, health checkup institutions, and reservation and examination schedules | `apiKey`      |
-| [Samsung Health SDK](https://developer.samsung.com/health)                                      | Health data read/write (heart rate, blood oxygen saturation, blood sugar, blood pressure, etc.)                           | `Partnership` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -308,6 +303,7 @@ Source: 공공데이터 이슈 및 추천데이터
 |--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|----------------|
 | [Career Net](https://www.career.go.kr/cnet/front/openapi/openApiUseGuideCenter.do)                     | Career education materials and job information                           | `apiKey`       |
 | [Class101 Business API](https://docs.class101.net/)                                                    | Class management, course registration, progress inquiry, SSO integration | `Bearer Token` |
+| [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)                | National qualifications, vocational training, and work-learning information | `apiKey`       |
 | [KERIS Academic Research Information](https://www.data.go.kr/data/3046254/openapi.do)                  | KERIS academic papers, research information search service               | `apiKey`       |
 | [KERIS RISS Comprehensive Catalog](https://www.data.go.kr/data/15071949/fileData.do)                   | University library integrated academic material catalog                  | `apiKey`       |
 | [MOE NEIS School Basic Information](https://www.data.go.kr/data/15122275/openapi.do)                   | Basic information for elementary, middle, and high schools nationwide    | `apiKey`       |
@@ -339,47 +335,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
-### Statistics & Data
-
-| API                                                                             | Description                                                               | Auth     |
-|---------------------------------------------------------------------------------|---------------------------------------------------------------------------| -------- |
-| [Bank of Korea Economic Statistics](https://ecos.bok.or.kr/api/#/)              | Interest rates, exchange rates, price index and other economic statistics | `apiKey` |
-
-**[⬆ Back to Table of Contents](#table-of-contents)**
-
-### Datasets & Data Portals
-
-| API | Description | Auth |
-|---|---|---|
-| [One-Window](https://www.data1window.kr/) | Unified catalog for discovering public and private Korean datasets | No |
-| [KOSIS National Statistics Portal](https://kosis.kr/serviceInfo/openAPIGuide.do) | National statistics across population, industry, economy, and society | `apiKey` |
-| [MDIS Microdata Integrated Service](https://mdis.kostat.go.kr/) | KOSTAT microdata search, download, and access request service | `Login` |
-| [Statistics Data Center](https://data.mods.go.kr/) | Secure analysis environment and access support for approved statistical microdata | `Request` |
-| [SGIS Statistical Geographic Information Service](https://sgis.kostat.go.kr/developer/html/home.html) | Spatial statistics data including maps, boundaries, population, households, and businesses | `apiKey` |
-| [AI Hub](https://aihub.or.kr) | Korean AI training datasets including text, image, speech, and healthcare data | `Login` |
-| [NIKL Corpus / Modu Corpus](https://corpus.korean.go.kr/) | Korean corpus and language resources from the National Institute of Korean Language | `Login` |
-| [Hugging Face Korean Datasets](https://huggingface.co/datasets?language=language%3Ako) | Discovery hub for Korean-tagged datasets on Hugging Face | No |
-| [DataON](https://dataon.kisti.re.kr/) | KISTI research data discovery and sharing platform | `Login` |
-| [K-BDS Korea BioData Station](https://www.kbds.re.kr/) | National bio research data repository and sharing platform | `Login` |
-| [KOSSDA Korean Social Science Data Archive](https://kossda.snu.ac.kr/) | Social science survey and research data archive | `Login` |
-| [Education Data Utilization Support Service](https://data.edmgr.kr/) | Education data search and utilization support portal | `Login` |
-| [BIG KINDS](https://www.bigkinds.or.kr/) | Korea Press Foundation news big data analysis platform | `Login` |
-| [Culture Data Portal](https://www.culture.go.kr/data/main/main.do) | Public data portal for culture, tourism, performances, exhibitions, and heritage | `apiKey` |
-| [Data for Library](https://www.data4library.kr/apiUtilization) | Public library holdings, loans, and popular book data | `apiKey` |
-| [Korea Tourism Data Lab](https://datalab.visitkorea.or.kr/) | Tourism big data for visitors, spending, mobility, and trends | `Login` |
-| [National Transportation Data Open Market](https://bigdata-transportation.kr/) | Transportation big data products and dataset marketplace | `Login` |
-| [MOLIT Data Integration Channel](https://data.molit.go.kr/) | Integrated discovery and utilization channel for Ministry of Land, Infrastructure and Transport data | No |
-| [KTDB Korea Transport Database](https://www.ktdb.go.kr/) | National transport surveys, transport statistics, and transport databases | No |
-| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | Korea Exchange market data including indices, stocks, bonds, and derivatives | `apiKey` |
-| [Financial Data Exchange](https://www.findatamall.or.kr/) | Financial sector data product search and marketplace | `Login` |
-| [KEPCO Energy Data Service Market](https://bigdata.kepco.co.kr/) | Electricity usage, demand, and power-service datasets | `Login` |
-| [EPSIS Electric Power Statistics Information System](https://epsis.kpx.or.kr/) | Electricity market, generation, supply-demand, and trading statistics | No |
-| [MFDS Data Portal](https://data.mfds.go.kr/OPCAA01F01) | Food, drug, medical device, and public health safety data portal | `apiKey` |
-| [HIRA Healthcare Big Data Open API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Healthcare big data Open API from the Health Insurance Review & Assessment Service | `apiKey` |
-| [Geo Big Data Open Platform](https://data.kigam.re.kr/) | Geology, resources, and earth science data platform | `Login` |
-
-**[⬆ Back to Table of Contents](#table-of-contents)**
-
 ### AI & Machine Learning
 
 | API                                                                                               | Description                                               | Auth     |
@@ -388,11 +343,8 @@ Source: 공공데이터 이슈 및 추천데이터
 | [Naver Cloud CLOVA Studio](https://api.ncloud-docs.com/docs/ai-naver-clovastudio-summary)         | Korean-specialized generative AI platform                 | `apiKey` |
 | [Naver CLOVA Face Recognition](https://developers.naver.com/docs/clova/api/CFR/API_Guide.md)      | Face recognition and emotion analysis                     | `apiKey` |
 | [Naver CLOVA Speech](https://www.ncloud.com/product/aiService/clovaSpeech)                        | Voice recognition and STT service                         | `apiKey` |
-| [Samsung Bixby API](https://developer.samsung.com/bixby)                                          | Voice recognition and AI assistant integration            | `apiKey` |
-| [Samsung SDS FabriX](https://www.samsungsds.com/us/ai-fabrix/fabrix.html)                         | Multi-LLM enterprise generative AI platform               | `apiKey` |
-| [SKT A.X 4.0](https://github.com/SKT-AI/A.X-4.0)                                                  | Korean-specialized large language model                   | `apiKey` |
-| [Upstage Document AI](https://developers.upstage.ai/)                                             | Document parsing, layout analysis, information extraction | `apiKey` |
-| [Upstage Solar LLM](https://developers.upstage.ai/)                                               | Conversational LLM, Document AI, OCR, Embedding           | `apiKey` |
+| [Upstage Document AI](https://developers.upstage.ai/docs/capabilities/parse/document-parsing)      | Document parsing, layout analysis, information extraction | `apiKey` |
+| [Upstage Solar LLM](https://developers.upstage.ai/docs/capabilities/generate/chat)                 | Conversational LLM, Document AI, OCR, Embedding           | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -416,7 +368,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 | API                                                                                                                                                                                                                                                             | Description                                                   | Auth     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | -------- |
-| [CJ Logistics Delivery Tracking](https://development-pro.tistory.com/entry/%ED%83%9D%EB%B0%B0%EC%82%AC%EC%A1%B0%ED%9A%8C%EA%B0%81-%ED%83%9D%EB%B0%B0%EC%82%AC-%EB%B0%8F-%EB%8C%80%ED%95%9C%ED%86%B5%EC%9A%B4-API-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4) | CJ Logistics delivery tracking API                            | ✕        |
 | [Delivery Tracker API](https://tracker.delivery/)                                                                                                                                                                                                               | Open source delivery tracking service                         | `apiKey` |
 | [Hanjin Express Delivery Tracking](https://developers.hanjin.com/guides)                                                                                                                                                                                        | Hanjin Express delivery tracking service                      | ✕        |
 | [Real-time Delivery Tracking Service](http://apiservice.co.kr/)                                                                                                                                                                                                 | Real-time delivery information inquiry by courier company     | `apiKey` |
@@ -428,7 +379,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 | API                                                                                                  | Description                                                                                                   | Auth     |
 |------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------| -------- |
-| [Baedal Minjok Delivery Agency API](https://www.newtrack.co.kr/news/29)                              | Delivery agency order information integration system (partner companies only)                                 | `apiKey` |
 | [Food Nutrition Database](https://various.foodsafetykorea.go.kr/nutrient/industry/openApi/info.do)   | Provides nutritional information (calories, nutrients, etc.) for processed foods, raw ingredients, and dishes | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -437,7 +387,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 | API                                                                                                                                                                                                       | Description                                                   | Auth     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------| -------- |
-| [Com2uS HIVE Platform](https://developers.hiveplatform.ai/ko/latest/api/hive-sdk-api/?_gl=1*1aw8yqt*_ga*NTEzOTU0MjkyLjE3NTU2MDQ1OTM.*_ga_4J643QJWFZ*czE3NTU2MDQ1OTIkbzEkZzEkdDE3NTU2MDQ2MDQkajQ4JGwwJGgw) | GBaaS platform (100 million annual connections)               | `apiKey` |
 | [Game Rating and Administration Committee](https://www.grac.or.kr/OpenBook/OpenAPI.aspx)                                                                                                                  | Game content rating information                               | `apiKey` |
 | [Krafton PUBG API](https://developer.pubg.com/)                                                                                                                                                           | PUBG game data, player statistics, match analysis             | `apiKey` |
 | [NCSOFT PLAYNC](https://developers.plaync.com/)                                                                                                                                                           | Lineage 2M item information, market prices, search data       | `apiKey` |
@@ -457,7 +406,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [KMDb Movie Details](https://www.kmdb.or.kr/info/api/apiDetail/6)                    | Korean film titles, production year, companies, credits, synopsis, genres, keywords | `apiKey` |
 | [Korea Film Council KOBIS](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) | Box office data, movie info, film company & people info                             | `apiKey` |
 | [Korean Comics Archive (KMAS)](https://www.kmas.or.kr/guide/openapi)                 | Provides up-to-date information on comics, webtoons, and creators                   | `apiKey` |
-| [NAVER Chzzk API](https://chzzk.gitbook.io/chzzk)                                    | NAVER live streaming platform                                                       | `apiKey` |
 | [SOOP](https://developers.afreecatv.com/?szWork=openapi)                             | SOOP broadcast list, category information                                           | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
@@ -509,7 +457,6 @@ Source: 공공데이터 이슈 및 추천데이터
 | [Airbridge API](https://help.airbridge.io/ko/references/introduction)                      | Mobile app marketing attribution (multi-platform SDK)                                                       | `apiKey`      |
 | [Bizno API](https://bizno.net/openapi)                                                     | Business info lookup by registration number or company name                                                 | `apiKey`      |
 | [CODEF Open API](https://codef.io/)                                                        | Finance, insurance, telecommunications, public institution scraping API                                     | `OAuth`       |
-| [Human Resources Development Service of Korea HRD](https://openapi.hrdkorea.or.kr/main)    | Vocational training, certification, employment information                                                  | `apiKey`      |
 | [KBIOIS Open API](https://www.kbiois.or.kr/portal/openapi/openApiIntroPage.do)             | Korea bio-industry company, product, and statistics information                                            | `apiKey`      |
 | [KOTRA Overseas Market News Open API](https://dream.kotra.or.kr/kotranews/cms/com/index.do?MENU_ID=710) | Overseas market news, country information, product databases, and export market data                       | `apiKey`      |
 | [Ministry of SMEs and Startups Enterprise Information](https://www.smes.go.kr/main/dbCnrs) | SME support policies and business information                                                               | `apiKey`      |
@@ -525,8 +472,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 | API                                                                    | Description                                                  | Auth     |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------ | -------- |
-| [Gabia G Cloud](https://cloud.gabia.com/)                              | CSAP-certified SME-friendly cloud                            | `apiKey` |
-| [KT Cloud API](https://cloud.kt.com/)                                  | Public/finance/manufacturing specialized cloud (NPU support) | `apiKey` |
 | [Naver Cloud Platform](https://api.ncloud-docs.com/docs/common-ncpapi) | Comprehensive cloud services (AI, Maps, SMS, Object Storage) | `apiKey` |
 | [NHN Cloud Public API](https://docs.nhncloud.com/ko/nhncloud/ko/public-api/service-api/) | Cloud resource control and automation APIs                   | `AccessKey` |
 
@@ -649,14 +594,9 @@ Source: 공공데이터 이슈 및 추천데이터
 | API                                                                                                   | Description                                                | Auth     |
 | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | -------- |
 | [CAPTCHA Image](https://developers.naver.com/docs/utils/captcha/overview/)                            | Security image generation to prevent automatic input       | `apiKey` |
-| [CLOVA Face Recognition](https://developers.naver.com/products/clova/face/)                           | Face contour/part/expression/celebrity similarity analysis | `apiKey` |
 | [DataLab Search Trend](https://developers.naver.com/docs/serviceapi/datalab/search/search.md)         | Integrated search term trend inquiry                       | `apiKey` |
-| [DataLab Shopping Insight](https://developers.naver.com/docs/serviceapi/datalab/shopping/shopping.md) | Shopping insight field-specific trend inquiry              | `apiKey` |
-| [Naver Blog](https://developers.naver.com/docs/serviceapi/search/blog/blog.md)                        | Blog posting API                                           | `OAuth`  |
-| [Naver Cafe](https://developers.naver.com/docs/login/cafe-api/cafe-api.md)                            | Cafe membership and post writing                           | `OAuth`  |
 | [Naver Calendar](https://developers.naver.com/docs/login/calendar-api/calendar-api.md)                | User calendar schedule addition                            | `OAuth`  |
 | [Naver Login](https://developers.naver.com/products/login/api/)                                       | Login with Naver ID and profile inquiry                    | `OAuth`  |
-| [Naver Map](https://www.ncloud.com/product/applicationService/maps)                                   | Map display and address coordinate conversion              | `apiKey` |
 | [Naver Search](https://developers.naver.com/products/service-api/search/search.md)                    | Blog, image, web, news, encyclopedia and other searches    | `apiKey` |
 | [Papago Translation](https://developers.naver.com/docs/papago/README.md)                              | Artificial neural network-based machine translation        | `apiKey` |
 | [Share](https://developers.naver.com/docs/share/navershare/)                                          | Naver blog, cafe sharing                                   | `apiKey` |
@@ -671,15 +611,56 @@ Source: 공공데이터 이슈 및 추천데이터
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------ | -------- |
 | [Kakao Link](https://developers.kakao.com/docs/latest/ko/message/common)                    | Message sending from app/web to KakaoTalk        | `apiKey` |
 | [Kakao Login](https://developers.kakao.com/docs/latest/ko/kakaologin/common)                | Login with Kakao account and user management     | `OAuth`  |
-| [Kakao Map](https://developers.kakao.com/docs/latest/ko/local/common)                       | Map display, place search, coordinate conversion | `apiKey` |
 | [Kakao Moment](https://developers.kakao.com/docs/latest/ko/kakaomoment/reference)           | Mobile advertising platform                      | `apiKey` |
 | [Kakao Navi](https://developers.kakao.com/docs/latest/ko/kakaonavi/common)                  | Kakao Navi navigation integration                | `apiKey` |
-| [Kakao Pay](http://developers.kakaopay.com/docs/payment/online/common)                      | Simple payment and regular payment               | `apiKey` |
 | [Kakao Search](https://developers.kakao.com/docs/latest/ko/daum-search/common)              | Web, image, video, blog search                   | `apiKey` |
-| [KakaoTalk Channel](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common)   | KakaoTalk channel management                     | `OAuth`  |
 | [KakaoTalk Friends](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common)    | KakaoTalk friend list and social features        | `OAuth`  |
-| [KakaoTalk Message](https://developers.kakao.com/docs/latest/ko/kakaotalk-message/rest-api) | Send to me, send to friends                      | `OAuth`  |
 | [Push Notification](https://developers.kakao.com/docs/latest/ko/push/common)                | App push notification sending                    | `apiKey` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+## Data & Statistics Resources
+
+These resources are separate from the API catalog and can be used for market research, regional analysis, AI training dataset discovery, policy research, and trend analysis.
+
+### Datasets & Data Portals
+
+| Resource | Description | Access |
+|---|---|---|
+| [One-Window](https://www.data1window.kr/) | Unified catalog for discovering public and private Korean datasets | No |
+| [KOSIS National Statistics Portal](https://kosis.kr/serviceInfo/openAPIGuide.do) | National statistics across population, industry, economy, and society | `apiKey` |
+| [MDIS Microdata Integrated Service](https://mdis.kostat.go.kr/) | KOSTAT microdata search, download, and access request service | `Login` |
+| [Statistics Data Center](https://data.mods.go.kr/) | Secure analysis environment and access support for approved statistical microdata | `Request` |
+| [SGIS Statistical Geographic Information Service](https://sgis.kostat.go.kr/developer/html/home.html) | Spatial statistics data including maps, boundaries, population, households, and businesses | `apiKey` |
+| [AI Hub](https://aihub.or.kr) | Korean AI training datasets including text, image, speech, and healthcare data | `Login` |
+| [NIKL Corpus / Modu Corpus](https://corpus.korean.go.kr/) | Korean corpus and language resources from the National Institute of Korean Language | `Login` |
+| [Hugging Face Korean Datasets](https://huggingface.co/datasets?language=language%3Ako) | Discovery hub for Korean-tagged datasets on Hugging Face | No |
+| [DataON](https://dataon.kisti.re.kr/) | KISTI research data discovery and sharing platform | `Login` |
+| [K-BDS Korea BioData Station](https://www.kbds.re.kr/) | National bio research data repository and sharing platform | `Login` |
+| [KOSSDA Korean Social Science Data Archive](https://kossda.snu.ac.kr/) | Social science survey and research data archive | `Login` |
+| [Education Data Utilization Support Service](https://data.edmgr.kr/) | Education data search and utilization support portal | `Login` |
+| [BIG KINDS](https://www.bigkinds.or.kr/) | Korea Press Foundation news big data analysis platform | `Login` |
+| [Culture Data Portal](https://www.culture.go.kr/data/main/main.do) | Public data portal for culture, tourism, performances, exhibitions, and heritage | `apiKey` |
+| [Data for Library](https://www.data4library.kr/apiUtilization) | Public library holdings, loans, and popular book data | `apiKey` |
+| [Korea Tourism Data Lab](https://datalab.visitkorea.or.kr/) | Tourism big data for visitors, spending, mobility, and trends | `Login` |
+| [National Transportation Data Open Market](https://bigdata-transportation.kr/) | Transportation big data products and dataset marketplace | `Login` |
+| [MOLIT Data Integration Channel](https://data.molit.go.kr/) | Integrated discovery and utilization channel for Ministry of Land, Infrastructure and Transport data | No |
+| [KTDB Korea Transport Database](https://www.ktdb.go.kr/) | National transport surveys, transport statistics, and transport databases | No |
+| [KRX Data Marketplace Open API](https://openapi.krx.co.kr/contents/OPP/MAIN/main/index.cmd) | Korea Exchange market data including indices, stocks, bonds, and derivatives | `apiKey` |
+| [Financial Data Exchange](https://www.findatamall.or.kr/) | Financial sector data product search and marketplace | `Login` |
+| [KEPCO Energy Data Service Market](https://bigdata.kepco.co.kr/) | Electricity usage, demand, and power-service datasets | `Login` |
+| [EPSIS Electric Power Statistics Information System](https://epsis.kpx.or.kr/) | Electricity market, generation, supply-demand, and trading statistics | No |
+| [MFDS Data Portal](https://data.mfds.go.kr/OPCAA01F01) | Food, drug, medical device, and public health safety data portal | `apiKey` |
+| [HIRA Healthcare Big Data Open API](https://opendata.hira.or.kr/op/opc/selectOpenApiInfoView.do) | Healthcare big data Open API from the Health Insurance Review & Assessment Service | `apiKey` |
+| [Geo Big Data Open Platform](https://data.kigam.re.kr/) | Geology, resources, and earth science data platform | `Login` |
+
+**[⬆ Back to Table of Contents](#table-of-contents)**
+
+### Statistics & Indicators
+
+| Resource | Description | Access |
+|---|---|---|
+| [Bank of Korea Economic Statistics](https://ecos.bok.or.kr/api/#/) | Interest rates, exchange rates, price index and other economic statistics | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -697,7 +678,7 @@ This project is distributed under the MIT License.
 
 **Last Updated**: July 3, 2026
 
-**Total API Count**: 300+α (datasets/data portals)
+**Total API Count**: 270+α (datasets/data portals)
 
 
 
