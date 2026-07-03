@@ -2,7 +2,7 @@
 
 [![Link Health Check](https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg)](https://github.com/yybmion/public-apis-4Kr/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-270+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
+[![Korean APIs](https://img.shields.io/badge/Korean%20APIs-300+-blue.svg)](https://github.com/yybmion/public-apis-4Kr)
 [![Global APIs](https://img.shields.io/badge/Global%20APIs-780+-blue.svg)](https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md)
 
 🇺🇸 [English](./README_EN.md) | 🇰🇷 [한국어](./README.md) | 🌏 [글로벌 public API](./GLOBAL_PUBLIC_APIS_KR.md)
@@ -11,7 +11,7 @@
 이 프로젝트는 한국에서 개발자들이 활용할 수 있는 모든 **공개 API**를 체계적으로 정리한 목록입니다.
 
 
-2026년 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+2026년 7월 3일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
 
 > ### 🌍 글로벌 API 리소스
 >
@@ -702,6 +702,6 @@ Source: 공공데이터 이슈 및 추천데이터
 
 ---
 
-**마지막 업데이트**: 2026년 5월 29일
+**마지막 업데이트**: 2026년 7월 3일
 
-**총 API 수**: 270+α(데이터셋/데이터 포털)
+**총 API 수**: 300+α(데이터셋/데이터 포털)

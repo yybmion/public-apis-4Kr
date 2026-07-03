@@ -6,7 +6,7 @@
 This project systematically organizes all public APIs that developers can utilize in South Korea.
 
 
-Updated with the latest information as of 2026, and will be periodically updated going forward.
+Updated with the latest information as of July 3, 2026, and will be periodically updated going forward.
 
 <details>
 <summary><strong>🏆 May 2026 Public Data Open API Request TOP 10</strong></summary>
@@ -695,9 +695,9 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: May 29, 2026
+**Last Updated**: July 3, 2026
 
-**Total API Count**: 270+α (datasets/data portals)
+**Total API Count**: 300+α (datasets/data portals)
 
 
 
