@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./assets/api-image.png" width="108" align="absmiddle" alt="Public API Korea logo" />
   &nbsp;&nbsp;
-  <img src="./assets/public-apis-kr-title.svg" width="370" align="absmiddle" alt="public-apis-kr" />
+  <img src="./assets/public-apis-kr-title.svg" width="340" align="absmiddle" alt="public-apis-kr" />
 </p>
 
 <p align="center">
