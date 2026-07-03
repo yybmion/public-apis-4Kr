@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./assets/api-image.png" width="180" alt="Public API Korea" />
+  <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" /> public-apis-kr
 </h1>
 
 <h3 align='center'>Comprehensive Collection of Public APIs Available in South Korea</h3>
