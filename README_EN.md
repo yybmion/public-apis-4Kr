@@ -1,7 +1,7 @@
-<p align="center">
+<h3 align="center">
   <img src="./assets/api-image.png" width="96" align="absmiddle" alt="Public API Korea logo" />
-  <strong><font size="7">public-apis-kr</font></strong>
-</p>
+  public-apis-kr
+</h3>
 
 <p align="center">
   <a href="https://github.com/yybmion/public-apis-4Kr/actions"><img src="https://github.com/yybmion/public-apis-4Kr/actions/workflows/link_health_check.yml/badge.svg" alt="Link Health Check" /></a>
@@ -9,8 +9,6 @@
   <a href="https://github.com/yybmion/public-apis-4Kr"><img src="https://img.shields.io/badge/Korean%20APIs%20%26%20Resources-300+-blue.svg" alt="Korean APIs and Resources 300+" /></a>
   <a href="https://github.com/yybmion/public-apis-4Kr/blob/main/GLOBAL_PUBLIC_APIS_KR.md"><img src="https://img.shields.io/badge/Global%20APIs-780+-blue.svg" alt="Global APIs 780+" /></a>
 </p>
-
----
 
 <h3 align='center'>Comprehensive Collection of Public APIs Available in South Korea</h3>
 
