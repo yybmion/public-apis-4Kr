@@ -22,7 +22,7 @@
 <details>
 <summary><strong>🏆 2026년 5월 공공데이터 활용신청 TOP 10</strong></summary>
 
-출처: 공공데이터 이슈 및 추천데이터
+Source: 공공데이터 이슈 및 추천데이터
 
 | 순위 | 기관 | Open API | URL | 유형 |
 |---:|---|---|---|---|
