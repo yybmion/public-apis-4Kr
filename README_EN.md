@@ -123,7 +123,7 @@ Source: 공공데이터 이슈 및 추천데이터
 - [🏦 Finance & Budget](#Finance--Budget)
 - [<img src="./assets/logo-naver.png" width="16" height="16"/> Naver](#Naver)
 - [<img src="./assets/logo-kakao.png" width="16" height="16"/> Kakao](#Kakao)
-- [📚 Data & Statistics Resources](#data--statistics-resources)
+- [📊 Data & Statistics Resources](#data--statistics-resources)
   - [Datasets & Data Portals](#datasets--data-portals)
   - [Statistics & Indicators](#statistics--indicators)
 
