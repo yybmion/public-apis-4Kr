@@ -946,7 +946,6 @@
 | [Naver Search](https://developers.naver.com/products/service-api/search/search.md)                    | Blog, image, web, news, encyclopedia and other searches    | `apiKey` |
 | [Papago Translation](https://developers.naver.com/docs/papago/README.md)                              | Artificial neural network-based machine translation        | `apiKey` |
 | [Share](https://developers.naver.com/docs/share/navershare/)                                          | Naver blog, cafe sharing                                   | `apiKey` |
-| [URL Shortener](https://developers.naver.com/docs/utils/shortenurl/)                                  | Shorten URLs to me2.do format                              | `apiKey` |
 | [Voice CAPTCHA](https://developers.naver.com/docs/utils/scaptcha/overview/)                           | Voice security to prevent automatic input                  | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**

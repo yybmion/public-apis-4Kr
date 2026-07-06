@@ -943,7 +943,6 @@
 | [네이버 검색](https://developers.naver.com/products/service-api/search/search.md)                  | 블로그, 이미지, 웹, 뉴스, 백과사전 등 검색 | `apiKey` |
 | [네이버 로그인](https://developers.naver.com/products/login/api/)                                  | 네이버 아이디로 로그인 및 프로필 조회      | `OAuth`  |
 | [네이버 캘린더](https://developers.naver.com/docs/login/calendar-api/calendar-api.md)              | 사용자 캘린더 일정 추가                    | `OAuth`  |
-| [단축URL](https://developers.naver.com/docs/utils/shortenurl/)                                     | URL을 me2.do 형태로 단축                   | `apiKey` |
 | [데이터랩 검색어트렌드](https://developers.naver.com/docs/serviceapi/datalab/search/search.md)     | 통합검색어 트렌드 조회                     | `apiKey` |
 | [음성 캡차](https://developers.naver.com/docs/utils/scaptcha/overview/)                            | 자동 입력 방지용 음성 보안                 | `apiKey` |
 | [캡차 이미지](https://developers.naver.com/docs/utils/captcha/overview/)                           | 자동 입력 방지용 보안 이미지 생성          | `apiKey` |
