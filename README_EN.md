@@ -707,6 +707,7 @@
 | [Naver Shopping Search API](https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)   | Naver Shopping product search service                | `apiKey` |
 | [NHN Commerce Developer Center](https://devcenter.nhn-commerce.com/)                                    | GodomMall API integration and sample code provision  | `apiKey` |
 | [WeMakePrice Login](https://developer.login.wonders.work/)                                              | WeMakePrice login OAuth 2.0 (partner companies only) | `OAuth`  |
+| [YES24 Open API](https://developers.yes24.com)                                                          | YES24 product search and bestseller API              | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
