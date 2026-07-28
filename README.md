@@ -707,6 +707,7 @@
 | [G마켓 Open API](https://etapi.gmarket.com/pages/API-%EA%B0%80%EC%9D%B4%EB%93%9C)                    | G마켓 상품검색 및 카테고리 API          | `apiKey` |
 | [G마켓/옥션 ESM Trading API](https://etapi.gmarket.com/category/%EA%B3%B5%EC%A7%80)                  | 이베이코리아 통합 판매자 도구           | `JWT`    |
 | [NHN커머스 개발자센터](https://devcenter.nhn-commerce.com/)                                          | 고도몰 API 연동 및 샘플 코드 제공       | `apiKey` |
+| [예스24 Open API](https://developers.yes24.com)                                                      | 예스24 상품검색 및 베스트셀러 API       | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
