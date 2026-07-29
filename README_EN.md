@@ -581,7 +581,7 @@
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- |
 | [Gyeonggi Province Bus Information](https://www.data.go.kr/data/15058012/openapi.do)                        | Real-time information for Gyeonggi Province city/intercity buses                       | `apiKey` |
 | [Hyundai Motor Developers](https://developers.hyundai.com/)                                                 | Vehicle specifications, operation information, mileage, vehicle status, driving habits | `OAuth`  |
-| [Kakao Mobility Navigation](https://developers.kakaomobility.com/product/api)                               | Technical products for mobility service development                                    | `apiKey` |
+| [Kakao Mobility Navigation](https://developers.kakaomobility.com/product/naviapi.html)                       | Technical products for mobility service development                                    | `apiKey` |
 | [Kakao T Business](https://kakaotbusinessapiinfo.oopy.io/)                                                  | Business Kakao T usage history integration service                                     | `Partnership` |
 | [Kia Motors Developers](https://developers.kia.com/)                                                        | KIA Connect vehicle data and operation information                                     | `OAuth`  |
 | [Korea Expressway Corporation Real-time Traffic Volume](https://www.data.go.kr/data/15076872/openapi.do)    | Real-time traffic volume information by highway tollgate                               | `apiKey` |
@@ -955,7 +955,7 @@
 
 | API                                                                                         | Description                                      | Auth     |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------ | -------- |
-| [Kakao Link](https://developers.kakao.com/docs/latest/ko/message/common)                    | Message sending from app/web to KakaoTalk        | `apiKey` |
+| [Kakao Link](https://developers.kakao.com/docs/ko/kakaotalk-message/common)                 | Message sending from app/web to KakaoTalk        | `apiKey` |
 | [Kakao Login](https://developers.kakao.com/docs/latest/ko/kakaologin/common)                | Login with Kakao account and user management     | `OAuth`  |
 | [Kakao Moment](https://developers.kakao.com/docs/latest/ko/kakaomoment/reference)           | Mobile advertising platform                      | `apiKey` |
 | [Kakao Navi](https://developers.kakao.com/docs/latest/ko/kakaonavi/common)                  | Kakao Navi navigation integration                | `apiKey` |
