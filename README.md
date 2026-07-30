@@ -589,7 +589,7 @@
 | [서울시 버스 도착정보](http://api.bus.go.kr/contents/sub01/wisOpenApi.html)                    | 서울시 시내버스 실시간 도착정보                   | `apiKey` |
 | [서울시 지하철 실시간 도착정보](https://data.seoul.go.kr/dataList/OA-12764/A/1/datasetView.do) | 서울 지하철 2~8호선 실시간 도착정보               | `apiKey` |
 | [카카오T 비즈니스](https://kakaotbusinessapiinfo.oopy.io/)                                     | 업무용 카카오T 이용내역 연동 서비스               | `Partnership` |
-| [카카오모빌리티 길찾기](https://developers.kakaomobility.com/product/api)                      | 모빌리티 서비스 개발용 기술제품                   | `apiKey` |
+| [카카오모빌리티 길찾기](https://developers.kakaomobility.com/product/naviapi.html)          | 모빌리티 서비스 개발용 기술제품                   | `apiKey` |
 | [TAGO 국가대중교통정보 Open API](https://www.tago.go.kr/use/openapi)                           | 버스, 대중교통 노선·정류장·도착정보 등 국가대중교통정보 | `apiKey` |
 | [교통카드 빅데이터 시스템](https://stcis.go.kr/wps/openapi/devsvc/openApiDevList.do) | 대중교통 이용 통계, 교통수단별 통행량, 환승·목적별 통행 데이터 | `apiKey` |
 | [한국도로교통공단 교통사고정보](https://opendata.koroad.or.kr/)                                    | 교통사고 다발지역, 사고 통계, 도로위험지수 등 교통사고정보 | `apiKey` |
@@ -958,7 +958,7 @@
 | [카카오 검색](https://developers.kakao.com/docs/latest/ko/daum-search/common)             | 웹, 이미지, 동영상, 블로그 검색       | `apiKey` |
 | [카카오 로그인](https://developers.kakao.com/docs/latest/ko/kakaologin/common)            | 카카오 계정으로 로그인 및 사용자 관리 | `OAuth`  |
 | [카카오내비](https://developers.kakao.com/docs/latest/ko/kakaonavi/common)                | 카카오내비 길찾기 연동                | `apiKey` |
-| [카카오링크](https://developers.kakao.com/docs/latest/ko/message/common)                  | 앱/웹에서 카카오톡으로 메시지 전송    | `apiKey` |
+| [카카오링크](https://developers.kakao.com/docs/ko/kakaotalk-message/common)               | 앱/웹에서 카카오톡으로 메시지 전송    | `apiKey` |
 | [카카오모먼트](https://developers.kakao.com/docs/latest/ko/kakaomoment/reference)         | 모바일 광고 플랫폼                    | `apiKey` |
 | [카카오톡 친구](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common)      | 카카오톡 친구 목록 및 소셜 기능       | `OAuth`  |
 | [푸시 알림](https://developers.kakao.com/docs/latest/ko/push/common)                      | 앱 푸시 알림 발송                     | `apiKey` |
