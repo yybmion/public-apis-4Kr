@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  Updated with the latest information as of July 3, 2026, and will be periodically updated going forward.
+  Updated with the latest information as of August 13, 2026, and will be periodically updated going forward.
 </p>
 
 <details>
@@ -596,6 +596,7 @@
 | [STCIS Transportation Card Big Data](https://stcis.go.kr/wps/openapi/devsvc/openApiDevList.do)              | Public transportation usage statistics, mode-based trip volume, transfer and purpose-based trip data | `apiKey` |
 | [TAGO National Public Transportation Open API](https://www.tago.go.kr/use/openapi)                          | National public transportation routes, stops, arrival information, and related data     | `apiKey` |
 | [Ttareungyi (Seoul Bike)](https://data.seoul.go.kr/dataList/OA-15493/A/1/datasetView.do)                    | Seoul public bicycle real-time rental information                                      | `apiKey` |
+| [ITS National Transport Information Center Open Data API](https://www.its.go.kr/opendata/)                  | Nationwide traffic flow, incidents, CCTV, traffic forecasts, VDS, VMS, and related data | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -1046,7 +1047,7 @@ This project is distributed under the MIT License.
 
 ---
 
-**Last Updated**: July 3, 2026
+**Last Updated**: August 13, 2026
 
 **Total API/Resource Count**: 300+ (including datasets/data portals/statistical indicators)
 
