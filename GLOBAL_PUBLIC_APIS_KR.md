@@ -1272,6 +1272,7 @@
 | [The Old Reader](https://github.com/theoldreader/api) | RSS 리더 | `apiKey` | Yes | Unknown |
 | [TheNews](https://www.thenewsapi.com/) | 집계된 헤드라인, 주요 기사 및 실시간 뉴스 JSON API | `apiKey` | Yes | Yes |
 | [Trove](https://trove.nla.gov.au/about/create-something/using-api) | 1000개에 달하는 디지털 신문 컬렉션을 호주 국립도서관에서 검색하세요. | `apiKey` | Yes | Unknown |
+| [finlight](https://finlight.me/ko/news-api) | 티커·ISIN 엔티티 인식과 감성 분석이 포함된 실시간 금융 뉴스 API. REST·WebSocket·MCP 지원 | `apiKey` | Yes | Unknown |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
