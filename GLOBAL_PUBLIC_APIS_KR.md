@@ -1272,6 +1272,7 @@
 | [The Old Reader](https://github.com/theoldreader/api) | RSS 리더 | `apiKey` | Yes | Unknown |
 | [TheNews](https://www.thenewsapi.com/) | 집계된 헤드라인, 주요 기사 및 실시간 뉴스 JSON API | `apiKey` | Yes | Yes |
 | [Trove](https://trove.nla.gov.au/about/create-something/using-api) | 1000개에 달하는 디지털 신문 컬렉션을 호주 국립도서관에서 검색하세요. | `apiKey` | Yes | Unknown |
+| [APITube](https://apitube.io/) | 감정 분석 및 개체 추출을 포함한 다국어 실시간 뉴스 검색 | `apiKey` | Yes | Yes |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -1678,7 +1679,6 @@
 | :--- | --- | :---: | :---: | :---: |
 | [Code Detection API](https://codedetectionapi.runtime.dev) | 앱 또는 데이터 파이프라인에서 코드를 감지하고, 레이블을 지정하고, 형식을 지정하고 강화합니다. | `OAuth` | Yes | Unknown |
 | [apilayer languagelayer](https://languagelayer.com/) | 173개 언어를 지원하는 언어 감지 JSON API | `OAuth` | Yes | Unknown |
-| [Aylien Text Analysis](https://docs.aylien.com/textapi/#getting-started) | 정보 검색 및 자연어 API 모음 | `apiKey` | Yes | Unknown |
 | [Cloudmersive Natural Language Processing](https://www.cloudmersive.com/nlp-api) | 자연어 처리 및 텍스트 분석 | `apiKey` | Yes | Yes |
 | [Detect Language](https://detectlanguage.com/) | 텍스트 언어 감지 | `apiKey` | Yes | Unknown |
 | [ELI](https://nlp.insightera.co.th/docs/v1.0) | 태국어용 자연어 처리 도구 | `apiKey` | Yes | Unknown |
