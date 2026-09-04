@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  Updated with the latest information as of August 13, 2026, and will be periodically updated going forward.
+  Updated with the latest information as of September 4, 2026, and will be periodically updated going forward.
 </p>
 
 <details>
@@ -1048,7 +1048,7 @@ This project is distributed under the MIT License.
 
 ---
   
-**Last Updated**: August 13, 2026
+**Last Updated**: September 4, 2026
 
 **Total API/Resource Count**: 300+ (including datasets/data portals/statistical indicators)
 
