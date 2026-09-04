@@ -546,6 +546,7 @@
 | [Bank of Korea Open API](https://ecos.bok.or.kr/api/)                              | Economic statistics information providing API                                                | `apiKey`      |
 | [Bootpay API](https://docs.bootpay.co.kr/)                                         | Unified PG integration service supporting multiple payment gateways (Inicis, KCP, Danal, etc.) | `apiKey`      |
 | [CODEF API](https://developer.codef.io/)                                           | Finance, insurance, telecommunications data integration API                                  | `OAuth`       |
+| [Financial Services Commission Financial Public Data Open API](https://www.fsc.go.kr/in060301) | 110 APIs across 10 topics including companies, financial institutions, disclosures, capital markets, market prices, and financial products | `apiKey` |
 | [Hana Financial Group Open API](https://www.hanafnapimarket.com/)                  | Hana Financial Group API marketplace                                                             | `OAuth`       |
 | [HYPHEN API Marketplace](https://hyphen.im/)                                       | KSNet subsidiary data API marketplace with 500+ APIs                                         | `apiKey`      |
 | [Kakao Pay](https://developers.kakaopay.com/)                                      | Online payment, regular payment, remittance and other comprehensive payment solutions        | `OAuth`       |
