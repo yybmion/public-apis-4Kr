@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  Updated with the latest information as of September 4, 2026, and will be periodically updated going forward.
+  Updated with the latest information as of September 7, 2026, and will be periodically updated going forward.
 </p>
 
 <details>
@@ -678,6 +678,7 @@
 |------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------| -------- |
 | [KOPIS Performing Arts Integrated Computer Network](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | Performance information, venue information, booking information                            | `apiKey` |
 | [Korea Culture Information Service Agency](https://www.kcisa.kr/kr/contents/open_openData/view.do)         | Cultural content open API                                                                  | `apiKey` |
+| [Korea Mountaineering & Trekking Support Center Forest Trail Open API](https://komount.or.kr/html/index.do?html=public_data2) | 17 APIs for national forest trails, 100 famous mountains, Baekdu-daegan and nine mountain ranges, including routes, surfaces, hazards, and POIs | `apiKey` |
 | [Korea Tourism Organization TourAPI 4.0](https://api.visitkorea.or.kr/)                                    | Tourist attractions, accommodation, restaurants, festivals and other tourism information   | `apiKey` |
 | [National Museum of Korea eMuseum](https://www.emuseum.go.kr/openApi)                                      | Nationwide museum collection information                                                   | `apiKey` |
 
@@ -1048,7 +1049,7 @@ This project is distributed under the MIT License.
 
 ---
   
-**Last Updated**: September 4, 2026
+**Last Updated**: September 7, 2026
 
 **Total API/Resource Count**: 300+ (including datasets/data portals/statistical indicators)
 
