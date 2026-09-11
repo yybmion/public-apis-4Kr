@@ -564,6 +564,7 @@
 | [Toss Pay API](https://docs-pay.toss.im/reference)                                 | Payment service API through Toss (TLS 1.2+ required)                                         | `apiKey`      |
 | [Toss Payments](https://docs.tosspayments.com/reference)                           | Integrated payment API (card, virtual account, simple payment)                               | `apiKey`      |
 | [Woori Bank Open API](https://developer.wooribank.com/apiservice)                  | Fintech developer one-stop support service                                                   | `OAuth`       |
+| [Korea Stock Data (aikstockdata)](https://aikstockdata.com/en/api) | T+1 confirmed closing prices for all KOSPI/KOSDAQ/KONEX stocks, DART filings with receipt time, quarterly earnings as JSON/CSV, no signup | `No` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
