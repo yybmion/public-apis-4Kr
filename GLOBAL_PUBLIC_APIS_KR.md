@@ -743,6 +743,7 @@
 | [Boleto.Cloud](https://boleto.cloud/) | 브라질에서 boleto를 생성하는 API | `apiKey` | Yes | Unknown |
 | [Citi](https://sandbox.developerhub.citi.com/api-catalog-list) | 모든 Citigroup 계좌 및 명세서 데이터 API | `apiKey` | Yes | Unknown |
 | [Econdb](https://www.econdb.com/api/) | 글로벌 거시경제 데이터 | No | Yes | Yes |
+| [Eulerpool](https://eulerpool.com/developers) | 글로벌 주식, ETF, 매크로, 암호화폐, 외환 데이터 및 재무 정보 | `apiKey` | Yes | Yes |
 | [Fed Treasury](https://fiscaldata.treasury.gov/api-documentation/) | 미국 재무부 데이터 | No | Yes | Unknown |
 | [Finage](https://finage.co.uk) | Finage는 주식, 통화, 암호화폐, 지수, ETF 실시간 및 과거 데이터 제공업체입니다. | `apiKey` | Yes | Unknown |
 | [Financial Modeling Prep](https://site.financialmodelingprep.com/developer/docs) | 실시간 및 과거 주식 데이터 | `apiKey` | Yes | Unknown |
