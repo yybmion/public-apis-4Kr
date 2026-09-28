@@ -796,6 +796,7 @@
 | [Fruityvice](https://www.fruityvice.com) | 모든 종류의 과일에 대한 데이터 | No | Yes | Unknown |
 | [Kroger](https://developer.kroger.com/reference) | 슈퍼마켓 데이터 | `apiKey` | Yes | Unknown |
 | [LCBO](https://lcboapi.com/) | 주류 | `apiKey` | Yes | Unknown |
+| [Noms](https://noms.sh/docs) | 230개국 370만 개 식품과 29만 8천 개 브랜드의 영양 성분 데이터 및 바코드 조회 | `apiKey` | Yes | Yes |
 | [Open Brewery DB](https://www.openbrewerydb.org) | 양조장, 사과주 양조장 및 수제 맥주 병 상점 | No | Yes | Yes |
 | [Open Food Facts](https://world.openfoodfacts.org/data) | 식품 제품 데이터베이스 | No | Yes | Unknown |
 | [PunkAPI](https://punkapi.com/) | 브루독 맥주 레시피 | No | Yes | Unknown |
