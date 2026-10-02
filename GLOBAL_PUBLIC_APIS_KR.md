@@ -604,6 +604,7 @@
 | [Merriam-Webster](https://dictionaryapi.com/) | 사전 및 유의어 사전 데이터 | `apiKey` | Yes | Unknown |
 | [OwlBot](https://owlbot.info/) | 가능한 경우 예문과 사진이 포함된 정의 | `apiKey` | Yes | Yes |
 | [Oxford](https://developer.oxforddictionaries.com/) | 사전 데이터 | `apiKey` | Yes | No |
+| [SayItVid](https://sayitvid.com) | 영어 비디오 발음 검색, 타임스탬프, IPA 음성 기호 및 자막 문맥 제공 | `apiKey` | Yes | Yes |
 | [Synonyms](https://www.synonyms.com/synonyms_api.php) | 특정 단어에 대한 동의어, 유의어 사전, 반의어 정보 | `apiKey` | Yes | Unknown |
 | [Wiktionary](https://en.wiktionary.org/w/api.php) | 협업 사전 데이터 | No | Yes | Yes |
 | [Wordnik](https://developer.wordnik.com) | 사전 데이터 | `apiKey` | Yes | Unknown |
