@@ -564,6 +564,7 @@
 | [KB API 포탈](https://apiportal.kbfg.com/)                            | KB금융그룹 종합 금융 API 서비스 (800+ API 제공)     | `OAuth`       |
 | [KB국민은행 Open API](https://obizapi.kbstar.com/quics?page=C108082)  | KB 종합 금융서비스 및 BaaS 플랫폼                 | `OAuth`       |
 | [NH농협은행 Open API](https://developers.nonghyup.com/center/CE_1020) | 농협 금융 API 개발자센터                        | `OAuth`       |
+| [한국주식데이터](https://aikstockdata.com/datasets) | 코스피·코스닥·코넥스 전 종목 T+1 확정 종가·DART 공시(접수 시각)·분기 실적 JSON/CSV, 가입 없이 조회 | `No` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
