@@ -751,6 +751,7 @@
 | [Finnhub](https://finnhub.io/docs/api) | 주식, 통화, 암호화폐를 위한 실시간 RESTful API 및 웹소켓 | `apiKey` | Yes | Unknown |
 | [FRED](https://fred.stlouisfed.org/docs/api/fred/) | 세인트루이스 연방준비은행의 경제 데이터 | `apiKey` | Yes | Yes |
 | [Front Accounting APIs](https://frontaccounting.com/fawiki/index.php?n=Devel.SimpleAPIModule) | Front Accounting은 중소기업을 위한 다국어 및 다중 통화 소프트웨어입니다. | `OAuth` | Yes | Yes |
+| [FXMacroData](https://fxmacrodata.com/documentation/reference?utm_source=github&utm_medium=referral&utm_campaign=public-apis-4Kr&utm_content=readme) | 22개 통화권 중앙은행·통계기관의 공식 거시경제 지표, 경제지표 발표 일정, 환율 데이터 (USD 지표는 API 키 없이 이용 가능) | `apiKey` | Yes | No |
 | [Helium](https://heliumtrades.com/mcp-page/) | 미디어 편견 점수, 균형 잡힌 뉴스 종합, 실시간 시장 데이터, AI 옵션 가격 책정이 포함된 뉴스 | No | Yes | Yes |
 | [Hotstoks](https://hotstoks.com?utm_source=public-apis) | SQL로 구동되는 주식 시장 데이터 | `apiKey` | Yes | Yes |
 | [IBANforge](https://api.ibanforge.com) | 121,000개 이상의 은행 항목이 있는 75개 이상의 국가에 대한 IBAN 검증 및 BIC/SWIFT 조회 | No | Yes | Yes |
