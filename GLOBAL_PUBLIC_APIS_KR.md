@@ -262,6 +262,7 @@
 | [Apache Superset](https://superset.apache.org/docs/api) | Superset에서 BI 대시보드 및 데이터 소스를 관리하는 API | `apiKey` | Yes | Yes |
 | [Charity Search](http://charityapi.orghunter.com/) | 비영리 자선단체 데이터 | `apiKey` | No | Unknown |
 | [Clearbit Logo](https://clearbit.com/docs#logo-api) | 회사 로고 검색 및 프로젝트에 임베딩 | `apiKey` | Yes | Unknown |
+| [Datacircle](https://docs.datacircle.dev) | 저희를 통해 여러분이 가장 좋아하는 B2B 데이터 API를 조회하세요. 같은 요청, 같은 가격, 웃돈 없음 | `apiKey` | Yes | No |
 | [Domainsdb.info](https://domainsdb.info/) | 등록된 도메인 이름 검색 | No | Yes | No |
 | [Freelancer](https://developers.freelancer.com) | 프리랜서를 고용하여 작업 완료 | `OAuth` | Yes | Unknown |
 | [Gmail](https://developers.google.com/gmail/api/) | 사용자 받은편지함에 대한 유연한 RESTful 액세스 | `OAuth` | Yes | Unknown |
