@@ -417,6 +417,7 @@
 | [VALR](https://docs.valr.com/) | 남아프리카공화국에 본사를 둔 암호화폐 거래소 | `apiKey` | Yes | Unknown |
 | [WorldCoinIndex](https://www.worldcoinindex.com/apiservice) | 암호화폐 가격 | `apiKey` | Yes | Unknown |
 | [ZMOK](https://zmok.io) | Ethereum JSON RPC API 및 Web3 공급자 | No | Yes | Unknown |
+| [Aperiodic](https://aperiodic.io) | Binance, OKX, Hyperliquid 등 거래소의 암호화폐 무기한 선물 시장 미시구조·유동성·주문 흐름 지표와 원시 체결·호가 데이터 (Parquet) | `apiKey` | Yes | Yes |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
