@@ -744,6 +744,7 @@
 | [Boleto.Cloud](https://boleto.cloud/) | 브라질에서 boleto를 생성하는 API | `apiKey` | Yes | Unknown |
 | [Citi](https://sandbox.developerhub.citi.com/api-catalog-list) | 모든 Citigroup 계좌 및 명세서 데이터 API | `apiKey` | Yes | Unknown |
 | [Econdb](https://www.econdb.com/api/) | 글로벌 거시경제 데이터 | No | Yes | Yes |
+| [Equibles](https://equibles.com/docs/api) | ChatGPT·Claude용 MCP 서버 및 REST API: 미국 주식 SEC 공시 전문, XBRL 재무제표, 실적 발표 콜 녹취록, 내부자·의원 거래, 13F 기관 보유, 공매도 데이터, 옵션 체인 | `apiKey` | Yes | Yes |
 | [Eulerpool](https://eulerpool.com/developers) | 글로벌 주식, ETF, 매크로, 암호화폐, 외환 데이터 및 재무 정보 | `apiKey` | Yes | Yes |
 | [Fed Treasury](https://fiscaldata.treasury.gov/api-documentation/) | 미국 재무부 데이터 | No | Yes | Unknown |
 | [Finage](https://finage.co.uk) | Finage는 주식, 통화, 암호화폐, 지수, ETF 실시간 및 과거 데이터 제공업체입니다. | `apiKey` | Yes | Unknown |
