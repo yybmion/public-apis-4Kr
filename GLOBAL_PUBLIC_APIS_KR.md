@@ -772,6 +772,7 @@
 | [Portfolio Optimizer](https://portfoliooptimizer.io/) | 포트폴리오 분석 및 최적화 | No | Yes | Yes |
 | [Razorpay IFSC](https://razorpay.com/docs/) | 인도 금융 시스템 코드(은행 지점 코드) | No | Yes | Unknown |
 | [Real Time Finance](https://github.com/Real-time-finance/finance-websocket-API/) | 실시간 주식 데이터에 액세스하는 Websocket API | `apiKey` | No | Unknown |
+| [roic.ai](https://www.roic.ai/) | 전 세계 68,000개 이상 기업의 재무제표, 재무비율, 실적발표 컨퍼런스콜 스크립트 | `apiKey` | Yes | Unknown |
 | [SEC EDGAR Data](https://www.sec.gov/edgar/sec-api-documentation) | 미국 상장 기업의 연간 보고서에 액세스하기 위한 API | No | Yes | Yes |
 | [SmartAPI](https://smartapi.angelbroking.com/) | <SmartAPI> 세트에 접근하여 엔드투엔드 브로커 서비스 생성 | `apiKey` | Yes | Unknown |
 | [StockData](https://www.StockData.org) | 실시간, 일중 및 과거 시장 데이터, 뉴스 및 감정 API | `apiKey` | Yes | Yes |
