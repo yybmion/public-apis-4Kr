@@ -681,7 +681,7 @@
 | [한국등산·트레킹지원센터 숲길 Open API](https://komount.or.kr/html/index.do?html=public_data2) | 국가숲길·100대명산·백두대간·9정맥의 코스·노면·위험지역 및 문화·관광·교통 POI 17개 API | `apiKey` |
 | [한국문화정보원](https://www.kcisa.kr/kr/contents/open_openData/view.do)        | 문화콘텐츠 오픈 API                     | `apiKey` |
 | [KOPIS 공연예술통합전산망](https://www.kopis.or.kr/por/cs/openapi/openApiInfo.do) | 공연정보, 공연장정보, 예매정보                | `apiKey` |
-| [China Visa Check 중국 무비자 입국 규정](https://github.com/chematecc/china-visa-rules) | 여권별 중국 무비자 입국 규정(30일 무비자, 상호 면제, 240시간 경유 무비자, 하이난 30일) JSON, 매일 중국 공식 출처와 대조 | `No` |
+| [China Visa Check API (중국 무비자 입국 규정)](https://github.com/chematecc/china-visa-rules#use-it-as-an-api) | 여권별 중국 무비자 입국 규정 조회와 여행 판정 API(체류 일수·목적·제3국행 항공권·입국일 기준), 한국어 응답 지원(lang=ko), 매일 중국 공식 출처와 대조 | `No` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
