@@ -316,6 +316,7 @@
 | [BayFiles](https://bayfiles.com/docs/api) | 파일 업로드 및 공유 | No | Yes | Unknown |
 | [Box](https://developer.box.com/) | 파일 공유 및 저장 | `OAuth` | Yes | Unknown |
 | [ddownload](https://ddownload.com/api) | 파일 공유 및 저장 | `apiKey` | Yes | Unknown |
+| [deed.page](https://deed.page/docs) | PUT 요청 한 번으로 HTML 파일이나 정적 폴더를 영구 `https://<slug>.deed.page` 주소에 게시, 가입 없이 무료 플랜(사이트 25개, 사이트당 25MB), MCP 서버 제공 | No | Yes | Yes |
 | [Dropbox](https://www.dropbox.com/developers) | 파일 공유 및 저장 | `OAuth` | Yes | Unknown |
 | [File.io](https://www.file.io) | 파일 공유 | No | Yes | Unknown |
 | [Filestack](https://www.filestack.com) | Filestack 파일 업로더 및 파일 업로드 API | `apiKey` | Yes | Unknown |
