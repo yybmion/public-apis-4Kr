@@ -1639,6 +1639,7 @@
 | [Sport Vision](https://developers.decathlon.com/products/sport-vision) | 이미지에서 스포츠, 브랜드, 장비를 식별하세요. 이미지 스포츠 캡션도 제공됩니다. | `apiKey` | Yes | Yes |
 | [Sportmonks Cricket](https://docs.sportmonks.com/cricket/) | 실시간 크리켓 점수, 플레이어 통계 및 판타지 API | `apiKey` | Yes | Unknown |
 | [Sportmonks Football](https://docs.sportmonks.com/football/) | 축구 점수/일정, 뉴스 API, TV 채널, 통계, 기록, 디스플레이 상태(예: epl, 라 리가 | `apiKey` | Yes | Unknown |
+| [Sports Odds API (BetRivers, Unibet & 22 more books)](https://apify.com/publicrecords/sports-odds-api) | BetRivers, Unibet 등 Kambi 기반 스포츠북 24곳의 실시간 배당률과 결과별 최고 배당 | `apiKey` | Yes | Unknown |
 | [Squiggle](https://api.squiggle.com.au) | 호주 풋볼 리그 경기 일정, 결과 및 예측 | No | Yes | Yes |
 | [Strava](https://strava.github.io/api/) | 운동선수, 활동 등과 연결 | `OAuth` | Yes | Unknown |
 | [SuredBits](https://suredbits.com/api/) | 팀, 선수, 게임, 점수 및 통계를 포함한 스포츠 데이터 쿼리 | No | No | No |
