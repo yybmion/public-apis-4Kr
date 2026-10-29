@@ -1523,6 +1523,7 @@
 | [Mozilla http scanner](https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md) | Mozilla 천문대 http 스캐너 | No | Yes | Unknown |
 | [Mozilla tls scanner](https://github.com/mozilla/tls-observatory#api-endpoints) | Mozilla 천문대 TLS 스캐너 | No | Yes | Unknown |
 | [National Vulnerability Database](https://nvd.nist.gov/vuln/Data-Feeds/JSON-feed-changelog) | 미국 국가 취약점 데이터베이스 | No | Yes | Unknown |
+| [NetAPI](https://netapi.com/help/api/#json-api) | 도메인 데이터 API: 1,500개 이상 TLD의 신규 등록 도메인 키워드 검색, 도메인/IP의 침해(compromised) 목록 등재 여부 확인, 웹사이트 Top 1M 순위 조회. 기본 조회는 무료이며 키가 필요 없음 | No | Yes | Yes |
 | [Passwordinator](https://github.com/fawazsullia/password-generator/) | 다양한 복잡성의 무작위 비밀번호 생성 | No | Yes | Yes |
 | [PhishStats](https://phishstats.info/) | 피싱 데이터베이스 | No | Yes | Unknown |
 | [Privacy.com](https://privacy.com/developer/docs) | 은행에 다시 연결되는 판매자별 일회용 신용카드 번호를 생성하세요. | `apiKey` | Yes | Unknown |
