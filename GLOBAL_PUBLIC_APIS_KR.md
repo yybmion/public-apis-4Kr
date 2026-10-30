@@ -491,6 +491,7 @@
 | [Contentful Images](https://www.contentful.com/developers/docs/references/images-api/) | 이미지에서 링크 생성 (통합 개발자 유틸리티 API) | `apiKey` | Yes | Yes |
 | [CORS Proxy](https://github.com/burhanuday/cors-proxy) | 이 프록시를 중개자로 사용하여 두려운 CORS 오류를 해결하세요. | No | Yes | Yes |
 | [CountAPI](https://countapi.xyz) | 무료로 간편하게 계수 서비스를 제공합니다. 이를 사용하여 페이지 조회수 및 특정 이벤트를 추적할 수 있습니다. | No | Yes | Yes |
+| [CurlShot](https://curlshot.com/docs) | GET 요청 하나로 URL·HTML·Markdown을 PNG/JPEG/WebP/PDF 스크린샷 또는 스크롤 영상(MP4/WebM/GIF)으로 변환하는 웹사이트 스크린샷 API. 전체 페이지·요소 캡처, 기기 프리셋, 다크 모드, 광고·쿠키 배너 차단 지원. 카드 없이 월 100회 무료 | `apiKey` | Yes | Yes |
 | [Databricks](https://docs.databricks.com/dev-tools/api/latest/index.html) | Databricks 계정, 클러스터, 노트북, 작업 및 작업 공간을 관리하는 서비스 | `apiKey` | Yes | Yes |
 | [DigitalOcean Status](https://status.digitalocean.com/api) | 모든 DigitalOcean 서비스 상태 | No | Yes | Unknown |
 | [Docker Hub](https://docs.docker.com/docker-hub/api/latest/) | Docker Hub와 상호작용 | `apiKey` | Yes | Yes |
