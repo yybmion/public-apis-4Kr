@@ -24,266 +24,19 @@
 </p>
 
 <details>
-<summary align="center"><strong>🏆 June 2026 Public Data Open API Request TOP 10</strong></summary>
+<summary align="center"><strong>🏆 DATA.GO.KR Top 20 Open APIs by Application Count</strong></summary>
 
-<p align="center">Source: <a href="https://www.data.go.kr/tcs/eds/idt/selectIssueData.do?issueId=372191&amp;issueType=USE&amp;sortType=sort_order&amp;perPage=10">공공데이터 이슈 및 추천데이터</a></p>
-
-<table align="center">
-  <thead>
-    <tr>
-      <th align="right">Rank</th>
-      <th>Organization</th>
-      <th>Open API</th>
-      <th>URL</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="right">1</td>
-      <td>기상청</td>
-      <td>기상청_단기예보 조회서비스</td>
-      <td><a href="https://www.data.go.kr/data/15084084/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">2</td>
-      <td>조달청</td>
-      <td>조달청_나라장터 입찰공고정보서비스</td>
-      <td><a href="https://www.data.go.kr/data/15129394/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">3</td>
-      <td>국토교통부</td>
-      <td>국토교통부_아파트 매매 실거래가 자료</td>
-      <td><a href="https://www.data.go.kr/data/15126469/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">4</td>
-      <td>국세청</td>
-      <td>국세청_사업자등록정보 진위확인 및 상태조회 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15081808/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">5</td>
-      <td>한국천문연구원</td>
-      <td>한국천문연구원_특일 정보</td>
-      <td><a href="https://www.data.go.kr/data/15012690/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">6</td>
-      <td>국토교통부</td>
-      <td>국토교통부_아파트 매매 실거래가 상세 자료</td>
-      <td><a href="https://www.data.go.kr/data/15126468/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">7</td>
-      <td>국토교통부</td>
-      <td>국토교통부_자동차종합정보 API서비스</td>
-      <td><a href="https://www.data.go.kr/data/15071233/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">8</td>
-      <td>한국수출입은행</td>
-      <td>한국수출입은행 환율 정보</td>
-      <td><a href="https://www.data.go.kr/data/3068846/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">9</td>
-      <td>한국관광공사</td>
-      <td>한국관광공사_국문 관광정보 서비스_GW</td>
-      <td><a href="https://www.data.go.kr/data/15101578/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">10</td>
-      <td>국토교통부</td>
-      <td>국토교통부_건축HUB_건축물대장정보 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15134735/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-  </tbody>
-</table>
-
-</details>
-
-<details>
-<summary align="center"><strong>🏆 January–June 2026 Public Data Open API Request TOP 20</strong></summary>
+<p align="center">Checked on November 3, 2026 · Open API tab, sorted by usage (application count)</p>
+<p align="center"><a href="https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&amp;sort=use">DATA.GO.KR dataset catalog — Open API · usage order</a></p>
 
 <table align="center">
   <thead>
     <tr>
       <th align="right">Rank</th>
-      <th>Organization</th>
+      <th>Provider</th>
       <th>Open API</th>
+      <th align="right">Applications</th>
       <th>URL</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="right">1</td>
-      <td>기상청</td>
-      <td>기상청_단기예보 조회서비스</td>
-      <td><a href="https://www.data.go.kr/data/15084084/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">2</td>
-      <td>한국천문연구원</td>
-      <td>한국천문연구원_특일 정보</td>
-      <td><a href="https://www.data.go.kr/data/15012690/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">3</td>
-      <td>국토교통부</td>
-      <td>국토교통부_아파트 매매 실거래가 자료</td>
-      <td><a href="https://www.data.go.kr/data/15126469/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">4</td>
-      <td>조달청</td>
-      <td>조달청_나라장터 입찰공고정보서비스</td>
-      <td><a href="https://www.data.go.kr/data/15129394/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">5</td>
-      <td>국토교통부</td>
-      <td>국토교통부_자동차종합정보 API서비스</td>
-      <td><a href="https://www.data.go.kr/data/15071233/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">6</td>
-      <td>국세청</td>
-      <td>국세청_사업자등록정보 진위확인 및 상태조회 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15081808/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">7</td>
-      <td>한국수출입은행</td>
-      <td>한국수출입은행 환율 정보</td>
-      <td><a href="https://www.data.go.kr/data/3068846/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">8</td>
-      <td>한국환경공단</td>
-      <td>한국환경공단_에어코리아_대기오염정보</td>
-      <td><a href="https://www.data.go.kr/data/15073861/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">9</td>
-      <td>행정안전부</td>
-      <td>행정안전부_실시간 주소정보 조회(검색API)</td>
-      <td><a href="https://www.data.go.kr/data/15057017/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">10</td>
-      <td>국토교통부</td>
-      <td>국토교통부_아파트 매매 실거래가 상세 자료</td>
-      <td><a href="https://www.data.go.kr/data/15126468/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">11</td>
-      <td>한국관광공사</td>
-      <td>한국관광공사_국문 관광정보 서비스_GW</td>
-      <td><a href="https://www.data.go.kr/data/15101578/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">12</td>
-      <td>국토교통부</td>
-      <td>국토교통부_연속지적도</td>
-      <td><a href="https://www.data.go.kr/data/15056910/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">13</td>
-      <td>국토교통부</td>
-      <td>국토교통부_아파트 전월세 실거래가 자료</td>
-      <td><a href="https://www.data.go.kr/data/15126474/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">14</td>
-      <td>국토교통부</td>
-      <td>국토교통부_건축HUB_건축물대장정보 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15134735/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">15</td>
-      <td>국토교통부</td>
-      <td>국토교통부_지오코더 API</td>
-      <td><a href="https://www.data.go.kr/data/15101106/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">16</td>
-      <td>한국고용정보원</td>
-      <td>한국고용정보원_워크넷 채용정보 채용목록 및 상세정보</td>
-      <td><a href="https://www.data.go.kr/data/3038225/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">17</td>
-      <td>금융위원회</td>
-      <td>금융위원회_주식시세정보</td>
-      <td><a href="https://www.data.go.kr/data/15094808/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">18</td>
-      <td>조달청</td>
-      <td>조달청_나라장터 낙찰정보서비스</td>
-      <td><a href="https://www.data.go.kr/data/15129397/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-    <tr>
-      <td align="right">19</td>
-      <td>국토교통부</td>
-      <td>국토교통부_개별공시지가정보(WMS/WFS/속성정보)</td>
-      <td><a href="https://www.data.go.kr/data/15124014/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">20</td>
-      <td>소상공인시장진흥공단</td>
-      <td>소상공인시장진흥공단_상가(상권)정보_API</td>
-      <td><a href="https://www.data.go.kr/data/15012005/openapi.do">Detail</a></td>
-      <td>REST</td>
-    </tr>
-  </tbody>
-</table>
-
-</details>
-
-<details>
-<summary align="center"><strong>🏆 2011–June 2026 All-Time Public Data Open API Request TOP 20</strong></summary>
-
-<table align="center">
-  <thead>
-    <tr>
-      <th align="right">Rank</th>
-      <th>Organization</th>
-      <th>Open API</th>
-      <th>URL</th>
-      <th>Type</th>
     </tr>
   </thead>
   <tbody>
@@ -291,141 +44,141 @@
       <td align="right">1</td>
       <td>국토교통부</td>
       <td>국토교통부_연속지적도</td>
-      <td><a href="https://www.data.go.kr/data/15056910/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td align="right">86,847</td>
+      <td><a href="https://www.data.go.kr/data/15056910/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">2</td>
-      <td>한국수출입은행</td>
-      <td>한국수출입은행 환율 정보</td>
-      <td><a href="https://www.data.go.kr/data/3068846/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>기상청</td>
+      <td>기상청_단기예보 조회서비스</td>
+      <td align="right">74,245</td>
+      <td><a href="https://www.data.go.kr/data/15084084/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">3</td>
-      <td>기상청</td>
-      <td>기상청_단기예보 조회서비스</td>
-      <td><a href="https://www.data.go.kr/data/15084084/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>한국수출입은행</td>
+      <td>한국수출입은행 환율 정보</td>
+      <td align="right">70,636</td>
+      <td><a href="https://www.data.go.kr/data/3068846/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">4</td>
       <td>한국환경공단</td>
       <td>한국환경공단_에어코리아_대기오염정보</td>
-      <td><a href="https://www.data.go.kr/data/15073861/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td align="right">60,074</td>
+      <td><a href="https://www.data.go.kr/data/15073861/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">5</td>
+      <td>한국천문연구원</td>
+      <td>한국천문연구원_특일 정보</td>
+      <td align="right">46,437</td>
+      <td><a href="https://www.data.go.kr/data/15012690/openapi.do">Details</a></td>
+    </tr>
+    <tr>
+      <td align="right">6</td>
       <td>국토교통부</td>
       <td>국토교통부_시군구</td>
-      <td><a href="https://www.data.go.kr/data/15059464/openapi.do">Detail</a></td>
-      <td>LINK</td>
-    </tr>
-    <tr>
-      <td align="right">6</td>
-      <td>국토교통부</td>
-      <td>국토교통부_자동차종합정보 API서비스</td>
-      <td><a href="https://www.data.go.kr/data/15071233/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td align="right">46,015</td>
+      <td><a href="https://www.data.go.kr/data/15059464/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">7</td>
-      <td>한국천문연구원</td>
-      <td>한국천문연구원_특일 정보</td>
-      <td><a href="https://www.data.go.kr/data/15012690/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>국토교통부</td>
+      <td>국토교통부_자동차종합정보 API서비스</td>
+      <td align="right">43,106</td>
+      <td><a href="https://www.data.go.kr/data/15071233/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">8</td>
-      <td>행정안전부</td>
-      <td>행정안전부_실시간 주소정보 조회(검색API)</td>
-      <td><a href="https://www.data.go.kr/data/15057017/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>국세청</td>
+      <td>국세청_사업자등록정보 진위확인 및 상태조회 서비스</td>
+      <td align="right">34,940</td>
+      <td><a href="https://www.data.go.kr/data/15081808/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">9</td>
-      <td>국토교통부</td>
-      <td>국토교통부_교통CCTV</td>
-      <td><a href="https://www.data.go.kr/data/3068943/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>행정안전부</td>
+      <td>행정안전부_실시간 주소정보 조회(검색API)</td>
+      <td align="right">33,291</td>
+      <td><a href="https://www.data.go.kr/data/15057017/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">10</td>
-      <td>국세청</td>
-      <td>국세청_사업자등록정보 진위확인 및 상태조회 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15081808/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>한국관광공사</td>
+      <td>한국관광공사_국문 관광정보 서비스_GW</td>
+      <td align="right">32,319</td>
+      <td><a href="https://www.data.go.kr/data/15101578/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">11</td>
-      <td>서울특별시</td>
-      <td>서울특별시_지하철 실시간 도착정보</td>
-      <td><a href="https://www.data.go.kr/data/15058052/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>국토교통부</td>
+      <td>국토교통부_교통CCTV</td>
+      <td align="right">27,530</td>
+      <td><a href="https://www.data.go.kr/data/3068943/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">12</td>
-      <td>한국관광공사</td>
-      <td>한국관광공사_국문 관광정보 서비스_GW</td>
-      <td><a href="https://www.data.go.kr/data/15101578/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>서울특별시</td>
+      <td>서울특별시_지하철 실시간 도착정보</td>
+      <td align="right">25,498</td>
+      <td><a href="https://www.data.go.kr/data/15058052/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">13</td>
       <td>국토교통부</td>
       <td>국토교통부_CCTV 화상자료</td>
-      <td><a href="https://www.data.go.kr/data/15040466/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td align="right">24,735</td>
+      <td><a href="https://www.data.go.kr/data/15040466/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">14</td>
-      <td>식품의약품안전처</td>
-      <td>식품의약품안전처_조리식품의 레시피 DB</td>
-      <td><a href="https://www.data.go.kr/data/15060073/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>금융위원회</td>
+      <td>금융위원회_주식시세정보</td>
+      <td align="right">22,985</td>
+      <td><a href="https://www.data.go.kr/data/15094808/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">15</td>
       <td>국토교통부</td>
-      <td>국토교통부_지오코더 API</td>
-      <td><a href="https://www.data.go.kr/data/15101106/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>국토교통부_공동주택 기본 정보제공 서비스</td>
+      <td align="right">22,622</td>
+      <td><a href="https://www.data.go.kr/data/15058453/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">16</td>
-      <td>성평등가족부</td>
-      <td>성평등가족부_성범죄자 지역별 통계</td>
-      <td><a href="https://www.data.go.kr/data/3072018/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>국토교통부</td>
+      <td>국토교통부_아파트 매매 실거래가 자료</td>
+      <td align="right">22,608</td>
+      <td><a href="https://www.data.go.kr/data/15126469/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">17</td>
-      <td>영화진흥위원회</td>
-      <td>영화진흥위원회_영화정보 DB</td>
-      <td><a href="https://www.data.go.kr/data/3076402/openapi.do">Detail</a></td>
-      <td>LINK</td>
+      <td>식품의약품안전처</td>
+      <td>식품의약품안전처_조리식품의 레시피 DB</td>
+      <td align="right">21,490</td>
+      <td><a href="https://www.data.go.kr/data/15060073/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">18</td>
-      <td>서울특별시</td>
-      <td>서울특별시_지하철 실시간 열차 위치정보</td>
-      <td><a href="https://data.seoul.go.kr/dataList/OA-12601/A/1/datasetView.do">Detail</a></td>
-      <td>LINK</td>
+      <td>국토교통부</td>
+      <td>국토교통부_지오코더 API</td>
+      <td align="right">21,311</td>
+      <td><a href="https://www.data.go.kr/data/15101106/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">19</td>
-      <td>서울특별시</td>
-      <td>서울특별시_노선정보조회 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15000193/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>조달청</td>
+      <td>조달청_나라장터 입찰공고정보서비스</td>
+      <td align="right">20,393</td>
+      <td><a href="https://www.data.go.kr/data/15129394/openapi.do">Details</a></td>
     </tr>
     <tr>
       <td align="right">20</td>
-      <td>서울특별시</td>
-      <td>서울특별시_버스위치정보조회 서비스</td>
-      <td><a href="https://www.data.go.kr/data/15000332/openapi.do">Detail</a></td>
-      <td>REST</td>
+      <td>성평등가족부</td>
+      <td>성평등가족부_성범죄자 지역별 통계</td>
+      <td align="right">19,257</td>
+      <td><a href="https://www.data.go.kr/data/3072018/openapi.do">Details</a></td>
     </tr>
   </tbody>
 </table>
@@ -730,6 +483,7 @@
 | API                                                                                                  | Description                                                                                                   | Auth     |
 |------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------| -------- |
 | [Food Nutrition Database](https://various.foodsafetykorea.go.kr/nutrient/industry/openApi/info.do)   | Provides nutritional information (calories, nutrients, etc.) for processed foods, raw ingredients, and dishes | `apiKey` |
+| [Safe Restaurant Information](https://data.mafra.go.kr/majorpublicdata/indexMajorPublicData.do) | Locations and hygiene-related information for safe restaurants designated by local governments | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -883,6 +637,7 @@
 | [National Fire Agency Public Data](https://www.nfa.go.kr/nfa/releaseinformation/0011/0001/)   | Fire incidents, emergency dispatches, fire facility locations, and other fire safety information | `apiKey` |
 | [Public Safety Information](https://safemap.go.kr/opna/data/dataListRenew.do)                 | Crime statistics, traffic accidents, fire incidents, and locations of public safety facilities   | `apiKey` |
 | [Safety Dream Missing Person/Safety API](https://www.safe182.go.kr/home/api/guideMain.do)     | Missing person information and public safety data (National Police Agency)                       | `apiKey` |
+| [Lost and Abandoned Animal Search](https://data.mafra.go.kr/majorpublicdata/indexMajorPublicData.do) | Nationwide rescue and shelter status of lost and abandoned animals | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -917,6 +672,8 @@
 | [National Institute of Agricultural Sciences Soil Environment API](https://www.naas.go.kr/01_commu/Commu_Minwon.do?menu_code=0&tg=5&mmode=21) | Regional soil chemistry and detailed soil characteristics via parcel number (PNU) or legal district code     | `apiKey` |
 | [National Institute of Fisheries Science](https://www.nifs.go.kr/openApi/actionOpenapiInfoList.do)                                            | Marine environment and fisheries information                                                                 | `apiKey` |
 | [Rural Development Administration Nongsaro Open API](https://www.nongsaro.go.kr/portal/ps/psz/psza/contentMain.ps?menuId=PS00191)             | Crop-specific farming techniques, weekly agricultural info, pest control information for external developers | `apiKey` |
+| [Wholesale Market Auction Prices](https://data.mafra.go.kr/majorpublicdata/indexMajorPublicData.do) | Real-time auction prices, settlement transactions, prices, and volumes for agricultural, livestock, and fishery products at nationwide wholesale markets | `apiKey` |
+| [Smart Farm Data](https://data.mafra.go.kr/majorpublicdata/indexMajorPublicData.do) | Smart farm environment, crop growth, farming and management information, and smart livestock data | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
