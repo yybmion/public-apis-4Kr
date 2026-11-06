@@ -282,6 +282,7 @@
 | [Tenders in Ukraine](https://tenders.guru/ua/api) | JSON 형식으로 우크라이나 조달 데이터 가져오기 | No | Yes | Unknown |
 | [Tomba email finder](https://tomba.io/api) | B2B 판매 및 이메일 마케팅을 위한 이메일 찾기 및 이메일 검증기 | `apiKey` | Yes | Yes |
 | [Trello](https://developers.trello.com/) | 프로젝트 정리 및 우선순위 설정을 위한 보드, 목록, 카드 | `OAuth` | Yes | Unknown |
+| [Datacircle](https://api.datacircle.dev/v1) | 최고의 GTM API를 찾으세요. 모든 GTM API를 벤치마크하고 그 결과를 웹사이트에 올립니다 | No | Yes | Yes |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
