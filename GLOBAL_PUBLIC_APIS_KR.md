@@ -1851,6 +1851,7 @@
 | [Dune](https://github.com/ywalia01/dune-api) | 듄 API | No | Yes | Yes |
 | [Final Space](https://finalspaceapi.com/docs/) | 최종 공간 API | No | Yes | Yes |
 | [Game of Thrones Quotes](https://gameofthronesquotes.xyz/) | 왕좌의 게임 인용문 | No | Yes | Unknown |
+| [GetYouTubeTranscript](https://getyoutubetranscript.com/ko/docs?utm_source=public-apis-4kr&utm_medium=referral) | YouTube 자막(스크립트) API: GET 요청 한 번으로 영상 전체 자막을 JSON으로 반환 (언어·타임스탬프 선택, 한국어 자막 지원), YouTube 검색·채널·재생목록 엔드포인트와 MCP 서버 제공. 유료: 성공한 요청당 1크레딧, 가입 시 100크레딧 | `apiKey` | Yes | No |
 | [Harry Potter Charactes](https://hp-api.herokuapp.com/) | 이미지가 포함된 해리포터 캐릭터 데이터 | No | Yes | Unknown |
 | [IMDb-API](https://imdb-api.com/) | 영화, 연재물, 출연진 정보를 수신하기 위한 API | `apiKey` | Yes | Unknown |
 | [IMDbOT](https://github.com/SpEcHiDe/IMDbOT) | 비공식 IMDb 영화/시리즈 정보 | No | Yes | Yes |
