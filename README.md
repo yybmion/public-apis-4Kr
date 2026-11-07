@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  2026년 11월 3일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
+  2026년 11월 8일 기준 최신 정보로 업데이트되었으며, 앞으로도 주기적으로 업데이트 할 예정입니다.
 </p>
 
 <details>
@@ -422,6 +422,8 @@
 | [아파트 전월세 실거래가](https://www.data.go.kr/data/15126474/openapi.do)                 | 아파트 전세/월세 실거래 자료             | `apiKey` |
 | [한국부동산원 부동산통계](https://www.reb.or.kr/r-one/portal/openapi/openApiIntroPage.do) | 부동산 시장동향 및 통계정보              | `apiKey` |
 | [Airbnb API](https://www.airbnb.com/help/article/3418)                                    | 숙소 관리, 예약 관리 (B2B 파트너십 필수) | `OAuth`  |
+| [건축HUB 건축물대장정보](https://www.data.go.kr/data/15134735/openapi.do) | 건축물대장 기본개요·총괄표제부·표제부·층별개요·전유공용면적 등 조회 | `apiKey` |
+| [건축HUB 주택인허가정보](https://www.data.go.kr/data/15136560/openapi.do) | 주택건설사업계획승인과 동·층·호별 개요, 주차장·부대복리시설 정보 조회 | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -569,6 +571,7 @@
 | [CODEF 오픈API](https://codef.io/)                                  | 금융, 보험, 통신, 공공기관 스크래핑 API                    | `OAuth`       |
 | [KOTRA 해외시장뉴스 Open API](https://dream.kotra.or.kr/kotranews/cms/com/index.do?MENU_ID=710) | 해외시장 뉴스, 국가정보, 상품DB 등 해외진출 데이터 제공 | `apiKey` |
 | [Open DART API](https://opendart.fss.or.kr/)                       | 상장법인 공시보고서 원문, 주요 재무정보 및 기업 개황 데이터      | `apiKey` |
+| [고용24 Open API](https://www.work24.go.kr/cm/e/a/0110/selectOpenApiIntro.do) | 채용·직업정보와 직업훈련 과정 조회 (기업회원 신청·인증키 심사 필요) | `apiKey` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
@@ -802,6 +805,6 @@
 
 ---
 
-**마지막 업데이트**: 2026년 11월 3일
+**마지막 업데이트**: 2026년 11월 8일
 
 **총 API/리소스 수**: 300+(데이터셋/데이터 포털/통계 지표 포함)

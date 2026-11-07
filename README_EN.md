@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  Updated with the latest information as of November 3, 2026, and will be periodically updated going forward.
+  Updated with the latest information as of November 8, 2026, and will be periodically updated going forward.
 </p>
 
 <details>
@@ -422,6 +422,8 @@
 | [Apartment Jeonse/Monthly Rent Transaction Prices](https://www.data.go.kr/data/15126474/openapi.do)              | Apartment jeonse/monthly rent transaction data                              | `apiKey` |
 | [Apartment Sale Transaction Prices](https://www.data.go.kr/data/15126469/openapi.do)                             | MOLIT apartment sale transaction data                                       | `apiKey` |
 | [Korea Real Estate Board Real Estate Statistics](https://www.reb.or.kr/r-one/portal/openapi/openApiIntroPage.do) | Real estate market trends and statistical information                       | `apiKey` |
+| [ArchHUB Building Register Information](https://www.data.go.kr/data/15134735/openapi.do) | Building register overviews and headers, floor details, and exclusive/common floor areas | `apiKey` |
+| [ArchHUB Housing Permit Information](https://www.data.go.kr/data/15136560/openapi.do) | Housing construction project approvals, building/floor/unit overviews, parking, and ancillary facilities | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -569,6 +571,7 @@
 | [Samsung Knox API](https://developer.samsung.com/knox)                                     | Enterprise mobile security and management solutions                                                         | `Partnership` |
 | [Saramin Job API](https://oapi.saramin.co.kr/)                                             | Saramin job posting data API                                                                                 | `apiKey`      |
 | [Open DART API](https://engopendart.fss.or.kr/)                                            | Repository of South Korea's corporate filings, financial statements, and company overviews                  | `apiKey`      |
+| [Work24 Open API](https://www.work24.go.kr/cm/e/a/0110/selectOpenApiIntro.do) | Job listings, occupation information, and vocational training courses (business account application and API key approval required) | `apiKey` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
@@ -806,7 +809,7 @@ This project is distributed under the MIT License.
 
 ---
   
-**Last Updated**: November 3, 2026
+**Last Updated**: November 8, 2026
 
 **Total API/Resource Count**: 300+ (including datasets/data portals/statistical indicators)
 
