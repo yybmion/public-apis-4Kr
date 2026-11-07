@@ -266,6 +266,7 @@
 | [브이월드](https://www.vworld.kr/v4po_openapi_s001.do)               | 국토지리정보원의 3D 지도 및 공간정보                | `apiKey` |
 | [주소기반산업지원서비스](https://business.juso.go.kr)                       | 도로명주소 API / DB 제공 및 국가지점정보 등 제공      | `apiKey` |
 | [카카오맵](https://apis.map.kakao.com/web/guide/)                    | 지도 표시, 장소 검색, 좌표 변환, 경로 탐색           | `apiKey` |
+| [NPNkorea](https://github.com/hyein-cbio/NPNkorea-web/blob/main/api/README.md#public-http-api) | 국가지점번호와 WGS84 경위도 좌표 간 양방향 변환 | `No` |
 
 **[⬆ 목차로 돌아가기](#목차)**
 

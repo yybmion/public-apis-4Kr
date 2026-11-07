@@ -266,6 +266,7 @@
 | [National Land Information Platform](https://map.ngii.go.kr/mi/openKey/openKeyInfo.do)  | Digital maps, aerial imagery, orthophotos, DEM, and national points of interest (POI)  | `apiKey` |
 | [Naver Map](https://www.ncloud.com/product/applicationService/maps)                     | Map API, Geocoding, Directions, Panorama                                               | `apiKey` |
 | [V-World](https://www.vworld.kr/v4po_openapi_s001.do)                                   | National Geographic Information Institute's 3D maps and spatial information            | `apiKey` |
+| [NPNkorea](https://github.com/hyein-cbio/NPNkorea-web/blob/main/api/README.md#public-http-api) | Bidirectional conversion between Korean National Point Numbers and WGS84 coordinates | `No` |
 
 **[⬆ Back to Table of Contents](#table-of-contents)**
 
