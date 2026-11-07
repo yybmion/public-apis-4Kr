@@ -220,6 +220,7 @@
 | [The Graph](https://thegraph.com) | GraphQL을 사용하여 Ethereum과 같은 네트워크를 쿼리하기 위한 인덱싱 프로토콜 | `apiKey` | Yes | Unknown |
 | [Walltime](https://walltime.info/api.html) | Walltime의 시장 정보를 검색하려면 | No | Yes | Unknown |
 | [Watchdata](https://docs.watchdata.io) | Ethereum 블록체인에 대한 간단하고 안정적인 API 액세스 제공 | `apiKey` | Yes | Unknown |
+| [BlockVectra](https://docs.blockvectra.com/ko/guides/robinhood-chain/?ref=gh-public-apis-4kr) | Robinhood Chain 메인넷 공개 JSON-RPC, 일부 읽기 메서드는 API 키 없이 사용 | No | Yes | Unknown |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
