@@ -176,6 +176,7 @@
 | [Dribbble](https://developer.dribbble.com) | 세계 최고의 디자이너와 크리에이티브를 만나보세요 | `OAuth` | Yes | Unknown |
 | [EmojiHub](https://github.com/cheatsnake/emojihub) | 카테고리 및 그룹별로 이모티콘 받기 | No | Yes | Yes |
 | [Europeana](https://pro.europeana.eu/resources/apis/search) | 유럽 박물관 및 갤러리 콘텐츠 | `apiKey` | Yes | Unknown |
+| [FaviconDL](https://favicondl.com/documentation.html) | URL로 웹사이트의 실제 파비콘(PNG/SVG/ICO, 16–512px 리사이즈) 또는 JSON 메타데이터 가져오기 | No | Yes | Yes |
 | [Harvard Art Museums](https://github.com/harvardartmuseums/api-docs) | 아트 | `apiKey` | No | Unknown |
 | [Icon Horse](https://icon.horse) | 대체 기능이 포함된 모든 웹사이트의 파비콘 | No | Yes | Yes |
 | [Iconfinder](https://developer.iconfinder.com) | 아이콘 | `apiKey` | Yes | Unknown |
