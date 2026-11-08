@@ -676,6 +676,7 @@
 | [Sendgrid](https://docs.sendgrid.com/api-reference/) | 이메일 서버를 유지 관리할 필요 없이 이메일을 보낼 수 있는 클라우드 기반 SMTP 공급자 | `apiKey` | Yes | Unknown |
 | [Sendinblue](https://developers.sendinblue.com/docs) | 마케팅 및/또는 거래 이메일 및/또는 SMS와 관련된 솔루션을 제공하는 서비스 | `apiKey` | Yes | Unknown |
 | [Verifier](https://verifier.meetchopra.com/docs#/) | 주어진 이메일이 진짜인지 확인합니다. | `apiKey` | Yes | Yes |
+| [SimpleVerifier](https://simpleverifier.com/docs/api) | 실시간 SMTP 메일함 확인으로 이메일 주소를 검증하고, 결과마다 메일 서버의 사유와 캐치올(catch-all) 등급을 제공 | `apiKey` | Yes | No |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
