@@ -632,6 +632,7 @@
 | [Code::Stats](https://codestats.net/api-docs) | 프로그래머를 위한 자동 시간 추적 | `apiKey` | Yes | No |
 | [CraftMyPDF](https://craftmypdf.com) | 드롭 앤 드롭 편집기와 간단한 API를 사용하여 템플릿에서 PDF 문서 생성 | `apiKey` | Yes | No |
 | [Flowdash](https://docs.flowdash.com/docs/api-introduction) | 비즈니스 워크플로 자동화 | `apiKey` | Yes | Unknown |
+| [HumanPen](https://api.humanpen.net/v1/docs.md) | 12? ?? ?? ??(???? ??), ?? ?? ??????????? ?? ??(12?) ? ?? ???? API (?? ? 100 ???, ?? ??? ??) | `apiKey` | Yes | Unknown |
 | [Html2PDF](https://html2pdf.app/) | HTML/URL을 PDF로 | `apiKey` | Yes | Unknown |
 | [iLovePDF](https://developer.ilovepdf.com/) | PDF의 변환, 병합, 분할, 텍스트 추출 및 페이지 번호 추가. 월 250개 문서 무료 | `apiKey` | Yes | Yes |
 | [JIRA](https://developer.atlassian.com/server/jira/platform/rest-apis/) | JIRA는 버그 추적 및 민첩한 프로젝트 관리를 가능하게 하는 독점 문제 추적 제품입니다. | `OAuth` | Yes | Unknown |
