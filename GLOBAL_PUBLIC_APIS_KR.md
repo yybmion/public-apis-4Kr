@@ -651,6 +651,7 @@
 | [Vector Express v2.0](https://vector.express) | 무료 벡터 파일 변환 API | No | Yes | No |
 | [WakaTime](https://wakatime.com/developers) | 프로그래머를 위한 자동화된 시간 추적 리더보드 | No | Yes | Unknown |
 | [Zube](https://zube.io/docs/api) | 풀스택 프로젝트 관리 | `OAuth` | Yes | Unknown |
+| [HumanPen](https://api.humanpen.net/v1/docs.md) | 문서 번역 및 편집 API: 12개 언어 번역, 문서 다듬기, 요약, 인용 형식 교정. 가입 시 100크레딧 제공, 이후 크레딧 기반 유료 서비스. | `apiKey` | Yes | Unknown |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
