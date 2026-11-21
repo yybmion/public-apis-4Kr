@@ -1181,6 +1181,7 @@
 | [USAJOBS](https://developer.usajobs.gov/) | 미국 정부 구인 게시판 | `apiKey` | Yes | Unknown |
 | [WhatJobs](https://www.whatjobs.com/affiliates) | 직업 검색 엔진 | `apiKey` | Yes | Unknown |
 | [ZipRecruiter](https://www.ziprecruiter.com/publishers) | 구인 검색 앱 및 웹사이트 | `apiKey` | Yes | Unknown |
+| [Jobs Every Hour](https://jobseveryhour.com/api/) | 고용주 채용 페이지에서 매시간 읽어 오는 채용 공고의 JSON API 및 RSS 피드(직군, 기술, 지역, 회사별), 마감된 공고는 제외 | No | Yes | Yes |
 
 **[⬆ 목차로 돌아가기](#목차)**
 
