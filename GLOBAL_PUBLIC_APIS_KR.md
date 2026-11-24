@@ -1670,6 +1670,7 @@
 | [Mailsac](https://mailsac.com/docs/api) | 일회용 이메일 | `apiKey` | Yes | Unknown |
 | [Metaphorsum](http://metaphorpsum.com/) | 단어와 문장 수를 제공하는 데모 단락 생성 | No | No | Unknown |
 | [Mockaroo](https://www.mockaroo.com/docs) | JSON, CSV, TXT, SQL 및 XML로 가짜 데이터 생성 | `apiKey` | Yes | Unknown |
+| [Narkis Avatars](https://narkis.ai/developers/avatars) | 같은 시드면 같은 얼굴: 실존하지 않는 사람의 사실적인 AI 얼굴 아바타, 원하는 크기 | No | Yes | Yes |
 | [QuickMocker](https://quickmocker.com) | 상황별, 가짜 또는 무작위 데이터를 생성하는 API 모킹 도구 | No | Yes | Yes |
 | [Random Data](https://random-data-api.com) | 무작위 데이터 생성기 | No | Yes | Unknown |
 | [Randommer](https://randommer.io/randommer-api) | 랜덤 데이터 생성기 | `apiKey` | Yes | Yes |
