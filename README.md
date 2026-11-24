@@ -251,6 +251,7 @@
 | [한국도로공사 교통정보](https://data.ex.co.kr/)                                                                          | 실시간 고속도로 교통량 및 교통정보                                              | `apiKey` |
 | [한국철도공사 열차운행정보](https://www.data.go.kr/data/15125762/openapi.do)                                                 | KTX, 새마을호 등 열차 운행정보                                              | `apiKey` |
 | [한국토지주택공사(LH)](https://www.data.go.kr/tcs/dss/selectDataSetList.do?org=한국토지주택공사)                                 | 분양임대공고, 사전청약, 임대주택 정보                                            | `apiKey` |
+| [행정안전부 공중화장실정보](https://www.data.go.kr/data/15155058/openapi.do)                                               | 전국 공중화장실의 소재지 주소, 개방시간, 남녀·장애인·어린이용 위생시설 수 정보               | `apiKey` |
 | [행정안전부 행정표준코드](https://www.data.go.kr/data/15077871/openapi.do)                                                  | 법정동코드, 행정구역코드 등 표준코드 정보                                          | `apiKey` |
 | [환경공간정보서비스 지도 API](https://egis.me.go.kr/api/intro.do)                                                           | 환경부 토지피복지도, 환경주제도, 생태자연도 공간정보                                    | `apiKey` |
 | [NTIS 국가과학기술정보](https://www.ntis.go.kr/rndopen/api/mng/apiMain.do)                                               | 국가R&D 과제정보, 성과정보 메타데이터 검색                                        | `apiKey` |
