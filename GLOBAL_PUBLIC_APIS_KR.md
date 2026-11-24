@@ -268,6 +268,7 @@
 | [Freelancer](https://developers.freelancer.com) | 프리랜서를 고용하여 작업 완료 | `OAuth` | Yes | Unknown |
 | [Gmail](https://developers.google.com/gmail/api/) | 사용자 받은편지함에 대한 유연한 RESTful 액세스 | `OAuth` | Yes | Unknown |
 | [Google Analytics](https://developers.google.com/analytics/) | 올바른 타겟층에 도달하기 위한 데이터 수집, 구성 및 분석 | `OAuth` | Yes | Unknown |
+| [Hermoso](https://hermoso.ai/docs/) | 경쟁사 광고 조사, 이미지·동영상 광고 생성, 소셜 게시물 예약 발행, Meta·Google·TikTok·LinkedIn 광고 캠페인 관리 | `apiKey` | Yes | Unknown |
 | [Instatus](https://instatus.com/help/api) | HTTP REST API를 통해 상태 페이지에 유지 관리 및 인시던트를 게시하고 업데이트합니다. | `apiKey` | Yes | Unknown |
 | [Mailchimp](https://mailchimp.com/developer/) | 마케팅 캠페인 및 거래 메일 보내기 | `apiKey` | Yes | Unknown |
 | [mailjet](https://www.mailjet.com/) | 이메일 서비스 | `apiKey` | Yes | Unknown |
