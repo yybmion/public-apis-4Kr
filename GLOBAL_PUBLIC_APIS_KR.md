@@ -1635,6 +1635,7 @@
 | [NHL Records and Stats](https://gitlab.com/dword4/nhlapi) | NHL 과거 데이터 및 통계 | No | Yes | Unknown |
 | [Oddsmagnet](https://data.oddsmagnet.com) | 여러 영국 북메이커의 배당률 기록 | No | Yes | Yes |
 | [OpenLigaDB](https://www.openligadb.de) | 크라우드 소싱 스포츠 리그 결과 | No | Yes | Yes |
+| [PinnFeed](https://pinnfeed.io/docs) | REST와 WebSocket으로 제공하는 실시간 Pinnacle 배당률, 마진을 제거한(no-vig) 공정 배당과 마감 배당(closing line) 기록 포함 | `apiKey` | Yes | Yes |
 | [Premier League Standings](https://rapidapi.com/heisenbug/api/premier-league-live-scores/) | 모든 현재 프리미어 리그 순위 및 통계 | `apiKey` | Yes | Unknown |
 | [RacingHub](https://racinghub.net/api/v1/docs#/) | Formula 1 과거 데이터 및 통계 | No | Yes | Unknown |
 | [Sport Data](https://sportdataapi.com) | 전 세계의 스포츠 데이터를 받아보세요 | `apiKey` | Yes | Unknown |
